@@ -26,6 +26,15 @@ tar -xzf "$tar" -C "$work" --strip-components=1
 cd "$work"
 # no build path or date inside the library
 export SOURCE_DATE_EPOCH=0
+# Prefer static libcrypto when available so distributed binaries do not crash
+# on distributions with differing OpenSSL ABIs
+if [ -z "${EXTRA_LDFLAGS:-}" ] && command -v pkg-config >/dev/null 2>&1 && pkg-config --exists libcrypto; then
+  CRYPTO_STATIC_LIB="$(pkg-config --variable=libdir libcrypto 2>/dev/null)/libcrypto.a"
+  if [ -f "$CRYPTO_STATIC_LIB" ]; then
+    EXTRA_LDFLAGS="$CRYPTO_STATIC_LIB"
+  fi
+fi
+
 export CFLAGS="-O2 ${EXTRA_CFLAGS:-} -ffile-prefix-map=$work=/sqlcipher -DSQLITE_HAS_CODEC -DSQLITE_EXTRA_INIT=sqlcipher_extra_init -DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown"
 # its own sqlite3_* calls stay inside it: gtk may have loaded the system
 # sqlite first, and binding to that one breaks the database open
