@@ -301,10 +301,14 @@ DesktopStop? windowsFolderStop(String? word) => switch (word) {
   _ => DesktopStop.notPrivate,
 };
 
-Future<void> startDesktop(Future<void> Function() appMain) async {
+Future<void> startDesktop(
+  Future<void> Function() appMain, {
+  String? profile,
+}) async {
+  if (profile != null && profile.isNotEmpty) activeProfile = profile;
   onDesktop = true;
   privateUmask();
-  final root = desktopDataDir();
+  final root = desktopDataDir(profile: profile);
   final stop = await claimFolder(root);
   if (stop == null) startTrace(root);
   if (stop != null) {

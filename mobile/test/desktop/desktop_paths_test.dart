@@ -28,6 +28,17 @@ void main() {
       desktopDataDir(env: const {'HOME': '/home/a', 'XDG_DATA_HOME': 'rel'}),
       '/home/a/.local/share/kryfo',
     );
+    // a profile puts everything in a dedicated subfolder
+    expect(
+      desktopDataDir(env: const {'HOME': '/home/a'}, profile: 'work'),
+      '/home/a/.local/share/kryfo/profiles/work',
+    );
+    expect(
+      desktopDataDir(
+        env: const {'HOME': '/home/a', 'KRYFO_PROFILE': 'personal'},
+      ),
+      '/home/a/.local/share/kryfo/profiles/personal',
+    );
   });
 
   test('every folder the app asks for is 0700 and inside its own', () async {

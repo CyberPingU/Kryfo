@@ -13,22 +13,32 @@ import 'desktop_posix.dart' as posix show ownerOf;
 import 'package:path/path.dart' as p;
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 
+/// the active profile name, if any (set via --profile or KRYFO_PROFILE)
+String? activeProfile;
+
 /// the app's folder: $XDG_DATA_HOME/kryfo (inside a flatpak that is the
 /// sandbox's own data dir), else ~/.local/share/kryfo, %LOCALAPPDATA%\Kryfo
-/// on windows
-String desktopDataDir({Map<String, String>? env}) {
+/// on windows. When a profile is active, subfolder profiles/<profile> is used.
+String desktopDataDir({Map<String, String>? env, String? profile}) {
   final e = env ?? Platform.environment;
+  final prof = profile ?? activeProfile ?? e['KRYFO_PROFILE'];
   if (Platform.isWindows) {
     final local =
         e['LOCALAPPDATA'] ??
         p.join(e['USERPROFILE'] ?? '.', 'AppData', 'Local');
-    return p.join(local, 'Kryfo');
+    final base = p.join(local, 'Kryfo');
+    return prof != null && prof.isNotEmpty
+        ? p.join(base, 'profiles', prof)
+        : base;
   }
   final xdg = e['XDG_DATA_HOME'];
   final base = xdg != null && p.isAbsolute(xdg)
       ? xdg
       : p.join(e['HOME'] ?? '/nonexistent', '.local', 'share');
-  return p.join(base, 'kryfo');
+  final dir = p.join(base, 'kryfo');
+  return prof != null && prof.isNotEmpty
+      ? p.join(dir, 'profiles', prof)
+      : dir;
 }
 
 typedef _ModeC = Int32 Function(Pointer<Utf8>, Uint32);
