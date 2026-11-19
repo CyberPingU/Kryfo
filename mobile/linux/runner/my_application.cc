@@ -32,6 +32,8 @@ struct _MyApplication {
   guint lock_state_signal;
   guint lock_response_signal;
   int screen_locked;
+  gchar* profile_name;
+  gchar* app_id;
 };
 
 // how long a hidden start waits for its tray icon before the window shows
@@ -191,12 +193,20 @@ static gboolean make_indicator(MyApplication* self, GtkWidget* open_item) {
   if (self->indicator == nullptr) {
     if (!sni_host()) return FALSE;
     g_autofree gchar* dir = data_dir();
-    self->indicator = lib->new_with_path(APPLICATION_ID, "kryfo",
+    const gchar* id = self->app_id != nullptr ? self->app_id : APPLICATION_ID;
+    self->indicator = lib->new_with_path(id, "kryfo",
                                          kIndicatorCommunications, dir);
     if (self->indicator == nullptr) return FALSE;
   }
   lib->set_menu(self->indicator, GTK_MENU(self->tray_menu));
-  if (lib->set_title != nullptr) lib->set_title(self->indicator, "Kryfo");
+  if (lib->set_title != nullptr) {
+    if (self->profile_name != nullptr) {
+      g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
+      lib->set_title(self->indicator, t);
+    } else {
+      lib->set_title(self->indicator, "Kryfo");
+    }
+  }
   if (lib->set_secondary != nullptr) {
     lib->set_secondary(self->indicator, open_item);
   }
@@ -229,16 +239,22 @@ static void make_tray(MyApplication* self, const gchar* open,
   if (indicated) return;
   if (self->tray == nullptr) {
     g_autofree gchar* path = icon_path();
+    const gchar* id = self->app_id != nullptr ? self->app_id : APPLICATION_ID;
     self->tray = path != nullptr && g_file_test(path, G_FILE_TEST_EXISTS)
                      ? gtk_status_icon_new_from_file(path)
-                     : gtk_status_icon_new_from_icon_name(APPLICATION_ID);
+                     : gtk_status_icon_new_from_icon_name(id);
     g_signal_connect(self->tray, "activate", G_CALLBACK(tray_activate_cb),
                      self);
     g_signal_connect(self->tray, "popup-menu", G_CALLBACK(tray_popup_cb),
                      self);
   }
   gtk_status_icon_set_tooltip_text(self->tray, tip);
-  gtk_status_icon_set_title(self->tray, "Kryfo");
+  if (self->profile_name != nullptr) {
+    g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
+    gtk_status_icon_set_title(self->tray, t);
+  } else {
+    gtk_status_icon_set_title(self->tray, "Kryfo");
+  }
 }
 
 G_GNUC_END_IGNORE_DEPRECATIONS
@@ -814,11 +830,21 @@ static void my_application_activate(GApplication* application) {
   if (use_header_bar) {
     GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
     gtk_widget_show(GTK_WIDGET(header_bar));
-    gtk_header_bar_set_title(header_bar, "Kryfo");
+    if (self->profile_name != nullptr) {
+      g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
+      gtk_header_bar_set_title(header_bar, t);
+    } else {
+      gtk_header_bar_set_title(header_bar, "Kryfo");
+    }
     gtk_header_bar_set_show_close_button(header_bar, TRUE);
     gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
   } else {
-    gtk_window_set_title(window, "Kryfo");
+    if (self->profile_name != nullptr) {
+      g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
+      gtk_window_set_title(window, t);
+    } else {
+      gtk_window_set_title(window, "Kryfo");
+    }
   }
 
   gtk_window_set_default_size(window, 1280, 720);
@@ -861,6 +887,19 @@ static void my_application_activate(GApplication* application) {
   }
 }
 
+static gchar* profile_slug(const gchar* profile) {
+  if (profile == nullptr || profile[0] == '\0') return nullptr;
+  GString* s = g_string_new("p_");
+  for (const gchar* p = profile; *p != '\0'; p++) {
+    if (g_ascii_isalnum(*p) || *p == '_' || *p == '-') {
+      g_string_append_c(s, *p);
+    } else {
+      g_string_append_c(s, '_');
+    }
+  }
+  return g_string_free(s, FALSE);
+}
+
 static gboolean my_application_local_command_line(GApplication* application,
                                                   gchar*** arguments,
                                                   int* exit_status) {
@@ -872,8 +911,30 @@ static gboolean my_application_local_command_line(GApplication* application,
     if (g_strcmp0(*a, "--hidden") == 0) {
       self->start_hidden = TRUE;
     } else {
+      if ((g_strcmp0(*a, "--profile") == 0 || g_strcmp0(*a, "-p") == 0) &&
+          *(a + 1) != nullptr) {
+        if (self->profile_name == nullptr) {
+          self->profile_name = g_strdup(*(a + 1));
+        }
+      } else if (g_str_has_prefix(*a, "--profile=")) {
+        if (self->profile_name == nullptr) {
+          self->profile_name = g_strdup(*a + 10);
+        }
+      }
       g_ptr_array_add(rest, g_strdup(*a));
     }
+  }
+  if (self->profile_name == nullptr) {
+    const gchar* env_p = g_getenv("KRYFO_PROFILE");
+    if (env_p != nullptr && env_p[0] != '\0') {
+      self->profile_name = g_strdup(env_p);
+    }
+  }
+  if (self->profile_name != nullptr) {
+    g_autofree gchar* slug = profile_slug(self->profile_name);
+    self->app_id = g_strdup_printf("%s.%s", APPLICATION_ID, slug);
+    g_application_set_application_id(application, self->app_id);
+    g_set_prgname(self->app_id);
   }
   g_ptr_array_add(rest, nullptr);
   self->dart_entrypoint_arguments =
@@ -908,6 +969,8 @@ static void my_application_dispose(GObject* object) {
   }
   g_clear_pointer(&self->dart_entrypoint_arguments, g_strfreev);
   g_clear_pointer(&self->tray_hint, g_free);
+  g_clear_pointer(&self->profile_name, g_free);
+  g_clear_pointer(&self->app_id, g_free);
   unwatch_screen_lock(self);
   g_clear_object(&self->desktop_channel);
   drop_indicator(self);

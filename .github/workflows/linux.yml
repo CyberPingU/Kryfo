@@ -1,0 +1,92 @@
+name: linux
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - "feature/*"
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: linux-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            ca-certificates curl git unzip xz-utils make perl gcc g++ libc6-dev \
+            pkg-config cmake ninja-build clang \
+            libgtk-3-dev libayatana-appindicator3-dev libssl-dev protobuf-compiler
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+
+      - name: Set up Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.7"
+          channel: "stable"
+          cache: true
+
+      - name: Build engine (libhalo.so)
+        run: ./engine/build-linux.sh
+
+      - name: Build signal shim (libkryfo_signal.so)
+        run: ./mobile/native/kryfo_signal/build-host.sh
+
+      - name: Build SQLCipher (libsqlcipher.so.0)
+        run: ./mobile/linux/build-sqlcipher.sh
+
+      - name: Build Flutter Linux app
+        run: |
+          cd mobile
+          flutter pub get
+          flutter build linux --release -t lib/main_desktop.dart
+
+      - name: Validate bundle
+        run: ./mobile/linux/check-bundle.sh mobile/build/linux/x64/release/bundle
+
+      - name: Package Linux tarball
+        run: |
+          VERSION="${GITHUB_REF_NAME:-0.6.2}"
+          VERSION="${VERSION#v}"
+          TARBALL="kryfo-${VERSION}-linux-x64.tar.gz"
+          ./packaging/linux/make-tarball.sh mobile/build/linux/x64/release/bundle "$TARBALL"
+          echo "TARBALL=$TARBALL" >> $GITHUB_ENV
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kryfo-linux-x64
+          path: ${{ env.TARBALL }}
+
+      - name: Attach to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.TARBALL }}
