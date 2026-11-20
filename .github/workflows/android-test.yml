@@ -19,6 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Cache native jniLibs
+        uses: actions/cache@v4
+        with:
+          path: mobile/android/app/src/main/jniLibs
+          key: jni-libs-${{ hashFiles('engine/**', 'mobile/native/kryfo_signal/**') }}
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 

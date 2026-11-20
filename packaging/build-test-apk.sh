@@ -33,21 +33,29 @@ echo "=== 1. Flutter dependencies ==="
 cd "$ROOT/mobile"
 flutter pub get
 
-echo "=== 2. Go Engine (libhalo.so) ==="
-cd "$ROOT/engine"
-HALO_FULL=1 bash build.sh
+# Check if native libraries are already compiled (e.g. restored from cache)
+if [[ -f "$ROOT/mobile/android/app/src/main/jniLibs/arm64-v8a/libhalo.so" && \
+      -f "$ROOT/mobile/android/app/src/main/jniLibs/arm64-v8a/libkryfo_signal.so" && \
+      -f "$ROOT/mobile/android/app/src/main/jniLibs/arm64-v8a/libkryfo_translate.so" && \
+      -f "$ROOT/mobile/android/app/src/main/jniLibs/arm64-v8a/libkryfo_voice.so" ]]; then
+  echo "=== Native libraries found in jniLibs! Skipping native rebuild ==="
+else
+  echo "=== 2. Go Engine (libhalo.so) ==="
+  cd "$ROOT/engine"
+  HALO_FULL=1 bash build.sh
 
-echo "=== 3. Signal Shim (libkryfo_signal.so) ==="
-cd "$ROOT/mobile/native/kryfo_signal"
-bash build-android.sh
+  echo "=== 3. Signal Shim (libkryfo_signal.so) ==="
+  cd "$ROOT/mobile/native/kryfo_signal"
+  bash build-android.sh
 
-echo "=== 4. Translation Library (libkryfo_translate.so) ==="
-cd "$ROOT/engine/translate/native"
-KT_JNI_LIBS_DIR="$ROOT/mobile/android/app/src/main/jniLibs" bash build.sh
+  echo "=== 4. Translation Library (libkryfo_translate.so) ==="
+  cd "$ROOT/engine/translate/native"
+  KT_JNI_LIBS_DIR="$ROOT/mobile/android/app/src/main/jniLibs" bash build.sh
 
-echo "=== 5. Voice Library (libkryfo_voice.so) ==="
-cd "$ROOT/engine/voice/native"
-KV_JNI_LIBS_DIR="$ROOT/mobile/android/app/src/main/jniLibs" bash build.sh
+  echo "=== 5. Voice Library (libkryfo_voice.so) ==="
+  cd "$ROOT/engine/voice/native"
+  KV_JNI_LIBS_DIR="$ROOT/mobile/android/app/src/main/jniLibs" bash build.sh
+fi
 
 echo "=== 6. Flutter Test APK (assembleFossDebug) ==="
 cd "$ROOT/mobile"

@@ -11,7 +11,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide LockState;
 import 'package:flutter/services.dart';
 import '../widgets/press_scale.dart';
 import '../widgets/fit_column.dart';
