@@ -75,8 +75,11 @@ jobs:
 
       - name: Package Linux tarball
         run: |
-          VERSION="${GITHUB_REF_NAME:-0.6.2}"
-          VERSION="${VERSION#v}"
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION=$(sed -n 's/^version: \([^+]*\).*/\1/p' mobile/pubspec.yaml)
+          fi
           TARBALL="kryfo-${VERSION}-linux-x64.tar.gz"
           ./packaging/linux/make-tarball.sh mobile/build/linux/x64/release/bundle "$TARBALL"
           echo "TARBALL=$TARBALL" >> $GITHUB_ENV
