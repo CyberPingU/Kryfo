@@ -1,0 +1,53 @@
+name: Android Test APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "feature/advanced-protection-vault"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Android Test APK
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Repro Toolchain Image
+        uses: docker/build-push-action@v6
+        with:
+          context: repro
+          load: true
+          tags: kryfo-repro:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Fix workspace permissions
+        run: chmod -R a+rwX "$GITHUB_WORKSPACE"
+
+      - name: Build Test APK inside Container
+        run: |
+          docker run --rm \
+            --ulimit nofile=65536:65536 \
+            -v "$GITHUB_WORKSPACE:/home/vagrant/build/app.kryfo" \
+            -w /home/vagrant/build/app.kryfo \
+            -e HOME=/home/vagrant \
+            --entrypoint /bin/bash \
+            kryfo-repro:latest \
+            packaging/build-test-apk.sh
+
+      - name: Upload Test APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Kryfo-Test-Debug-APK
+          path: mobile/build/app/outputs/flutter-apk/app-foss-debug.apk
+          if-no-files-found: error
