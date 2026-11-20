@@ -188,10 +188,10 @@ class _PinsScreenState extends State<PinsScreen> {
         : await _host.removeDecoy();
   }
 
-  // outside the vault the row always leads to setup, which replaces any
-  // hidden chats there are. inside it, the hidden chats' own choices
+  // inside the vault, the hidden chats' own choices: setup is done on first
+  // start and never replaced from outside
   Future<void> _hiddenRow() async {
-    if (!_lock.inVault) return _flow(PinFlow.vault);
+    if (!_lock.inVault) return;
     final r = await showChangeOrRemoveSheet(
       context,
       title: l10n.pinsHiddenChats,
@@ -350,20 +350,16 @@ class _PinsScreenState extends State<PinsScreen> {
                             : HaloColors.text,
                         onTap: on ? _decoyRow : null,
                       ),
-                    if (_host.decoyAndVault)
+                    // hidden chats show only from inside: setup is done on
+                    // first start and never replaced or set from outside
+                    if (_host.decoyAndVault && vault)
                       _ExtraRow(
                         icon: Icons.visibility_off_outlined,
                         tint: HaloColors.violet,
                         name: l10n.pinsHiddenChats,
                         line: l10n.pinsHiddenLine,
-                        state: !on
-                            ? l10n.pinsNeedsAPinFirst
-                            : vault
-                            ? l10n.pinsSet
-                            : l10n.pinsSetUp,
-                        stateColor: on && vault
-                            ? HaloColors.violet
-                            : HaloColors.text,
+                        state: l10n.pinsSet,
+                        stateColor: HaloColors.violet,
                         onTap: on ? _hiddenRow : null,
                       ),
                     if (_host.decoyAndVault)

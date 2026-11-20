@@ -147,7 +147,7 @@ class _PinFlowScreenState extends State<PinFlowScreen>
   bool get _restoring => _vault && widget.restoring;
   // no app lock yet: its pin comes first. a lock turned off in the decoy
   // counts as none, as it does everywhere else there
-  late final bool _needsLock = _restoring && !_lock.lockOn;
+  late final bool _needsLock = !_lock.lockOn;
   // the flow that made a new vault, whose key goes however it ends
   bool get _setup => _vault && !widget.skipIntro && !widget.restoring;
   Color get _tint => _wipe
@@ -357,7 +357,7 @@ class _PinFlowScreenState extends State<PinFlowScreen>
       }
       _first = '';
       HapticFeedback.lightImpact();
-      _go(_restoring ? _Step.done : _Step.pick);
+      _go((_restoring || widget.host.hideable().isEmpty) ? _Step.done : _Step.pick);
     } catch (e) {
       if (mounted) {
         await _rechoose(e is PinKeyBusy ? l10n.lockKeyBusy : l10n.flowNotSet);
@@ -461,11 +461,14 @@ class _PinFlowScreenState extends State<PinFlowScreen>
       ],
       PinFlow.vault => [
         (Icons.visibility_off_outlined, l10n.flowVault1),
+        if (_needsLock)
+          (Icons.lock_outline_rounded, l10n.restoreHiddenLockFirst),
         (Icons.notifications_off_outlined, l10n.flowVault2),
         // no finger on a computer
         if (!onDesktop) (Icons.fingerprint, l10n.flowVaultFinger),
         (Icons.dialpad_outlined, l10n.flowVaultDigits),
-        (Icons.autorenew_rounded, l10n.flowVaultReplaceShown),
+        if (!_needsLock)
+          (Icons.autorenew_rounded, l10n.flowVaultReplaceShown),
         (Icons.gavel_outlined, l10n.flowLawShown),
       ],
     };
@@ -525,10 +528,10 @@ class _PinFlowScreenState extends State<PinFlowScreen>
         _button(l10n.commonContinue, () {
           HapticFeedback.selectionClick();
           _go(
-            !_restoring
-                ? _Step.check
-                : _needsLock
+            _needsLock
                 ? _Step.appChoose
+                : !_restoring
+                ? _Step.check
                 : _Step.choose,
           );
         }),
