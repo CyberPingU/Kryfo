@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "اضغط مطولًا على صورة GIF في محادثة أو في صور GIF لإضافتها هنا.",
   "gifFavMoveEarlier": "نقل إلى الأمام",
   "gifFavMoveLater": "نقل إلى الخلف",
-  "gifFavTileA11y": "صورة GIF مفضلة {number}"
+  "gifFavTileA11y": "صورة GIF مفضلة {number}",
+  "onboardingProtectionOneTimeTitle": "أثناء الإعداد فقط",
+  "onboardingProtectionOneTimeLine": "لا يمكن إعداده إلا الآن. إذا اخترت «ليس الآن»، فلن تتمكن من تفعيله لاحقًا."
 }

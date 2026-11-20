@@ -11598,9 +11598,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return '收藏的 GIF $number';
   }
-}
 
-/// The translations for Chinese, using the Han script (`zh_Hant`).
+  @override
+  String get onboardingProtectionOneTimeTitle => '仅在首次设置时';
+
+  @override
+  String get onboardingProtectionOneTimeLine => '只能在此处设置。若选择“暂不”，日后将无法再次启用。';
+}
 class AppLocalizationsZhHant extends AppLocalizationsZh {
   AppLocalizationsZhHant(): super('zh_Hant');
 
@@ -23076,4 +23080,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String gifFavTileA11y(String number) {
     return '收藏的 GIF $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => '僅在首次設定時';
+
+  @override
+  String get onboardingProtectionOneTimeLine => '只能在此處設定。若選擇「以後再說」，日後將無法再次啟用。';
 }

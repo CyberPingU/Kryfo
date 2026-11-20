@@ -11797,4 +11797,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Обраний GIF $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Лише під час першого налаштування';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Можна налаштувати лише зараз. Якщо вибрати «Не зараз», увімкнути пізніше буде неможливо.';
 }

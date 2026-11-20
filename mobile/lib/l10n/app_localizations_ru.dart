@@ -11800,4 +11800,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Избранный GIF $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Только при первой настройке';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Можно настроить только сейчас. Если выбрать «Не сейчас», включить позже будет невозможно.';
 }

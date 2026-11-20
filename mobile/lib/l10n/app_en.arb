@@ -15859,5 +15859,13 @@
         "type": "String"
       }
     }
+  },
+  "onboardingProtectionOneTimeTitle": "Only during setup",
+  "@onboardingProtectionOneTimeTitle": {
+    "description": "screens/onboarding_screen.dart: title of the warning card on advanced protection step"
+  },
+  "onboardingProtectionOneTimeLine": "This can only be set up now. If you choose Not now, it cannot be turned on later.",
+  "@onboardingProtectionOneTimeLine": {
+    "description": "screens/onboarding_screen.dart: line of the warning card on advanced protection step"
   }
 }

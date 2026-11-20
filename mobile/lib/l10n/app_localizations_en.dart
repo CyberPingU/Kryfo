@@ -11663,4 +11663,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Favourite GIF $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Only during setup';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'This can only be set up now. If you choose Not now, it cannot be turned on later.';
 }

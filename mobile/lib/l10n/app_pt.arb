@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Segure um GIF em uma conversa ou em GIFs para adicionar aqui.",
   "gifFavMoveEarlier": "Mover para antes",
   "gifFavMoveLater": "Mover para depois",
-  "gifFavTileA11y": "GIF favorito {number}"
+  "gifFavTileA11y": "GIF favorito {number}",
+  "onboardingProtectionOneTimeTitle": "Apenas durante a configuração",
+  "onboardingProtectionOneTimeLine": "Só pode ser configurado agora. Se escolher «Agora não», não poderá ser ativado mais tarde."
 }

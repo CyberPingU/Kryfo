@@ -20212,4 +20212,16 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'
   );
+
+  /// screens/onboarding_screen.dart: title of the warning card on advanced protection step
+  ///
+  /// In en, this message translates to:
+  /// **'Only during setup'**
+  String get onboardingProtectionOneTimeTitle;
+
+  /// screens/onboarding_screen.dart: line of the warning card on advanced protection step
+  ///
+  /// In en, this message translates to:
+  /// **'This can only be set up now. If you choose Not now, it cannot be turned on later.'**
+  String get onboardingProtectionOneTimeLine;
 }

@@ -11670,4 +11670,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF preferita $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Solo al primo avvio';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Si può configurare solo ora. Se scegli «Non ora», non potrà più essere attivato in seguito.';
 }

@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Buraya eklemek için bir sohbette ya da GIF’lerde bir GIF’e basılı tut.",
   "gifFavMoveEarlier": "Öne al",
   "gifFavMoveLater": "Arkaya al",
-  "gifFavTileA11y": "Favori GIF {number}"
+  "gifFavTileA11y": "Favori GIF {number}",
+  "onboardingProtectionOneTimeTitle": "Yalnızca kurulum sırasında",
+  "onboardingProtectionOneTimeLine": "Yalnızca şimdi ayarlanabilir. «Şimdi değil»i seçerseniz, daha sonra etkinleştirilemez."
 }

@@ -11648,4 +11648,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF برگزیده $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'فقط هنگام راه‌اندازی اولیه';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'فقط اکنون قابل تنظیم است. اگر «فعلاً نه» را انتخاب کنید، بعداً فعال نخواهد شد.';
 }

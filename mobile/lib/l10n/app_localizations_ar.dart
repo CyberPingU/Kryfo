@@ -11908,4 +11908,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'صورة GIF مفضلة $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'أثناء الإعداد فقط';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'لا يمكن إعداده إلا الآن. إذا اخترت «ليس الآن»، فلن تتمكن من تفعيله لاحقًا.';
 }

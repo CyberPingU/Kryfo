@@ -11654,4 +11654,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Favori GIF $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Yalnızca kurulum sırasında';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Yalnızca şimdi ayarlanabilir. «Şimdi değil»i seçerseniz, daha sonra etkinleştirilemez.';
 }

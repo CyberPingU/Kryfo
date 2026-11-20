@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Halte ein GIF in einem Chat oder unter GIFs, um es hier hinzuzufügen.",
   "gifFavMoveEarlier": "Nach vorne",
   "gifFavMoveLater": "Nach hinten",
-  "gifFavTileA11y": "Lieblings-GIF {number}"
+  "gifFavTileA11y": "Lieblings-GIF {number}",
+  "onboardingProtectionOneTimeTitle": "Nur bei der Ersteinrichtung",
+  "onboardingProtectionOneTimeLine": "Kann nur jetzt eingerichtet werden. Wenn du «Nicht jetzt» wählst, kann es später nicht mehr aktiviert werden."
 }

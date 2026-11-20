@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Giữ một GIF trong cuộc trò chuyện hoặc trong GIF để thêm vào đây.",
   "gifFavMoveEarlier": "Chuyển lên trước",
   "gifFavMoveLater": "Chuyển ra sau",
-  "gifFavTileA11y": "GIF yêu thích {number}"
+  "gifFavTileA11y": "GIF yêu thích {number}",
+  "onboardingProtectionOneTimeTitle": "Chỉ trong quá trình thiết lập",
+  "onboardingProtectionOneTimeLine": "Chỉ có thể thiết lập ngay bây giờ. Nếu chọn «Để sau», bạn sẽ không thể bật lại sau."
 }

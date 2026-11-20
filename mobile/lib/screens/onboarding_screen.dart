@@ -1872,7 +1872,13 @@ class _ProtectionScreenState extends State<_ProtectionScreen> {
         _Card(
           icon: Icons.visibility_off_outlined,
           title: l10n.pinsHiddenChats,
-          desc: l10n.pinsHiddenLine,
+          desc: '${l10n.restoreHiddenLockFirst}\n\n${l10n.flowVault1}',
+        ),
+        const SizedBox(height: 10),
+        _Card(
+          icon: Icons.lock_clock_outlined,
+          title: l10n.onboardingProtectionOneTimeTitle,
+          desc: l10n.onboardingProtectionOneTimeLine,
         ),
       ],
     );
