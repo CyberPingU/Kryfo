@@ -236,7 +236,7 @@ void main() {
             build(t, play: play, google: google);
             final pages = await open(t);
             final count = onboardingSteps().length;
-            expect(count, 6);
+            expect(count, 7);
             for (var i = 0; i < count; i++) {
               await step(t, pages, i);
               bad.addAll(_misfits(t, '$name, step ${i + 1}'));

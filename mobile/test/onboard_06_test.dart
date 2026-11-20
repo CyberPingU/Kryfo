@@ -77,13 +77,14 @@ Widget _framed(Widget home) => MaterialApp(
 
 void main() {
   group('the steps', () {
-    test('six, in order: the route before the way messages arrive', () {
+    test('seven, in order: the route before the way messages arrive', () {
       expect(onboardingSteps(), [
         OnboardStep.welcome,
         OnboardStep.identity,
         OnboardStep.name,
         OnboardStep.route,
         OnboardStep.delivery,
+        OnboardStep.protection,
         OnboardStep.invite,
       ]);
     });

@@ -59,9 +59,20 @@ import 'helper_sheet.dart' show showHelperSheet;
 import '../desktop/desktop_mode.dart'
     show desktopRun, onDesktop, takeDeskLinkAtStart;
 import 'desk_run_section.dart';
+import '../lock_state.dart' show LockState, lockState;
+import 'pin_flow_screen.dart' show PinFlowScreen, PinFlow, PinsHost;
 
 /// the onboarding's steps, by name: a step is never found by its place
-enum OnboardStep { welcome, identity, name, route, delivery, desk, invite }
+enum OnboardStep {
+  welcome,
+  identity,
+  name,
+  route,
+  delivery,
+  desk,
+  protection,
+  invite,
+}
 
 /// the steps in order. the route comes before the way messages arrive:
 /// google push and the helper app need the private route. a phone picks how
@@ -72,6 +83,7 @@ List<OnboardStep> onboardingSteps({bool desk = false}) => [
   OnboardStep.name,
   OnboardStep.route,
   desk ? OnboardStep.desk : OnboardStep.delivery,
+  OnboardStep.protection,
   OnboardStep.invite,
 ];
 
@@ -215,6 +227,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
       OnboardStep.delivery => _DeliveryScreen(onContinue: _next),
       OnboardStep.desk => _DeskRunScreen(onContinue: _next),
+      OnboardStep.protection => _ProtectionScreen(
+        onContinue: _next,
+        lock: lockState,
+        host: const PinsHost(),
+      ),
       OnboardStep.invite => _InviteScreen(onComplete: widget.onComplete),
     };
   }
@@ -1786,6 +1803,77 @@ class _DeskRunScreen extends StatelessWidget {
             hintColor: HaloColors.text,
           ),
         ], from: 1),
+      ],
+    );
+  }
+}
+
+// ---- 05b advanced protection ----
+//
+// optional vault setup on first start: isolates private chats under a second
+// pin. chosen here once, and never replaced or set from outside
+
+class _ProtectionScreen extends StatefulWidget {
+  final VoidCallback onContinue;
+  final LockState lock;
+  final PinsHost host;
+  const _ProtectionScreen({
+    required this.onContinue,
+    required this.lock,
+    required this.host,
+  });
+
+  @override
+  State<_ProtectionScreen> createState() => _ProtectionScreenState();
+}
+
+class _ProtectionScreenState extends State<_ProtectionScreen> {
+  bool _busy = false;
+
+  Future<void> _setup() async {
+    if (_busy) return;
+    setState(() => _busy = true);
+    final nav = Navigator.of(context);
+    final ok = await nav.push<bool>(
+      haloRoute(
+        PinFlowScreen(
+          flow: PinFlow.vault,
+          lock: widget.lock,
+          host: widget.host,
+        ),
+      ),
+    );
+    if (!mounted) return;
+    setState(() => _busy = false);
+    if (ok == true) widget.onContinue();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _StepPage(
+      footer: [
+        _Cta(
+          label: l10n.pinsSetAPin,
+          onTap: _setup,
+        ),
+        const SizedBox(height: 2),
+        Center(
+          child: _TextLink(
+            label: l10n.flowVaultNotNow,
+            onTap: widget.onContinue,
+          ),
+        ),
+      ],
+      children: [
+        _Headline(l10n.pinsAdvanced),
+        const SizedBox(height: 12),
+        _lead(onDesktop ? l10n.pinsAdvancedLineDesk : l10n.pinsAdvancedLine),
+        const SizedBox(height: 20),
+        _Card(
+          icon: Icons.visibility_off_outlined,
+          title: l10n.pinsHiddenChats,
+          desc: l10n.pinsHiddenLine,
+        ),
       ],
     );
   }

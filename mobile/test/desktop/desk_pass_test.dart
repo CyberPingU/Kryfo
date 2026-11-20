@@ -126,6 +126,7 @@ void main() {
       OnboardStep.name,
       OnboardStep.route,
       OnboardStep.desk,
+      OnboardStep.protection,
       OnboardStep.invite,
     ]);
     expect(onboardingSteps(), contains(OnboardStep.delivery));
