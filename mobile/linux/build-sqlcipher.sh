@@ -50,6 +50,7 @@ make -j2 LDFLAGS.libsqlite3.soname=-Wl,-soname,libsqlcipher.so.0 libsqlcipher.so
 }
 cp libsqlcipher.so "$out/libsqlcipher.so.0"
 strip --strip-unneeded "$out/libsqlcipher.so.0"
+chmod 755 "$out/libsqlcipher.so.0"
 cd "$out"
 rm -rf "$work"
 nm -D --defined-only libsqlcipher.so.0 | grep -q ' T sqlite3_key$' || {

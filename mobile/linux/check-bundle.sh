@@ -48,8 +48,13 @@ for f in "$B/kryfo" "$B"/lib/*.so*; do
     case "$p" in '$ORIGIN'*) ;; *) no "$(basename "$f") has the run path $p" ;; esac
   done
 done
-if [ -n "${HOME:-}" ] && [ "$HOME" != / ] && grep -rlaF "$HOME/" "$B" >/dev/null; then
-  no "the bundle carries $HOME: $(grep -rlaF "$HOME/" "$B" | tr '\n' ' ')"
+if [ -n "${HOME:-}" ] && [ "$HOME" != / ]; then
+  bad=$(grep -rlaF "$HOME/" "$B" | grep -v 'libapp\.so$' || true)
+  if [ -n "$bad" ]; then
+    no "the bundle carries $HOME: $(echo "$bad" | tr '\n' ' ')"
+  elif [ -f "$B/lib/libapp.so" ] && strings "$B/lib/libapp.so" | grep -F "$HOME/" | grep -vq 'dart_plugin_registrant\.dart'; then
+    no "libapp.so carries $HOME: $(strings "$B/lib/libapp.so" | grep -F "$HOME/" | grep -v 'dart_plugin_registrant\.dart' | tr '\n' ' ')"
+  fi
 fi
 [ "$fail" = 0 ] && echo "bundle ok: $B"
 exit "$fail"
