@@ -200,7 +200,7 @@ static gboolean make_indicator(MyApplication* self, GtkWidget* open_item) {
   }
   lib->set_menu(self->indicator, GTK_MENU(self->tray_menu));
   if (lib->set_title != nullptr) {
-    if (self->profile_name != nullptr) {
+    if (self->profile_name != nullptr && self->profile_name[0] != '\0') {
       g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
       lib->set_title(self->indicator, t);
     } else {
@@ -249,7 +249,7 @@ static void make_tray(MyApplication* self, const gchar* open,
                      self);
   }
   gtk_status_icon_set_tooltip_text(self->tray, tip);
-  if (self->profile_name != nullptr) {
+  if (self->profile_name != nullptr && self->profile_name[0] != '\0') {
     g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
     gtk_status_icon_set_title(self->tray, t);
   } else {
@@ -830,7 +830,7 @@ static void my_application_activate(GApplication* application) {
   if (use_header_bar) {
     GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
     gtk_widget_show(GTK_WIDGET(header_bar));
-    if (self->profile_name != nullptr) {
+    if (self->profile_name != nullptr && self->profile_name[0] != '\0') {
       g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
       gtk_header_bar_set_title(header_bar, t);
     } else {
@@ -839,7 +839,7 @@ static void my_application_activate(GApplication* application) {
     gtk_header_bar_set_show_close_button(header_bar, TRUE);
     gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
   } else {
-    if (self->profile_name != nullptr) {
+    if (self->profile_name != nullptr && self->profile_name[0] != '\0') {
       g_autofree gchar* t = g_strdup_printf("Kryfo (%s)", self->profile_name);
       gtk_window_set_title(window, t);
     } else {
@@ -912,11 +912,11 @@ static gboolean my_application_local_command_line(GApplication* application,
       self->start_hidden = TRUE;
     } else {
       if ((g_strcmp0(*a, "--profile") == 0 || g_strcmp0(*a, "-p") == 0) &&
-          *(a + 1) != nullptr) {
+          *(a + 1) != nullptr && *(a + 1)[0] != '\0') {
         if (self->profile_name == nullptr) {
           self->profile_name = g_strdup(*(a + 1));
         }
-      } else if (g_str_has_prefix(*a, "--profile=")) {
+      } else if (g_str_has_prefix(*a, "--profile=") && (*a)[10] != '\0') {
         if (self->profile_name == nullptr) {
           self->profile_name = g_strdup(*a + 10);
         }
@@ -930,7 +930,7 @@ static gboolean my_application_local_command_line(GApplication* application,
       self->profile_name = g_strdup(env_p);
     }
   }
-  if (self->profile_name != nullptr) {
+  if (self->profile_name != nullptr && self->profile_name[0] != '\0') {
     g_autofree gchar* slug = profile_slug(self->profile_name);
     self->app_id = g_strdup_printf("%s.%s", APPLICATION_ID, slug);
     g_application_set_application_id(application, self->app_id);

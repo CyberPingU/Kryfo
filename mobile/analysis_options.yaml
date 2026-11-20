@@ -23,6 +23,13 @@ analyzer:
     # flags in every string. hand-written code is still checked for them.
     - lib/l10n/app_localizations_fa.dart
     - lib/l10n/app_localizations_ar.dart
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
 
 linter:
   rules:
