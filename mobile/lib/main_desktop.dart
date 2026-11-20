@@ -22,6 +22,10 @@ void main(List<String> args) {
       break;
     }
   }
+  final envProfile = Platform.environment['KRYFO_PROFILE'];
+  if (profile == null && envProfile != null && envProfile.isNotEmpty) {
+    profile = envProfile;
+  }
   if (profile != null && profile.isNotEmpty) activeProfile = profile;
   startDesktop(() async => app.main(), profile: profile);
 }
