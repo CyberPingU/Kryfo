@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "यहाँ जोड़ने के लिए किसी चैट में या GIF में किसी GIF को दबाकर रखें।",
   "gifFavMoveEarlier": "पहले ले जाएँ",
   "gifFavMoveLater": "बाद में ले जाएँ",
-  "gifFavTileA11y": "पसंदीदा GIF {number}"
+  "gifFavTileA11y": "पसंदीदा GIF {number}",
+  "onboardingProtectionOneTimeTitle": "केवल सेटअप के दौरान",
+  "onboardingProtectionOneTimeLine": "इसे केवल अभी सेट किया जा सकता है। यदि आप «अभी नहीं» चुनते हैं, तो इसे बाद में चालू नहीं किया जा सकता।"
 }

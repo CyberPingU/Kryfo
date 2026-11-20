@@ -11598,4 +11598,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF yêu thích $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Chỉ trong quá trình thiết lập';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Chỉ có thể thiết lập ngay bây giờ. Nếu chọn «Để sau», bạn sẽ không thể bật lại sau.';
 }

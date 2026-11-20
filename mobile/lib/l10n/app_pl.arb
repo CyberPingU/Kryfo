@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Przytrzymaj GIF w czacie lub w GIF-ach, aby dodać go tutaj.",
   "gifFavMoveEarlier": "Przesuń wcześniej",
   "gifFavMoveLater": "Przesuń później",
-  "gifFavTileA11y": "Ulubiony GIF {number}"
+  "gifFavTileA11y": "Ulubiony GIF {number}",
+  "onboardingProtectionOneTimeTitle": "Tylko podczas konfiguracji",
+  "onboardingProtectionOneTimeLine": "Można to skonfigurować tylko teraz. Jeśli wybierzesz «Nie teraz», nie będzie można tego włączyć później."
 }

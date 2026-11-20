@@ -11656,4 +11656,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'पसंदीदा GIF $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'केवल सेटअप के दौरान';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'इसे केवल अभी सेट किया जा सकता है। यदि आप «अभी नहीं» चुनते हैं, तो इसे बाद में चालू नहीं किया जा सकता।';
 }

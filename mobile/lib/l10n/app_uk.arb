@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Утримуй GIF у чаті або у вкладці GIF, щоб додати його сюди.",
   "gifFavMoveEarlier": "Перемістити раніше",
   "gifFavMoveLater": "Перемістити пізніше",
-  "gifFavTileA11y": "Обраний GIF {number}"
+  "gifFavTileA11y": "Обраний GIF {number}",
+  "onboardingProtectionOneTimeTitle": "Лише під час першого налаштування",
+  "onboardingProtectionOneTimeLine": "Можна налаштувати лише зараз. Якщо вибрати «Не зараз», увімкнути пізніше буде неможливо."
 }

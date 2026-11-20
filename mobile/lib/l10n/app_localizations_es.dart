@@ -11669,4 +11669,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF favorito $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Solo durante la configuración';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Solo se puede configurar ahora. Si eliges «Ahora no», no se podrá activar más adelante.';
 }

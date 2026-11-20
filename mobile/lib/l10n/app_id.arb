@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "Tahan GIF di chat atau di GIF untuk menambahkannya di sini.",
   "gifFavMoveEarlier": "Pindah ke depan",
   "gifFavMoveLater": "Pindah ke belakang",
-  "gifFavTileA11y": "GIF favorit {number}"
+  "gifFavTileA11y": "GIF favorit {number}",
+  "onboardingProtectionOneTimeTitle": "Hanya saat penyiapan awal",
+  "onboardingProtectionOneTimeLine": "Hanya dapat diatur sekarang. Jika memilih «Nanti saja», ini tidak dapat diaktifkan nanti."
 }

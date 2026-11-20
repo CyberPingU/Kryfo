@@ -11598,4 +11598,10 @@ class AppLocalizationsId extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF favorit $number';
   }
+
+  @override
+  String get onboardingProtectionOneTimeTitle => 'Hanya saat penyiapan awal';
+
+  @override
+  String get onboardingProtectionOneTimeLine => 'Hanya dapat diatur sekarang. Jika memilih «Nanti saja», ini tidak dapat diaktifkan nanti.';
 }

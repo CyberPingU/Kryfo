@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "برای افزودن به اینجا، یک GIF را در گفتگو یا در GIFها نگه دارید.",
   "gifFavMoveEarlier": "جابه‌جایی به قبل",
   "gifFavMoveLater": "جابه‌جایی به بعد",
-  "gifFavTileA11y": "GIF برگزیده {number}"
+  "gifFavTileA11y": "GIF برگزیده {number}",
+  "onboardingProtectionOneTimeTitle": "فقط هنگام راه‌اندازی اولیه",
+  "onboardingProtectionOneTimeLine": "فقط اکنون قابل تنظیم است. اگر «فعلاً نه» را انتخاب کنید، بعداً فعال نخواهد شد."
 }

@@ -3310,5 +3310,7 @@
   "gifFavEmptyLine": "在聊天或 GIF 中長按一個 GIF，即可加入這裡。",
   "gifFavMoveEarlier": "往前移",
   "gifFavMoveLater": "往後移",
-  "gifFavTileA11y": "收藏的 GIF {number}"
+  "gifFavTileA11y": "收藏的 GIF {number}",
+  "onboardingProtectionOneTimeTitle": "僅在首次設定時",
+  "onboardingProtectionOneTimeLine": "只能在此處設定。若選擇「以後再說」，日後將無法再次啟用。"
 }
