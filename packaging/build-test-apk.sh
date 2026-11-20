@@ -20,6 +20,12 @@ kotlin.daemon.jvmargs=-Xmx1g
 org.gradle.workers.max=2
 EOF
 
+# Add Google Maven Central mirror to avoid HTTP 429 (Too Many Requests)
+# from repo.maven.apache.org on GitHub Actions public runners
+echo "=== Configuring Maven Central mirror ==="
+sed -i 's|mavenCentral()|maven { url = uri("https://maven-central.storage-download.googleapis.com/maven2/") }\n        mavenCentral()|' \
+  "$ROOT/mobile/android/settings.gradle.kts" "$ROOT/mobile/android/build.gradle.kts"
+
 # Raise file limit for cgo / openssl builds
 ulimit -n 65536 2>/dev/null || true
 
@@ -46,7 +52,22 @@ KV_JNI_LIBS_DIR="$ROOT/mobile/android/app/src/main/jniLibs" bash build.sh
 echo "=== 6. Flutter Test APK (assembleFossDebug) ==="
 cd "$ROOT/mobile"
 export HALO_TEST_ID=1
-flutter build apk --debug --flavor foss
+
+success=0
+for attempt in 1 2 3; do
+  echo "Flutter build attempt $attempt..."
+  if flutter build apk --debug --flavor foss; then
+    success=1
+    break
+  fi
+  echo "Build attempt $attempt failed, waiting 15s before retry..."
+  sleep 15
+done
+
+if [[ "$success" -ne 1 ]]; then
+  echo "Error: Flutter build failed after 3 attempts" >&2
+  exit 1
+fi
 
 APK="$ROOT/mobile/build/app/outputs/flutter-apk/app-foss-debug.apk"
 if [[ -f "$APK" ]]; then
