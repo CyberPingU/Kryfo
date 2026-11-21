@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "Przesuń wcześniej",
   "gifFavMoveLater": "Przesuń później",
   "gifFavTileA11y": "Ulubiony GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Tylko podczas konfiguracji",
-  "onboardingProtectionOneTimeLine": "Można to skonfigurować tylko teraz. Jeśli wybierzesz «Nie teraz», nie będzie można tego włączyć później."
+  "onboardingProtectionOneTimeTitle": "Tylko przy pierwszym uruchomieniu",
+  "onboardingProtectionOneTimeLine": "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.",
+  "onboardingProtectionDualPinTitle": "Dwa różne kody PIN",
+  "onboardingProtectionDualPinLine": "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty."
 }

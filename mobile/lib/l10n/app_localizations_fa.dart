@@ -11650,8 +11650,14 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'فقط هنگام راه‌اندازی اولیه';
+  String get onboardingProtectionDualPinTitle => "دو پین جداگانه";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'فقط اکنون قابل تنظیم است. اگر «فعلاً نه» را انتخاب کنید، بعداً فعال نخواهد شد.';
+  String get onboardingProtectionDualPinLine => "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "تنها هنگام راه‌اندازی نخست";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.";
 }

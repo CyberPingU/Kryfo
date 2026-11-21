@@ -15860,12 +15860,20 @@
       }
     }
   },
-  "onboardingProtectionOneTimeTitle": "Only during setup",
+  "onboardingProtectionOneTimeTitle": "Initial setup only",
   "@onboardingProtectionOneTimeTitle": {
     "description": "screens/onboarding_screen.dart: title of the warning card on advanced protection step"
   },
-  "onboardingProtectionOneTimeLine": "This can only be set up now. If you choose Not now, it cannot be turned on later.",
+  "onboardingProtectionOneTimeLine": "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.",
   "@onboardingProtectionOneTimeLine": {
     "description": "screens/onboarding_screen.dart: line of the warning card on advanced protection step"
+  },
+  "onboardingProtectionDualPinTitle": "Dual PIN protection",
+  "onboardingProtectionDualPinLine": "Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.",
+  "@onboardingProtectionDualPinTitle": {
+    "description": "screens/onboarding_screen.dart: title of dual PIN card on advanced protection step"
+  },
+  "@onboardingProtectionDualPinLine": {
+    "description": "screens/onboarding_screen.dart: description of dual PIN card on advanced protection step"
   }
 }

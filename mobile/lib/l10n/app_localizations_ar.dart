@@ -11910,8 +11910,14 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'أثناء الإعداد فقط';
+  String get onboardingProtectionDualPinTitle => "رمزا PIN منفصلان";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'لا يمكن إعداده إلا الآن. إذا اخترت «ليس الآن»، فلن تتمكن من تفعيله لاحقًا.';
+  String get onboardingProtectionDualPinLine => "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "أثناء الإعداد الأول فقط";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.";
 }

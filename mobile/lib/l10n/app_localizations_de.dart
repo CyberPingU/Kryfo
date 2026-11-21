@@ -11670,8 +11670,14 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Nur bei der Ersteinrichtung';
+  String get onboardingProtectionDualPinTitle => "Zwei getrennte PINs";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Kann nur jetzt eingerichtet werden. Wenn du «Nicht jetzt» wählst, kann es später nicht mehr aktiviert werden.';
+  String get onboardingProtectionDualPinLine => "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Nur bei Ersteinrichtung";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.";
 }

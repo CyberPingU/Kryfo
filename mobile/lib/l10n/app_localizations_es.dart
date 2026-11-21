@@ -11671,8 +11671,14 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Solo durante la configuración';
+  String get onboardingProtectionDualPinTitle => "Dos PIN distintos";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Solo se puede configurar ahora. Si eliges «Ahora no», no se podrá activar más adelante.';
+  String get onboardingProtectionDualPinLine => "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Solo al primer inicio";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.";
 }

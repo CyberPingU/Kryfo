@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "Перемістити раніше",
   "gifFavMoveLater": "Перемістити пізніше",
   "gifFavTileA11y": "Обраний GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Лише під час першого налаштування",
-  "onboardingProtectionOneTimeLine": "Можна налаштувати лише зараз. Якщо вибрати «Не зараз», увімкнути пізніше буде неможливо."
+  "onboardingProtectionOneTimeTitle": "Лише під час першого запуску",
+  "onboardingProtectionOneTimeLine": "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.",
+  "onboardingProtectionDualPinTitle": "Два окремих PIN-коди",
+  "onboardingProtectionDualPinLine": "Основний PIN (від 4 цифр) відкриває звичайні чати. Секретний PIN (від 6 цифр) розблоковує приховані чати."
 }

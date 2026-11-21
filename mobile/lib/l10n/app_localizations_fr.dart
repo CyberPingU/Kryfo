@@ -11670,8 +11670,14 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Uniquement lors de la configuration';
+  String get onboardingProtectionDualPinTitle => "Deux codes PIN distincts";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Ne peut être configuré que maintenant. Si vous choisissez « Pas maintenant », il ne pourra plus être activé ultérieurement.';
+  String get onboardingProtectionDualPinLine => "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Configuration initiale";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.";
 }

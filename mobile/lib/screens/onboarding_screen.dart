@@ -1863,13 +1863,13 @@ class _ProtectionScreenState extends State<_ProtectionScreen> {
         _lead(onDesktop ? l10n.pinsAdvancedLineDesk : l10n.pinsAdvancedLine),
         const SizedBox(height: 20),
         _Card(
-          icon: Icons.visibility_off_outlined,
-          title: l10n.pinsHiddenChats,
-          desc: '${l10n.restoreHiddenLockFirst}\n\n${l10n.flowVault1}',
+          icon: Icons.password_outlined,
+          title: l10n.onboardingProtectionDualPinTitle,
+          desc: l10n.onboardingProtectionDualPinLine,
         ),
         const SizedBox(height: 10),
         _Card(
-          icon: Icons.lock_clock_outlined,
+          icon: Icons.visibility_off_outlined,
           title: l10n.onboardingProtectionOneTimeTitle,
           desc: l10n.onboardingProtectionOneTimeLine,
         ),

@@ -3312,5 +3312,7 @@
   "gifFavMoveLater": "后移",
   "gifFavTileA11y": "收藏的 GIF {number}",
   "onboardingProtectionOneTimeTitle": "仅在首次设置时",
-  "onboardingProtectionOneTimeLine": "只能在此处设置。若选择“暂不”，日后将无法再次启用。"
+  "onboardingProtectionOneTimeLine": "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。",
+  "onboardingProtectionDualPinTitle": "两个独立 PIN 码",
+  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。"
 }

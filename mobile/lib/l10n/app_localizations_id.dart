@@ -11600,8 +11600,14 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Hanya saat penyiapan awal';
+  String get onboardingProtectionDualPinTitle => "Dua PIN terpisah";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Hanya dapat diatur sekarang. Jika memilih «Nanti saja», ini tidak dapat diaktifkan nanti.';
+  String get onboardingProtectionDualPinLine => "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Hanya pada awal penyiapan";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.";
 }

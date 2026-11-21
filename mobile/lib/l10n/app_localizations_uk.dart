@@ -11799,8 +11799,14 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Лише під час першого налаштування';
+  String get onboardingProtectionDualPinTitle => "Два окремих PIN-коди";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Можна налаштувати лише зараз. Якщо вибрати «Не зараз», увімкнути пізніше буде неможливо.';
+  String get onboardingProtectionDualPinLine => "Основний PIN (від 4 цифр) відкриває звичайні чати. Секретний PIN (від 6 цифр) розблоковує приховані чати.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Лише під час першого запуску";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.";
 }

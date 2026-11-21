@@ -11836,8 +11836,14 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Tylko podczas konfiguracji';
+  String get onboardingProtectionDualPinTitle => "Dwa różne kody PIN";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Można to skonfigurować tylko teraz. Jeśli wybierzesz «Nie teraz», nie będzie można tego włączyć później.';
+  String get onboardingProtectionDualPinLine => "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Tylko przy pierwszym uruchomieniu";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.";
 }
