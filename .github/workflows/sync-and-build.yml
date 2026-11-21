@@ -96,6 +96,7 @@ jobs:
           if [ -n "${{ secrets.DREADFUL_KEYSTORE_BASE64 }}" ]; then
             echo "Setting up release signing keystore from secret..."
             echo "${{ secrets.DREADFUL_KEYSTORE_BASE64 }}" | base64 -d > mobile/android/app/dreadful.keystore
+            cp mobile/android/app/dreadful.keystore mobile/android/dreadful.keystore
             cat > mobile/android/key.properties <<EOF
 keyAlias=dreadful
 keyPassword=${{ secrets.DREADFUL_KEY_PASSWORD }}
