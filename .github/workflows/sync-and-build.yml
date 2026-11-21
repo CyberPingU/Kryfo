@@ -1,6 +1,9 @@
 name: Sync Upstream & Build Dreadful
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Run once a day at 03:00 UTC
     - cron: '0 3 * * *'
@@ -50,7 +53,7 @@ jobs:
       - name: Check if release already exists
         id: check_release
         run: |
-          if [ "${{ github.event.inputs.force_build }}" = "true" ]; then
+          if [ "${{ github.event.inputs.force_build }}" = "true" ] || [ "${{ github.event_name }}" = "push" ]; then
             echo "should_build=true" >> $GITHUB_OUTPUT
             exit 0
           fi
@@ -68,11 +71,21 @@ jobs:
         if: steps.check_release.outputs.should_build == 'true'
         run: |
           TAG="${{ steps.target.outputs.tag }}"
+          echo "Staging patch and build script..."
+          mkdir -p /tmp/dreadful-assets
+          cp patches/0001-vault-onboarding-plausible-absence.patch /tmp/dreadful-assets/
+          cp packaging/build-dreadful-apk.sh /tmp/dreadful-assets/
+
           echo "Checking out $TAG..."
           git checkout "$TAG"
 
+          echo "Restoring build script..."
+          mkdir -p packaging
+          cp /tmp/dreadful-assets/build-dreadful-apk.sh packaging/
+          chmod +x packaging/build-dreadful-apk.sh
+
           echo "Applying vault onboarding patch..."
-          git apply patches/0001-vault-onboarding-plausible-absence.patch
+          git apply /tmp/dreadful-assets/0001-vault-onboarding-plausible-absence.patch
 
           echo "Configuring package work.dreadful.kryfo..."
           sed -i 's|applicationId = "app.kryfo"|applicationId = "work.dreadful.kryfo"|' \
