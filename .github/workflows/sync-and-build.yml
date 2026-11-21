@@ -97,12 +97,9 @@ jobs:
             echo "Setting up release signing keystore from secret..."
             echo "${{ secrets.DREADFUL_KEYSTORE_BASE64 }}" | base64 -d > mobile/android/app/dreadful.keystore
             cp mobile/android/app/dreadful.keystore mobile/android/dreadful.keystore
-            cat > mobile/android/key.properties <<EOF
-keyAlias=dreadful
-keyPassword=${{ secrets.DREADFUL_KEY_PASSWORD }}
-storeFile=dreadful.keystore
-storePassword=${{ secrets.DREADFUL_KEY_PASSWORD }}
-EOF
+            printf "storePassword=%s\nkeyPassword=%s\nkeyAlias=dreadful\nstoreFile=dreadful.keystore\n" \
+              "${{ secrets.DREADFUL_KEY_PASSWORD }}" \
+              "${{ secrets.DREADFUL_KEY_PASSWORD }}" > mobile/android/key.properties
             echo "Release keystore configured successfully."
           fi
 
