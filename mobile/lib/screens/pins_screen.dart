@@ -96,6 +96,7 @@ class _PinsScreenState extends State<PinsScreen> {
     return askPin(context, _lock);
   }
 
+  @visibleForTesting
   Future<void> _turnOff() async {
     // hidden chats need the lock: they come back to the chat list first
     if (_lock.inVault) {
@@ -286,8 +287,8 @@ class _PinsScreenState extends State<PinsScreen> {
                       context,
                     ).push(haloRoute(LockSetupScreen(lock: _lock, check: on)));
                   },
-                  secondary: on ? l10n.pinsTurnOff : null,
-                  onSecondary: on ? _turnOff : null,
+                  secondary: null,
+                  onSecondary: null,
                   extra: on && _lock.fingerOffered
                       ? _Toggle(
                           label: l10n.pinsUnlockWithFingerprint,
