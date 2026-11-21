@@ -12,6 +12,28 @@
 >
 > This downstream version is packaged under the application ID `work.dreadful.kryfo` so that it installs side-by-side with official Kryfo without interfering with or replacing official installations.
 
+## Hardened Modifications in this Build
+
+Compared to upstream Kryfo, this build introduces specific hardening measures for coercion resistance and strict plausible absence:
+
+- **Independent Application ID (`work.dreadful.kryfo`)**:
+  Installs and operates side-by-side with the official Kryfo app without package or signature conflicts.
+- **Distinct Visual Identity (Slate Cyan Seal `#1E6B8A`)**:
+  The launcher icon seal background is tinted dark slate cyan instead of GnosiWorks orange, avoiding visual confusion on the home screen.
+- **Mandatory App Lock PIN**:
+  Setting a main App PIN (4+ digits) is required during initial onboarding and cannot be skipped. Once set, the app lock cannot be disabled in Settings (only changed), ensuring private keys and databases are never exposed in plaintext.
+- **One-Time Secret Vault Setup (Strict Plausible Absence)**:
+  During onboarding, after configuring the mandatory main PIN, users are offered the optional choice to configure a second, independent PIN (6+ digits) for secret hidden chats.
+  - If skipped, no vault is created.
+  - Crucially, no vault setup or mention is exposed in everyday Settings from the outside. An adversary inspecting the device cannot tell whether a vault is active or was declined.
+  - Secret chats can only be opened and managed from within the vault by typing the secret PIN on the keypad.
+- **100% FOSS & Tracker-Free**:
+  Built from source using the reproducible container toolchain with zero proprietary Google/FCM dependencies (Tor always-on, optional UnifiedPush via ntfy).
+- **Persistent Signing for Automated Updates**:
+  Signed with a permanent dedicated release keystore, enabling direct, seamless in-app updates via [Obtainium](https://github.com/ImranR98/Obtainium) straight from this repository's GitHub Releases.
+
+---
+
 Kryfo is a private messenger for Android, with beta builds for Windows and Linux.
 There is no phone number, no email and no account, and messages travel end to end encrypted over Tor.
 
