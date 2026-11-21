@@ -1856,13 +1856,6 @@ class _ProtectionScreenState extends State<_ProtectionScreen> {
           label: l10n.pinsSetAPin,
           onTap: _setup,
         ),
-        const SizedBox(height: 2),
-        Center(
-          child: _TextLink(
-            label: l10n.flowVaultNotNow,
-            onTap: widget.onContinue,
-          ),
-        ),
       ],
       children: [
         _Headline(l10n.pinsAdvanced),

@@ -502,7 +502,7 @@ index 365d792fd..63358d20c 100644
 +  "onboardingProtectionOneTimeLine": "只能在此處設定。若選擇「以後再說」，日後將無法再次啟用。"
  }
 diff --git a/mobile/lib/screens/onboarding_screen.dart b/mobile/lib/screens/onboarding_screen.dart
-index 8161dec41..cd232a06a 100644
+index 8161dec41..2851f7ef0 100644
 --- a/mobile/lib/screens/onboarding_screen.dart
 +++ b/mobile/lib/screens/onboarding_screen.dart
 @@ -11,7 +11,7 @@
@@ -556,7 +556,7 @@ index 8161dec41..cd232a06a 100644
        OnboardStep.invite => _InviteScreen(onComplete: widget.onComplete),
      };
    }
-@@ -1791,6 +1808,83 @@ class _DeskRunScreen extends StatelessWidget {
+@@ -1791,6 +1808,76 @@ class _DeskRunScreen extends StatelessWidget {
    }
  }
  
@@ -607,13 +607,6 @@ index 8161dec41..cd232a06a 100644
 +        _Cta(
 +          label: l10n.pinsSetAPin,
 +          onTap: _setup,
-+        ),
-+        const SizedBox(height: 2),
-+        Center(
-+          child: _TextLink(
-+            label: l10n.flowVaultNotNow,
-+            onTap: widget.onContinue,
-+          ),
 +        ),
 +      ],
 +      children: [
@@ -693,10 +686,18 @@ index 212537784..62f3e3c5a 100644
            );
          }),
 diff --git a/mobile/lib/screens/pins_screen.dart b/mobile/lib/screens/pins_screen.dart
-index 607ba66f2..0d4dd02d9 100644
+index 607ba66f2..226626c57 100644
 --- a/mobile/lib/screens/pins_screen.dart
 +++ b/mobile/lib/screens/pins_screen.dart
-@@ -188,10 +188,10 @@ class _PinsScreenState extends State<PinsScreen> {
+@@ -96,6 +96,7 @@ class _PinsScreenState extends State<PinsScreen> {
+     return askPin(context, _lock);
+   }
+ 
++  @visibleForTesting
+   Future<void> _turnOff() async {
+     // hidden chats need the lock: they come back to the chat list first
+     if (_lock.inVault) {
+@@ -188,10 +189,10 @@ class _PinsScreenState extends State<PinsScreen> {
          : await _host.removeDecoy();
    }
  
@@ -710,7 +711,18 @@ index 607ba66f2..0d4dd02d9 100644
      final r = await showChangeOrRemoveSheet(
        context,
        title: l10n.pinsHiddenChats,
-@@ -350,20 +350,16 @@ class _PinsScreenState extends State<PinsScreen> {
+@@ -286,8 +287,8 @@ class _PinsScreenState extends State<PinsScreen> {
+                       context,
+                     ).push(haloRoute(LockSetupScreen(lock: _lock, check: on)));
+                   },
+-                  secondary: on ? l10n.pinsTurnOff : null,
+-                  onSecondary: on ? _turnOff : null,
++                  secondary: null,
++                  onSecondary: null,
+                   extra: on && _lock.fingerOffered
+                       ? _Toggle(
+                           label: l10n.pinsUnlockWithFingerprint,
+@@ -350,20 +351,16 @@ class _PinsScreenState extends State<PinsScreen> {
                              : HaloColors.text,
                          onTap: on ? _decoyRow : null,
                        ),
