@@ -60,6 +60,7 @@ import '../desktop/desktop_mode.dart'
     show desktopRun, onDesktop, takeDeskLinkAtStart;
 import 'desk_run_section.dart';
 import '../lock_state.dart' show LockState, lockState;
+import 'lock_setup_screen.dart' show LockSetupScreen;
 import 'pin_flow_screen.dart' show PinFlowScreen, PinFlow, PinsHost;
 
 /// the onboarding's steps, by name: a step is never found by its place
@@ -1830,7 +1831,22 @@ class _ProtectionScreen extends StatefulWidget {
 class _ProtectionScreenState extends State<_ProtectionScreen> {
   bool _busy = false;
 
-  Future<void> _setup() async {
+  bool get _hasAppPin => widget.lock.lockOn;
+
+  Future<void> _setupAppPin() async {
+    if (_busy) return;
+    setState(() => _busy = true);
+    final nav = Navigator.of(context);
+    await nav.push<bool>(
+      haloRoute(
+        LockSetupScreen(lock: widget.lock),
+      ),
+    );
+    if (!mounted) return;
+    setState(() => _busy = false);
+  }
+
+  Future<void> _setupVault() async {
     if (_busy) return;
     setState(() => _busy = true);
     final nav = Navigator.of(context);
@@ -1850,11 +1866,40 @@ class _ProtectionScreenState extends State<_ProtectionScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (!_hasAppPin) {
+      return _StepPage(
+        footer: [
+          _Cta(
+            label: l10n.pinsSetAPin,
+            onTap: _setupAppPin,
+          ),
+        ],
+        children: [
+          _Headline(l10n.pinsAppLock),
+          const SizedBox(height: 12),
+          _lead(l10n.onboardingAppLockMandatoryLine),
+          const SizedBox(height: 20),
+          _Card(
+            icon: Icons.lock_outline_rounded,
+            title: l10n.pinsYourPin,
+            desc: l10n.pinsOpensKryfoFourDigits,
+          ),
+        ],
+      );
+    }
+
     return _StepPage(
       footer: [
         _Cta(
-          label: l10n.pinsSetAPin,
-          onTap: _setup,
+          label: l10n.onboardingProtectionSetupVault,
+          onTap: _setupVault,
+        ),
+        const SizedBox(height: 2),
+        Center(
+          child: _TextLink(
+            label: l10n.flowVaultNotNow,
+            onTap: widget.onContinue,
+          ),
         ),
       ],
       children: [

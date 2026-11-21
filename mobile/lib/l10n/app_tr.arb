@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Yalnızca ilk başlatmada",
   "onboardingProtectionOneTimeLine": "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.",
   "onboardingProtectionDualPinTitle": "İki ayrı PIN",
-  "onboardingProtectionDualPinLine": "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar."
+  "onboardingProtectionDualPinLine": "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.",
+  "onboardingAppLockMandatoryLine": "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.",
+  "onboardingProtectionSetupVault": "Gizli sohbetleri ayarla"
 }

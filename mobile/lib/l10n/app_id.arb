@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Hanya pada awal penyiapan",
   "onboardingProtectionOneTimeLine": "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.",
   "onboardingProtectionDualPinTitle": "Dua PIN terpisah",
-  "onboardingProtectionDualPinLine": "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi."
+  "onboardingProtectionDualPinLine": "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi.",
+  "onboardingAppLockMandatoryLine": "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.",
+  "onboardingProtectionSetupVault": "Atur obrolan tersembunyi"
 }

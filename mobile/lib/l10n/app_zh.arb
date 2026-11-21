@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "仅在首次设置时",
   "onboardingProtectionOneTimeLine": "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。",
   "onboardingProtectionDualPinTitle": "两个独立 PIN 码",
-  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。"
+  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。",
+  "onboardingAppLockMandatoryLine": "必须设置应用锁以保护此设备上的聊天记录。",
+  "onboardingProtectionSetupVault": "设置隐藏聊天"
 }

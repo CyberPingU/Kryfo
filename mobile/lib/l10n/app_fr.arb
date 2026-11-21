@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Configuration initiale",
   "onboardingProtectionOneTimeLine": "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.",
   "onboardingProtectionDualPinTitle": "Deux codes PIN distincts",
-  "onboardingProtectionDualPinLine": "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées."
+  "onboardingProtectionDualPinLine": "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées.",
+  "onboardingAppLockMandatoryLine": "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.",
+  "onboardingProtectionSetupVault": "Configurer les discussions cachées"
 }

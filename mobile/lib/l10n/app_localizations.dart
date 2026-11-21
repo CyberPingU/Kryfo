@@ -20236,4 +20236,9 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   /// In en, this message translates to:
   /// **'This can only be set up now. If you choose Not now, it cannot be turned on later.'**
   String get onboardingProtectionOneTimeLine;
+
+  String get onboardingAppLockMandatoryLine;
+
+  String get onboardingProtectionSetupVault;
+
 }

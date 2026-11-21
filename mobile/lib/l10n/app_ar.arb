@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأول فقط",
   "onboardingProtectionOneTimeLine": "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.",
   "onboardingProtectionDualPinTitle": "رمزا PIN منفصلان",
-  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية."
+  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية.",
+  "onboardingAppLockMandatoryLine": "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.",
+  "onboardingProtectionSetupVault": "إعداد المحادثات المخفية"
 }

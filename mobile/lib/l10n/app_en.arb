@@ -15875,5 +15875,7 @@
   },
   "@onboardingProtectionDualPinLine": {
     "description": "screens/onboarding_screen.dart: description of dual PIN card on advanced protection step"
-  }
+  },
+  "onboardingAppLockMandatoryLine": "An app lock is required to protect your chats on this device.",
+  "onboardingProtectionSetupVault": "Set up hidden chats"
 }

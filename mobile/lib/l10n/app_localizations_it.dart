@@ -11682,4 +11682,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configura chat nascoste";
 }

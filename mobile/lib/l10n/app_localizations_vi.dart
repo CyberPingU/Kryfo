@@ -11610,4 +11610,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Thiết lập cuộc trò chuyện ẩn";
 }

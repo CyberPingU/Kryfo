@@ -11680,4 +11680,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.";
+  @override
+  String get onboardingAppLockMandatoryLine => "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configurar conversas ocultas";
 }

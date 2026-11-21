@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Apenas na primeira inicialização",
   "onboardingProtectionOneTimeLine": "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.",
   "onboardingProtectionDualPinTitle": "Dois PINs distintos",
-  "onboardingProtectionDualPinLine": "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas."
+  "onboardingProtectionDualPinLine": "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.",
+  "onboardingAppLockMandatoryLine": "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.",
+  "onboardingProtectionSetupVault": "Configurar conversas ocultas"
 }

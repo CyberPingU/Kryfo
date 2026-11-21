@@ -11610,6 +11610,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。";
+  @override
+  String get onboardingAppLockMandatoryLine => "必须设置应用锁以保护此设备上的聊天记录。";
+
+  @override
+  String get onboardingProtectionSetupVault => "设置隐藏聊天";
 }
 class AppLocalizationsZhHant extends AppLocalizationsZh {
   AppLocalizationsZhHant(): super('zh_Hant');
@@ -23098,4 +23103,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get onboardingProtectionOneTimeLine => "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。";
+  @override
+  String get onboardingAppLockMandatoryLine => "必須設定應用程式鎖定以保護此裝置上的聊天記錄。";
+
+  @override
+  String get onboardingProtectionSetupVault => "設定隱藏聊天";
 }

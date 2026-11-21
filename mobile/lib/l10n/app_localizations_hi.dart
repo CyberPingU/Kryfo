@@ -11668,4 +11668,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।";
+  @override
+  String get onboardingAppLockMandatoryLine => "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।";
+
+  @override
+  String get onboardingProtectionSetupVault => "छुपी हुई चैट सेट करें";
 }

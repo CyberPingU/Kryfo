@@ -11809,4 +11809,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Блокування застосунку обов'язкове для захисту ваших чатів на цьому пристрої.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Налаштувати приховані чати";
 }
