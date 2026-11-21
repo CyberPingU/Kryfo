@@ -11610,4 +11610,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Atur obrolan tersembunyi";
 }

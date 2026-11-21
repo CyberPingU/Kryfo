@@ -11812,4 +11812,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Настроить скрытые чаты";
 }

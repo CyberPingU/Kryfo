@@ -11660,4 +11660,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.";
+  @override
+  String get onboardingAppLockMandatoryLine => "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.";
+
+  @override
+  String get onboardingProtectionSetupVault => "راه‌اندازی گفتگوهای پنهان";
 }

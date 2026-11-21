@@ -11920,4 +11920,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.";
+  @override
+  String get onboardingAppLockMandatoryLine => "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.";
+
+  @override
+  String get onboardingProtectionSetupVault => "إعداد المحادثات المخفية";
 }

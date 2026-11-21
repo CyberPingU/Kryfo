@@ -11666,4 +11666,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Gizli sohbetleri ayarla";
 }

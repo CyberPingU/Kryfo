@@ -1,8 +1,8 @@
 diff --git a/mobile/lib/l10n/app_ar.arb b/mobile/lib/l10n/app_ar.arb
-index eef5fdc25..0ee6ff1b1 100644
+index eef5fdc25..0a884b44c 100644
 --- a/mobile/lib/l10n/app_ar.arb
 +++ b/mobile/lib/l10n/app_ar.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "اضغط مطولًا على صورة GIF في محادثة أو في صور GIF لإضافتها هنا.",
    "gifFavMoveEarlier": "نقل إلى الأمام",
    "gifFavMoveLater": "نقل إلى الخلف",
@@ -11,13 +11,15 @@ index eef5fdc25..0ee6ff1b1 100644
 +  "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأول فقط",
 +  "onboardingProtectionOneTimeLine": "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.",
 +  "onboardingProtectionDualPinTitle": "رمزا PIN منفصلان",
-+  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية."
++  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية.",
++  "onboardingAppLockMandatoryLine": "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.",
++  "onboardingProtectionSetupVault": "إعداد المحادثات المخفية"
  }
 diff --git a/mobile/lib/l10n/app_de.arb b/mobile/lib/l10n/app_de.arb
-index 90efd21a6..2a5df0037 100644
+index 90efd21a6..2e93682bf 100644
 --- a/mobile/lib/l10n/app_de.arb
 +++ b/mobile/lib/l10n/app_de.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Halte ein GIF in einem Chat oder unter GIFs, um es hier hinzuzufügen.",
    "gifFavMoveEarlier": "Nach vorne",
    "gifFavMoveLater": "Nach hinten",
@@ -26,16 +28,19 @@ index 90efd21a6..2a5df0037 100644
 +  "onboardingProtectionOneTimeTitle": "Nur bei Ersteinrichtung",
 +  "onboardingProtectionOneTimeLine": "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.",
 +  "onboardingProtectionDualPinTitle": "Zwei getrennte PINs",
-+  "onboardingProtectionDualPinLine": "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats."
++  "onboardingProtectionDualPinLine": "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats.",
++  "onboardingAppLockMandatoryLine": "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.",
++  "onboardingProtectionSetupVault": "Versteckte Chats einrichten"
  }
 diff --git a/mobile/lib/l10n/app_en.arb b/mobile/lib/l10n/app_en.arb
-index 9d3f8f38c..626d9e19c 100644
+index 9d3f8f38c..ef38843ae 100644
 --- a/mobile/lib/l10n/app_en.arb
 +++ b/mobile/lib/l10n/app_en.arb
-@@ -15859,5 +15859,21 @@
+@@ -15859,5 +15859,23 @@
          "type": "String"
        }
      }
+-  }
 +  },
 +  "onboardingProtectionOneTimeTitle": "Initial setup only",
 +  "@onboardingProtectionOneTimeTitle": {
@@ -52,13 +57,15 @@ index 9d3f8f38c..626d9e19c 100644
 +  },
 +  "@onboardingProtectionDualPinLine": {
 +    "description": "screens/onboarding_screen.dart: description of dual PIN card on advanced protection step"
-   }
++  },
++  "onboardingAppLockMandatoryLine": "An app lock is required to protect your chats on this device.",
++  "onboardingProtectionSetupVault": "Set up hidden chats"
  }
 diff --git a/mobile/lib/l10n/app_es.arb b/mobile/lib/l10n/app_es.arb
-index 24d4f251c..0cf014f54 100644
+index 24d4f251c..4eba46aaf 100644
 --- a/mobile/lib/l10n/app_es.arb
 +++ b/mobile/lib/l10n/app_es.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Mantén pulsado un GIF en un chat o en GIF para añadirlo aquí.",
    "gifFavMoveEarlier": "Mover antes",
    "gifFavMoveLater": "Mover después",
@@ -67,13 +74,15 @@ index 24d4f251c..0cf014f54 100644
 +  "onboardingProtectionOneTimeTitle": "Solo al primer inicio",
 +  "onboardingProtectionOneTimeLine": "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.",
 +  "onboardingProtectionDualPinTitle": "Dos PIN distintos",
-+  "onboardingProtectionDualPinLine": "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos."
++  "onboardingProtectionDualPinLine": "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos.",
++  "onboardingAppLockMandatoryLine": "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.",
++  "onboardingProtectionSetupVault": "Configurar chats ocultos"
  }
 diff --git a/mobile/lib/l10n/app_fa.arb b/mobile/lib/l10n/app_fa.arb
-index 24c354388..79911238c 100644
+index 24c354388..781a82175 100644
 --- a/mobile/lib/l10n/app_fa.arb
 +++ b/mobile/lib/l10n/app_fa.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "برای افزودن به اینجا، یک GIF را در گفتگو یا در GIFها نگه دارید.",
    "gifFavMoveEarlier": "جابه‌جایی به قبل",
    "gifFavMoveLater": "جابه‌جایی به بعد",
@@ -82,13 +91,15 @@ index 24c354388..79911238c 100644
 +  "onboardingProtectionOneTimeTitle": "تنها هنگام راه‌اندازی نخست",
 +  "onboardingProtectionOneTimeLine": "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.",
 +  "onboardingProtectionDualPinTitle": "دو پین جداگانه",
-+  "onboardingProtectionDualPinLine": "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند."
++  "onboardingProtectionDualPinLine": "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند.",
++  "onboardingAppLockMandatoryLine": "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.",
++  "onboardingProtectionSetupVault": "راه‌اندازی گفتگوهای پنهان"
  }
 diff --git a/mobile/lib/l10n/app_fr.arb b/mobile/lib/l10n/app_fr.arb
-index 5f444675b..35475312f 100644
+index 5f444675b..54af1931d 100644
 --- a/mobile/lib/l10n/app_fr.arb
 +++ b/mobile/lib/l10n/app_fr.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Maintenez un GIF dans une discussion ou dans GIF pour l’ajouter ici.",
    "gifFavMoveEarlier": "Avancer",
    "gifFavMoveLater": "Reculer",
@@ -97,13 +108,15 @@ index 5f444675b..35475312f 100644
 +  "onboardingProtectionOneTimeTitle": "Configuration initiale",
 +  "onboardingProtectionOneTimeLine": "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.",
 +  "onboardingProtectionDualPinTitle": "Deux codes PIN distincts",
-+  "onboardingProtectionDualPinLine": "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées."
++  "onboardingProtectionDualPinLine": "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées.",
++  "onboardingAppLockMandatoryLine": "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.",
++  "onboardingProtectionSetupVault": "Configurer les discussions cachées"
  }
 diff --git a/mobile/lib/l10n/app_hi.arb b/mobile/lib/l10n/app_hi.arb
-index 73154fa02..1d595f26e 100644
+index 73154fa02..a329baeae 100644
 --- a/mobile/lib/l10n/app_hi.arb
 +++ b/mobile/lib/l10n/app_hi.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "यहाँ जोड़ने के लिए किसी चैट में या GIF में किसी GIF को दबाकर रखें।",
    "gifFavMoveEarlier": "पहले ले जाएँ",
    "gifFavMoveLater": "बाद में ले जाएँ",
@@ -112,13 +125,15 @@ index 73154fa02..1d595f26e 100644
 +  "onboardingProtectionOneTimeTitle": "केवल पहले सेटअप पर",
 +  "onboardingProtectionOneTimeLine": "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।",
 +  "onboardingProtectionDualPinTitle": "दो अलग पिन",
-+  "onboardingProtectionDualPinLine": "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।"
++  "onboardingProtectionDualPinLine": "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।",
++  "onboardingAppLockMandatoryLine": "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।",
++  "onboardingProtectionSetupVault": "छुपी हुई चैट सेट करें"
  }
 diff --git a/mobile/lib/l10n/app_id.arb b/mobile/lib/l10n/app_id.arb
-index b435f041d..45d9a6d06 100644
+index b435f041d..839c17b42 100644
 --- a/mobile/lib/l10n/app_id.arb
 +++ b/mobile/lib/l10n/app_id.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Tahan GIF di chat atau di GIF untuk menambahkannya di sini.",
    "gifFavMoveEarlier": "Pindah ke depan",
    "gifFavMoveLater": "Pindah ke belakang",
@@ -127,13 +142,15 @@ index b435f041d..45d9a6d06 100644
 +  "onboardingProtectionOneTimeTitle": "Hanya pada awal penyiapan",
 +  "onboardingProtectionOneTimeLine": "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.",
 +  "onboardingProtectionDualPinTitle": "Dua PIN terpisah",
-+  "onboardingProtectionDualPinLine": "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi."
++  "onboardingProtectionDualPinLine": "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi.",
++  "onboardingAppLockMandatoryLine": "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.",
++  "onboardingProtectionSetupVault": "Atur obrolan tersembunyi"
  }
 diff --git a/mobile/lib/l10n/app_it.arb b/mobile/lib/l10n/app_it.arb
-index 3525ac7cb..30bf823b0 100644
+index 3525ac7cb..5f1cf313e 100644
 --- a/mobile/lib/l10n/app_it.arb
 +++ b/mobile/lib/l10n/app_it.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Tieni premuta una GIF in una chat o in GIF per aggiungerla qui.",
    "gifFavMoveEarlier": "Sposta prima",
    "gifFavMoveLater": "Sposta dopo",
@@ -142,13 +159,15 @@ index 3525ac7cb..30bf823b0 100644
 +  "onboardingProtectionOneTimeTitle": "Configurazione riservata",
 +  "onboardingProtectionOneTimeLine": "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.",
 +  "onboardingProtectionDualPinTitle": "Due PIN distinti",
-+  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste."
++  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste.",
++  "onboardingAppLockMandatoryLine": "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.",
++  "onboardingProtectionSetupVault": "Configura chat nascoste"
  }
 diff --git a/mobile/lib/l10n/app_localizations.dart b/mobile/lib/l10n/app_localizations.dart
-index 74953573c..447ebe416 100644
+index 74953573c..331bc06d3 100644
 --- a/mobile/lib/l10n/app_localizations.dart
 +++ b/mobile/lib/l10n/app_localizations.dart
-@@ -20212,4 +20212,28 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
+@@ -20212,4 +20212,33 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
      'on GitHub with a reproducible sample app and the gen-l10n configuration '
      'that was used.'
    );
@@ -176,12 +195,17 @@ index 74953573c..447ebe416 100644
 +  /// In en, this message translates to:
 +  /// **'This can only be set up now. If you choose Not now, it cannot be turned on later.'**
 +  String get onboardingProtectionOneTimeLine;
++
++  String get onboardingAppLockMandatoryLine;
++
++  String get onboardingProtectionSetupVault;
++
  }
 diff --git a/mobile/lib/l10n/app_localizations_ar.dart b/mobile/lib/l10n/app_localizations_ar.dart
-index f4adc83d2..4a0acc556 100644
+index f4adc83d2..8f1690d0e 100644
 --- a/mobile/lib/l10n/app_localizations_ar.dart
 +++ b/mobile/lib/l10n/app_localizations_ar.dart
-@@ -11908,4 +11908,16 @@ class AppLocalizationsAr extends AppLocalizations {
+@@ -11908,4 +11908,21 @@ class AppLocalizationsAr extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'صورة GIF مفضلة $number';
    }
@@ -197,12 +221,17 @@ index f4adc83d2..4a0acc556 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.";
++  @override
++  String get onboardingAppLockMandatoryLine => "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.";
++
++  @override
++  String get onboardingProtectionSetupVault => "إعداد المحادثات المخفية";
  }
 diff --git a/mobile/lib/l10n/app_localizations_de.dart b/mobile/lib/l10n/app_localizations_de.dart
-index 25e679a98..1357ea7f8 100644
+index 25e679a98..3ce4da52f 100644
 --- a/mobile/lib/l10n/app_localizations_de.dart
 +++ b/mobile/lib/l10n/app_localizations_de.dart
-@@ -11668,4 +11668,16 @@ class AppLocalizationsDe extends AppLocalizations {
+@@ -11668,4 +11668,21 @@ class AppLocalizationsDe extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Lieblings-GIF $number';
    }
@@ -218,12 +247,17 @@ index 25e679a98..1357ea7f8 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Versteckte Chats einrichten";
  }
 diff --git a/mobile/lib/l10n/app_localizations_en.dart b/mobile/lib/l10n/app_localizations_en.dart
-index 74cf6ac1c..d6ea5b0a2 100644
+index 74cf6ac1c..3643d11df 100644
 --- a/mobile/lib/l10n/app_localizations_en.dart
 +++ b/mobile/lib/l10n/app_localizations_en.dart
-@@ -11663,4 +11663,16 @@ class AppLocalizationsEn extends AppLocalizations {
+@@ -11663,4 +11663,21 @@ class AppLocalizationsEn extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Favourite GIF $number';
    }
@@ -239,12 +273,17 @@ index 74cf6ac1c..d6ea5b0a2 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.";
++  @override
++  String get onboardingAppLockMandatoryLine => "An app lock is required to protect your chats on this device.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Set up hidden chats";
  }
 diff --git a/mobile/lib/l10n/app_localizations_es.dart b/mobile/lib/l10n/app_localizations_es.dart
-index 52489a524..ec96a039a 100644
+index 52489a524..5b2528281 100644
 --- a/mobile/lib/l10n/app_localizations_es.dart
 +++ b/mobile/lib/l10n/app_localizations_es.dart
-@@ -11669,4 +11669,16 @@ class AppLocalizationsEs extends AppLocalizations {
+@@ -11669,4 +11669,21 @@ class AppLocalizationsEs extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favorito $number';
    }
@@ -260,12 +299,17 @@ index 52489a524..ec96a039a 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.";
++  @override
++  String get onboardingAppLockMandatoryLine => "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Configurar chats ocultos";
  }
 diff --git a/mobile/lib/l10n/app_localizations_fa.dart b/mobile/lib/l10n/app_localizations_fa.dart
-index ec33c2be1..9ff8b4dd8 100644
+index ec33c2be1..828ec0f83 100644
 --- a/mobile/lib/l10n/app_localizations_fa.dart
 +++ b/mobile/lib/l10n/app_localizations_fa.dart
-@@ -11648,4 +11648,16 @@ class AppLocalizationsFa extends AppLocalizations {
+@@ -11648,4 +11648,21 @@ class AppLocalizationsFa extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF برگزیده $number';
    }
@@ -281,12 +325,17 @@ index ec33c2be1..9ff8b4dd8 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.";
++  @override
++  String get onboardingAppLockMandatoryLine => "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.";
++
++  @override
++  String get onboardingProtectionSetupVault => "راه‌اندازی گفتگوهای پنهان";
  }
 diff --git a/mobile/lib/l10n/app_localizations_fr.dart b/mobile/lib/l10n/app_localizations_fr.dart
-index d5b43db87..46c405b7e 100644
+index d5b43db87..5eb8fde71 100644
 --- a/mobile/lib/l10n/app_localizations_fr.dart
 +++ b/mobile/lib/l10n/app_localizations_fr.dart
-@@ -11668,4 +11668,16 @@ class AppLocalizationsFr extends AppLocalizations {
+@@ -11668,4 +11668,21 @@ class AppLocalizationsFr extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favori $number';
    }
@@ -302,12 +351,17 @@ index d5b43db87..46c405b7e 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Configurer les discussions cachées";
  }
 diff --git a/mobile/lib/l10n/app_localizations_hi.dart b/mobile/lib/l10n/app_localizations_hi.dart
-index 6a06ae243..2ec9a5640 100644
+index 6a06ae243..4ba2a3fef 100644
 --- a/mobile/lib/l10n/app_localizations_hi.dart
 +++ b/mobile/lib/l10n/app_localizations_hi.dart
-@@ -11656,4 +11656,16 @@ class AppLocalizationsHi extends AppLocalizations {
+@@ -11656,4 +11656,21 @@ class AppLocalizationsHi extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'पसंदीदा GIF $number';
    }
@@ -323,12 +377,17 @@ index 6a06ae243..2ec9a5640 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।";
++  @override
++  String get onboardingAppLockMandatoryLine => "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।";
++
++  @override
++  String get onboardingProtectionSetupVault => "छुपी हुई चैट सेट करें";
  }
 diff --git a/mobile/lib/l10n/app_localizations_id.dart b/mobile/lib/l10n/app_localizations_id.dart
-index b42622a07..cefe3fdb9 100644
+index b42622a07..4c62ab61b 100644
 --- a/mobile/lib/l10n/app_localizations_id.dart
 +++ b/mobile/lib/l10n/app_localizations_id.dart
-@@ -11598,4 +11598,16 @@ class AppLocalizationsId extends AppLocalizations {
+@@ -11598,4 +11598,21 @@ class AppLocalizationsId extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favorit $number';
    }
@@ -344,12 +403,17 @@ index b42622a07..cefe3fdb9 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Atur obrolan tersembunyi";
  }
 diff --git a/mobile/lib/l10n/app_localizations_it.dart b/mobile/lib/l10n/app_localizations_it.dart
-index 0ecc297bd..df3ca114c 100644
+index 0ecc297bd..860ca4af7 100644
 --- a/mobile/lib/l10n/app_localizations_it.dart
 +++ b/mobile/lib/l10n/app_localizations_it.dart
-@@ -11670,4 +11670,16 @@ class AppLocalizationsIt extends AppLocalizations {
+@@ -11670,4 +11670,21 @@ class AppLocalizationsIt extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF preferita $number';
    }
@@ -365,12 +429,17 @@ index 0ecc297bd..df3ca114c 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Configura chat nascoste";
  }
 diff --git a/mobile/lib/l10n/app_localizations_pl.dart b/mobile/lib/l10n/app_localizations_pl.dart
-index c33d48ef3..5b73fab9b 100644
+index c33d48ef3..9dd9f7dc1 100644
 --- a/mobile/lib/l10n/app_localizations_pl.dart
 +++ b/mobile/lib/l10n/app_localizations_pl.dart
-@@ -11834,4 +11834,16 @@ class AppLocalizationsPl extends AppLocalizations {
+@@ -11834,4 +11834,21 @@ class AppLocalizationsPl extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Ulubiony GIF $number';
    }
@@ -386,12 +455,17 @@ index c33d48ef3..5b73fab9b 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Skonfiguruj ukryte czaty";
  }
 diff --git a/mobile/lib/l10n/app_localizations_pt.dart b/mobile/lib/l10n/app_localizations_pt.dart
-index 4f65e2908..4d7bd06d2 100644
+index 4f65e2908..4a27c1964 100644
 --- a/mobile/lib/l10n/app_localizations_pt.dart
 +++ b/mobile/lib/l10n/app_localizations_pt.dart
-@@ -11668,4 +11668,16 @@ class AppLocalizationsPt extends AppLocalizations {
+@@ -11668,4 +11668,21 @@ class AppLocalizationsPt extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favorito $number';
    }
@@ -407,12 +481,17 @@ index 4f65e2908..4d7bd06d2 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.";
++  @override
++  String get onboardingAppLockMandatoryLine => "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Configurar conversas ocultas";
  }
 diff --git a/mobile/lib/l10n/app_localizations_ru.dart b/mobile/lib/l10n/app_localizations_ru.dart
-index 98bdbf440..6ff15416b 100644
+index 98bdbf440..e9f8a56c0 100644
 --- a/mobile/lib/l10n/app_localizations_ru.dart
 +++ b/mobile/lib/l10n/app_localizations_ru.dart
-@@ -11800,4 +11800,16 @@ class AppLocalizationsRu extends AppLocalizations {
+@@ -11800,4 +11800,21 @@ class AppLocalizationsRu extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Избранный GIF $number';
    }
@@ -428,12 +507,17 @@ index 98bdbf440..6ff15416b 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Настроить скрытые чаты";
  }
 diff --git a/mobile/lib/l10n/app_localizations_tr.dart b/mobile/lib/l10n/app_localizations_tr.dart
-index ac36b1b55..cbe878a32 100644
+index ac36b1b55..9a97b0098 100644
 --- a/mobile/lib/l10n/app_localizations_tr.dart
 +++ b/mobile/lib/l10n/app_localizations_tr.dart
-@@ -11654,4 +11654,16 @@ class AppLocalizationsTr extends AppLocalizations {
+@@ -11654,4 +11654,21 @@ class AppLocalizationsTr extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Favori GIF $number';
    }
@@ -449,12 +533,17 @@ index ac36b1b55..cbe878a32 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Gizli sohbetleri ayarla";
  }
 diff --git a/mobile/lib/l10n/app_localizations_uk.dart b/mobile/lib/l10n/app_localizations_uk.dart
-index bb29de778..942599437 100644
+index bb29de778..0b370dc21 100644
 --- a/mobile/lib/l10n/app_localizations_uk.dart
 +++ b/mobile/lib/l10n/app_localizations_uk.dart
-@@ -11797,4 +11797,16 @@ class AppLocalizationsUk extends AppLocalizations {
+@@ -11797,4 +11797,21 @@ class AppLocalizationsUk extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Обраний GIF $number';
    }
@@ -470,12 +559,17 @@ index bb29de778..942599437 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Блокування застосунку обов'язкове для захисту ваших чатів на цьому пристрої.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Налаштувати приховані чати";
  }
 diff --git a/mobile/lib/l10n/app_localizations_vi.dart b/mobile/lib/l10n/app_localizations_vi.dart
-index bca397e30..7400f6202 100644
+index bca397e30..73b53584c 100644
 --- a/mobile/lib/l10n/app_localizations_vi.dart
 +++ b/mobile/lib/l10n/app_localizations_vi.dart
-@@ -11598,4 +11598,16 @@ class AppLocalizationsVi extends AppLocalizations {
+@@ -11598,4 +11598,21 @@ class AppLocalizationsVi extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF yêu thích $number';
    }
@@ -491,12 +585,17 @@ index bca397e30..7400f6202 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.";
++  @override
++  String get onboardingAppLockMandatoryLine => "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Thiết lập cuộc trò chuyện ẩn";
  }
 diff --git a/mobile/lib/l10n/app_localizations_zh.dart b/mobile/lib/l10n/app_localizations_zh.dart
-index 2b35d95ae..7967a00a6 100644
+index 2b35d95ae..669469c50 100644
 --- a/mobile/lib/l10n/app_localizations_zh.dart
 +++ b/mobile/lib/l10n/app_localizations_zh.dart
-@@ -11598,9 +11598,19 @@ class AppLocalizationsZh extends AppLocalizations {
+@@ -11598,9 +11598,24 @@ class AppLocalizationsZh extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return '收藏的 GIF $number';
    }
@@ -514,11 +613,16 @@ index 2b35d95ae..7967a00a6 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。";
++  @override
++  String get onboardingAppLockMandatoryLine => "必须设置应用锁以保护此设备上的聊天记录。";
++
++  @override
++  String get onboardingProtectionSetupVault => "设置隐藏聊天";
 +}
  class AppLocalizationsZhHant extends AppLocalizationsZh {
    AppLocalizationsZhHant(): super('zh_Hant');
  
-@@ -23076,4 +23086,16 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
+@@ -23076,4 +23091,21 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
    String gifFavTileA11y(String number) {
      return '收藏的 GIF $number';
    }
@@ -534,12 +638,17 @@ index 2b35d95ae..7967a00a6 100644
 +
 +  @override
 +  String get onboardingProtectionOneTimeLine => "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。";
++  @override
++  String get onboardingAppLockMandatoryLine => "必須設定應用程式鎖定以保護此裝置上的聊天記錄。";
++
++  @override
++  String get onboardingProtectionSetupVault => "設定隱藏聊天";
  }
 diff --git a/mobile/lib/l10n/app_pl.arb b/mobile/lib/l10n/app_pl.arb
-index 197f9493d..01ed6614f 100644
+index 197f9493d..387bd6e92 100644
 --- a/mobile/lib/l10n/app_pl.arb
 +++ b/mobile/lib/l10n/app_pl.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Przytrzymaj GIF w czacie lub w GIF-ach, aby dodać go tutaj.",
    "gifFavMoveEarlier": "Przesuń wcześniej",
    "gifFavMoveLater": "Przesuń później",
@@ -548,13 +657,15 @@ index 197f9493d..01ed6614f 100644
 +  "onboardingProtectionOneTimeTitle": "Tylko przy pierwszym uruchomieniu",
 +  "onboardingProtectionOneTimeLine": "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.",
 +  "onboardingProtectionDualPinTitle": "Dwa różne kody PIN",
-+  "onboardingProtectionDualPinLine": "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty."
++  "onboardingProtectionDualPinLine": "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty.",
++  "onboardingAppLockMandatoryLine": "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.",
++  "onboardingProtectionSetupVault": "Skonfiguruj ukryte czaty"
  }
 diff --git a/mobile/lib/l10n/app_pt.arb b/mobile/lib/l10n/app_pt.arb
-index 56b18cd95..a5d41cc8c 100644
+index 56b18cd95..87caacc14 100644
 --- a/mobile/lib/l10n/app_pt.arb
 +++ b/mobile/lib/l10n/app_pt.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Segure um GIF em uma conversa ou em GIFs para adicionar aqui.",
    "gifFavMoveEarlier": "Mover para antes",
    "gifFavMoveLater": "Mover para depois",
@@ -563,13 +674,15 @@ index 56b18cd95..a5d41cc8c 100644
 +  "onboardingProtectionOneTimeTitle": "Apenas na primeira inicialização",
 +  "onboardingProtectionOneTimeLine": "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.",
 +  "onboardingProtectionDualPinTitle": "Dois PINs distintos",
-+  "onboardingProtectionDualPinLine": "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas."
++  "onboardingProtectionDualPinLine": "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.",
++  "onboardingAppLockMandatoryLine": "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.",
++  "onboardingProtectionSetupVault": "Configurar conversas ocultas"
  }
 diff --git a/mobile/lib/l10n/app_ru.arb b/mobile/lib/l10n/app_ru.arb
-index 81776273d..00a1b1197 100644
+index 81776273d..52a503796 100644
 --- a/mobile/lib/l10n/app_ru.arb
 +++ b/mobile/lib/l10n/app_ru.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Удерживай GIF в чате или во вкладке GIF, чтобы добавить его сюда.",
    "gifFavMoveEarlier": "Переместить раньше",
    "gifFavMoveLater": "Переместить позже",
@@ -578,13 +691,15 @@ index 81776273d..00a1b1197 100644
 +  "onboardingProtectionOneTimeTitle": "Только при первом запуске",
 +  "onboardingProtectionOneTimeLine": "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.",
 +  "onboardingProtectionDualPinTitle": "Два разных PIN-кода",
-+  "onboardingProtectionDualPinLine": "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты."
++  "onboardingProtectionDualPinLine": "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты.",
++  "onboardingAppLockMandatoryLine": "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.",
++  "onboardingProtectionSetupVault": "Настроить скрытые чаты"
  }
 diff --git a/mobile/lib/l10n/app_tr.arb b/mobile/lib/l10n/app_tr.arb
-index f05b4744b..463db345a 100644
+index f05b4744b..b7874512d 100644
 --- a/mobile/lib/l10n/app_tr.arb
 +++ b/mobile/lib/l10n/app_tr.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Buraya eklemek için bir sohbette ya da GIF’lerde bir GIF’e basılı tut.",
    "gifFavMoveEarlier": "Öne al",
    "gifFavMoveLater": "Arkaya al",
@@ -593,13 +708,15 @@ index f05b4744b..463db345a 100644
 +  "onboardingProtectionOneTimeTitle": "Yalnızca ilk başlatmada",
 +  "onboardingProtectionOneTimeLine": "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.",
 +  "onboardingProtectionDualPinTitle": "İki ayrı PIN",
-+  "onboardingProtectionDualPinLine": "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar."
++  "onboardingProtectionDualPinLine": "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.",
++  "onboardingAppLockMandatoryLine": "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.",
++  "onboardingProtectionSetupVault": "Gizli sohbetleri ayarla"
  }
 diff --git a/mobile/lib/l10n/app_uk.arb b/mobile/lib/l10n/app_uk.arb
-index 0137755e5..376e43020 100644
+index 0137755e5..9f736a04e 100644
 --- a/mobile/lib/l10n/app_uk.arb
 +++ b/mobile/lib/l10n/app_uk.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Утримуй GIF у чаті або у вкладці GIF, щоб додати його сюди.",
    "gifFavMoveEarlier": "Перемістити раніше",
    "gifFavMoveLater": "Перемістити пізніше",
@@ -608,13 +725,15 @@ index 0137755e5..376e43020 100644
 +  "onboardingProtectionOneTimeTitle": "Лише під час першого запуску",
 +  "onboardingProtectionOneTimeLine": "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.",
 +  "onboardingProtectionDualPinTitle": "Два окремих PIN-коди",
-+  "onboardingProtectionDualPinLine": "Основний PIN (від 4 цифр) відкриває звичайні чати. Секретний PIN (від 6 цифр) розблоковує приховані чати."
++  "onboardingProtectionDualPinLine": "Основний PIN (від 4 цифр) відкриває звичайні чати. Секретний PIN (від 6 цифр) розблоковує приховані чати.",
++  "onboardingAppLockMandatoryLine": "Блокування застосунку обов'язкове для захисту ваших чатів на цьому пристрої.",
++  "onboardingProtectionSetupVault": "Налаштувати приховані чати"
  }
 diff --git a/mobile/lib/l10n/app_vi.arb b/mobile/lib/l10n/app_vi.arb
-index cf1d2b550..7632e398b 100644
+index cf1d2b550..16b2dc66e 100644
 --- a/mobile/lib/l10n/app_vi.arb
 +++ b/mobile/lib/l10n/app_vi.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "Giữ một GIF trong cuộc trò chuyện hoặc trong GIF để thêm vào đây.",
    "gifFavMoveEarlier": "Chuyển lên trước",
    "gifFavMoveLater": "Chuyển ra sau",
@@ -623,13 +742,15 @@ index cf1d2b550..7632e398b 100644
 +  "onboardingProtectionOneTimeTitle": "Chỉ khi thiết lập ban đầu",
 +  "onboardingProtectionOneTimeLine": "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.",
 +  "onboardingProtectionDualPinTitle": "Hai mã PIN riêng biệt",
-+  "onboardingProtectionDualPinLine": "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn."
++  "onboardingProtectionDualPinLine": "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn.",
++  "onboardingAppLockMandatoryLine": "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.",
++  "onboardingProtectionSetupVault": "Thiết lập cuộc trò chuyện ẩn"
  }
 diff --git a/mobile/lib/l10n/app_zh.arb b/mobile/lib/l10n/app_zh.arb
-index c908d1ba5..64fb67508 100644
+index c908d1ba5..009022523 100644
 --- a/mobile/lib/l10n/app_zh.arb
 +++ b/mobile/lib/l10n/app_zh.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "在聊天或 GIF 中长按一个 GIF，即可添加到这里。",
    "gifFavMoveEarlier": "前移",
    "gifFavMoveLater": "后移",
@@ -638,13 +759,15 @@ index c908d1ba5..64fb67508 100644
 +  "onboardingProtectionOneTimeTitle": "仅在首次设置时",
 +  "onboardingProtectionOneTimeLine": "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。",
 +  "onboardingProtectionDualPinTitle": "两个独立 PIN 码",
-+  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。"
++  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。",
++  "onboardingAppLockMandatoryLine": "必须设置应用锁以保护此设备上的聊天记录。",
++  "onboardingProtectionSetupVault": "设置隐藏聊天"
  }
 diff --git a/mobile/lib/l10n/app_zh_Hant.arb b/mobile/lib/l10n/app_zh_Hant.arb
-index 365d792fd..b1edf8669 100644
+index 365d792fd..9d39527c3 100644
 --- a/mobile/lib/l10n/app_zh_Hant.arb
 +++ b/mobile/lib/l10n/app_zh_Hant.arb
-@@ -3310,5 +3310,9 @@
+@@ -3310,5 +3310,11 @@
    "gifFavEmptyLine": "在聊天或 GIF 中長按一個 GIF，即可加入這裡。",
    "gifFavMoveEarlier": "往前移",
    "gifFavMoveLater": "往後移",
@@ -653,10 +776,12 @@ index 365d792fd..b1edf8669 100644
 +  "onboardingProtectionOneTimeTitle": "僅在首次設定時",
 +  "onboardingProtectionOneTimeLine": "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。",
 +  "onboardingProtectionDualPinTitle": "兩個獨立 PIN 碼",
-+  "onboardingProtectionDualPinLine": "主 PIN 碼（4 位以上）開啟普通聊天。私密 PIN 碼（6 位以上）解鎖所有隱藏聊天。"
++  "onboardingProtectionDualPinLine": "主 PIN 碼（4 位以上）開啟普通聊天。私密 PIN 碼（6 位以上）解鎖所有隱藏聊天。",
++  "onboardingAppLockMandatoryLine": "必須設定應用程式鎖定以保護此裝置上的聊天記錄。",
++  "onboardingProtectionSetupVault": "設定隱藏聊天"
  }
 diff --git a/mobile/lib/screens/onboarding_screen.dart b/mobile/lib/screens/onboarding_screen.dart
-index 8161dec41..af7bc4faa 100644
+index 8161dec41..b4d20129b 100644
 --- a/mobile/lib/screens/onboarding_screen.dart
 +++ b/mobile/lib/screens/onboarding_screen.dart
 @@ -11,7 +11,7 @@
@@ -668,11 +793,12 @@ index 8161dec41..af7bc4faa 100644
  import 'package:flutter/services.dart';
  import '../widgets/press_scale.dart';
  import '../widgets/fit_column.dart';
-@@ -59,9 +59,20 @@ import 'helper_sheet.dart' show showHelperSheet;
+@@ -59,9 +59,21 @@ import 'helper_sheet.dart' show showHelperSheet;
  import '../desktop/desktop_mode.dart'
      show desktopRun, onDesktop, takeDeskLinkAtStart;
  import 'desk_run_section.dart';
 +import '../lock_state.dart' show LockState, lockState;
++import 'lock_setup_screen.dart' show LockSetupScreen;
 +import 'pin_flow_screen.dart' show PinFlowScreen, PinFlow, PinsHost;
  
  /// the onboarding's steps, by name: a step is never found by its place
@@ -690,7 +816,7 @@ index 8161dec41..af7bc4faa 100644
  
  /// the steps in order. the route comes before the way messages arrive:
  /// google push and the helper app need the private route. a phone picks how
-@@ -72,6 +83,7 @@ List<OnboardStep> onboardingSteps({bool desk = false}) => [
+@@ -72,6 +84,7 @@ List<OnboardStep> onboardingSteps({bool desk = false}) => [
    OnboardStep.name,
    OnboardStep.route,
    desk ? OnboardStep.desk : OnboardStep.delivery,
@@ -698,7 +824,7 @@ index 8161dec41..af7bc4faa 100644
    OnboardStep.invite,
  ];
  
-@@ -215,6 +227,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
+@@ -215,6 +228,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
        ),
        OnboardStep.delivery => _DeliveryScreen(onContinue: _next),
        OnboardStep.desk => _DeskRunScreen(onContinue: _next),
@@ -710,7 +836,7 @@ index 8161dec41..af7bc4faa 100644
        OnboardStep.invite => _InviteScreen(onComplete: widget.onComplete),
      };
    }
-@@ -1791,6 +1808,76 @@ class _DeskRunScreen extends StatelessWidget {
+@@ -1791,6 +1809,120 @@ class _DeskRunScreen extends StatelessWidget {
    }
  }
  
@@ -736,7 +862,22 @@ index 8161dec41..af7bc4faa 100644
 +class _ProtectionScreenState extends State<_ProtectionScreen> {
 +  bool _busy = false;
 +
-+  Future<void> _setup() async {
++  bool get _hasAppPin => widget.lock.lockOn;
++
++  Future<void> _setupAppPin() async {
++    if (_busy) return;
++    setState(() => _busy = true);
++    final nav = Navigator.of(context);
++    await nav.push<bool>(
++      haloRoute(
++        LockSetupScreen(lock: widget.lock),
++      ),
++    );
++    if (!mounted) return;
++    setState(() => _busy = false);
++  }
++
++  Future<void> _setupVault() async {
 +    if (_busy) return;
 +    setState(() => _busy = true);
 +    final nav = Navigator.of(context);
@@ -756,11 +897,40 @@ index 8161dec41..af7bc4faa 100644
 +
 +  @override
 +  Widget build(BuildContext context) {
++    if (!_hasAppPin) {
++      return _StepPage(
++        footer: [
++          _Cta(
++            label: l10n.pinsSetAPin,
++            onTap: _setupAppPin,
++          ),
++        ],
++        children: [
++          _Headline(l10n.pinsAppLock),
++          const SizedBox(height: 12),
++          _lead(l10n.onboardingAppLockMandatoryLine),
++          const SizedBox(height: 20),
++          _Card(
++            icon: Icons.lock_outline_rounded,
++            title: l10n.pinsYourPin,
++            desc: l10n.pinsOpensKryfoFourDigits,
++          ),
++        ],
++      );
++    }
++
 +    return _StepPage(
 +      footer: [
 +        _Cta(
-+          label: l10n.pinsSetAPin,
-+          onTap: _setup,
++          label: l10n.onboardingProtectionSetupVault,
++          onTap: _setupVault,
++        ),
++        const SizedBox(height: 2),
++        Center(
++          child: _TextLink(
++            label: l10n.flowVaultNotNow,
++            onTap: widget.onContinue,
++          ),
 +        ),
 +      ],
 +      children: [

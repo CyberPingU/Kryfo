@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Configurazione riservata",
   "onboardingProtectionOneTimeLine": "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.",
   "onboardingProtectionDualPinTitle": "Due PIN distinti",
-  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste."
+  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste.",
+  "onboardingAppLockMandatoryLine": "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.",
+  "onboardingProtectionSetupVault": "Configura chat nascoste"
 }

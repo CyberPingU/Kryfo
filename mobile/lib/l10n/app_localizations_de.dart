@@ -11680,4 +11680,9 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Versteckte Chats einrichten";
 }

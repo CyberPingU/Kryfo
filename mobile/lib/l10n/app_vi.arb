@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Chỉ khi thiết lập ban đầu",
   "onboardingProtectionOneTimeLine": "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.",
   "onboardingProtectionDualPinTitle": "Hai mã PIN riêng biệt",
-  "onboardingProtectionDualPinLine": "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn."
+  "onboardingProtectionDualPinLine": "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn.",
+  "onboardingAppLockMandatoryLine": "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.",
+  "onboardingProtectionSetupVault": "Thiết lập cuộc trò chuyện ẩn"
 }

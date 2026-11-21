@@ -11846,4 +11846,9 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Skonfiguruj ukryte czaty";
 }

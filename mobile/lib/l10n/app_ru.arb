@@ -3314,5 +3314,7 @@
   "onboardingProtectionOneTimeTitle": "Только при первом запуске",
   "onboardingProtectionOneTimeLine": "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.",
   "onboardingProtectionDualPinTitle": "Два разных PIN-кода",
-  "onboardingProtectionDualPinLine": "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты."
+  "onboardingProtectionDualPinLine": "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты.",
+  "onboardingAppLockMandatoryLine": "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.",
+  "onboardingProtectionSetupVault": "Настроить скрытые чаты"
 }

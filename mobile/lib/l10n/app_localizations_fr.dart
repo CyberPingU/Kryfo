@@ -11680,4 +11680,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.";
+  @override
+  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configurer les discussions cachées";
 }

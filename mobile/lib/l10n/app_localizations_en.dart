@@ -11675,4 +11675,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.";
+  @override
+  String get onboardingAppLockMandatoryLine => "An app lock is required to protect your chats on this device.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Set up hidden chats";
 }

@@ -11681,4 +11681,9 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get onboardingProtectionOneTimeLine => "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.";
+  @override
+  String get onboardingAppLockMandatoryLine => "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configurar chats ocultos";
 }
