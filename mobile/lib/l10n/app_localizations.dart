@@ -20217,6 +20217,18 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   ///
   /// In en, this message translates to:
   /// **'Only during setup'**
+  /// screens/onboarding_screen.dart: title of dual PIN card on advanced protection step
+  ///
+  /// In en, this message translates to:
+  /// **'Dual PIN protection'**
+  String get onboardingProtectionDualPinTitle;
+
+  /// screens/onboarding_screen.dart: description of dual PIN card on advanced protection step
+  ///
+  /// In en, this message translates to:
+  /// **'Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.'**
+  String get onboardingProtectionDualPinLine;
+
   String get onboardingProtectionOneTimeTitle;
 
   /// screens/onboarding_screen.dart: line of the warning card on advanced protection step

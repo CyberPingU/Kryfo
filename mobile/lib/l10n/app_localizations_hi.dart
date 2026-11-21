@@ -11658,8 +11658,14 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'केवल सेटअप के दौरान';
+  String get onboardingProtectionDualPinTitle => "दो अलग पिन";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'इसे केवल अभी सेट किया जा सकता है। यदि आप «अभी नहीं» चुनते हैं, तो इसे बाद में चालू नहीं किया जा सकता।';
+  String get onboardingProtectionDualPinLine => "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "केवल पहले सेटअप पर";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।";
 }

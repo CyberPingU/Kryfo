@@ -11600,10 +11600,16 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => '仅在首次设置时';
+  String get onboardingProtectionDualPinTitle => "两个独立 PIN 码";
 
   @override
-  String get onboardingProtectionOneTimeLine => '只能在此处设置。若选择“暂不”，日后将无法再次启用。';
+  String get onboardingProtectionDualPinLine => "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "仅在首次设置时";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。";
 }
 class AppLocalizationsZhHant extends AppLocalizationsZh {
   AppLocalizationsZhHant(): super('zh_Hant');
@@ -23082,8 +23088,14 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => '僅在首次設定時';
+  String get onboardingProtectionDualPinTitle => "兩個獨立 PIN 碼";
 
   @override
-  String get onboardingProtectionOneTimeLine => '只能在此處設定。若選擇「以後再說」，日後將無法再次啟用。';
+  String get onboardingProtectionDualPinLine => "主 PIN 碼（4 位以上）開啟普通聊天。私密 PIN 碼（6 位以上）解鎖所有隱藏聊天。";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "僅在首次設定時";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。";
 }

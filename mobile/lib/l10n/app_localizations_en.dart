@@ -11665,8 +11665,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Only during setup';
+  String get onboardingProtectionDualPinTitle => "Dual PIN protection";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'This can only be set up now. If you choose Not now, it cannot be turned on later.';
+  String get onboardingProtectionDualPinLine => "Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Initial setup only";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.";
 }

@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "Pindah ke depan",
   "gifFavMoveLater": "Pindah ke belakang",
   "gifFavTileA11y": "GIF favorit {number}",
-  "onboardingProtectionOneTimeTitle": "Hanya saat penyiapan awal",
-  "onboardingProtectionOneTimeLine": "Hanya dapat diatur sekarang. Jika memilih «Nanti saja», ini tidak dapat diaktifkan nanti."
+  "onboardingProtectionOneTimeTitle": "Hanya pada awal penyiapan",
+  "onboardingProtectionOneTimeLine": "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.",
+  "onboardingProtectionDualPinTitle": "Dua PIN terpisah",
+  "onboardingProtectionDualPinLine": "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi."
 }

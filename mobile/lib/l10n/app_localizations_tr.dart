@@ -11656,8 +11656,14 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Yalnızca kurulum sırasında';
+  String get onboardingProtectionDualPinTitle => "İki ayrı PIN";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Yalnızca şimdi ayarlanabilir. «Şimdi değil»i seçerseniz, daha sonra etkinleştirilemez.';
+  String get onboardingProtectionDualPinLine => "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Yalnızca ilk başlatmada";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.";
 }

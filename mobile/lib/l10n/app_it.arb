@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "Sposta prima",
   "gifFavMoveLater": "Sposta dopo",
   "gifFavTileA11y": "GIF preferita {number}",
-  "onboardingProtectionOneTimeTitle": "Solo al primo avvio",
-  "onboardingProtectionOneTimeLine": "Si può configurare solo ora. Se scegli «Non ora», non potrà più essere attivato in seguito."
+  "onboardingProtectionOneTimeTitle": "Configurazione riservata",
+  "onboardingProtectionOneTimeLine": "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.",
+  "onboardingProtectionDualPinTitle": "Due PIN distinti",
+  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste."
 }

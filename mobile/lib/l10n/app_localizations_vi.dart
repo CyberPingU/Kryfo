@@ -11600,8 +11600,14 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Chỉ trong quá trình thiết lập';
+  String get onboardingProtectionDualPinTitle => "Hai mã PIN riêng biệt";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Chỉ có thể thiết lập ngay bây giờ. Nếu chọn «Để sau», bạn sẽ không thể bật lại sau.';
+  String get onboardingProtectionDualPinLine => "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Chỉ khi thiết lập ban đầu";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.";
 }

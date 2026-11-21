@@ -11802,8 +11802,14 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Только при первой настройке';
+  String get onboardingProtectionDualPinTitle => "Два разных PIN-кода";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Можно настроить только сейчас. Если выбрать «Не сейчас», включить позже будет невозможно.';
+  String get onboardingProtectionDualPinLine => "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Только при первом запуске";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.";
 }

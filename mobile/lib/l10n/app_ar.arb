@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "نقل إلى الأمام",
   "gifFavMoveLater": "نقل إلى الخلف",
   "gifFavTileA11y": "صورة GIF مفضلة {number}",
-  "onboardingProtectionOneTimeTitle": "أثناء الإعداد فقط",
-  "onboardingProtectionOneTimeLine": "لا يمكن إعداده إلا الآن. إذا اخترت «ليس الآن»، فلن تتمكن من تفعيله لاحقًا."
+  "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأول فقط",
+  "onboardingProtectionOneTimeLine": "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.",
+  "onboardingProtectionDualPinTitle": "رمزا PIN منفصلان",
+  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية."
 }

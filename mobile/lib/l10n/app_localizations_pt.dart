@@ -11670,8 +11670,14 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get onboardingProtectionOneTimeTitle => 'Apenas durante a configuração';
+  String get onboardingProtectionDualPinTitle => "Dois PINs distintos";
 
   @override
-  String get onboardingProtectionOneTimeLine => 'Só pode ser configurado agora. Se escolher «Agora não», não poderá ser ativado mais tarde.';
+  String get onboardingProtectionDualPinLine => "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.";
+
+  @override
+  String get onboardingProtectionOneTimeTitle => "Apenas na primeira inicialização";
+
+  @override
+  String get onboardingProtectionOneTimeLine => "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.";
 }

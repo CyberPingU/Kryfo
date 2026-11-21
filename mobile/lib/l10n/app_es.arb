@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "Mover antes",
   "gifFavMoveLater": "Mover después",
   "gifFavTileA11y": "GIF favorito {number}",
-  "onboardingProtectionOneTimeTitle": "Solo durante la configuración",
-  "onboardingProtectionOneTimeLine": "Solo se puede configurar ahora. Si eliges «Ahora no», no se podrá activar más adelante."
+  "onboardingProtectionOneTimeTitle": "Solo al primer inicio",
+  "onboardingProtectionOneTimeLine": "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.",
+  "onboardingProtectionDualPinTitle": "Dos PIN distintos",
+  "onboardingProtectionDualPinLine": "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos."
 }

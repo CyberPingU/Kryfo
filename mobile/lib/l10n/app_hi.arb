@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "पहले ले जाएँ",
   "gifFavMoveLater": "बाद में ले जाएँ",
   "gifFavTileA11y": "पसंदीदा GIF {number}",
-  "onboardingProtectionOneTimeTitle": "केवल सेटअप के दौरान",
-  "onboardingProtectionOneTimeLine": "इसे केवल अभी सेट किया जा सकता है। यदि आप «अभी नहीं» चुनते हैं, तो इसे बाद में चालू नहीं किया जा सकता।"
+  "onboardingProtectionOneTimeTitle": "केवल पहले सेटअप पर",
+  "onboardingProtectionOneTimeLine": "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।",
+  "onboardingProtectionDualPinTitle": "दो अलग पिन",
+  "onboardingProtectionDualPinLine": "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।"
 }

@@ -3311,6 +3311,8 @@
   "gifFavMoveEarlier": "جابه‌جایی به قبل",
   "gifFavMoveLater": "جابه‌جایی به بعد",
   "gifFavTileA11y": "GIF برگزیده {number}",
-  "onboardingProtectionOneTimeTitle": "فقط هنگام راه‌اندازی اولیه",
-  "onboardingProtectionOneTimeLine": "فقط اکنون قابل تنظیم است. اگر «فعلاً نه» را انتخاب کنید، بعداً فعال نخواهد شد."
+  "onboardingProtectionOneTimeTitle": "تنها هنگام راه‌اندازی نخست",
+  "onboardingProtectionOneTimeLine": "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.",
+  "onboardingProtectionDualPinTitle": "دو پین جداگانه",
+  "onboardingProtectionDualPinLine": "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند."
 }
