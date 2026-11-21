@@ -144,7 +144,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "app.kryfo"
+        applicationId = "work.dreadful.kryfo"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -365,7 +365,7 @@ abstract class LabelCheck : DefaultTask() {
 
     @TaskAction
     fun check() {
-        val want = if (appId.get() == "app.kryfo.bridgetest") "Kryfo test" else "Kryfo"
+        val want = if (appId.get() == "app.kryfo.bridgetest" || appId.get().endsWith(".bridgetest")) "Kryfo test" else "Kryfo"
         val doc = javax.xml.parsers.DocumentBuilderFactory.newInstance()
             .newDocumentBuilder().parse(manifest.get().asFile)
         val app = doc.getElementsByTagName("application").item(0) as org.w3c.dom.Element

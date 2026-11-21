@@ -1,4 +1,16 @@
-# Kryfo
+# Kryfo (Dreadful Hardened Build)
+
+> [!IMPORTANT]
+> **Downstream / Experimental Build Notice**
+>
+> This repository is a downstream, experimental build of **Kryfo**, created specifically to test continuous coercion and plausible absence enhancements.
+>
+> **Please use and support the official Kryfo project by Marios (GnosiWorks)!**
+> * Official Website & Downloads: [kryfo.app](https://kryfo.app)
+> * Upstream Repository: [github.com/GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo)
+> * Sponsor the developer: [OpenSats Project Grant](https://opensats.org)
+>
+> This downstream version is packaged under the application ID `work.dreadful.kryfo` so that it installs side-by-side with official Kryfo without interfering with or replacing official installations.
 
 Kryfo is a private messenger for Android, with beta builds for Windows and Linux.
 There is no phone number, no email and no account, and messages travel end to end encrypted over Tor.

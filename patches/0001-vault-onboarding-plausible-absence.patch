@@ -1,0 +1,738 @@
+diff --git a/mobile/lib/l10n/app_ar.arb b/mobile/lib/l10n/app_ar.arb
+index eef5fdc25..de2a66c4a 100644
+--- a/mobile/lib/l10n/app_ar.arb
++++ b/mobile/lib/l10n/app_ar.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "اضغط مطولًا على صورة GIF في محادثة أو في صور GIF لإضافتها هنا.",
+   "gifFavMoveEarlier": "نقل إلى الأمام",
+   "gifFavMoveLater": "نقل إلى الخلف",
+-  "gifFavTileA11y": "صورة GIF مفضلة {number}"
++  "gifFavTileA11y": "صورة GIF مفضلة {number}",
++  "onboardingProtectionOneTimeTitle": "أثناء الإعداد فقط",
++  "onboardingProtectionOneTimeLine": "لا يمكن إعداده إلا الآن. إذا اخترت «ليس الآن»، فلن تتمكن من تفعيله لاحقًا."
+ }
+diff --git a/mobile/lib/l10n/app_de.arb b/mobile/lib/l10n/app_de.arb
+index 90efd21a6..3e480edff 100644
+--- a/mobile/lib/l10n/app_de.arb
++++ b/mobile/lib/l10n/app_de.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Halte ein GIF in einem Chat oder unter GIFs, um es hier hinzuzufügen.",
+   "gifFavMoveEarlier": "Nach vorne",
+   "gifFavMoveLater": "Nach hinten",
+-  "gifFavTileA11y": "Lieblings-GIF {number}"
++  "gifFavTileA11y": "Lieblings-GIF {number}",
++  "onboardingProtectionOneTimeTitle": "Nur bei der Ersteinrichtung",
++  "onboardingProtectionOneTimeLine": "Kann nur jetzt eingerichtet werden. Wenn du «Nicht jetzt» wählst, kann es später nicht mehr aktiviert werden."
+ }
+diff --git a/mobile/lib/l10n/app_en.arb b/mobile/lib/l10n/app_en.arb
+index 9d3f8f38c..7fa978c2c 100644
+--- a/mobile/lib/l10n/app_en.arb
++++ b/mobile/lib/l10n/app_en.arb
+@@ -15859,5 +15859,13 @@
+         "type": "String"
+       }
+     }
++  },
++  "onboardingProtectionOneTimeTitle": "Only during setup",
++  "@onboardingProtectionOneTimeTitle": {
++    "description": "screens/onboarding_screen.dart: title of the warning card on advanced protection step"
++  },
++  "onboardingProtectionOneTimeLine": "This can only be set up now. If you choose Not now, it cannot be turned on later.",
++  "@onboardingProtectionOneTimeLine": {
++    "description": "screens/onboarding_screen.dart: line of the warning card on advanced protection step"
+   }
+ }
+diff --git a/mobile/lib/l10n/app_es.arb b/mobile/lib/l10n/app_es.arb
+index 24d4f251c..2b90ed595 100644
+--- a/mobile/lib/l10n/app_es.arb
++++ b/mobile/lib/l10n/app_es.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Mantén pulsado un GIF en un chat o en GIF para añadirlo aquí.",
+   "gifFavMoveEarlier": "Mover antes",
+   "gifFavMoveLater": "Mover después",
+-  "gifFavTileA11y": "GIF favorito {number}"
++  "gifFavTileA11y": "GIF favorito {number}",
++  "onboardingProtectionOneTimeTitle": "Solo durante la configuración",
++  "onboardingProtectionOneTimeLine": "Solo se puede configurar ahora. Si eliges «Ahora no», no se podrá activar más adelante."
+ }
+diff --git a/mobile/lib/l10n/app_fa.arb b/mobile/lib/l10n/app_fa.arb
+index 24c354388..64e42e798 100644
+--- a/mobile/lib/l10n/app_fa.arb
++++ b/mobile/lib/l10n/app_fa.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "برای افزودن به اینجا، یک GIF را در گفتگو یا در GIFها نگه دارید.",
+   "gifFavMoveEarlier": "جابه‌جایی به قبل",
+   "gifFavMoveLater": "جابه‌جایی به بعد",
+-  "gifFavTileA11y": "GIF برگزیده {number}"
++  "gifFavTileA11y": "GIF برگزیده {number}",
++  "onboardingProtectionOneTimeTitle": "فقط هنگام راه‌اندازی اولیه",
++  "onboardingProtectionOneTimeLine": "فقط اکنون قابل تنظیم است. اگر «فعلاً نه» را انتخاب کنید، بعداً فعال نخواهد شد."
+ }
+diff --git a/mobile/lib/l10n/app_fr.arb b/mobile/lib/l10n/app_fr.arb
+index 5f444675b..17d108a14 100644
+--- a/mobile/lib/l10n/app_fr.arb
++++ b/mobile/lib/l10n/app_fr.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Maintenez un GIF dans une discussion ou dans GIF pour l’ajouter ici.",
+   "gifFavMoveEarlier": "Avancer",
+   "gifFavMoveLater": "Reculer",
+-  "gifFavTileA11y": "GIF favori {number}"
++  "gifFavTileA11y": "GIF favori {number}",
++  "onboardingProtectionOneTimeTitle": "Uniquement lors de la configuration",
++  "onboardingProtectionOneTimeLine": "Ne peut être configuré que maintenant. Si vous choisissez « Pas maintenant », il ne pourra plus être activé ultérieurement."
+ }
+diff --git a/mobile/lib/l10n/app_hi.arb b/mobile/lib/l10n/app_hi.arb
+index 73154fa02..fa90cd8cf 100644
+--- a/mobile/lib/l10n/app_hi.arb
++++ b/mobile/lib/l10n/app_hi.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "यहाँ जोड़ने के लिए किसी चैट में या GIF में किसी GIF को दबाकर रखें।",
+   "gifFavMoveEarlier": "पहले ले जाएँ",
+   "gifFavMoveLater": "बाद में ले जाएँ",
+-  "gifFavTileA11y": "पसंदीदा GIF {number}"
++  "gifFavTileA11y": "पसंदीदा GIF {number}",
++  "onboardingProtectionOneTimeTitle": "केवल सेटअप के दौरान",
++  "onboardingProtectionOneTimeLine": "इसे केवल अभी सेट किया जा सकता है। यदि आप «अभी नहीं» चुनते हैं, तो इसे बाद में चालू नहीं किया जा सकता।"
+ }
+diff --git a/mobile/lib/l10n/app_id.arb b/mobile/lib/l10n/app_id.arb
+index b435f041d..d37de3850 100644
+--- a/mobile/lib/l10n/app_id.arb
++++ b/mobile/lib/l10n/app_id.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Tahan GIF di chat atau di GIF untuk menambahkannya di sini.",
+   "gifFavMoveEarlier": "Pindah ke depan",
+   "gifFavMoveLater": "Pindah ke belakang",
+-  "gifFavTileA11y": "GIF favorit {number}"
++  "gifFavTileA11y": "GIF favorit {number}",
++  "onboardingProtectionOneTimeTitle": "Hanya saat penyiapan awal",
++  "onboardingProtectionOneTimeLine": "Hanya dapat diatur sekarang. Jika memilih «Nanti saja», ini tidak dapat diaktifkan nanti."
+ }
+diff --git a/mobile/lib/l10n/app_it.arb b/mobile/lib/l10n/app_it.arb
+index 3525ac7cb..f67f44a31 100644
+--- a/mobile/lib/l10n/app_it.arb
++++ b/mobile/lib/l10n/app_it.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Tieni premuta una GIF in una chat o in GIF per aggiungerla qui.",
+   "gifFavMoveEarlier": "Sposta prima",
+   "gifFavMoveLater": "Sposta dopo",
+-  "gifFavTileA11y": "GIF preferita {number}"
++  "gifFavTileA11y": "GIF preferita {number}",
++  "onboardingProtectionOneTimeTitle": "Solo al primo avvio",
++  "onboardingProtectionOneTimeLine": "Si può configurare solo ora. Se scegli «Non ora», non potrà più essere attivato in seguito."
+ }
+diff --git a/mobile/lib/l10n/app_localizations.dart b/mobile/lib/l10n/app_localizations.dart
+index 74953573c..cdd221e7e 100644
+--- a/mobile/lib/l10n/app_localizations.dart
++++ b/mobile/lib/l10n/app_localizations.dart
+@@ -20212,4 +20212,16 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
+     'on GitHub with a reproducible sample app and the gen-l10n configuration '
+     'that was used.'
+   );
++
++  /// screens/onboarding_screen.dart: title of the warning card on advanced protection step
++  ///
++  /// In en, this message translates to:
++  /// **'Only during setup'**
++  String get onboardingProtectionOneTimeTitle;
++
++  /// screens/onboarding_screen.dart: line of the warning card on advanced protection step
++  ///
++  /// In en, this message translates to:
++  /// **'This can only be set up now. If you choose Not now, it cannot be turned on later.'**
++  String get onboardingProtectionOneTimeLine;
+ }
+diff --git a/mobile/lib/l10n/app_localizations_ar.dart b/mobile/lib/l10n/app_localizations_ar.dart
+index f4adc83d2..6fef28689 100644
+--- a/mobile/lib/l10n/app_localizations_ar.dart
++++ b/mobile/lib/l10n/app_localizations_ar.dart
+@@ -11908,4 +11908,10 @@ class AppLocalizationsAr extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'صورة GIF مفضلة $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'أثناء الإعداد فقط';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'لا يمكن إعداده إلا الآن. إذا اخترت «ليس الآن»، فلن تتمكن من تفعيله لاحقًا.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_de.dart b/mobile/lib/l10n/app_localizations_de.dart
+index 25e679a98..c8034307e 100644
+--- a/mobile/lib/l10n/app_localizations_de.dart
++++ b/mobile/lib/l10n/app_localizations_de.dart
+@@ -11668,4 +11668,10 @@ class AppLocalizationsDe extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'Lieblings-GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Nur bei der Ersteinrichtung';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Kann nur jetzt eingerichtet werden. Wenn du «Nicht jetzt» wählst, kann es später nicht mehr aktiviert werden.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_en.dart b/mobile/lib/l10n/app_localizations_en.dart
+index 74cf6ac1c..e1f04f905 100644
+--- a/mobile/lib/l10n/app_localizations_en.dart
++++ b/mobile/lib/l10n/app_localizations_en.dart
+@@ -11663,4 +11663,10 @@ class AppLocalizationsEn extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'Favourite GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Only during setup';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'This can only be set up now. If you choose Not now, it cannot be turned on later.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_es.dart b/mobile/lib/l10n/app_localizations_es.dart
+index 52489a524..df9d40281 100644
+--- a/mobile/lib/l10n/app_localizations_es.dart
++++ b/mobile/lib/l10n/app_localizations_es.dart
+@@ -11669,4 +11669,10 @@ class AppLocalizationsEs extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF favorito $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Solo durante la configuración';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Solo se puede configurar ahora. Si eliges «Ahora no», no se podrá activar más adelante.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_fa.dart b/mobile/lib/l10n/app_localizations_fa.dart
+index ec33c2be1..208812d41 100644
+--- a/mobile/lib/l10n/app_localizations_fa.dart
++++ b/mobile/lib/l10n/app_localizations_fa.dart
+@@ -11648,4 +11648,10 @@ class AppLocalizationsFa extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF برگزیده $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'فقط هنگام راه‌اندازی اولیه';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'فقط اکنون قابل تنظیم است. اگر «فعلاً نه» را انتخاب کنید، بعداً فعال نخواهد شد.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_fr.dart b/mobile/lib/l10n/app_localizations_fr.dart
+index d5b43db87..0af5e245e 100644
+--- a/mobile/lib/l10n/app_localizations_fr.dart
++++ b/mobile/lib/l10n/app_localizations_fr.dart
+@@ -11668,4 +11668,10 @@ class AppLocalizationsFr extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF favori $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Uniquement lors de la configuration';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Ne peut être configuré que maintenant. Si vous choisissez « Pas maintenant », il ne pourra plus être activé ultérieurement.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_hi.dart b/mobile/lib/l10n/app_localizations_hi.dart
+index 6a06ae243..ea732fbca 100644
+--- a/mobile/lib/l10n/app_localizations_hi.dart
++++ b/mobile/lib/l10n/app_localizations_hi.dart
+@@ -11656,4 +11656,10 @@ class AppLocalizationsHi extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'पसंदीदा GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'केवल सेटअप के दौरान';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'इसे केवल अभी सेट किया जा सकता है। यदि आप «अभी नहीं» चुनते हैं, तो इसे बाद में चालू नहीं किया जा सकता।';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_id.dart b/mobile/lib/l10n/app_localizations_id.dart
+index b42622a07..8347eb3ec 100644
+--- a/mobile/lib/l10n/app_localizations_id.dart
++++ b/mobile/lib/l10n/app_localizations_id.dart
+@@ -11598,4 +11598,10 @@ class AppLocalizationsId extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF favorit $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Hanya saat penyiapan awal';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Hanya dapat diatur sekarang. Jika memilih «Nanti saja», ini tidak dapat diaktifkan nanti.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_it.dart b/mobile/lib/l10n/app_localizations_it.dart
+index 0ecc297bd..ead577b2e 100644
+--- a/mobile/lib/l10n/app_localizations_it.dart
++++ b/mobile/lib/l10n/app_localizations_it.dart
+@@ -11670,4 +11670,10 @@ class AppLocalizationsIt extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF preferita $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Solo al primo avvio';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Si può configurare solo ora. Se scegli «Non ora», non potrà più essere attivato in seguito.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_pl.dart b/mobile/lib/l10n/app_localizations_pl.dart
+index c33d48ef3..3b530f4b2 100644
+--- a/mobile/lib/l10n/app_localizations_pl.dart
++++ b/mobile/lib/l10n/app_localizations_pl.dart
+@@ -11834,4 +11834,10 @@ class AppLocalizationsPl extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'Ulubiony GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Tylko podczas konfiguracji';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Można to skonfigurować tylko teraz. Jeśli wybierzesz «Nie teraz», nie będzie można tego włączyć później.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_pt.dart b/mobile/lib/l10n/app_localizations_pt.dart
+index 4f65e2908..7de9273ac 100644
+--- a/mobile/lib/l10n/app_localizations_pt.dart
++++ b/mobile/lib/l10n/app_localizations_pt.dart
+@@ -11668,4 +11668,10 @@ class AppLocalizationsPt extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF favorito $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Apenas durante a configuração';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Só pode ser configurado agora. Se escolher «Agora não», não poderá ser ativado mais tarde.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_ru.dart b/mobile/lib/l10n/app_localizations_ru.dart
+index 98bdbf440..785e953f2 100644
+--- a/mobile/lib/l10n/app_localizations_ru.dart
++++ b/mobile/lib/l10n/app_localizations_ru.dart
+@@ -11800,4 +11800,10 @@ class AppLocalizationsRu extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'Избранный GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Только при первой настройке';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Можно настроить только сейчас. Если выбрать «Не сейчас», включить позже будет невозможно.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_tr.dart b/mobile/lib/l10n/app_localizations_tr.dart
+index ac36b1b55..2581acd13 100644
+--- a/mobile/lib/l10n/app_localizations_tr.dart
++++ b/mobile/lib/l10n/app_localizations_tr.dart
+@@ -11654,4 +11654,10 @@ class AppLocalizationsTr extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'Favori GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Yalnızca kurulum sırasında';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Yalnızca şimdi ayarlanabilir. «Şimdi değil»i seçerseniz, daha sonra etkinleştirilemez.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_uk.dart b/mobile/lib/l10n/app_localizations_uk.dart
+index bb29de778..46db914ab 100644
+--- a/mobile/lib/l10n/app_localizations_uk.dart
++++ b/mobile/lib/l10n/app_localizations_uk.dart
+@@ -11797,4 +11797,10 @@ class AppLocalizationsUk extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'Обраний GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Лише під час першого налаштування';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Можна налаштувати лише зараз. Якщо вибрати «Не зараз», увімкнути пізніше буде неможливо.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_vi.dart b/mobile/lib/l10n/app_localizations_vi.dart
+index bca397e30..7cece8dd5 100644
+--- a/mobile/lib/l10n/app_localizations_vi.dart
++++ b/mobile/lib/l10n/app_localizations_vi.dart
+@@ -11598,4 +11598,10 @@ class AppLocalizationsVi extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return 'GIF yêu thích $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => 'Chỉ trong quá trình thiết lập';
++
++  @override
++  String get onboardingProtectionOneTimeLine => 'Chỉ có thể thiết lập ngay bây giờ. Nếu chọn «Để sau», bạn sẽ không thể bật lại sau.';
+ }
+diff --git a/mobile/lib/l10n/app_localizations_zh.dart b/mobile/lib/l10n/app_localizations_zh.dart
+index 2b35d95ae..ed740ef15 100644
+--- a/mobile/lib/l10n/app_localizations_zh.dart
++++ b/mobile/lib/l10n/app_localizations_zh.dart
+@@ -11598,9 +11598,13 @@ class AppLocalizationsZh extends AppLocalizations {
+   String gifFavTileA11y(String number) {
+     return '收藏的 GIF $number';
+   }
+-}
+ 
+-/// The translations for Chinese, using the Han script (`zh_Hant`).
++  @override
++  String get onboardingProtectionOneTimeTitle => '仅在首次设置时';
++
++  @override
++  String get onboardingProtectionOneTimeLine => '只能在此处设置。若选择“暂不”，日后将无法再次启用。';
++}
+ class AppLocalizationsZhHant extends AppLocalizationsZh {
+   AppLocalizationsZhHant(): super('zh_Hant');
+ 
+@@ -23076,4 +23080,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
+   String gifFavTileA11y(String number) {
+     return '收藏的 GIF $number';
+   }
++
++  @override
++  String get onboardingProtectionOneTimeTitle => '僅在首次設定時';
++
++  @override
++  String get onboardingProtectionOneTimeLine => '只能在此處設定。若選擇「以後再說」，日後將無法再次啟用。';
+ }
+diff --git a/mobile/lib/l10n/app_pl.arb b/mobile/lib/l10n/app_pl.arb
+index 197f9493d..ba6ce392e 100644
+--- a/mobile/lib/l10n/app_pl.arb
++++ b/mobile/lib/l10n/app_pl.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Przytrzymaj GIF w czacie lub w GIF-ach, aby dodać go tutaj.",
+   "gifFavMoveEarlier": "Przesuń wcześniej",
+   "gifFavMoveLater": "Przesuń później",
+-  "gifFavTileA11y": "Ulubiony GIF {number}"
++  "gifFavTileA11y": "Ulubiony GIF {number}",
++  "onboardingProtectionOneTimeTitle": "Tylko podczas konfiguracji",
++  "onboardingProtectionOneTimeLine": "Można to skonfigurować tylko teraz. Jeśli wybierzesz «Nie teraz», nie będzie można tego włączyć później."
+ }
+diff --git a/mobile/lib/l10n/app_pt.arb b/mobile/lib/l10n/app_pt.arb
+index 56b18cd95..949e38bde 100644
+--- a/mobile/lib/l10n/app_pt.arb
++++ b/mobile/lib/l10n/app_pt.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Segure um GIF em uma conversa ou em GIFs para adicionar aqui.",
+   "gifFavMoveEarlier": "Mover para antes",
+   "gifFavMoveLater": "Mover para depois",
+-  "gifFavTileA11y": "GIF favorito {number}"
++  "gifFavTileA11y": "GIF favorito {number}",
++  "onboardingProtectionOneTimeTitle": "Apenas durante a configuração",
++  "onboardingProtectionOneTimeLine": "Só pode ser configurado agora. Se escolher «Agora não», não poderá ser ativado mais tarde."
+ }
+diff --git a/mobile/lib/l10n/app_ru.arb b/mobile/lib/l10n/app_ru.arb
+index 81776273d..7882f70a8 100644
+--- a/mobile/lib/l10n/app_ru.arb
++++ b/mobile/lib/l10n/app_ru.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Удерживай GIF в чате или во вкладке GIF, чтобы добавить его сюда.",
+   "gifFavMoveEarlier": "Переместить раньше",
+   "gifFavMoveLater": "Переместить позже",
+-  "gifFavTileA11y": "Избранный GIF {number}"
++  "gifFavTileA11y": "Избранный GIF {number}",
++  "onboardingProtectionOneTimeTitle": "Только при первой настройке",
++  "onboardingProtectionOneTimeLine": "Можно настроить только сейчас. Если выбрать «Не сейчас», включить позже будет невозможно."
+ }
+diff --git a/mobile/lib/l10n/app_tr.arb b/mobile/lib/l10n/app_tr.arb
+index f05b4744b..27274b941 100644
+--- a/mobile/lib/l10n/app_tr.arb
++++ b/mobile/lib/l10n/app_tr.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Buraya eklemek için bir sohbette ya da GIF’lerde bir GIF’e basılı tut.",
+   "gifFavMoveEarlier": "Öne al",
+   "gifFavMoveLater": "Arkaya al",
+-  "gifFavTileA11y": "Favori GIF {number}"
++  "gifFavTileA11y": "Favori GIF {number}",
++  "onboardingProtectionOneTimeTitle": "Yalnızca kurulum sırasında",
++  "onboardingProtectionOneTimeLine": "Yalnızca şimdi ayarlanabilir. «Şimdi değil»i seçerseniz, daha sonra etkinleştirilemez."
+ }
+diff --git a/mobile/lib/l10n/app_uk.arb b/mobile/lib/l10n/app_uk.arb
+index 0137755e5..254d3f484 100644
+--- a/mobile/lib/l10n/app_uk.arb
++++ b/mobile/lib/l10n/app_uk.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Утримуй GIF у чаті або у вкладці GIF, щоб додати його сюди.",
+   "gifFavMoveEarlier": "Перемістити раніше",
+   "gifFavMoveLater": "Перемістити пізніше",
+-  "gifFavTileA11y": "Обраний GIF {number}"
++  "gifFavTileA11y": "Обраний GIF {number}",
++  "onboardingProtectionOneTimeTitle": "Лише під час першого налаштування",
++  "onboardingProtectionOneTimeLine": "Можна налаштувати лише зараз. Якщо вибрати «Не зараз», увімкнути пізніше буде неможливо."
+ }
+diff --git a/mobile/lib/l10n/app_vi.arb b/mobile/lib/l10n/app_vi.arb
+index cf1d2b550..072b633d5 100644
+--- a/mobile/lib/l10n/app_vi.arb
++++ b/mobile/lib/l10n/app_vi.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "Giữ một GIF trong cuộc trò chuyện hoặc trong GIF để thêm vào đây.",
+   "gifFavMoveEarlier": "Chuyển lên trước",
+   "gifFavMoveLater": "Chuyển ra sau",
+-  "gifFavTileA11y": "GIF yêu thích {number}"
++  "gifFavTileA11y": "GIF yêu thích {number}",
++  "onboardingProtectionOneTimeTitle": "Chỉ trong quá trình thiết lập",
++  "onboardingProtectionOneTimeLine": "Chỉ có thể thiết lập ngay bây giờ. Nếu chọn «Để sau», bạn sẽ không thể bật lại sau."
+ }
+diff --git a/mobile/lib/l10n/app_zh.arb b/mobile/lib/l10n/app_zh.arb
+index c908d1ba5..aafbb4ea5 100644
+--- a/mobile/lib/l10n/app_zh.arb
++++ b/mobile/lib/l10n/app_zh.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "在聊天或 GIF 中长按一个 GIF，即可添加到这里。",
+   "gifFavMoveEarlier": "前移",
+   "gifFavMoveLater": "后移",
+-  "gifFavTileA11y": "收藏的 GIF {number}"
++  "gifFavTileA11y": "收藏的 GIF {number}",
++  "onboardingProtectionOneTimeTitle": "仅在首次设置时",
++  "onboardingProtectionOneTimeLine": "只能在此处设置。若选择“暂不”，日后将无法再次启用。"
+ }
+diff --git a/mobile/lib/l10n/app_zh_Hant.arb b/mobile/lib/l10n/app_zh_Hant.arb
+index 365d792fd..63358d20c 100644
+--- a/mobile/lib/l10n/app_zh_Hant.arb
++++ b/mobile/lib/l10n/app_zh_Hant.arb
+@@ -3310,5 +3310,7 @@
+   "gifFavEmptyLine": "在聊天或 GIF 中長按一個 GIF，即可加入這裡。",
+   "gifFavMoveEarlier": "往前移",
+   "gifFavMoveLater": "往後移",
+-  "gifFavTileA11y": "收藏的 GIF {number}"
++  "gifFavTileA11y": "收藏的 GIF {number}",
++  "onboardingProtectionOneTimeTitle": "僅在首次設定時",
++  "onboardingProtectionOneTimeLine": "只能在此處設定。若選擇「以後再說」，日後將無法再次啟用。"
+ }
+diff --git a/mobile/lib/screens/onboarding_screen.dart b/mobile/lib/screens/onboarding_screen.dart
+index 8161dec41..cd232a06a 100644
+--- a/mobile/lib/screens/onboarding_screen.dart
++++ b/mobile/lib/screens/onboarding_screen.dart
+@@ -11,7 +11,7 @@
+ import 'dart:async';
+ import 'dart:math' as math;
+ import 'dart:ui' as ui;
+-import 'package:flutter/material.dart';
++import 'package:flutter/material.dart' hide LockState;
+ import 'package:flutter/services.dart';
+ import '../widgets/press_scale.dart';
+ import '../widgets/fit_column.dart';
+@@ -59,9 +59,20 @@ import 'helper_sheet.dart' show showHelperSheet;
+ import '../desktop/desktop_mode.dart'
+     show desktopRun, onDesktop, takeDeskLinkAtStart;
+ import 'desk_run_section.dart';
++import '../lock_state.dart' show LockState, lockState;
++import 'pin_flow_screen.dart' show PinFlowScreen, PinFlow, PinsHost;
+ 
+ /// the onboarding's steps, by name: a step is never found by its place
+-enum OnboardStep { welcome, identity, name, route, delivery, desk, invite }
++enum OnboardStep {
++  welcome,
++  identity,
++  name,
++  route,
++  delivery,
++  desk,
++  protection,
++  invite,
++}
+ 
+ /// the steps in order. the route comes before the way messages arrive:
+ /// google push and the helper app need the private route. a phone picks how
+@@ -72,6 +83,7 @@ List<OnboardStep> onboardingSteps({bool desk = false}) => [
+   OnboardStep.name,
+   OnboardStep.route,
+   desk ? OnboardStep.desk : OnboardStep.delivery,
++  OnboardStep.protection,
+   OnboardStep.invite,
+ ];
+ 
+@@ -215,6 +227,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
+       ),
+       OnboardStep.delivery => _DeliveryScreen(onContinue: _next),
+       OnboardStep.desk => _DeskRunScreen(onContinue: _next),
++      OnboardStep.protection => _ProtectionScreen(
++        onContinue: _next,
++        lock: lockState,
++        host: const PinsHost(),
++      ),
+       OnboardStep.invite => _InviteScreen(onComplete: widget.onComplete),
+     };
+   }
+@@ -1791,6 +1808,83 @@ class _DeskRunScreen extends StatelessWidget {
+   }
+ }
+ 
++// ---- 05b advanced protection ----
++//
++// optional vault setup on first start: isolates private chats under a second
++// pin. chosen here once, and never replaced or set from outside
++
++class _ProtectionScreen extends StatefulWidget {
++  final VoidCallback onContinue;
++  final LockState lock;
++  final PinsHost host;
++  const _ProtectionScreen({
++    required this.onContinue,
++    required this.lock,
++    required this.host,
++  });
++
++  @override
++  State<_ProtectionScreen> createState() => _ProtectionScreenState();
++}
++
++class _ProtectionScreenState extends State<_ProtectionScreen> {
++  bool _busy = false;
++
++  Future<void> _setup() async {
++    if (_busy) return;
++    setState(() => _busy = true);
++    final nav = Navigator.of(context);
++    final ok = await nav.push<bool>(
++      haloRoute(
++        PinFlowScreen(
++          flow: PinFlow.vault,
++          lock: widget.lock,
++          host: widget.host,
++        ),
++      ),
++    );
++    if (!mounted) return;
++    setState(() => _busy = false);
++    if (ok == true) widget.onContinue();
++  }
++
++  @override
++  Widget build(BuildContext context) {
++    return _StepPage(
++      footer: [
++        _Cta(
++          label: l10n.pinsSetAPin,
++          onTap: _setup,
++        ),
++        const SizedBox(height: 2),
++        Center(
++          child: _TextLink(
++            label: l10n.flowVaultNotNow,
++            onTap: widget.onContinue,
++          ),
++        ),
++      ],
++      children: [
++        _Headline(l10n.pinsAdvanced),
++        const SizedBox(height: 12),
++        _lead(onDesktop ? l10n.pinsAdvancedLineDesk : l10n.pinsAdvancedLine),
++        const SizedBox(height: 20),
++        _Card(
++          icon: Icons.visibility_off_outlined,
++          title: l10n.pinsHiddenChats,
++          desc: '${l10n.restoreHiddenLockFirst}\n\n${l10n.flowVault1}',
++        ),
++        const SizedBox(height: 10),
++        _Card(
++          icon: Icons.lock_clock_outlined,
++          title: l10n.onboardingProtectionOneTimeTitle,
++          desc: l10n.onboardingProtectionOneTimeLine,
++        ),
++      ],
++    );
++  }
++}
++
+ // ---- 06 invite someone ----
+ //
+ // the link goes out in whatever messenger they already share: it opens
+diff --git a/mobile/lib/screens/pin_flow_screen.dart b/mobile/lib/screens/pin_flow_screen.dart
+index 212537784..62f3e3c5a 100644
+--- a/mobile/lib/screens/pin_flow_screen.dart
++++ b/mobile/lib/screens/pin_flow_screen.dart
+@@ -147,7 +147,7 @@ class _PinFlowScreenState extends State<PinFlowScreen>
+   bool get _restoring => _vault && widget.restoring;
+   // no app lock yet: its pin comes first. a lock turned off in the decoy
+   // counts as none, as it does everywhere else there
+-  late final bool _needsLock = _restoring && !_lock.lockOn;
++  late final bool _needsLock = !_lock.lockOn;
+   // the flow that made a new vault, whose key goes however it ends
+   bool get _setup => _vault && !widget.skipIntro && !widget.restoring;
+   Color get _tint => _wipe
+@@ -357,7 +357,7 @@ class _PinFlowScreenState extends State<PinFlowScreen>
+       }
+       _first = '';
+       HapticFeedback.lightImpact();
+-      _go(_restoring ? _Step.done : _Step.pick);
++      _go((_restoring || widget.host.hideable().isEmpty) ? _Step.done : _Step.pick);
+     } catch (e) {
+       if (mounted) {
+         await _rechoose(e is PinKeyBusy ? l10n.lockKeyBusy : l10n.flowNotSet);
+@@ -461,11 +461,14 @@ class _PinFlowScreenState extends State<PinFlowScreen>
+       ],
+       PinFlow.vault => [
+         (Icons.visibility_off_outlined, l10n.flowVault1),
++        if (_needsLock)
++          (Icons.lock_outline_rounded, l10n.restoreHiddenLockFirst),
+         (Icons.notifications_off_outlined, l10n.flowVault2),
+         // no finger on a computer
+         if (!onDesktop) (Icons.fingerprint, l10n.flowVaultFinger),
+         (Icons.dialpad_outlined, l10n.flowVaultDigits),
+-        (Icons.autorenew_rounded, l10n.flowVaultReplaceShown),
++        if (!_needsLock)
++          (Icons.autorenew_rounded, l10n.flowVaultReplaceShown),
+         (Icons.gavel_outlined, l10n.flowLawShown),
+       ],
+     };
+@@ -525,10 +528,10 @@ class _PinFlowScreenState extends State<PinFlowScreen>
+         _button(l10n.commonContinue, () {
+           HapticFeedback.selectionClick();
+           _go(
+-            !_restoring
+-                ? _Step.check
+-                : _needsLock
++            _needsLock
+                 ? _Step.appChoose
++                : !_restoring
++                ? _Step.check
+                 : _Step.choose,
+           );
+         }),
+diff --git a/mobile/lib/screens/pins_screen.dart b/mobile/lib/screens/pins_screen.dart
+index 607ba66f2..0d4dd02d9 100644
+--- a/mobile/lib/screens/pins_screen.dart
++++ b/mobile/lib/screens/pins_screen.dart
+@@ -188,10 +188,10 @@ class _PinsScreenState extends State<PinsScreen> {
+         : await _host.removeDecoy();
+   }
+ 
+-  // outside the vault the row always leads to setup, which replaces any
+-  // hidden chats there are. inside it, the hidden chats' own choices
++  // inside the vault, the hidden chats' own choices: setup is done on first
++  // start and never replaced from outside
+   Future<void> _hiddenRow() async {
+-    if (!_lock.inVault) return _flow(PinFlow.vault);
++    if (!_lock.inVault) return;
+     final r = await showChangeOrRemoveSheet(
+       context,
+       title: l10n.pinsHiddenChats,
+@@ -350,20 +350,16 @@ class _PinsScreenState extends State<PinsScreen> {
+                             : HaloColors.text,
+                         onTap: on ? _decoyRow : null,
+                       ),
+-                    if (_host.decoyAndVault)
++                    // hidden chats show only from inside: setup is done on
++                    // first start and never replaced or set from outside
++                    if (_host.decoyAndVault && vault)
+                       _ExtraRow(
+                         icon: Icons.visibility_off_outlined,
+                         tint: HaloColors.violet,
+                         name: l10n.pinsHiddenChats,
+                         line: l10n.pinsHiddenLine,
+-                        state: !on
+-                            ? l10n.pinsNeedsAPinFirst
+-                            : vault
+-                            ? l10n.pinsSet
+-                            : l10n.pinsSetUp,
+-                        stateColor: on && vault
+-                            ? HaloColors.violet
+-                            : HaloColors.text,
++                        state: l10n.pinsSet,
++                        stateColor: HaloColors.violet,
+                         onTap: on ? _hiddenRow : null,
+                       ),
+                     if (_host.decoyAndVault)
