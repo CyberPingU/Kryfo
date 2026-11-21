@@ -27,6 +27,10 @@ sed -i 's|mavenCentral()|maven { url = uri("https://maven-central.storage-downlo
 sed -i 's|applicationId = "app.kryfo"|applicationId = "work.dreadful.kryfo"|' \
   "$ROOT/mobile/android/app/build.gradle.kts"
 
+# Set Dreadful Slate Cyan launcher icon background
+sed -i 's|<color name="ic_launcher_seal">#E58A2B</color>|<color name="ic_launcher_seal">#1E6B8A</color>|' \
+  "$ROOT/mobile/android/app/src/main/res/values/colors.xml"
+
 # Raise file limit for cgo / openssl builds
 ulimit -n 65536 2>/dev/null || true
 
