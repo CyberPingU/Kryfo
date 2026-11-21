@@ -69,6 +69,9 @@ jobs:
 
       - name: Prepare patched source
         if: steps.check_release.outputs.should_build == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.DREADFUL_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
         run: |
           TAG="${{ steps.target.outputs.tag }}"
           echo "Staging patch and build script..."
@@ -93,13 +96,13 @@ jobs:
           sed -i 's|appId.get() == "app.kryfo.bridgetest"|appId.get() == "app.kryfo.bridgetest" \|\| appId.get().endsWith(".bridgetest")|' \
             mobile/android/app/build.gradle.kts
 
-          if [ -n "${{ secrets.DREADFUL_KEYSTORE_BASE64 }}" ]; then
+          if [ -n "$KEYSTORE_BASE64" ]; then
             echo "Setting up release signing keystore from secret..."
-            echo "${{ secrets.DREADFUL_KEYSTORE_BASE64 }}" | base64 -d > mobile/android/app/dreadful.keystore
+            echo "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > mobile/android/app/dreadful.keystore
             cp mobile/android/app/dreadful.keystore mobile/android/dreadful.keystore
             printf "storePassword=%s\nkeyPassword=%s\nkeyAlias=dreadful\nstoreFile=dreadful.keystore\n" \
-              "${{ secrets.DREADFUL_KEY_PASSWORD }}" \
-              "${{ secrets.DREADFUL_KEY_PASSWORD }}" > mobile/android/key.properties
+              "$KEYSTORE_PASSWORD" \
+              "$KEYSTORE_PASSWORD" > mobile/android/key.properties
             echo "Release keystore configured successfully."
           fi
 
