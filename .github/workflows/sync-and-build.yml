@@ -200,7 +200,7 @@ jobs:
             - **Coercion Resistance**: Mandatory App PIN + optional hidden chats PIN explained upfront.
             - **Dual Flavors**:
               - **FOSS (`-foss.apk` / default)**: Completely tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush ntfy).
-              - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping via `relay.dreadful.work` gateway) without any companion app needed.
+              - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping via `r.dreadful.work` gateway) without any companion app needed.
           files: |
             Kryfo-Dreadful-*.apk
             Kryfo-Dreadful-*.sha256

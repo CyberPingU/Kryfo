@@ -23,7 +23,7 @@ import 'helper_push.dart';
 
 // with a 480-character seal an endpoint is 510 of the relay's 512: a longer
 // gateway name needs a shorter seal (relay-live/knock.go knockSealedMax)
-const kPushGateway = 'https://relay.dreadful.work/push/';
+const kPushGateway = 'https://r.dreadful.work/push/';
 // the gateway's public key, pinned like the version key. the private half
 // is made on the server with `kryfo-push keygen` and never leaves it
 const kPushGatewayPub = '_MGTaqH-2QhNJvG6IB3VYzBPcomkme3X2Cwkqax-BT4';
