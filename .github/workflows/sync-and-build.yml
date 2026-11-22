@@ -92,6 +92,9 @@ jobs:
           echo "Applying vault onboarding patch..."
           git apply /tmp/dreadful-assets/0001-vault-onboarding-plausible-absence.patch
 
+          echo "Applying push gateway relay.dreadful.work patch..."
+          git apply /tmp/dreadful-assets/0002-push-gateway-relay-dreadful.patch
+
           echo "Configuring package work.dreadful.kryfo..."
           sed -i 's|applicationId = "app.kryfo"|applicationId = "work.dreadful.kryfo"|' \
             mobile/android/app/build.gradle.kts
@@ -131,6 +134,14 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Inject Google Services configuration
+        if: steps.check_release.outputs.should_build == 'true' && env.GOOGLE_SERVICES_JSON != ''
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          mkdir -p mobile/android/app/src/play
+          echo "$GOOGLE_SERVICES_JSON" > mobile/android/app/src/play/google-services.json
+
       - name: Fix workspace permissions
         if: steps.check_release.outputs.should_build == 'true'
         run: chmod -R a+rwX "$GITHUB_WORKSPACE"
@@ -150,10 +161,19 @@ jobs:
       - name: Prepare release assets
         if: steps.check_release.outputs.should_build == 'true'
         run: |
-          RELEASE_APK="mobile/build/app/outputs/flutter-apk/app-foss-release.apk"
-          DEST_NAME="Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk"
-          cp "$RELEASE_APK" "$DEST_NAME"
-          sha256sum "$DEST_NAME" > "${DEST_NAME}.sha256"
+          FOSS_APK="mobile/build/app/outputs/flutter-apk/app-foss-release.apk"
+          DEST_FOSS="Kryfo-Dreadful-${{ steps.target.outputs.tag }}-foss.apk"
+          cp "$FOSS_APK" "$DEST_FOSS"
+          cp "$FOSS_APK" "Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk"
+          sha256sum "$DEST_FOSS" > "${DEST_FOSS}.sha256"
+          sha256sum "Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk" > "Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk.sha256"
+
+          PLAY_APK="mobile/build/app/outputs/flutter-apk/app-play-release.apk"
+          if [[ -f "$PLAY_APK" ]]; then
+            DEST_PLAY="Kryfo-Dreadful-${{ steps.target.outputs.tag }}-play.apk"
+            cp "$PLAY_APK" "$DEST_PLAY"
+            sha256sum "$DEST_PLAY" > "${DEST_PLAY}.sha256"
+          fi
 
       - name: Create GitHub Release
         if: steps.check_release.outputs.should_build == 'true'
@@ -172,10 +192,12 @@ jobs:
             #### Changes in this build:
             - **Application ID**: `work.dreadful.kryfo` (installs cleanly alongside official Kryfo without conflict).
             - **Vault Setup during Onboarding**: Configurable at first start with strict plausible absence (no trace in everyday settings; skipping is irreversible).
-            - **Coercion Resistance**: Dual PIN setup (everyday PIN + hidden chats PIN) explained upfront.
-            - **FOSS Flavor**: Completely tracker-free, zero Google/FCM dependencies (Tor always-on / UnifiedPush ntfy).
+            - **Coercion Resistance**: Mandatory App PIN + optional hidden chats PIN explained upfront.
+            - **Dual Flavors**:
+              - **FOSS (`-foss.apk` / default)**: Completely tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush ntfy).
+              - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping via `relay.dreadful.work` gateway) without any companion app needed.
           files: |
-            Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk
-            Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk.sha256
+            Kryfo-Dreadful-*.apk
+            Kryfo-Dreadful-*.sha256
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
