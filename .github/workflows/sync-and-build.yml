@@ -76,9 +76,9 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
         run: |
           TAG="${{ steps.target.outputs.tag }}"
-          echo "Staging patch and build script..."
+          echo "Staging patches and build script..."
           mkdir -p /tmp/dreadful-assets
-          cp patches/0001-vault-onboarding-plausible-absence.patch /tmp/dreadful-assets/
+          cp patches/*.patch /tmp/dreadful-assets/
           cp packaging/build-dreadful-apk.sh /tmp/dreadful-assets/
 
           echo "Checking out $TAG..."
