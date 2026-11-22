@@ -189,15 +189,13 @@ jobs:
           body: |
             ### Kryfo Dreadful (${{ steps.target.outputs.tag }})
 
-            Downstream hardened build of [Kryfo](https://github.com/GnosiWorks/Kryfo) based on upstream `${{ steps.target.outputs.tag }}`.
+            Hardened private fork of Kryfo based on upstream `${{ steps.target.outputs.tag }}`.
 
-            > [!IMPORTANT]
-            > **Please support and use the official Kryfo app by Marios (GnosiWorks) at [kryfo.app](https://kryfo.app)!**
-
-            #### Changes in this build:
+            #### Features & Hardening:
             - **Application ID**: `work.dreadful.kryfo` (installs cleanly alongside official Kryfo without conflict).
             - **Vault Setup during Onboarding**: Configurable at first start with strict plausible absence (no trace in everyday settings; skipping is irreversible).
             - **Coercion Resistance**: Mandatory App PIN + optional hidden chats PIN explained upfront.
+            - **Clean Slate**: Removed developer default contact, upstream support/social links, and repointed source code links to this repository.
             - **Dual Flavors**:
               - **FOSS (`-foss.apk` / default)**: Completely tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush ntfy).
               - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping via `r.dreadful.work` gateway) without any companion app needed.

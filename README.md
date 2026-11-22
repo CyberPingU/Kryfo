@@ -1,127 +1,112 @@
-# Kryfo (Dreadful Hardened Build)
+# Kryfo (Dreadful Hardened Fork)
 
-> [!IMPORTANT]
-> **Downstream / Experimental Build Notice**
+> [!NOTE]
+> **Hardened Fork Notice**
 >
-> This repository is a downstream, experimental build of **Kryfo**, created specifically to test continuous coercion and plausible absence enhancements.
+> This repository is a private, hardened downstream fork of [Kryfo](https://github.com/GnosiWorks/Kryfo), engineered for enhanced coercion resistance, strict plausible absence, self-hosted push infrastructure, and privacy.
 >
-> **Please use and support the official Kryfo project by Marios (GnosiWorks)!**
-> * Official Website & Downloads: [kryfo.app](https://kryfo.app)
-> * Upstream Repository: [github.com/GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo)
-> * Sponsor the developer: [OpenSats Project Grant](https://opensats.org)
->
-> This downstream version is packaged under the application ID `work.dreadful.kryfo` so that it installs side-by-side with official Kryfo without interfering with or replacing official installations.
+> Packaged under application ID `work.dreadful.kryfo` with a custom slate cyan seal (`#1E6B8A`) so it installs cleanly side-by-side with official upstream releases without conflict.
 
-## Hardened Modifications in this Build
+## Hardened Features & Enhancements
 
-Compared to upstream Kryfo, this build introduces specific hardening measures for coercion resistance and strict plausible absence:
+Compared to upstream Kryfo, this build introduces specific hardening measures, privacy improvements, and infrastructure independence:
 
 - **Independent Application ID (`work.dreadful.kryfo`)**:
   Installs and operates side-by-side with the official Kryfo app without package or signature conflicts.
 - **Distinct Visual Identity (Slate Cyan Seal `#1E6B8A`)**:
-  The launcher icon seal background is tinted dark slate cyan instead of GnosiWorks orange, avoiding visual confusion on the home screen.
-- **Mandatory App Lock PIN**:
-  Setting a main App PIN (4+ digits) is required during initial onboarding and cannot be skipped. Once set, the app lock cannot be disabled in Settings (only changed), ensuring private keys and databases are never exposed in plaintext.
-- **One-Time Secret Vault Setup (Strict Plausible Absence)**:
-  During onboarding, after configuring the mandatory main PIN, users are offered the optional choice to configure a second, independent PIN (6+ digits) for secret hidden chats.
-  - If skipped, no vault is created.
-  - Crucially, no vault setup or mention is exposed in everyday Settings from the outside. An adversary inspecting the device cannot tell whether a vault is active or was declined.
-  - Secret chats can only be opened and managed from within the vault by typing the secret PIN on the keypad.
-- **100% FOSS & Tracker-Free**:
-  Built from source using the reproducible container toolchain with zero proprietary Google/FCM dependencies (Tor always-on, optional UnifiedPush via ntfy).
-- **Persistent Signing for Automated Updates**:
-  Signed with a permanent dedicated release keystore, enabling direct, seamless in-app updates via [Obtainium](https://github.com/ImranR98/Obtainium) straight from this repository's GitHub Releases.
+  The launcher icon seal background is tinted dark slate cyan instead of upstream orange, avoiding visual confusion on the home screen.
+- **Coercion Resistance & Vault (Strict Plausible Absence)**:
+  - **Mandatory App Lock PIN**: Setting a main App PIN (4+ digits) is required during initial onboarding and cannot be skipped. Once set, the app lock cannot be disabled in Settings (only changed), ensuring private keys and databases are never exposed in plaintext.
+  - **One-Time Secret Vault Setup**: During onboarding, after configuring the mandatory main PIN, users are offered the optional choice to configure a second, independent PIN (6+ digits) for secret hidden chats.
+    - If skipped, no vault is created.
+    - Crucially, no vault setup or mention is exposed in everyday Settings from the outside. An adversary inspecting the device cannot tell whether a vault is active or was declined.
+    - Secret chats can only be opened and managed from within the vault by typing the secret PIN on the keypad.
+- **Clean Slate (No Upstream Developer Telemetry or Contacts)**:
+  - Removed the hardcoded developer contact card ("Marios") from the chat list.
+  - Removed devchat, story submission, and upstream support reporting (`gnosiworks@proton.me`) from Settings.
+  - Removed upstream social media links (`FollowSection`).
+  - Repointed all source code and license references to [github.com/CyberPingU/Kryfo](https://github.com/CyberPingU/Kryfo).
+- **Dual Flavors & Self-Hosted Push Gateway**:
+  - **FOSS (`-foss.apk`)**: 100% tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush via ntfy).
+  - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping) routed through private self-hosted push gateway at `r.dreadful.work` (ensuring URLs remain under the 512-byte Tor/relay seal limit). Works reliably without battery drain or companion apps on Sandboxed Google Play (GrapheneOS) and standard Android.
+- **Automated CI & Reproducible Container Toolchain**:
+  - Automatically checks and syncs upstream tags via GitHub Actions.
+  - Dynamically applies all modular patches (`patches/*.patch`) on clean upstream checkouts.
+  - Built using the reproducible container toolchain and permanently signed with a dedicated release keystore for seamless updates via [Obtainium](https://github.com/ImranR98/Obtainium).
 
 ---
 
+## About Kryfo
+
 Kryfo is a private messenger for Android, with beta builds for Windows and Linux.
-There is no phone number, no email and no account, and messages travel end to end encrypted over Tor.
+There is no phone number, no email and no account, and messages travel end-to-end encrypted over Tor.
 
-## Who it's for
+### Core Principles
 
-People who don't want their messages tied to a phone number or a real name. Journalists and their sources, activists, people on networks that block or watch messengers, and anyone who would rather not be findable by default.
+- **No phone number, email or account.** Your identity is three words, generated on your phone. Nobody can look you up unless you pick a public @name, which is disabled by default.
+- **Tor by default.** Messages go phone-to-phone over Tor when both phones are online, and otherwise wait sealed on Nostr relays reached through Tor. When Tor is blocked, automatic mode tries bridges (Snowflake, WebTunnel, obfs4) and keeps the first one that works. Fast mode connects directly to designated relays (THREAT_MODEL.md outlines the trade-offs).
+- **Signal protocol, post-quantum.** Chats use libsignal. Between modern clients, chats start with PQXDH and run SPQR (Signal's post-quantum ratchet) alongside the double ratchet.
+- **Decoy PIN and hidden chats.** A decoy PIN opens an empty Kryfo, as if freshly installed. Hidden chats open only with their dedicated vault PIN. A wipe PIN permanently destroys all local data.
+- **Zero-knowledge relays.** No accounts, no IP logs, no contact lists, no member lists. When the recipient is offline, encrypted messages wait sealed on relays for up to 14 days. Relays cannot decrypt messages or determine sender identities.
+- **No telemetry, no contact upload, no ads.**
 
-## What's different
+Also included: encrypted groups, files up to 50 MB, voice notes with on-device transcripts, disappearing messages, desktop companion pairing, offline translation, encrypted backups, and customizable disguised home screen icons.
 
-- **No phone number, email or account.** Your identity is three words, made on your phone. Nobody can look you up unless you pick a public @name, and that is off until you do.
-- **Tor by default.** On Private, the default, messages go phone to phone over Tor when both phones are online, and otherwise wait sealed on Nostr relays, reached through Tor. When Tor is blocked, automatic mode tries bridges (Snowflake, WebTunnel, obfs4) and keeps the first one that works. Tested in heavily censored countries. Fast skips Tor and connects straight to our two relays, which then see your IP address and don't write it down. THREAT_MODEL.md says what it gives up.
-- **Signal protocol, post-quantum.** Chats use libsignal. Between 0.6 phones a chat starts with PQXDH and runs SPQR, Signal's post-quantum ratchet, next to the double ratchet. Older chats move over once both sides have 0.6. docs/FORWARD_SECRECY.md has the details.
-- **Decoy PIN and hidden chats.** A decoy PIN opens an empty Kryfo, as if just installed. Hidden chats open only with their own PIN and leave no trace in the everyday app. A wipe PIN removes Kryfo from the phone.
-- **Our servers keep no logs.** No accounts, no IP logs, no contact lists, no member lists. When the other side is offline, a message waits sealed for up to 14 days: on Private on our two relays and a few public ones, on Fast on our two relays, with public ones only as a backup through Tor while ours are down. A relay can't read it and doesn't learn who sent it. docs/SERVERS.md lists what each server could see.
-- **No contact upload, no analytics, no ads.**
-
-Optional push: a UnifiedPush app such as ntfy can wake Kryfo, off by default. Our relay sends it an empty knock and Kryfo still fetches over Tor. PRIVACY.md says what the helper's server learns. Google push exists only in the Google Play build, and stays off until you pick it.
-
-Also in the app: groups, files up to 50 MB, voice notes with on-device transcripts, disappearing messages, linking a computer to your phone, offline translation, encrypted backups and a home screen icon that can look like an everyday app. CHANGELOG.md has the full list.
-
-## Status
-
-Kryfo is alpha software, written by one developer and 2 helpers. It has not been audited yet.
-
-Cure53 has quoted €15,470 for an independent security audit. It is booked once it is funded, and the full report will be public. If a funder brings its own audit firm, we use theirs. You can help fund it on [Open Collective](https://opencollective.com/kryfo/projects/independent-security-audit).
-
-Read [THREAT_MODEL.md](THREAT_MODEL.md) before you rely on Kryfo. It says plainly what Kryfo protects against and what it doesn't. Don't rely on it where a mistake would put you in danger.
+---
 
 ## Install
 
-Install Kryfo only from these four places:
+Download release APKs from [GitHub Releases](https://github.com/CyberPingU/Kryfo/releases):
 
-- **F-Droid:** [f-droid.org/packages/app.kryfo](https://f-droid.org/packages/app.kryfo/)
-- **GitHub:** the [releases page](https://github.com/GnosiWorks/Kryfo/releases), with SHA-256 sums for every file. The universal APK installs on every ARM phone.
-- **kryfo.app:** [kryfo.app/download](https://kryfo.app/download) has every build in one place.
-- **Google Play:** [play.google.com/store/apps/details?id=app.kryfo](https://play.google.com/store/apps/details?id=app.kryfo)
+- **`Kryfo-Dreadful-v*-play.apk`**: Recommended for devices with Google Play Services or GrapheneOS Sandboxed Google Play. Uses our self-hosted push gateway (`r.dreadful.work`) for instant push wake-ups without running persistent background sockets.
+- **`Kryfo-Dreadful-v*-foss.apk`**: 100% FOSS, zero Google dependencies. Ideal for fully de-Googled devices using Tor persistent connection or UnifiedPush (ntfy).
 
-Copies on other sites, such as APK mirrors, are not ours, even when they look the same.
+### Automatic Updates with Obtainium
+To receive automatic update notifications and one-click installs:
+1. Open [Obtainium](https://github.com/ImranR98/Obtainium).
+2. Tap **Add App** and paste `https://github.com/CyberPingU/Kryfo`.
+3. In **Filter APKs by regular expression**, enter your desired flavor (e.g., `-play\.apk$` or `-foss\.apk$`).
+4. Save and install.
 
-Windows and Linux (beta) are on the releases page and on kryfo.app. The Windows installer is not signed yet, so SmartScreen warns before it runs. The Linux build needs glibc 2.38 or newer: Ubuntu 24.04 or newer, Debian 13, Fedora 39 or newer.
+---
 
-New contacts need 0.6 or newer on both phones. Chats with people still on 0.5.3 keep working; ask them to update before you add each other.
+## Build from Source
 
-### Verify
+The build uses a reproducible container toolchain. For local builds:
 
-Release APKs are reproducible. F-Droid builds Kryfo from the tagged source and publishes its build only if every byte matches ours. You can run the same check with `repro/verify.sh`, see [repro/README.md](repro/README.md).
+```bash
+cd engine && ./build.sh
+cd .. && mobile/native/kryfo_signal/build-android.sh
+cd mobile && flutter pub get --offline
+flutter build apk --release --split-per-abi --flavor play # or --flavor foss
+```
 
-The release signing certificate (SHA-256):
+Or run the automated packaging script:
 
-    10928a61642c5cc471a99869e2ea4e2d4d70026e797dfba48c0f306b5b3473db
+```bash
+./packaging/build-dreadful-apk.sh play
+```
 
-Google Play installs are signed by Google's Play app signing key instead. Moving between Play and GitHub or F-Droid needs a backup, an uninstall and a restore.
+---
 
-The Windows build runs in public on GitHub Actions (.github/workflows/windows.yml). packaging/windows/CI.md says how to compare a download with a build of your own.
+## Documentation
 
-## Build from source
+- [THREAT_MODEL.md](THREAT_MODEL.md): Threat model and security guarantees
+- [PRIVACY.md](PRIVACY.md): Data handling and server privacy specifications
+- [FORWARD_SECRECY.md](docs/FORWARD_SECRECY.md): Forward secrecy and post-quantum ratcheting
+- [SERVERS.md](docs/SERVERS.md): Relay and server architecture details
+- [BUILDING.md](BUILDING.md): Build instructions and toolchain details
+- [CHANGELOG.md](CHANGELOG.md): Upstream release history
 
-[BUILDING.md](BUILDING.md) has the toolchain versions, the desktop builds and the Flatpak. The short version for Android:
+---
 
-    cd engine && ./build.sh
-    cd .. && mobile/native/kryfo_signal/build-android.sh
-    cd mobile && flutter pub get --offline
-    flutter build apk --release --split-per-abi --flavor foss
+## Security
 
-## Docs
+If you discover a security vulnerability in this fork, please report it privately via GitHub:
+- [Submit a Private Security Advisory](https://github.com/CyberPingU/Kryfo/security/advisories/new)
 
-- [THREAT_MODEL.md](THREAT_MODEL.md): what Kryfo protects against, and what it doesn't
-- [PRIVACY.md](PRIVACY.md): what each part of Kryfo sends and what our servers see
-- [FORWARD_SECRECY.md](docs/FORWARD_SECRECY.md): what a key taken from a phone can open later
-- [SERVERS.md](docs/SERVERS.md): every server we run, where it runs and what it could log
-- [RELAYS.md](docs/RELAYS.md): the relay code and how it is deployed
-- [BUILDING.md](BUILDING.md): every build, for Android and the desktop
-- [RELEASING.md](docs/RELEASING.md): the release checklist and the F-Droid recipe
-- [repro/README.md](repro/README.md): reproducible builds and how to verify one
-- [CHANGELOG.md](CHANGELOG.md): what changed in each version
-- [ABUSE.md](ABUSE.md): child safety, and what we can and can't do
-- [TERMS.md](TERMS.md): the terms for our servers and public listings
-
-## Languages
-
-17 languages: English, Arabic, Chinese (simplified and traditional), French, German, Hindi, Indonesian, Italian, Persian, Polish, Portuguese, Russian, Spanish, Turkish, Ukrainian and Vietnamese. Corrections from native speakers are welcome, see CONTRIBUTING.md.
-
-## Contributing and security
-
-- Bug reports, translations and pull requests: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Found a security problem? Please report it privately, see [SECURITY.md](SECURITY.md). Don't open a public issue for it.
-- Support the work: [opencollective.com/kryfo](https://opencollective.com/kryfo)
+---
 
 ## Licence
 
-GPL-3.0-or-later, see [LICENSE](LICENSE). The sticker art is CC BY-SA 4.0, see `mobile/tool/stickers/fokia/LICENSE.md` and `mobile/tool/stickers/fokiaremix/LICENSE.md`. The names Kryfo and Fokia are not included: a fork may use the art, not the names.
+GPL-3.0-or-later, see [LICENSE](LICENSE). The sticker art is CC BY-SA 4.0, see `mobile/tool/stickers/fokia/LICENSE.md` and `mobile/tool/stickers/fokiaremix/LICENSE.md`.
