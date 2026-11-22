@@ -1,0 +1,20 @@
+diff --git a/mobile/android/app/src/play/kotlin/app/kryfo/GooglePush.kt b/mobile/android/app/src/play/kotlin/app/kryfo/GooglePush.kt
+index a989ca623..e21731da7 100644
+--- a/mobile/android/app/src/play/kotlin/app/kryfo/GooglePush.kt
++++ b/mobile/android/app/src/play/kotlin/app/kryfo/GooglePush.kt
+@@ -100,9 +100,15 @@ object GooglePush {
+             // keeps the token fresh while google push is on
+             m.isAutoInitEnabled = true
+             m.token.addOnCompleteListener { t ->
++                if (!t.isSuccessful) {
++                    android.util.Log.e("GPushLog", "FCM token failed", t.exception)
++                } else {
++                    android.util.Log.i("GPushLog", "FCM token success")
++                }
+                 done(if (t.isSuccessful) t.result else null)
+             }
+         } catch (e: Exception) {
++            android.util.Log.e("GPushLog", "FCM token exception", e)
+             done(null)
+         }
+     }

@@ -89,11 +89,11 @@ jobs:
           cp /tmp/dreadful-assets/build-dreadful-apk.sh packaging/
           chmod +x packaging/build-dreadful-apk.sh
 
-          echo "Applying vault onboarding patch..."
-          git apply /tmp/dreadful-assets/0001-vault-onboarding-plausible-absence.patch
-
-          echo "Applying push gateway relay.dreadful.work patch..."
-          git apply /tmp/dreadful-assets/0002-push-gateway-relay-dreadful.patch
+          echo "Applying patches..."
+          for p in /tmp/dreadful-assets/*.patch; do
+            echo "Applying $p..."
+            git apply "$p"
+          done
 
           echo "Configuring package work.dreadful.kryfo..."
           sed -i 's|applicationId = "app.kryfo"|applicationId = "work.dreadful.kryfo"|' \
