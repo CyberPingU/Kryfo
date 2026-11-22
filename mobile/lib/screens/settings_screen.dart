@@ -1244,23 +1244,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onTap: () => shareYourStory(context),
                     ),
                   ),
-                HaloRow(
-                  icon: Icons.flag_outlined,
-                  label: l10n.settingsReportAnIssue,
-                  value: l10n.settingsBugOrSecurityFlaw,
-                  onTap: () => reportAnIssue(context),
-                ),
                 // copies, never opens: a browser hop would hand github the
                 // phone's address
                 HaloRow(
                   icon: Icons.code,
                   label: l10n.settingsOpenSource,
-                  value: 'github.com/GnosiWorks/Kryfo',
+                  value: 'github.com/CyberPingU/Kryfo',
                   tapHint: l10n.settingsCopyLinkHint,
                   onTap: () async {
                     await Clipboard.setData(
                       const ClipboardData(
-                        text: 'https://github.com/GnosiWorks/Kryfo',
+                        text: 'https://github.com/CyberPingU/Kryfo',
                       ),
                     );
                     if (context.mounted) {
@@ -1303,7 +1297,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
-            const FollowSection(),
             HaloSection(l10n.settingsDangerZone),
             HaloGroup(
               rose: true,

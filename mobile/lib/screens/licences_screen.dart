@@ -17,7 +17,7 @@ import '../widgets/motion.dart' show haloRoute;
 import '../widgets/stagger_in.dart';
 import '../wide/read_width.dart' show DeskPage;
 
-const _kryfoSource = 'https://github.com/GnosiWorks/Kryfo';
+const _kryfoSource = 'https://github.com/CyberPingU/Kryfo';
 const _signalSource = 'https://github.com/signalapp/libsignal';
 // where a licence text is when its asset will not load
 const _gplLink = 'https://www.gnu.org/licenses/gpl-3.0.txt';
@@ -174,7 +174,7 @@ class _LicencesScreenState extends State<LicencesScreen> {
                   HaloRow(
                     icon: Icons.code,
                     label: l10n.licencesSourceCode,
-                    value: 'github.com/GnosiWorks/Kryfo',
+                    value: 'github.com/CyberPingU/Kryfo',
                     tapHint: l10n.settingsCopyLinkHint,
                     onTap: () => _copy(_kryfoSource),
                   ),
