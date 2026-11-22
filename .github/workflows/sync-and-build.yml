@@ -135,12 +135,17 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Inject Google Services configuration
-        if: steps.check_release.outputs.should_build == 'true' && env.GOOGLE_SERVICES_JSON != ''
+        if: steps.check_release.outputs.should_build == 'true'
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
-          mkdir -p mobile/android/app/src/play
-          echo "$GOOGLE_SERVICES_JSON" > mobile/android/app/src/play/google-services.json
+          if [ -n "$GOOGLE_SERVICES_JSON" ]; then
+            echo "Injecting Google Services configuration for Play flavor..."
+            mkdir -p mobile/android/app/src/play
+            echo "$GOOGLE_SERVICES_JSON" > mobile/android/app/src/play/google-services.json
+          else
+            echo "GOOGLE_SERVICES_JSON secret not set, will build FOSS flavor only."
+          fi
 
       - name: Fix workspace permissions
         if: steps.check_release.outputs.should_build == 'true'
