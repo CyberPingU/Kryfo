@@ -1,0 +1,33 @@
+diff --git a/mobile/android/app/build.gradle.kts b/mobile/android/app/build.gradle.kts
+index 996eaf864..b4eca1112 100644
+--- a/mobile/android/app/build.gradle.kts
++++ b/mobile/android/app/build.gradle.kts
+@@ -56,7 +56,10 @@ val firebaseValues: Result<Map<String, String>> = when (val f = googleServicesFi
+             "put the firebase project's file at ~/.kryfo-secrets/play/google-services.json\n" +
+             "or name it in KRYFO_GOOGLE_SERVICES. it never goes in git, and foss builds do not need it."
+     ))
+-    else -> if (fossTasksOnly) Result.success(emptyMap()) else runCatching { firebaseValuesOf(f, "app.kryfo") }
++    else -> if (fossTasksOnly) Result.success(emptyMap()) else runCatching {
++        runCatching { firebaseValuesOf(f, "work.dreadful.kryfo") }
++            .getOrElse { firebaseValuesOf(f, "app.kryfo") }
++    }
+ }
+ 
+ fun firebaseValuesOf(f: File, pkg: String): Map<String, String> {
+diff --git a/mobile/lib/google_push.dart b/mobile/lib/google_push.dart
+index 07f8df28b..4760e4d66 100644
+--- a/mobile/lib/google_push.dart
++++ b/mobile/lib/google_push.dart
+@@ -23,10 +23,10 @@ import 'helper_push.dart';
+ 
+ // with a 480-character seal an endpoint is 510 of the relay's 512: a longer
+ // gateway name needs a shorter seal (relay-live/knock.go knockSealedMax)
+-const kPushGateway = 'https://relay.kryfo.app/push/';
++const kPushGateway = 'https://relay.dreadful.work/push/';
+ // the gateway's public key, pinned like the version key. the private half
+ // is made on the server with `kryfo-push keygen` and never leaves it
+-const kPushGatewayPub = 'e6OQLuf2OdSzSLpVUWuPEp-HpBZ3Hur3LNHSDNCjY0Y';
++const kPushGatewayPub = '_MGTaqH-2QhNJvG6IB3VYzBPcomkme3X2Cwkqax-BT4';
+ // the development key: test/push_gateway_key_test.dart refuses it for a
+ // release
+ const kPushGatewayDevPub = 'QRglUlzqI_cAwOAFO7vVY52Kpw7xO9xePWnMIldDhW0';

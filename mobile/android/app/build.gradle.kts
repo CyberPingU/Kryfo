@@ -56,7 +56,10 @@ val firebaseValues: Result<Map<String, String>> = when (val f = googleServicesFi
             "put the firebase project's file at ~/.kryfo-secrets/play/google-services.json\n" +
             "or name it in KRYFO_GOOGLE_SERVICES. it never goes in git, and foss builds do not need it."
     ))
-    else -> if (fossTasksOnly) Result.success(emptyMap()) else runCatching { firebaseValuesOf(f, "app.kryfo") }
+    else -> if (fossTasksOnly) Result.success(emptyMap()) else runCatching {
+        runCatching { firebaseValuesOf(f, "work.dreadful.kryfo") }
+            .getOrElse { firebaseValuesOf(f, "app.kryfo") }
+    }
 }
 
 fun firebaseValuesOf(f: File, pkg: String): Map<String, String> {

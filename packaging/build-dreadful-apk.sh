@@ -71,7 +71,7 @@ cd "$ROOT/mobile"
 
 success=0
 for attempt in 1 2 3; do
-  echo "Flutter build attempt $attempt..."
+  echo "Flutter build attempt $attempt (foss)..."
   if flutter build apk --release --flavor foss; then
     success=1
     break
@@ -82,16 +82,46 @@ for attempt in 1 2 3; do
 done
 
 if [[ "$success" -ne 1 ]]; then
-  echo "Error: Flutter build failed after 3 attempts" >&2
+  echo "Error: Flutter foss build failed after 3 attempts" >&2
   exit 1
 fi
 
 APK="$ROOT/mobile/build/app/outputs/flutter-apk/app-foss-release.apk"
 if [[ -f "$APK" ]]; then
-  echo "=== BUILD FINISHED SUCCESSFULLY ==="
+  echo "=== FOSS BUILD FINISHED SUCCESSFULLY ==="
   ls -lh "$APK"
   sha256sum "$APK"
 else
   echo "Error: Output APK not found at $APK" >&2
   exit 1
+fi
+
+if [[ -f "$ROOT/mobile/android/app/src/play/google-services.json" || -f "${HOME:-/home/vagrant}/.kryfo-secrets/play/google-services.json" ]]; then
+  echo "=== 7. Flutter Build (assemblePlayRelease) ==="
+  success_play=0
+  for attempt in 1 2 3; do
+    echo "Flutter build attempt $attempt (play)..."
+    if flutter build apk --release --flavor play; then
+      success_play=1
+      break
+    fi
+    wait_time=$((attempt * 30))
+    echo "Build attempt $attempt failed, waiting ${wait_time}s before retry..."
+    sleep "$wait_time"
+  done
+
+  if [[ "$success_play" -ne 1 ]]; then
+    echo "Error: Flutter play build failed after 3 attempts" >&2
+    exit 1
+  fi
+
+  PLAY_APK="$ROOT/mobile/build/app/outputs/flutter-apk/app-play-release.apk"
+  if [[ -f "$PLAY_APK" ]]; then
+    echo "=== PLAY BUILD FINISHED SUCCESSFULLY ==="
+    ls -lh "$PLAY_APK"
+    sha256sum "$PLAY_APK"
+  else
+    echo "Error: Output APK not found at $PLAY_APK" >&2
+    exit 1
+  fi
 fi
