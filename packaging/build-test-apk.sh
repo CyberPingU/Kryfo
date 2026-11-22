@@ -18,6 +18,10 @@ cat > "$GRADLE_DIR/gradle.properties" <<'EOF'
 org.gradle.jvmargs=-Xmx2560m -XX:MaxMetaspaceSize=1G -XX:ReservedCodeCacheSize=512m -XX:+HeapDumpOnOutOfMemoryError -Djava.net.preferIPv4Stack=true
 kotlin.daemon.jvmargs=-Xmx1g
 org.gradle.workers.max=2
+systemProp.org.gradle.internal.http.connectionTimeout=60000
+systemProp.org.gradle.internal.http.socketTimeout=60000
+systemProp.org.gradle.internal.repository.max.retries=5
+systemProp.org.gradle.internal.repository.initial.backoff=2000
 EOF
 
 # Add Google Maven Central mirror to avoid HTTP 429 (Too Many Requests)
