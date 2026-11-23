@@ -27,7 +27,13 @@ Future<bool> openChatAt(
   final group = groupId != null && groupId.isNotEmpty ? groupId : null;
   final Route<void> route;
   if (group != null) {
-    if (!await session.groupExists(group)) return false;
+    if (!await session.groupExists(group)) {
+      if (session.vault != null && await session.vault!.groupExists(group)) {
+        session.noteVaultGroup(group);
+      } else {
+        return false;
+      }
+    }
     route = haloRoute(GroupChatScreen(groupId: group, jumpToUid: uid));
   } else if (peer == null || peer.isEmpty) {
     return false;
@@ -35,17 +41,37 @@ Future<bool> openChatAt(
     if (appState.devRow?.chatId != peer) return false;
     route = devChatRoute(peer, jumpToUid: uid);
   } else {
-    final rows = await session.contacts();
-    final row = rows.where((r) => r['halo_id'] == peer).firstOrNull;
-    if (row == null) return false;
+    Map<String, Object?>? row;
+    try {
+      final rows = await session.contacts();
+      row = rows.where((r) => r['halo_id'] == peer).firstOrNull;
+    } catch (_) {}
+    row ??= await session.getContact(peer);
+    if (row == null && session.vault != null) {
+      try {
+        row = await session.vault!.getContact(peer);
+      } catch (_) {}
+    }
+    if (row == null) {
+      try {
+        row = await session.primary.getContact(peer);
+      } catch (_) {}
+    }
+    if (session.vault != null && !session.isHidden(peer)) {
+      try {
+        if (await session.vault!.getContact(peer) != null) {
+          session.noteVaultPeer(peer);
+        }
+      } catch (_) {}
+    }
     route = haloRoute(
       ChatScreen(
         peerHaloId: peer,
-        peerOnion: (row['onion'] as String?) ?? '',
-        peerXPub: (row['xpub'] as String?) ?? '',
+        peerOnion: (row?['onion'] as String?) ?? '',
+        peerXPub: (row?['xpub'] as String?) ?? '',
         avatarSeed: peer,
-        avatarChoice: (row['avatar'] as num?)?.toInt(),
-        nickname: row['nickname'] as String?,
+        avatarChoice: (row?['avatar'] as num?)?.toInt(),
+        nickname: row?['nickname'] as String?,
         jumpToUid: uid,
       ),
     );

@@ -667,6 +667,16 @@ extension AppStateSession on AppState {
       await _vaultDevicesIn(v);
       // what came sealed while it was shut
       await _unseal();
+      if (identical(_openVault, v)) {
+        try {
+          final rebuilt = await Session.withVault(_session.primary, v);
+          if (identical(_openVault, v)) _session = rebuilt;
+        } catch (e) {
+          dlog('vault: session not rebuilt after unseal ($e)');
+        }
+        await refreshContacts();
+        await refreshGroups();
+      }
       // its groups' screenshot blocks, as what came says
       await _groupShotsAtOpen(v);
       // and what its shelf still holds for people it accepted

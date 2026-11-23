@@ -101,6 +101,13 @@ class _RootShellState extends State<RootShell> {
       onOpenChat: (id) => openChatAt(context, peer: id),
       onOpenGroup: (groupId) async {
         if (!mounted) return;
+        if (session.vault != null && !session.isHidden(groupId)) {
+          try {
+            if (await session.vault!.groupExists(groupId)) {
+              session.noteVaultGroup(groupId);
+            }
+          } catch (_) {}
+        }
         deskPush(
           context,
           haloRoute(GroupChatScreen(groupId: groupId)),

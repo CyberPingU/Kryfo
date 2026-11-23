@@ -1,0 +1,153 @@
+diff --git a/mobile/lib/app/shell.dart b/mobile/lib/app/shell.dart
+index 5122d6170..c8142e999 100644
+--- a/mobile/lib/app/shell.dart
++++ b/mobile/lib/app/shell.dart
+@@ -101,6 +101,13 @@ class _RootShellState extends State<RootShell> {
+       onOpenChat: (id) => openChatAt(context, peer: id),
+       onOpenGroup: (groupId) async {
+         if (!mounted) return;
++        if (session.vault != null && !session.isHidden(groupId)) {
++          try {
++            if (await session.vault!.groupExists(groupId)) {
++              session.noteVaultGroup(groupId);
++            }
++          } catch (_) {}
++        }
+         deskPush(
+           context,
+           haloRoute(GroupChatScreen(groupId: groupId)),
+diff --git a/mobile/lib/app/state_session.dart b/mobile/lib/app/state_session.dart
+index 46eac95ed..052777f8b 100644
+--- a/mobile/lib/app/state_session.dart
++++ b/mobile/lib/app/state_session.dart
+@@ -667,6 +667,16 @@ extension AppStateSession on AppState {
+       await _vaultDevicesIn(v);
+       // what came sealed while it was shut
+       await _unseal();
++      if (identical(_openVault, v)) {
++        try {
++          final rebuilt = await Session.withVault(_session.primary, v);
++          if (identical(_openVault, v)) _session = rebuilt;
++        } catch (e) {
++          dlog('vault: session not rebuilt after unseal ($e)');
++        }
++        await refreshContacts();
++        await refreshGroups();
++      }
+       // its groups' screenshot blocks, as what came says
+       await _groupShotsAtOpen(v);
+       // and what its shelf still holds for people it accepted
+diff --git a/mobile/lib/app/state_vault.dart b/mobile/lib/app/state_vault.dart
+index f43ac2fc7..cadc14e25 100644
+--- a/mobile/lib/app/state_vault.dart
++++ b/mobile/lib/app/state_vault.dart
+@@ -229,6 +229,12 @@ extension AppStateVault on AppState {
+           }
+           if (!stays) await _router.forgetSealed(id);
+         }
++        if (identical(_openVault, vault)) {
++          try {
++            final rebuilt = await Session.withVault(_session.primary, vault);
++            if (identical(_openVault, vault)) _session = rebuilt;
++          } catch (_) {}
++        }
+         await refreshContacts();
+         await refreshGroups();
+         await Future.delayed(const Duration(milliseconds: 60));
+diff --git a/mobile/lib/screens/chat_door.dart b/mobile/lib/screens/chat_door.dart
+index 71c41594e..6af9e56de 100644
+--- a/mobile/lib/screens/chat_door.dart
++++ b/mobile/lib/screens/chat_door.dart
+@@ -27,7 +27,13 @@ Future<bool> openChatAt(
+   final group = groupId != null && groupId.isNotEmpty ? groupId : null;
+   final Route<void> route;
+   if (group != null) {
+-    if (!await session.groupExists(group)) return false;
++    if (!await session.groupExists(group)) {
++      if (session.vault != null && await session.vault!.groupExists(group)) {
++        session.noteVaultGroup(group);
++      } else {
++        return false;
++      }
++    }
+     route = haloRoute(GroupChatScreen(groupId: group, jumpToUid: uid));
+   } else if (peer == null || peer.isEmpty) {
+     return false;
+@@ -35,17 +41,37 @@ Future<bool> openChatAt(
+     if (appState.devRow?.chatId != peer) return false;
+     route = devChatRoute(peer, jumpToUid: uid);
+   } else {
+-    final rows = await session.contacts();
+-    final row = rows.where((r) => r['halo_id'] == peer).firstOrNull;
+-    if (row == null) return false;
++    Map<String, Object?>? row;
++    try {
++      final rows = await session.contacts();
++      row = rows.where((r) => r['halo_id'] == peer).firstOrNull;
++    } catch (_) {}
++    row ??= await session.getContact(peer);
++    if (row == null && session.vault != null) {
++      try {
++        row = await session.vault!.getContact(peer);
++      } catch (_) {}
++    }
++    if (row == null) {
++      try {
++        row = await session.primary.getContact(peer);
++      } catch (_) {}
++    }
++    if (session.vault != null && !session.isHidden(peer)) {
++      try {
++        if (await session.vault!.getContact(peer) != null) {
++          session.noteVaultPeer(peer);
++        }
++      } catch (_) {}
++    }
+     route = haloRoute(
+       ChatScreen(
+         peerHaloId: peer,
+-        peerOnion: (row['onion'] as String?) ?? '',
+-        peerXPub: (row['xpub'] as String?) ?? '',
++        peerOnion: (row?['onion'] as String?) ?? '',
++        peerXPub: (row?['xpub'] as String?) ?? '',
+         avatarSeed: peer,
+-        avatarChoice: (row['avatar'] as num?)?.toInt(),
+-        nickname: row['nickname'] as String?,
++        avatarChoice: (row?['avatar'] as num?)?.toInt(),
++        nickname: row?['nickname'] as String?,
+         jumpToUid: uid,
+       ),
+     );
+diff --git a/mobile/lib/session.dart b/mobile/lib/session.dart
+index c757995fe..3d22ef639 100644
+--- a/mobile/lib/session.dart
++++ b/mobile/lib/session.dart
+@@ -28,9 +28,11 @@ import 'translate/hub.dart' show TranslationHub;
+ import 'translate/settings.dart' show forgetChatTranslate;
+ 
+ class Session {
+-  Session(this.primary) : vault = null, _people = const {}, _groups = const {};
++  Session(this.primary) : vault = null, _people = <String>{}, _groups = <String>{};
+ 
+-  Session._(this.primary, this.vault, this._people, this._groups);
++  Session._(this.primary, this.vault, Set<String> people, Set<String> groups)
++      : _people = Set<String>.of(people),
++        _groups = Set<String>.of(groups);
+ 
+   // which chats are the vault's is read once, here, from its own rows, so
+   // nothing on the everyday side has to say
+@@ -57,6 +59,14 @@ class Session {
+   final Set<String> _people;
+   final Set<String> _groups;
+ 
++  void noteVaultPeer(String haloId) {
++    if (vault != null) _people.add(haloId);
++  }
++
++  void noteVaultGroup(String groupId) {
++    if (vault != null) _groups.add(groupId);
++  }
++
+   /// the same databases open as in [at]: no lock, pin or vault change
+   /// came between. [vault] false looks at the primary alone
+   bool holdsSame(Session at, {bool vault = true}) =>

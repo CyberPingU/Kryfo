@@ -28,9 +28,11 @@ import 'translate/hub.dart' show TranslationHub;
 import 'translate/settings.dart' show forgetChatTranslate;
 
 class Session {
-  Session(this.primary) : vault = null, _people = const {}, _groups = const {};
+  Session(this.primary) : vault = null, _people = <String>{}, _groups = <String>{};
 
-  Session._(this.primary, this.vault, this._people, this._groups);
+  Session._(this.primary, this.vault, Set<String> people, Set<String> groups)
+      : _people = Set<String>.of(people),
+        _groups = Set<String>.of(groups);
 
   // which chats are the vault's is read once, here, from its own rows, so
   // nothing on the everyday side has to say
@@ -56,6 +58,14 @@ class Session {
   // the people and groups whose chats the vault holds
   final Set<String> _people;
   final Set<String> _groups;
+
+  void noteVaultPeer(String haloId) {
+    if (vault != null) _people.add(haloId);
+  }
+
+  void noteVaultGroup(String groupId) {
+    if (vault != null) _groups.add(groupId);
+  }
 
   /// the same databases open as in [at]: no lock, pin or vault change
   /// came between. [vault] false looks at the primary alone

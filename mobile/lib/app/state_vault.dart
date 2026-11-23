@@ -229,6 +229,12 @@ extension AppStateVault on AppState {
           }
           if (!stays) await _router.forgetSealed(id);
         }
+        if (identical(_openVault, vault)) {
+          try {
+            final rebuilt = await Session.withVault(_session.primary, vault);
+            if (identical(_openVault, vault)) _session = rebuilt;
+          } catch (_) {}
+        }
         await refreshContacts();
         await refreshGroups();
         await Future.delayed(const Duration(milliseconds: 60));
