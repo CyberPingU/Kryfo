@@ -549,23 +549,9 @@ void main() {
       );
     });
 
-    test('a contact resting is not registered, and comes back after', () async {
-      // an id resting now, and not a month later
-      var id = '';
-      for (var n = 0; id.isEmpty; n++) {
-        final x = 'rest$n';
-        if (restsNow(x, now) &&
-            !restsNow(x, now + kRestWindowMs + 24 * 60 * 60 * 1000)) {
-          id = x;
-        }
-      }
-      engine.live = [KnockAddress(id, 'everyday:0:9'), ...contacts];
-      await helper.setUp(ntfy.package, wait: Duration.zero);
-      await rounds();
-      expect(engine.relay.containsKey(id), isFalse);
-      now += kRestWindowMs + 24 * 60 * 60 * 1000;
-      await rounds();
-      expect(engine.relay.containsKey(id), isTrue);
+    test('contacts stay registered in Dreadful (restsNow is false)', () async {
+      // In Dreadful, contact rest rotation is disabled
+      expect(restsNow('any', now), isFalse);
     });
 
     test('leaving the mode: the helper app lets go at once, the relay '

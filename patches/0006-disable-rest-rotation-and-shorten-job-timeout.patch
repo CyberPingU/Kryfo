@@ -1,0 +1,106 @@
+diff --git a/mobile/android/app/src/main/kotlin/app/kryfo/HaloPeriodicJobService.kt b/mobile/android/app/src/main/kotlin/app/kryfo/HaloPeriodicJobService.kt
+index 3383627fc..fea2ec8cb 100644
+--- a/mobile/android/app/src/main/kotlin/app/kryfo/HaloPeriodicJobService.kt
++++ b/mobile/android/app/src/main/kotlin/app/kryfo/HaloPeriodicJobService.kt
+@@ -55,11 +55,9 @@ class HaloPeriodicJobService : JobService() {
+             // a knock owed to a job that was running goes once it has let go
+             main.postDelayed({ JobSetup.knockJobsEnded(applicationContext) }, 1_000L)
+         }
+-        // a hard stop of its own, so a wedged drain cannot hold the job
+-        // open. a check-in has to bring tor up, fetch and take it down again
+-        // inside its one window, so it gets longer than a knock on sockets
+-        // that are already there. android allows a job ten minutes.
+-        main.postDelayed(run.finish, if (staysOn) 60_000 else 170_000)
++        // Dreadful: reduce timeout from 170s to 35s so a stalled network/Tor drain releases
++        // the wakelock cleanly before Android JobScheduler times out (timeout-reg / ANR).
++        main.postDelayed(run.finish, if (staysOn) 60_000 else 35_000)
+         // a knock from the helper app, or the timer
+         val why = params?.extras?.getString("why") ?: "job"
+         ask(engine, run, if (staysOn) 0 else 15, up, startedAt, why)
+diff --git a/mobile/lib/helper_slots.dart b/mobile/lib/helper_slots.dart
+index 9d15fb250..33aa7dd9f 100644
+--- a/mobile/lib/helper_slots.dart
++++ b/mobile/lib/helper_slots.dart
+@@ -63,17 +63,9 @@ bool lastingGroup(String g) => _kBatchGroup.hasMatch(g);
+ const kRestWindowMs = 30 * 24 * 60 * 60 * 1000;
+ const kRestOneIn = 5;
+ 
+-bool restsNow(String id, int nowMs) {
+-  final phase = sha256.convert(utf8.encode('phase:$id')).bytes;
+-  final offset =
+-      ((phase[0] << 24 | phase[1] << 16 | phase[2] << 8 | phase[3]) &
+-          0x7fffffff) %
+-      kRestWindowMs;
+-  final window = (nowMs + offset) ~/ kRestWindowMs;
+-  return sha256.convert(utf8.encode('rest:$id:$window')).bytes[0] %
+-          kRestOneIn ==
+-      0;
+-}
++// Dreadful: all ordinary contacts stay registered for push at all times (no rest rotation).
++// Hidden vault chats remain strictly unregistered as always.
++bool restsNow(String id, int nowMs) => false;
+ 
+ bool _mainGroup(String g) => lastingGroup(g) || g.startsWith('firstcontact:');
+ 
+diff --git a/mobile/test/helper_delivery_test.dart b/mobile/test/helper_delivery_test.dart
+index ab371211c..4d011ae43 100644
+--- a/mobile/test/helper_delivery_test.dart
++++ b/mobile/test/helper_delivery_test.dart
+@@ -549,23 +549,9 @@ void main() {
+       );
+     });
+ 
+-    test('a contact resting is not registered, and comes back after', () async {
+-      // an id resting now, and not a month later
+-      var id = '';
+-      for (var n = 0; id.isEmpty; n++) {
+-        final x = 'rest$n';
+-        if (restsNow(x, now) &&
+-            !restsNow(x, now + kRestWindowMs + 24 * 60 * 60 * 1000)) {
+-          id = x;
+-        }
+-      }
+-      engine.live = [KnockAddress(id, 'everyday:0:9'), ...contacts];
+-      await helper.setUp(ntfy.package, wait: Duration.zero);
+-      await rounds();
+-      expect(engine.relay.containsKey(id), isFalse);
+-      now += kRestWindowMs + 24 * 60 * 60 * 1000;
+-      await rounds();
+-      expect(engine.relay.containsKey(id), isTrue);
++    test('contacts stay registered in Dreadful (restsNow is false)', () async {
++      // In Dreadful, contact rest rotation is disabled
++      expect(restsNow('any', now), isFalse);
+     });
+ 
+     test('leaving the mode: the helper app lets go at once, the relay '
+diff --git a/mobile/test/helper_slots_test.dart b/mobile/test/helper_slots_test.dart
+index 05ce5ec4c..f91ed672b 100644
+--- a/mobile/test/helper_slots_test.dart
++++ b/mobile/test/helper_slots_test.dart
+@@ -282,24 +282,9 @@ void main() {
+   });
+ 
+   test(
+-    'about one contact address in five rests, each in a month of its own',
++    'contacts do not rest in Dreadful',
+     () {
+-      const t0 = 1800000000000;
+-      const day = 24 * 60 * 60 * 1000;
+-      final ids = [for (var i = 0; i < 2000; i++) 'id$i'];
+-      final resting = ids.where((id) => restsNow(id, t0)).length;
+-      expect(resting, inInclusiveRange(300, 500));
+-      // over a year each id changes now and then, and not on one shared day
+-      final changeDays = <int>{};
+-      for (final id in ids.take(200)) {
+-        var was = restsNow(id, t0);
+-        for (var d = 1; d < 365; d++) {
+-          final now = restsNow(id, t0 + d * day);
+-          if (now != was) changeDays.add(d);
+-          was = now;
+-        }
+-      }
+-      expect(changeDays.length, greaterThan(100));
++      expect(restsNow('any-contact', 1800000000000), isFalse);
+     },
+   );
+ 

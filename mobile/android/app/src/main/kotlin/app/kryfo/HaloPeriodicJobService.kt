@@ -55,11 +55,9 @@ class HaloPeriodicJobService : JobService() {
             // a knock owed to a job that was running goes once it has let go
             main.postDelayed({ JobSetup.knockJobsEnded(applicationContext) }, 1_000L)
         }
-        // a hard stop of its own, so a wedged drain cannot hold the job
-        // open. a check-in has to bring tor up, fetch and take it down again
-        // inside its one window, so it gets longer than a knock on sockets
-        // that are already there. android allows a job ten minutes.
-        main.postDelayed(run.finish, if (staysOn) 60_000 else 170_000)
+        // Dreadful: reduce timeout from 170s to 35s so a stalled network/Tor drain releases
+        // the wakelock cleanly before Android JobScheduler times out (timeout-reg / ANR).
+        main.postDelayed(run.finish, if (staysOn) 60_000 else 35_000)
         // a knock from the helper app, or the timer
         val why = params?.extras?.getString("why") ?: "job"
         ask(engine, run, if (staysOn) 0 else 15, up, startedAt, why)
