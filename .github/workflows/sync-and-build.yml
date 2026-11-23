@@ -199,6 +199,7 @@ jobs:
             - **Dual Flavors**:
               - **FOSS (`-foss.apk` / default)**: Completely tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush ntfy).
               - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping via `r.dreadful.work` gateway) without any companion app needed.
+            - **Zero-Drop Push Delivery & Battery Hardening**: All ordinary contacts stay 100% registered to instant push continuously (no 1-month-in-5 rest rotation; vault chats remain strictly excluded), and background JobService timeout shortened from 170s to 35s to prevent Android 14/15 JobScheduler ANRs and wakelock leaks.
           files: |
             Kryfo-Dreadful-*.apk
             Kryfo-Dreadful-*.sha256
