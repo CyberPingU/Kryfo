@@ -15,12 +15,13 @@ Compared to upstream Kryfo, this build introduces specific hardening measures, p
   Installs and operates side-by-side with the official Kryfo app without package or signature conflicts.
 - **Distinct Visual Identity (Slate Cyan Seal `#1E6B8A`)**:
   The launcher icon seal background is tinted dark slate cyan instead of upstream orange, avoiding visual confusion on the home screen.
-- **Coercion Resistance & Vault (Strict Plausible Absence)**:
+- **Coercion Resistance & Isolated Archive (Strict Plausible Absence & State Uniformity)**:
   - **Mandatory App Lock PIN**: Setting a main App PIN (4+ digits) is required during initial onboarding and account restore, and cannot be skipped. Once set, the app lock cannot be disabled in Settings (only changed), ensuring private keys and databases are never exposed in plaintext.
-  - **One-Time Secret Vault Setup**: During initial onboarding or after restoring a profile, after configuring the mandatory main PIN, users are offered the optional choice to configure a second, independent PIN (6+ digits) for secret hidden chats.
-    - If skipped, no vault is created.
-    - Crucially, no vault setup or mention is exposed in everyday Settings from the outside. An adversary inspecting the device cannot tell whether a vault is active or was declined.
-    - Secret chats can only be opened and managed from within the vault by typing the secret PIN on the keypad.
+  - **Isolated Archive ("Archivio isolato") with Inverted Default**:
+    - Avoids conspicuous wording like "hidden chats" or "secret vault" across the app, presenting the feature as a standard, legitimate isolated archive.
+    - The prominent default action on onboarding and restore is simply **Continue** (`Continua`). The option to configure an isolated archive is presented as an unobtrusive secondary choice (**Set up isolated archive** / `Configura archivio isolato`).
+    - **Automatic Random Sealing (State Uniformity)**: When proceeding with the default "Continue", Kryfo automatically generates a cryptographically secure random 16-digit PIN (`Random.secure()`) and transparently initializes the vault before sealing it. As a result, **100% of Kryfo installations possess an initialized SQLCipher database (`k3.db`), valid slot 3 credentials, and public sealing key metadata**, preventing forensic analysts from differentiating between users who skipped the setup and users who actively use an isolated archive.
+    - **Strict Plausible Absence**: No archive setup or mention is exposed in everyday Settings from the outside. An adversary inspecting the unlocked device cannot tell whether an isolated archive is in use or not. Isolated conversations can only be unlocked and managed from within the archive by typing the dedicated PIN on the lock keypad.
 - **Clean Slate (No Upstream Developer Telemetry or Contacts)**:
   - Removed the hardcoded developer contact card ("Marios") from the chat list.
   - Removed devchat, story submission, and upstream support reporting (`gnosiworks@proton.me`) from Settings.
