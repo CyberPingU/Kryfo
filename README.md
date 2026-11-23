@@ -37,6 +37,17 @@ Compared to upstream Kryfo, this build introduces specific hardening measures, p
 
 ---
 
+## Support the official Kryfo project
+
+Kryfo was created and is actively maintained by Marios at **GnosiWorks**. If you appreciate Kryfo, please consider supporting the official upstream project and development:
+
+- **Official website**: [kryfo.app](https://kryfo.app)
+- **Upstream repository**: [github.com/GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo)
+- **Security audit fund & donations**: [Open Collective](https://opencollective.com/kryfo)
+- **Grant support**: [OpenSats Project Grant](https://opensats.org)
+
+---
+
 ## About Kryfo
 
 Kryfo is a private messenger for Android, with beta builds for Windows and Linux.
