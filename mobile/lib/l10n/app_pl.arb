@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Przesuń wcześniej",
   "gifFavMoveLater": "Przesuń później",
   "gifFavTileA11y": "Ulubiony GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Tylko przy pierwszym uruchomieniu",
-  "onboardingProtectionOneTimeLine": "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.",
-  "onboardingProtectionDualPinTitle": "Dwa różne kody PIN",
-  "onboardingProtectionDualPinLine": "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty.",
+  "onboardingProtectionOneTimeTitle": "Tylko wstępna konfiguracja",
+  "onboardingProtectionOneTimeLine": "Dla bezpieczeństwa i prywatności urządzenia aktywacja izolowanego archiwum jest możliwa tylko na tym etapie.",
+  "onboardingProtectionDualPinTitle": "Drugi PIN dostępu",
+  "onboardingProtectionDualPinLine": "Główny PIN otwiera standardowe środowisko. Możesz ustawić drugi PIN, aby zarządzać izolowanym archiwum.",
   "onboardingAppLockMandatoryLine": "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.",
-  "onboardingProtectionSetupVault": "Skonfiguruj ukryte czaty"
+  "onboardingProtectionSetupVault": "Skonfiguruj izolowane archiwum",
+  "onboardingProtectionHeadline": "Izolowane archiwum",
+  "onboardingProtectionLead": "Bezpieczna separacja dedykowanych rozmów na tym urządzeniu."
 }

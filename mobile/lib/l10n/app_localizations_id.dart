@@ -11598,21 +11598,27 @@ class AppLocalizationsId extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF favorit $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Arsip terisolasi";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Dua PIN terpisah";
+  String get onboardingProtectionLead => "Pemisahan aman untuk percakapan khusus di perangkat ini.";
 
   @override
-  String get onboardingProtectionDualPinLine => "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi.";
+  String get onboardingProtectionOneTimeTitle => "Hanya saat penyiapan awal";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Hanya pada awal penyiapan";
+  String get onboardingProtectionOneTimeLine => "Demi keamanan dan privasi perangkat, pengaktifan arsip terisolasi hanya tersedia pada tahap ini.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.";
+  String get onboardingProtectionDualPinTitle => "PIN akses kedua";
+
+  @override
+  String get onboardingProtectionDualPinLine => "PIN utama membuka lingkungan biasa. Anda dapat menyetel PIN kedua untuk mengelola arsip terisolasi.";
+
   @override
   String get onboardingAppLockMandatoryLine => "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.";
 
   @override
-  String get onboardingProtectionSetupVault => "Atur obrolan tersembunyi";
+  String get onboardingProtectionSetupVault => "Atur arsip terisolasi";
 }

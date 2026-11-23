@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "पहले ले जाएँ",
   "gifFavMoveLater": "बाद में ले जाएँ",
   "gifFavTileA11y": "पसंदीदा GIF {number}",
-  "onboardingProtectionOneTimeTitle": "केवल पहले सेटअप पर",
-  "onboardingProtectionOneTimeLine": "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।",
-  "onboardingProtectionDualPinTitle": "दो अलग पिन",
-  "onboardingProtectionDualPinLine": "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।",
+  "onboardingProtectionOneTimeTitle": "केवल प्रारंभिक सेटअप पर",
+  "onboardingProtectionOneTimeLine": "डिवाइस की सुरक्षा और गोपनीयता के लिए, अलग संग्रह केवल इसी चरण में सक्रिय किया जा सकता है।",
+  "onboardingProtectionDualPinTitle": "दूसरा एक्सेस पिन",
+  "onboardingProtectionDualPinLine": "मुख्य पिन सामान्य वातावरण खोलता है। आप अलग संग्रह प्रबंधित करने के लिए एक वैकल्पिक दूसरा पिन सेट कर सकते हैं।",
   "onboardingAppLockMandatoryLine": "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।",
-  "onboardingProtectionSetupVault": "छुपी हुई चैट सेट करें"
+  "onboardingProtectionSetupVault": "अलग संग्रह सेट करें",
+  "onboardingProtectionHeadline": "अलग संग्रह",
+  "onboardingProtectionLead": "इस डिवाइस पर समर्पित बातचीत के लिए सुरक्षित अलगाव।"
 }

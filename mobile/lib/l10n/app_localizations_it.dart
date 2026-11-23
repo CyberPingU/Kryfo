@@ -11670,21 +11670,27 @@ class AppLocalizationsIt extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF preferita $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Archivio isolato";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Due PIN distinti";
+  String get onboardingProtectionLead => "Separazione sicura per conversazioni dedicate su questo dispositivo.";
 
   @override
-  String get onboardingProtectionDualPinLine => "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste.";
+  String get onboardingProtectionOneTimeTitle => "Configurazione iniziale";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Configurazione riservata";
+  String get onboardingProtectionOneTimeLine => "Per garantire la sicurezza e la riservatezza del dispositivo, l'attivazione di un archivio isolato \u00e8 disponibile solo in questa fase.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.";
-  @override
-  String get onboardingAppLockMandatoryLine => "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
+  String get onboardingProtectionDualPinTitle => "Secondo PIN di accesso";
 
   @override
-  String get onboardingProtectionSetupVault => "Configura chat nascoste";
+  String get onboardingProtectionDualPinLine => "Il PIN principale apre l'ambiente ordinario. Puoi associare un secondo PIN dedicato per gestire un archivio isolato.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "Il codice di blocco \u00e8 obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configura archivio isolato";
 }

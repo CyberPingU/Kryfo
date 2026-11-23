@@ -11656,21 +11656,27 @@ class AppLocalizationsHi extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'पसंदीदा GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "\u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939";
 
   @override
-  String get onboardingProtectionDualPinTitle => "दो अलग पिन";
+  String get onboardingProtectionLead => "\u0907\u0938 \u0921\u093f\u0935\u093e\u0907\u0938 \u092a\u0930 \u0938\u092e\u0930\u094d\u092a\u093f\u0924 \u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0947 \u0932\u093f\u090f \u0938\u0941\u0930\u0915\u094d\u0937\u093f\u0924 \u0905\u0932\u0917\u093e\u0935\u0964";
 
   @override
-  String get onboardingProtectionDualPinLine => "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।";
+  String get onboardingProtectionOneTimeTitle => "\u0915\u0947\u0935\u0932 \u092a\u094d\u0930\u093e\u0930\u0902\u092d\u093f\u0915 \u0938\u0947\u091f\u0905\u092a \u092a\u0930";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "केवल पहले सेटअप पर";
+  String get onboardingProtectionOneTimeLine => "\u0921\u093f\u0935\u093e\u0907\u0938 \u0915\u0940 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0914\u0930 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e \u0915\u0947 \u0932\u093f\u090f, \u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939 \u0915\u0947\u0935\u0932 \u0907\u0938\u0940 \u091a\u0930\u0923 \u092e\u0947\u0902 \u0938\u0915\u094d\u0930\u093f\u092f \u0915\u093f\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964";
 
   @override
-  String get onboardingProtectionOneTimeLine => "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।";
-  @override
-  String get onboardingAppLockMandatoryLine => "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।";
+  String get onboardingProtectionDualPinTitle => "\u0926\u0942\u0938\u0930\u093e \u090f\u0915\u094d\u0938\u0947\u0938 \u092a\u093f\u0928";
 
   @override
-  String get onboardingProtectionSetupVault => "छुपी हुई चैट सेट करें";
+  String get onboardingProtectionDualPinLine => "\u092e\u0941\u0916\u094d\u092f \u092a\u093f\u0928 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0935\u093e\u0924\u093e\u0935\u0930\u0923 \u0916\u094b\u0932\u0924\u093e \u0939\u0948\u0964 \u0906\u092a \u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939 \u092a\u094d\u0930\u092c\u0902\u0927\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 \u0935\u0948\u0915\u0932\u094d\u092a\u093f\u0915 \u0926\u0942\u0938\u0930\u093e \u092a\u093f\u0928 \u0938\u0947\u091f \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\u0964";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "\u0907\u0938 \u0921\u093f\u0935\u093e\u0907\u0938 \u092a\u0930 \u0906\u092a\u0915\u0940 \u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0940 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0915\u0947 \u0932\u093f\u090f \u0910\u092a \u0932\u0949\u0915 \u0905\u0928\u093f\u0935\u093e\u0930\u094d\u092f \u0939\u0948\u0964";
+
+  @override
+  String get onboardingProtectionSetupVault => "\u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939 \u0938\u0947\u091f \u0915\u0930\u0947\u0902";
 }

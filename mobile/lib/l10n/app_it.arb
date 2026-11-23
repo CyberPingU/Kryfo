@@ -2142,7 +2142,7 @@
   "howDecoy": "Il PIN esca apre un secondo Kryfo, vuoto, con tre parole sue. I messaggi al tuo vero Kryfo continuano ad arrivare sotto, in silenzio. Per uscire dall'esca, passa a un'altra app e inserisci il tuo PIN.",
   "flowNotSet": "Non è stato possibile impostarlo. Riprova.",
   "pinsHiddenChats": "Chat nascoste",
-  "pinsHiddenLine": "Le chat scelte restano fuori vista finché non inserisci il PIN delle chat nascoste: non nell'elenco, non nella ricerca, nessuna notifica.",
+  "pinsHiddenLine": "Le conversazioni isolate restano fuori vista finché non inserisci il relativo PIN: non nell'elenco, non nella ricerca, nessuna notifica.",
   "pinsSetUp": "Configura",
   "pinsChangeHiddenPin": "Cambia PIN delle chat nascoste",
   "pinsHideMoreChats": "Nascondi altre chat",
@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Sposta prima",
   "gifFavMoveLater": "Sposta dopo",
   "gifFavTileA11y": "GIF preferita {number}",
-  "onboardingProtectionOneTimeTitle": "Configurazione riservata",
-  "onboardingProtectionOneTimeLine": "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.",
-  "onboardingProtectionDualPinTitle": "Due PIN distinti",
-  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste.",
+  "onboardingProtectionOneTimeTitle": "Configurazione iniziale",
+  "onboardingProtectionOneTimeLine": "Per garantire la sicurezza e la riservatezza del dispositivo, l'attivazione di un archivio isolato è disponibile solo in questa fase.",
+  "onboardingProtectionDualPinTitle": "Secondo PIN di accesso",
+  "onboardingProtectionDualPinLine": "Il PIN principale apre l'ambiente ordinario. Puoi associare un secondo PIN dedicato per gestire un archivio isolato.",
   "onboardingAppLockMandatoryLine": "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.",
-  "onboardingProtectionSetupVault": "Configura chat nascoste"
+  "onboardingProtectionSetupVault": "Configura archivio isolato",
+  "onboardingProtectionHeadline": "Archivio isolato",
+  "onboardingProtectionLead": "Separazione sicura per conversazioni dedicate su questo dispositivo."
 }

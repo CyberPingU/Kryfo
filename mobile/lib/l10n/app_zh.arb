@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "前移",
   "gifFavMoveLater": "后移",
   "gifFavTileA11y": "收藏的 GIF {number}",
-  "onboardingProtectionOneTimeTitle": "仅在首次设置时",
-  "onboardingProtectionOneTimeLine": "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。",
-  "onboardingProtectionDualPinTitle": "两个独立 PIN 码",
-  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。",
+  "onboardingProtectionOneTimeTitle": "仅在初始设置时",
+  "onboardingProtectionOneTimeLine": "为保障设备安全与隐私，仅可在此阶段启用独立归档。",
+  "onboardingProtectionDualPinTitle": "第二访问 PIN 码",
+  "onboardingProtectionDualPinLine": "主 PIN 码用于打开常规环境。您可设置第二个专属 PIN 码以管理独立归档。",
   "onboardingAppLockMandatoryLine": "必须设置应用锁以保护此设备上的聊天记录。",
-  "onboardingProtectionSetupVault": "设置隐藏聊天"
+  "onboardingProtectionSetupVault": "设置独立归档",
+  "onboardingProtectionHeadline": "独立归档",
+  "onboardingProtectionLead": "在此设备上对专属对话进行安全隔离。"
 }

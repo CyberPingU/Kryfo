@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "نقل إلى الأمام",
   "gifFavMoveLater": "نقل إلى الخلف",
   "gifFavTileA11y": "صورة GIF مفضلة {number}",
-  "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأول فقط",
-  "onboardingProtectionOneTimeLine": "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.",
-  "onboardingProtectionDualPinTitle": "رمزا PIN منفصلان",
-  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية.",
+  "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأولي فقط",
+  "onboardingProtectionOneTimeLine": "لأمان الجهاز وخصوصيته، يتوفر تفعيل الأرشيف المعزول في هذه المرحلة فقط.",
+  "onboardingProtectionDualPinTitle": "رمز PIN ثانٍ للوصول",
+  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي البيئة العادية. يمكنك تعيين رمز PIN ثانٍ لإدارة أرشيف معزول.",
   "onboardingAppLockMandatoryLine": "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.",
-  "onboardingProtectionSetupVault": "إعداد المحادثات المخفية"
+  "onboardingProtectionSetupVault": "إعداد الأرشيف المعزول",
+  "onboardingProtectionHeadline": "الأرشيف المعزول",
+  "onboardingProtectionLead": "فصل آمن للمحادثات المخصصة على هذا الجهاز."
 }

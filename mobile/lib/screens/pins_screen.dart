@@ -355,9 +355,9 @@ class _PinsScreenState extends State<PinsScreen> {
                     // first start and never replaced or set from outside
                     if (_host.decoyAndVault && vault)
                       _ExtraRow(
-                        icon: Icons.visibility_off_outlined,
+                        icon: Icons.archive_outlined,
                         tint: HaloColors.violet,
-                        name: l10n.pinsHiddenChats,
+                        name: l10n.onboardingProtectionHeadline,
                         line: l10n.pinsHiddenLine,
                         state: l10n.pinsSet,
                         stateColor: HaloColors.violet,

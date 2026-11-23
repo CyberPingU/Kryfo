@@ -11669,21 +11669,27 @@ class AppLocalizationsEs extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF favorito $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Archivo aislado";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Dos PIN distintos";
+  String get onboardingProtectionLead => "Separaci\u00f3n segura para conversaciones dedicadas en este dispositivo.";
 
   @override
-  String get onboardingProtectionDualPinLine => "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos.";
+  String get onboardingProtectionOneTimeTitle => "Configuraci\u00f3n inicial";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Solo al primer inicio";
+  String get onboardingProtectionOneTimeLine => "Por seguridad y privacidad del dispositivo, la activaci\u00f3n de un archivo aislado solo est\u00e1 disponible en esta fase.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.";
+  String get onboardingProtectionDualPinTitle => "Segundo PIN de acceso";
+
+  @override
+  String get onboardingProtectionDualPinLine => "El PIN principal abre el entorno habitual. Puedes definir un segundo PIN para gestionar un archivo aislado.";
+
   @override
   String get onboardingAppLockMandatoryLine => "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.";
 
   @override
-  String get onboardingProtectionSetupVault => "Configurar chats ocultos";
+  String get onboardingProtectionSetupVault => "Configurar archivo aislado";
 }

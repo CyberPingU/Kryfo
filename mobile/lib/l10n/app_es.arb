@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Mover antes",
   "gifFavMoveLater": "Mover después",
   "gifFavTileA11y": "GIF favorito {number}",
-  "onboardingProtectionOneTimeTitle": "Solo al primer inicio",
-  "onboardingProtectionOneTimeLine": "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.",
-  "onboardingProtectionDualPinTitle": "Dos PIN distintos",
-  "onboardingProtectionDualPinLine": "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos.",
+  "onboardingProtectionOneTimeTitle": "Configuración inicial",
+  "onboardingProtectionOneTimeLine": "Por seguridad y privacidad del dispositivo, la activación de un archivo aislado solo está disponible en esta fase.",
+  "onboardingProtectionDualPinTitle": "Segundo PIN de acceso",
+  "onboardingProtectionDualPinLine": "El PIN principal abre el entorno habitual. Puedes definir un segundo PIN para gestionar un archivo aislado.",
   "onboardingAppLockMandatoryLine": "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.",
-  "onboardingProtectionSetupVault": "Configurar chats ocultos"
+  "onboardingProtectionSetupVault": "Configurar archivo aislado",
+  "onboardingProtectionHeadline": "Archivo aislado",
+  "onboardingProtectionLead": "Separación segura para conversaciones dedicadas en este dispositivo."
 }

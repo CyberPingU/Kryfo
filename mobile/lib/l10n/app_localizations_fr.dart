@@ -11668,21 +11668,27 @@ class AppLocalizationsFr extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF favori $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Archive isol\u00e9e";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Deux codes PIN distincts";
-
-  @override
-  String get onboardingProtectionDualPinLine => "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées.";
+  String get onboardingProtectionLead => "S\u00e9paration s\u00e9curis\u00e9e pour les conversations d\u00e9di\u00e9es sur cet appareil.";
 
   @override
   String get onboardingProtectionOneTimeTitle => "Configuration initiale";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.";
-  @override
-  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.";
+  String get onboardingProtectionOneTimeLine => "Pour la s\u00e9curit\u00e9 et la confidentialit\u00e9 de l'appareil, l'activation d'une archive isol\u00e9e n'est possible qu'\u00e0 cette \u00e9tape.";
 
   @override
-  String get onboardingProtectionSetupVault => "Configurer les discussions cachées";
+  String get onboardingProtectionDualPinTitle => "Second code d'acc\u00e8s";
+
+  @override
+  String get onboardingProtectionDualPinLine => "Le code principal ouvre l'environnement habituel. Vous pouvez d\u00e9finir un second code pour g\u00e9rer une archive isol\u00e9e.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour prot\u00e9ger vos \u00e9changes sur cet appareil.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configurer une archive isol\u00e9e";
 }

@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Nach vorne",
   "gifFavMoveLater": "Nach hinten",
   "gifFavTileA11y": "Lieblings-GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Nur bei Ersteinrichtung",
-  "onboardingProtectionOneTimeLine": "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.",
-  "onboardingProtectionDualPinTitle": "Zwei getrennte PINs",
-  "onboardingProtectionDualPinLine": "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats.",
+  "onboardingProtectionOneTimeTitle": "Ersteinrichtung",
+  "onboardingProtectionOneTimeLine": "Aus Sicherheitsgründen kann ein isoliertes Archiv nur in dieser Phase eingerichtet werden.",
+  "onboardingProtectionDualPinTitle": "Zweite Zugangs-PIN",
+  "onboardingProtectionDualPinLine": "Die Haupt-PIN öffnet die gewohnte Umgebung. Sie können eine zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.",
   "onboardingAppLockMandatoryLine": "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.",
-  "onboardingProtectionSetupVault": "Versteckte Chats einrichten"
+  "onboardingProtectionSetupVault": "Isoliertes Archiv einrichten",
+  "onboardingProtectionHeadline": "Isoliertes Archiv",
+  "onboardingProtectionLead": "Sichere Trennung für dedizierte Konversationen auf diesem Gerät."
 }

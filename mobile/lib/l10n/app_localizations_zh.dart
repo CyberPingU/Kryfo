@@ -11598,24 +11598,32 @@ class AppLocalizationsZh extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return '收藏的 GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "\u72ec\u7acb\u5f52\u6863";
 
   @override
-  String get onboardingProtectionDualPinTitle => "两个独立 PIN 码";
+  String get onboardingProtectionLead => "\u5728\u6b64\u8bbe\u5907\u4e0a\u5bf9\u4e13\u5c5e\u5bf9\u8bdd\u8fdb\u884c\u5b89\u5168\u9694\u79bb\u3002";
 
   @override
-  String get onboardingProtectionDualPinLine => "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。";
+  String get onboardingProtectionOneTimeTitle => "\u4ec5\u5728\u521d\u59cb\u8bbe\u7f6e\u65f6";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "仅在首次设置时";
+  String get onboardingProtectionOneTimeLine => "\u4e3a\u4fdd\u969c\u8bbe\u5907\u5b89\u5168\u4e0e\u9690\u79c1\uff0c\u4ec5\u53ef\u5728\u6b64\u9636\u6bb5\u542f\u7528\u72ec\u7acb\u5f52\u6863\u3002";
 
   @override
-  String get onboardingProtectionOneTimeLine => "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。";
-  @override
-  String get onboardingAppLockMandatoryLine => "必须设置应用锁以保护此设备上的聊天记录。";
+  String get onboardingProtectionDualPinTitle => "\u7b2c\u4e8c\u8bbf\u95ee PIN \u7801";
 
   @override
-  String get onboardingProtectionSetupVault => "设置隐藏聊天";
+  String get onboardingProtectionDualPinLine => "\u4e3b PIN \u7801\u7528\u4e8e\u6253\u5f00\u5e38\u89c4\u73af\u5883\u3002\u60a8\u53ef\u8bbe\u7f6e\u7b2c\u4e8c\u4e2a\u4e13\u5c5e PIN \u7801\u4ee5\u7ba1\u7406\u72ec\u7acb\u5f52\u6863\u3002";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "\u5fc5\u987b\u8bbe\u7f6e\u5e94\u7528\u9501\u4ee5\u4fdd\u62a4\u6b64\u8bbe\u5907\u4e0a\u7684\u804a\u5929\u8bb0\u5f55\u3002";
+
+  @override
+  String get onboardingProtectionSetupVault => "\u8bbe\u7f6e\u72ec\u7acb\u5f52\u6863";
 }
+
+/// The translations for Chinese, using the Han script (`zh_Hant`).
 class AppLocalizationsZhHant extends AppLocalizationsZh {
   AppLocalizationsZhHant(): super('zh_Hant');
 
@@ -23091,21 +23099,27 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String gifFavTileA11y(String number) {
     return '收藏的 GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "\u7368\u7acb\u5c01\u5b58";
 
   @override
-  String get onboardingProtectionDualPinTitle => "兩個獨立 PIN 碼";
+  String get onboardingProtectionLead => "\u5728\u6b64\u88dd\u7f6e\u4e0a\u5c0d\u5c08\u5c6c\u5c0d\u8a71\u9032\u884c\u5b89\u5168\u9694\u96e2\u3002";
 
   @override
-  String get onboardingProtectionDualPinLine => "主 PIN 碼（4 位以上）開啟普通聊天。私密 PIN 碼（6 位以上）解鎖所有隱藏聊天。";
+  String get onboardingProtectionOneTimeTitle => "\u50c5\u5728\u521d\u59cb\u8a2d\u5b9a\u6642";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "僅在首次設定時";
+  String get onboardingProtectionOneTimeLine => "\u70ba\u4fdd\u969c\u88dd\u7f6e\u5b89\u5168\u8207\u96b1\u79c1\uff0c\u50c5\u53ef\u5728\u6b64\u968e\u6bb5\u555f\u7528\u7368\u7acb\u5c01\u5b58\u3002";
 
   @override
-  String get onboardingProtectionOneTimeLine => "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。";
-  @override
-  String get onboardingAppLockMandatoryLine => "必須設定應用程式鎖定以保護此裝置上的聊天記錄。";
+  String get onboardingProtectionDualPinTitle => "\u7b2c\u4e8c\u5b58\u53d6 PIN \u78bc";
 
   @override
-  String get onboardingProtectionSetupVault => "設定隱藏聊天";
+  String get onboardingProtectionDualPinLine => "\u4e3b\u8981 PIN \u78bc\u7528\u65bc\u958b\u555f\u5e38\u898f\u74b0\u5883\u3002\u60a8\u53ef\u8a2d\u5b9a\u7b2c\u4e8c\u500b\u5c08\u5c6c PIN \u78bc\u4ee5\u7ba1\u7406\u7368\u7acb\u5c01\u5b58\u3002";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "\u5fc5\u9808\u8a2d\u5b9a\u61c9\u7528\u7a0b\u5f0f\u9396\u5b9a\u4ee5\u4fdd\u8b77\u6b64\u88dd\u7f6e\u4e0a\u7684\u804a\u5929\u8a18\u9304\u3002";
+
+  @override
+  String get onboardingProtectionSetupVault => "\u8a2d\u5b9a\u7368\u7acb\u5c01\u5b58";
 }

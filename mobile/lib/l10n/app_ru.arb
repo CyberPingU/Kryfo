@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Переместить раньше",
   "gifFavMoveLater": "Переместить позже",
   "gifFavTileA11y": "Избранный GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Только при первом запуске",
-  "onboardingProtectionOneTimeLine": "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.",
-  "onboardingProtectionDualPinTitle": "Два разных PIN-кода",
-  "onboardingProtectionDualPinLine": "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты.",
+  "onboardingProtectionOneTimeTitle": "Только при начальной настройке",
+  "onboardingProtectionOneTimeLine": "Для безопасности и конфиденциальности устройства активация изолированного архива доступна только на этом этапе.",
+  "onboardingProtectionDualPinTitle": "Второй PIN-код доступа",
+  "onboardingProtectionDualPinLine": "Основной PIN открывает обычную среду. Вы можете задать второй PIN для управления изолированным архивом.",
   "onboardingAppLockMandatoryLine": "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.",
-  "onboardingProtectionSetupVault": "Настроить скрытые чаты"
+  "onboardingProtectionSetupVault": "Настроить изолированный архив",
+  "onboardingProtectionHeadline": "Изолированный архив",
+  "onboardingProtectionLead": "Безопасное разделение для выделенных бесед на этом устройстве."
 }

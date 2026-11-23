@@ -1879,6 +1879,24 @@ class _ProtectionScreenState extends State<ProtectionScreen> {
     if (ok == true) widget.onContinue();
   }
 
+  Future<void> _skipAndSealRandomVault() async {
+    if (_busy) return;
+    setState(() => _busy = true);
+    try {
+      final rnd = math.Random.secure();
+      final dummyPin = List.generate(16, (_) => rnd.nextInt(10)).join();
+      await widget.host.createVault(dummyPin);
+      await widget.host.vaultSetupDone();
+    } catch (_) {
+      // In case of error or already created, proceed safely
+    } finally {
+      if (mounted) {
+        setState(() => _busy = false);
+        widget.onContinue();
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final page = !_hasAppPin
@@ -1904,23 +1922,21 @@ class _ProtectionScreenState extends State<ProtectionScreen> {
         : _StepPage(
             footer: [
               _Cta(
-                label: l10n.onboardingProtectionSetupVault,
-                onTap: _setupVault,
+                label: l10n.commonContinue,
+                onTap: _skipAndSealRandomVault,
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 4),
               Center(
                 child: _TextLink(
-                  label: l10n.flowVaultNotNow,
-                  onTap: widget.onContinue,
+                  label: l10n.onboardingProtectionSetupVault,
+                  onTap: _setupVault,
                 ),
               ),
             ],
             children: [
-              _Headline(l10n.pinsAdvanced),
+              _Headline(l10n.onboardingProtectionHeadline),
               const SizedBox(height: 12),
-              _lead(
-                onDesktop ? l10n.pinsAdvancedLineDesk : l10n.pinsAdvancedLine,
-              ),
+              _lead(l10n.onboardingProtectionLead),
               const SizedBox(height: 20),
               _Card(
                 icon: Icons.password_outlined,
@@ -1929,7 +1945,7 @@ class _ProtectionScreenState extends State<ProtectionScreen> {
               ),
               const SizedBox(height: 10),
               _Card(
-                icon: Icons.visibility_off_outlined,
+                icon: Icons.archive_outlined,
                 title: l10n.onboardingProtectionOneTimeTitle,
                 desc: l10n.onboardingProtectionOneTimeLine,
               ),

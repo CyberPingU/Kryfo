@@ -11598,21 +11598,27 @@ class AppLocalizationsVi extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF yêu thích $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Hai mã PIN riêng biệt";
+  String get onboardingProtectionLead => "T\u00e1ch bi\u1ec7t an to\u00e0n cho c\u00e1c cu\u1ed9c tr\u00f2 chuy\u1ec7n ri\u00eang tr\u00ean thi\u1ebft b\u1ecb n\u00e0y.";
 
   @override
-  String get onboardingProtectionDualPinLine => "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn.";
+  String get onboardingProtectionOneTimeTitle => "Ch\u1ec9 khi thi\u1ebft l\u1eadp ban \u0111\u1ea7u";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Chỉ khi thiết lập ban đầu";
+  String get onboardingProtectionOneTimeLine => "\u0110\u1ec3 b\u1ea3o m\u1eadt v\u00e0 ri\u00eang t\u01b0 cho thi\u1ebft b\u1ecb, vi\u1ec7c k\u00edch ho\u1ea1t kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp ch\u1ec9 kh\u1ea3 d\u1ee5ng \u1edf giai \u0111o\u1ea1n n\u00e0y.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.";
-  @override
-  String get onboardingAppLockMandatoryLine => "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.";
+  String get onboardingProtectionDualPinTitle => "M\u00e3 PIN truy c\u1eadp th\u1ee9 hai";
 
   @override
-  String get onboardingProtectionSetupVault => "Thiết lập cuộc trò chuyện ẩn";
+  String get onboardingProtectionDualPinLine => "M\u00e3 PIN ch\u00ednh m\u1edf m\u00f4i tr\u01b0\u1eddng th\u00f4ng th\u01b0\u1eddng. B\u1ea1n c\u00f3 th\u1ec3 \u0111\u1eb7t m\u00e3 PIN th\u1ee9 hai \u0111\u1ec3 qu\u1ea3n l\u00fd kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "Kh\u00f3a \u1ee9ng d\u1ee5ng l\u00e0 b\u1eaft bu\u1ed9c \u0111\u1ec3 b\u1ea3o v\u1ec7 c\u00e1c cu\u1ed9c tr\u00f2 chuy\u1ec7n c\u1ee7a b\u1ea1n tr\u00ean thi\u1ebft b\u1ecb n\u00e0y.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Thi\u1ebft l\u1eadp kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp";
 }

@@ -11668,21 +11668,27 @@ class AppLocalizationsDe extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Lieblings-GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Isoliertes Archiv";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Zwei getrennte PINs";
+  String get onboardingProtectionLead => "Sichere Trennung f\u00fcr dedizierte Konversationen auf diesem Ger\u00e4t.";
 
   @override
-  String get onboardingProtectionDualPinLine => "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats.";
+  String get onboardingProtectionOneTimeTitle => "Ersteinrichtung";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Nur bei Ersteinrichtung";
+  String get onboardingProtectionOneTimeLine => "Aus Sicherheitsgr\u00fcnden kann ein isoliertes Archiv nur in dieser Phase eingerichtet werden.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.";
-  @override
-  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.";
+  String get onboardingProtectionDualPinTitle => "Zweite Zugangs-PIN";
 
   @override
-  String get onboardingProtectionSetupVault => "Versteckte Chats einrichten";
+  String get onboardingProtectionDualPinLine => "Die Haupt-PIN \u00f6ffnet die gewohnte Umgebung. Sie k\u00f6nnen eine zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Ger\u00e4t zu sch\u00fctzen.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Isoliertes Archiv einrichten";
 }

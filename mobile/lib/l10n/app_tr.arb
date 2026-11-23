@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Öne al",
   "gifFavMoveLater": "Arkaya al",
   "gifFavTileA11y": "Favori GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Yalnızca ilk başlatmada",
-  "onboardingProtectionOneTimeLine": "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.",
-  "onboardingProtectionDualPinTitle": "İki ayrı PIN",
-  "onboardingProtectionDualPinLine": "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.",
+  "onboardingProtectionOneTimeTitle": "Yalnızca ilk kurulumda",
+  "onboardingProtectionOneTimeLine": "Cihaz güvenliği ve gizliliği için ayrılmış arşivin etkinleştirilmesi yalnızca bu aşamada mümkündür.",
+  "onboardingProtectionDualPinTitle": "İkinci erişim PIN'i",
+  "onboardingProtectionDualPinLine": "Ana PIN normal ortamı açar. Ayrılmış arşivi yönetmek için isteğe bağlı ikinci bir PIN belirleyebilirsiniz.",
   "onboardingAppLockMandatoryLine": "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.",
-  "onboardingProtectionSetupVault": "Gizli sohbetleri ayarla"
+  "onboardingProtectionSetupVault": "Ayrılmış arşivi ayarla",
+  "onboardingProtectionHeadline": "Ayrılmış arşiv",
+  "onboardingProtectionLead": "Bu cihazdaki özel sohbetler için güvenli ayrım."
 }

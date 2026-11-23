@@ -11834,21 +11834,27 @@ class AppLocalizationsPl extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Ulubiony GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Izolowane archiwum";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Dwa różne kody PIN";
+  String get onboardingProtectionLead => "Bezpieczna separacja dedykowanych rozm\u00f3w na tym urz\u0105dzeniu.";
 
   @override
-  String get onboardingProtectionDualPinLine => "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty.";
+  String get onboardingProtectionOneTimeTitle => "Tylko wst\u0119pna konfiguracja";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Tylko przy pierwszym uruchomieniu";
+  String get onboardingProtectionOneTimeLine => "Dla bezpiecze\u0144stwa i prywatno\u015bci urz\u0105dzenia aktywacja izolowanego archiwum jest mo\u017cliwa tylko na tym etapie.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.";
-  @override
-  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.";
+  String get onboardingProtectionDualPinTitle => "Drugi PIN dost\u0119pu";
 
   @override
-  String get onboardingProtectionSetupVault => "Skonfiguruj ukryte czaty";
+  String get onboardingProtectionDualPinLine => "G\u0142\u00f3wny PIN otwiera standardowe \u015brodowisko. Mo\u017cesz ustawi\u0107 drugi PIN, aby zarz\u0105dza\u0107 izolowanym archiwum.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chroni\u0107 Twoje czaty na tym urz\u0105dzeniu.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Skonfiguruj izolowane archiwum";
 }

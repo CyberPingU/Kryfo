@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "Mover para antes",
   "gifFavMoveLater": "Mover para depois",
   "gifFavTileA11y": "GIF favorito {number}",
-  "onboardingProtectionOneTimeTitle": "Apenas na primeira inicialização",
-  "onboardingProtectionOneTimeLine": "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.",
-  "onboardingProtectionDualPinTitle": "Dois PINs distintos",
-  "onboardingProtectionDualPinLine": "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.",
+  "onboardingProtectionOneTimeTitle": "Apenas na configuração inicial",
+  "onboardingProtectionOneTimeLine": "Para segurança e privacidade do dispositivo, a ativação de um arquivo isolado só está disponível nesta etapa.",
+  "onboardingProtectionDualPinTitle": "Segundo PIN de acesso",
+  "onboardingProtectionDualPinLine": "O PIN principal abre o ambiente normal. Você pode definir um segundo PIN para gerenciar um arquivo isolado.",
   "onboardingAppLockMandatoryLine": "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.",
-  "onboardingProtectionSetupVault": "Configurar conversas ocultas"
+  "onboardingProtectionSetupVault": "Configurar arquivo isolado",
+  "onboardingProtectionHeadline": "Arquivo isolado",
+  "onboardingProtectionLead": "Separação segura para conversas dedicadas neste dispositivo."
 }

@@ -11668,21 +11668,27 @@ class AppLocalizationsPt extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF favorito $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Arquivo isolado";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Dois PINs distintos";
+  String get onboardingProtectionLead => "Separa\u00e7\u00e3o segura para conversas dedicadas neste dispositivo.";
 
   @override
-  String get onboardingProtectionDualPinLine => "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.";
+  String get onboardingProtectionOneTimeTitle => "Apenas na configura\u00e7\u00e3o inicial";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Apenas na primeira inicialização";
+  String get onboardingProtectionOneTimeLine => "Para seguran\u00e7a e privacidade do dispositivo, a ativa\u00e7\u00e3o de um arquivo isolado s\u00f3 est\u00e1 dispon\u00edvel nesta etapa.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.";
-  @override
-  String get onboardingAppLockMandatoryLine => "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.";
+  String get onboardingProtectionDualPinTitle => "Segundo PIN de acesso";
 
   @override
-  String get onboardingProtectionSetupVault => "Configurar conversas ocultas";
+  String get onboardingProtectionDualPinLine => "O PIN principal abre o ambiente normal. Voc\u00ea pode definir um segundo PIN para gerenciar um arquivo isolado.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "O bloqueio do app \u00e9 obrigat\u00f3rio para proteger suas conversas neste dispositivo.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Configurar arquivo isolado";
 }

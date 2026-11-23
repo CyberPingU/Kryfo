@@ -11654,21 +11654,27 @@ class AppLocalizationsTr extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Favori GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Ayr\u0131lm\u0131\u015f ar\u015fiv";
 
   @override
-  String get onboardingProtectionDualPinTitle => "İki ayrı PIN";
+  String get onboardingProtectionLead => "Bu cihazdaki \u00f6zel sohbetler i\u00e7in g\u00fcvenli ayr\u0131m.";
 
   @override
-  String get onboardingProtectionDualPinLine => "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.";
+  String get onboardingProtectionOneTimeTitle => "Yaln\u0131zca ilk kurulumda";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Yalnızca ilk başlatmada";
+  String get onboardingProtectionOneTimeLine => "Cihaz g\u00fcvenli\u011fi ve gizlili\u011fi i\u00e7in ayr\u0131lm\u0131\u015f ar\u015fivin etkinle\u015ftirilmesi yaln\u0131zca bu a\u015famada m\u00fcmk\u00fcnd\u00fcr.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.";
-  @override
-  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.";
+  String get onboardingProtectionDualPinTitle => "\u0130kinci eri\u015fim PIN'i";
 
   @override
-  String get onboardingProtectionSetupVault => "Gizli sohbetleri ayarla";
+  String get onboardingProtectionDualPinLine => "Ana PIN normal ortam\u0131 a\u00e7ar. Ayr\u0131lm\u0131\u015f ar\u015fivi y\u00f6netmek i\u00e7in iste\u011fe ba\u011fl\u0131 ikinci bir PIN belirleyebilirsiniz.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak i\u00e7in uygulama kilidi zorunludur.";
+
+  @override
+  String get onboardingProtectionSetupVault => "Ayr\u0131lm\u0131\u015f ar\u015fivi ayarla";
 }

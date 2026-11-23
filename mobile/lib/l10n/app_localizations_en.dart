@@ -11663,21 +11663,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'Favourite GIF $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "Isolated archive";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Dual PIN protection";
-
-  @override
-  String get onboardingProtectionDualPinLine => "Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.";
+  String get onboardingProtectionLead => "Secure separation for dedicated conversations on this device.";
 
   @override
   String get onboardingProtectionOneTimeTitle => "Initial setup only";
 
   @override
-  String get onboardingProtectionOneTimeLine => "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.";
+  String get onboardingProtectionOneTimeLine => "For device security and privacy, setting up an isolated archive is only available during this phase.";
+
+  @override
+  String get onboardingProtectionDualPinTitle => "Secondary access PIN";
+
+  @override
+  String get onboardingProtectionDualPinLine => "Your main PIN opens the everyday environment. You can set an optional second PIN to manage an isolated archive.";
+
   @override
   String get onboardingAppLockMandatoryLine => "An app lock is required to protect your chats on this device.";
 
   @override
-  String get onboardingProtectionSetupVault => "Set up hidden chats";
+  String get onboardingProtectionSetupVault => "Set up isolated archive";
 }

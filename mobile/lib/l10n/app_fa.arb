@@ -3311,10 +3311,12 @@
   "gifFavMoveEarlier": "جابه‌جایی به قبل",
   "gifFavMoveLater": "جابه‌جایی به بعد",
   "gifFavTileA11y": "GIF برگزیده {number}",
-  "onboardingProtectionOneTimeTitle": "تنها هنگام راه‌اندازی نخست",
-  "onboardingProtectionOneTimeLine": "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.",
-  "onboardingProtectionDualPinTitle": "دو پین جداگانه",
-  "onboardingProtectionDualPinLine": "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند.",
+  "onboardingProtectionOneTimeTitle": "تنها هنگام راه‌اندازی اولیه",
+  "onboardingProtectionOneTimeLine": "برای امنیت و حریم خصوصی دستگاه، فعال‌سازی بایگانی مجزا تنها در این مرحله امکان‌پذیر است.",
+  "onboardingProtectionDualPinTitle": "پین دسترسی دوم",
+  "onboardingProtectionDualPinLine": "پین اصلی محیط عادی را باز می‌کند. می‌توانید برای مدیریت بایگانی مجزا یک پین اختیاری دوم تنظیم کنید.",
   "onboardingAppLockMandatoryLine": "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.",
-  "onboardingProtectionSetupVault": "راه‌اندازی گفتگوهای پنهان"
+  "onboardingProtectionSetupVault": "راه‌اندازی بایگانی مجزا",
+  "onboardingProtectionHeadline": "بایگانی مجزا",
+  "onboardingProtectionLead": "جداسازی امن برای گفتگوهای اختصاصی در این دستگاه."
 }

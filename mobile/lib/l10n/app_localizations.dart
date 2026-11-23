@@ -20157,6 +20157,22 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Favourite GIF {number}'**
   String gifFavTileA11y(String number);
+
+  String get onboardingProtectionHeadline;
+
+  String get onboardingProtectionLead;
+
+  String get onboardingProtectionOneTimeTitle;
+
+  String get onboardingProtectionOneTimeLine;
+
+  String get onboardingProtectionDualPinTitle;
+
+  String get onboardingProtectionDualPinLine;
+
+  String get onboardingAppLockMandatoryLine;
+
+  String get onboardingProtectionSetupVault;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -20212,33 +20228,4 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'
   );
-
-  /// screens/onboarding_screen.dart: title of the warning card on advanced protection step
-  ///
-  /// In en, this message translates to:
-  /// **'Only during setup'**
-  /// screens/onboarding_screen.dart: title of dual PIN card on advanced protection step
-  ///
-  /// In en, this message translates to:
-  /// **'Dual PIN protection'**
-  String get onboardingProtectionDualPinTitle;
-
-  /// screens/onboarding_screen.dart: description of dual PIN card on advanced protection step
-  ///
-  /// In en, this message translates to:
-  /// **'Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.'**
-  String get onboardingProtectionDualPinLine;
-
-  String get onboardingProtectionOneTimeTitle;
-
-  /// screens/onboarding_screen.dart: line of the warning card on advanced protection step
-  ///
-  /// In en, this message translates to:
-  /// **'This can only be set up now. If you choose Not now, it cannot be turned on later.'**
-  String get onboardingProtectionOneTimeLine;
-
-  String get onboardingAppLockMandatoryLine;
-
-  String get onboardingProtectionSetupVault;
-
 }

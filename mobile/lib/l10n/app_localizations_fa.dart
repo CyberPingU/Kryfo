@@ -11648,21 +11648,27 @@ class AppLocalizationsFa extends AppLocalizations {
   String gifFavTileA11y(String number) {
     return 'GIF برگزیده $number';
   }
+  @override
+  String get onboardingProtectionHeadline => "\u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627";
 
   @override
-  String get onboardingProtectionDualPinTitle => "دو پین جداگانه";
+  String get onboardingProtectionLead => "\u062c\u062f\u0627\u0633\u0627\u0632\u06cc \u0627\u0645\u0646 \u0628\u0631\u0627\u06cc \u06af\u0641\u062a\u06af\u0648\u0647\u0627\u06cc \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062f\u0631 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06af\u0627\u0647.";
 
   @override
-  String get onboardingProtectionDualPinLine => "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند.";
+  String get onboardingProtectionOneTimeTitle => "\u062a\u0646\u0647\u0627 \u0647\u0646\u06af\u0627\u0645 \u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc \u0627\u0648\u0644\u06cc\u0647";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "تنها هنگام راه‌اندازی نخست";
+  String get onboardingProtectionOneTimeLine => "\u0628\u0631\u0627\u06cc \u0627\u0645\u0646\u06cc\u062a \u0648 \u062d\u0631\u06cc\u0645 \u062e\u0635\u0648\u0635\u06cc \u062f\u0633\u062a\u06af\u0627\u0647\u060c \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627 \u062a\u0646\u0647\u0627 \u062f\u0631 \u0627\u06cc\u0646 \u0645\u0631\u062d\u0644\u0647 \u0627\u0645\u06a9\u0627\u0646\u200c\u067e\u0630\u06cc\u0631 \u0627\u0633\u062a.";
 
   @override
-  String get onboardingProtectionOneTimeLine => "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.";
-  @override
-  String get onboardingAppLockMandatoryLine => "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.";
+  String get onboardingProtectionDualPinTitle => "\u067e\u06cc\u0646 \u062f\u0633\u062a\u0631\u0633\u06cc \u062f\u0648\u0645";
 
   @override
-  String get onboardingProtectionSetupVault => "راه‌اندازی گفتگوهای پنهان";
+  String get onboardingProtectionDualPinLine => "\u067e\u06cc\u0646 \u0627\u0635\u0644\u06cc \u0645\u062d\u06cc\u0637 \u0639\u0627\u062f\u06cc \u0631\u0627 \u0628\u0627\u0632 \u0645\u06cc\u200c\u06a9\u0646\u062f. \u0645\u06cc\u200c\u062a\u0648\u0627\u0646\u06cc\u062f \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627 \u06cc\u06a9 \u067e\u06cc\u0646 \u0627\u062e\u062a\u06cc\u0627\u0631\u06cc \u062f\u0648\u0645 \u062a\u0646\u0638\u06cc\u0645 \u06a9\u0646\u06cc\u062f.";
+
+  @override
+  String get onboardingAppLockMandatoryLine => "\u0642\u0641\u0644 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0631\u0627\u06cc \u0645\u062d\u0627\u0641\u0638\u062a \u0627\u0632 \u06af\u0641\u062a\u06af\u0648\u0647\u0627\u06cc \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06af\u0627\u0647 \u0627\u0644\u0632\u0627\u0645\u06cc \u0627\u0633\u062a.";
+
+  @override
+  String get onboardingProtectionSetupVault => "\u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc \u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627";
 }
