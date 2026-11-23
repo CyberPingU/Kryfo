@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Mover antes",
   "gifFavMoveLater": "Mover después",
   "gifFavTileA11y": "GIF favorito {number}",
-  "onboardingProtectionOneTimeTitle": "Configuración inicial",
-  "onboardingProtectionOneTimeLine": "Por seguridad y privacidad del dispositivo, la activación de un archivo aislado solo está disponible en esta fase.",
-  "onboardingProtectionDualPinTitle": "Segundo PIN de acceso",
-  "onboardingProtectionDualPinLine": "El PIN principal abre el entorno habitual. Puedes definir un segundo PIN para gestionar un archivo aislado.",
+  "onboardingProtectionOneTimeTitle": "Disponible solo durante la configuración inicial",
+  "onboardingProtectionOneTimeLine": "La configuración de un archivo aislado solo está disponible en esta fase inicial. Si tocas «Ignorar», el archivo no se configurará y no estará accesible en este dispositivo.",
+  "onboardingProtectionDualPinTitle": "PIN de acceso secundario",
+  "onboardingProtectionDualPinLine": "Tu PIN principal abre el entorno habitual. Puedes configurar un segundo PIN opcional para gestionar un archivo aislado.",
   "onboardingAppLockMandatoryLine": "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.",
   "onboardingProtectionSetupVault": "Configurar archivo aislado",
   "onboardingProtectionHeadline": "Archivo aislado",
-  "onboardingProtectionLead": "Separación segura para conversaciones dedicadas en este dispositivo."
+  "onboardingProtectionLead": "Espacio opcional separado para conversaciones dedicadas en este dispositivo.",
+  "onboardingProtectionIgnore": "Ignorar"
 }

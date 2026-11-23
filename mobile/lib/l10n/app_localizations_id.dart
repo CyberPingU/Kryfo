@@ -11602,23 +11602,25 @@ class AppLocalizationsId extends AppLocalizations {
   String get onboardingProtectionHeadline => "Arsip terisolasi";
 
   @override
-  String get onboardingProtectionLead => "Pemisahan aman untuk percakapan khusus di perangkat ini.";
+  String get onboardingProtectionLead => "Ruang terpisah opsional untuk percakapan khusus di perangkat ini.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Hanya saat penyiapan awal";
+  String get onboardingProtectionOneTimeTitle => "Hanya tersedia saat penyiapan awal";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Demi keamanan dan privasi perangkat, pengaktifan arsip terisolasi hanya tersedia pada tahap ini.";
+  String get onboardingProtectionOneTimeLine => "Menyiapkan arsip terisolasi hanya tersedia selama fase awal ini. Jika Anda mengetuk \"Abaikan\", arsip tidak akan dikonfigurasi dan tidak dapat diakses di perangkat ini.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "PIN akses kedua";
+  String get onboardingProtectionDualPinTitle => "PIN akses sekunder";
 
   @override
-  String get onboardingProtectionDualPinLine => "PIN utama membuka lingkungan biasa. Anda dapat menyetel PIN kedua untuk mengelola arsip terisolasi.";
+  String get onboardingProtectionDualPinLine => "PIN utama membuka lingkungan sehari-hari. Anda dapat menetapkan PIN kedua opsional untuk mengelola arsip terisolasi.";
 
   @override
   String get onboardingAppLockMandatoryLine => "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.";
 
   @override
-  String get onboardingProtectionSetupVault => "Atur arsip terisolasi";
+  String get onboardingProtectionSetupVault => "Siapkan arsip terisolasi";
+  @override
+  String get onboardingProtectionIgnore => "Abaikan";
 }

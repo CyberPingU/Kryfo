@@ -11655,26 +11655,28 @@ class AppLocalizationsTr extends AppLocalizations {
     return 'Favori GIF $number';
   }
   @override
-  String get onboardingProtectionHeadline => "Ayr\u0131lm\u0131\u015f ar\u015fiv";
+  String get onboardingProtectionHeadline => "Yalıtılmış arşiv";
 
   @override
-  String get onboardingProtectionLead => "Bu cihazdaki \u00f6zel sohbetler i\u00e7in g\u00fcvenli ayr\u0131m.";
+  String get onboardingProtectionLead => "Bu cihazdaki özel konuşmalar için isteğe bağlı ayrı alan.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Yaln\u0131zca ilk kurulumda";
+  String get onboardingProtectionOneTimeTitle => "Yalnızca ilk kurulum sırasında kullanılabilir";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Cihaz g\u00fcvenli\u011fi ve gizlili\u011fi i\u00e7in ayr\u0131lm\u0131\u015f ar\u015fivin etkinle\u015ftirilmesi yaln\u0131zca bu a\u015famada m\u00fcmk\u00fcnd\u00fcr.";
+  String get onboardingProtectionOneTimeLine => "Yalıtılmış bir arşiv kurulumu yalnızca bu ilk aşamada mümkündür. \"Yoksay\" seçeneğine dokunursanız arşiv yapılandırılmayacak ve bu cihazda erişilemeyecektir.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "\u0130kinci eri\u015fim PIN'i";
+  String get onboardingProtectionDualPinTitle => "İkincil erişim PIN'i";
 
   @override
-  String get onboardingProtectionDualPinLine => "Ana PIN normal ortam\u0131 a\u00e7ar. Ayr\u0131lm\u0131\u015f ar\u015fivi y\u00f6netmek i\u00e7in iste\u011fe ba\u011fl\u0131 ikinci bir PIN belirleyebilirsiniz.";
+  String get onboardingProtectionDualPinLine => "Ana PIN'iniz standart ortamı açar. Yalıtılmış bir arşivi yönetmek için isteğe bağlı ikinci bir PIN belirleyebilirsiniz.";
 
   @override
   String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak i\u00e7in uygulama kilidi zorunludur.";
 
   @override
-  String get onboardingProtectionSetupVault => "Ayr\u0131lm\u0131\u015f ar\u015fivi ayarla";
+  String get onboardingProtectionSetupVault => "Yalıtılmış arşiv oluştur";
+  @override
+  String get onboardingProtectionIgnore => "Yoksay";
 }

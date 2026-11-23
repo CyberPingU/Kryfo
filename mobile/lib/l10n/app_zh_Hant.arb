@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "往前移",
   "gifFavMoveLater": "往後移",
   "gifFavTileA11y": "收藏的 GIF {number}",
-  "onboardingProtectionOneTimeTitle": "僅在初始設定時",
-  "onboardingProtectionOneTimeLine": "為保障裝置安全與隱私，僅可在此階段啟用獨立封存。",
-  "onboardingProtectionDualPinTitle": "第二存取 PIN 碼",
-  "onboardingProtectionDualPinLine": "主要 PIN 碼用於開啟常規環境。您可設定第二個專屬 PIN 碼以管理獨立封存。",
+  "onboardingProtectionOneTimeTitle": "僅在初始設定期間可用",
+  "onboardingProtectionOneTimeLine": "隔離封存的設定僅在此初始階段可用。如果您點選「忽略」，封存將不會被設定，且無法在此裝置上存取。",
+  "onboardingProtectionDualPinTitle": "次要存取 PIN 碼",
+  "onboardingProtectionDualPinLine": "您的主要 PIN 碼用於開啟日常環境。您可以設定可選的第二個 PIN 碼來管理隔離封存。",
   "onboardingAppLockMandatoryLine": "必須設定應用程式鎖定以保護此裝置上的聊天記錄。",
-  "onboardingProtectionSetupVault": "設定獨立封存",
-  "onboardingProtectionHeadline": "獨立封存",
-  "onboardingProtectionLead": "在此裝置上對專屬對話進行安全隔離。"
+  "onboardingProtectionSetupVault": "設定隔離封存",
+  "onboardingProtectionHeadline": "隔離封存",
+  "onboardingProtectionLead": "在此裝置上用於專屬對話的可選獨立空間。",
+  "onboardingProtectionIgnore": "忽略"
 }

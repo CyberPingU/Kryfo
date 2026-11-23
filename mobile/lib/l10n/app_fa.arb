@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "جابه‌جایی به قبل",
   "gifFavMoveLater": "جابه‌جایی به بعد",
   "gifFavTileA11y": "GIF برگزیده {number}",
-  "onboardingProtectionOneTimeTitle": "تنها هنگام راه‌اندازی اولیه",
-  "onboardingProtectionOneTimeLine": "برای امنیت و حریم خصوصی دستگاه، فعال‌سازی بایگانی مجزا تنها در این مرحله امکان‌پذیر است.",
-  "onboardingProtectionDualPinTitle": "پین دسترسی دوم",
-  "onboardingProtectionDualPinLine": "پین اصلی محیط عادی را باز می‌کند. می‌توانید برای مدیریت بایگانی مجزا یک پین اختیاری دوم تنظیم کنید.",
+  "onboardingProtectionOneTimeTitle": "فقط در طول راه‌اندازی اولیه در دسترس است",
+  "onboardingProtectionOneTimeLine": "راه‌اندازی بایگانی ایzوله فقط در این مرحله اولیه امکان‌پذیر است. اگر روی «صرف‌نظر» ضربه بزنید، بایگانی پیکربندی نخواهد شد و در این دستگاه قابل دسترسی نیست.",
+  "onboardingProtectionDualPinTitle": "پین دسترسی ثانویه",
+  "onboardingProtectionDualPinLine": "پین اصلی شما محیط روزمره را باز می‌کند. می‌توانید برای مدیریت یک بایگانی ایزوله یک پین دوم اختیاری تنظیم کنید.",
   "onboardingAppLockMandatoryLine": "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.",
-  "onboardingProtectionSetupVault": "راه‌اندازی بایگانی مجزا",
-  "onboardingProtectionHeadline": "بایگانی مجزا",
-  "onboardingProtectionLead": "جداسازی امن برای گفتگوهای اختصاصی در این دستگاه."
+  "onboardingProtectionSetupVault": "راه‌اندازی بایگانی ایزوله",
+  "onboardingProtectionHeadline": "بایگانی ایزوله",
+  "onboardingProtectionLead": "فضای مجزای اختیاری برای گفتگوهای اختصاصی در این دستگاه.",
+  "onboardingProtectionIgnore": "صرف‌نظر"
 }

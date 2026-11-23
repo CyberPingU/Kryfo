@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "पहले ले जाएँ",
   "gifFavMoveLater": "बाद में ले जाएँ",
   "gifFavTileA11y": "पसंदीदा GIF {number}",
-  "onboardingProtectionOneTimeTitle": "केवल प्रारंभिक सेटअप पर",
-  "onboardingProtectionOneTimeLine": "डिवाइस की सुरक्षा और गोपनीयता के लिए, अलग संग्रह केवल इसी चरण में सक्रिय किया जा सकता है।",
-  "onboardingProtectionDualPinTitle": "दूसरा एक्सेस पिन",
-  "onboardingProtectionDualPinLine": "मुख्य पिन सामान्य वातावरण खोलता है। आप अलग संग्रह प्रबंधित करने के लिए एक वैकल्पिक दूसरा पिन सेट कर सकते हैं।",
+  "onboardingProtectionOneTimeTitle": "केवल प्रारंभिक सेटअप के दौरान उपलब्ध",
+  "onboardingProtectionOneTimeLine": "एक अलग संग्रह की स्थापना केवल इस प्रारंभिक चरण के दौरान उपलब्ध है। यदि आप \"अनदेखा करें\" पर टैप करते हैं, तो संग्रह कॉन्फ़िगर नहीं होगा और इस डिवाइस पर पहुंच योग्य नहीं होगा।",
+  "onboardingProtectionDualPinTitle": "द्वितीयक एक्सेस पिन",
+  "onboardingProtectionDualPinLine": "आपका मुख्य पिन रोजमर्रा के माहौल को खोलता है। आप एक अलग संग्रह को प्रबंधित करने के लिए एक वैकल्पिक दूसरा पिन सेट कर सकते हैं।",
   "onboardingAppLockMandatoryLine": "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।",
   "onboardingProtectionSetupVault": "अलग संग्रह सेट करें",
   "onboardingProtectionHeadline": "अलग संग्रह",
-  "onboardingProtectionLead": "इस डिवाइस पर समर्पित बातचीत के लिए सुरक्षित अलगाव।"
+  "onboardingProtectionLead": "इस डिवाइस पर समर्पित बातचीत के लिए वैकल्पिक अलग स्थान।",
+  "onboardingProtectionIgnore": "अनदेखा करें"
 }

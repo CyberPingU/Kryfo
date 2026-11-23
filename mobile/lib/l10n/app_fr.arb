@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Avancer",
   "gifFavMoveLater": "Reculer",
   "gifFavTileA11y": "GIF favori {number}",
-  "onboardingProtectionOneTimeTitle": "Configuration initiale",
-  "onboardingProtectionOneTimeLine": "Pour la sécurité et la confidentialité de l'appareil, l'activation d'une archive isolée n'est possible qu'à cette étape.",
-  "onboardingProtectionDualPinTitle": "Second code d'accès",
-  "onboardingProtectionDualPinLine": "Le code principal ouvre l'environnement habituel. Vous pouvez définir un second code pour gérer une archive isolée.",
+  "onboardingProtectionOneTimeTitle": "Disponible uniquement lors de la configuration initiale",
+  "onboardingProtectionOneTimeLine": "La configuration d'une archive isolée n'est possible que lors de cette phase initiale. Si vous appuyez sur « Ignorer », l'archive ne sera pas configurée et ne sera pas accessible sur cet appareil.",
+  "onboardingProtectionDualPinTitle": "Code PIN d'accès secondaire",
+  "onboardingProtectionDualPinLine": "Votre code PIN principal ouvre l'environnement habituel. Vous pouvez définir un deuxième code PIN facultatif pour gérer une archive isolée.",
   "onboardingAppLockMandatoryLine": "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.",
   "onboardingProtectionSetupVault": "Configurer une archive isolée",
   "onboardingProtectionHeadline": "Archive isolée",
-  "onboardingProtectionLead": "Séparation sécurisée pour les conversations dédiées sur cet appareil."
+  "onboardingProtectionLead": "Espace facultatif séparé pour les conversations dédiées sur cet appareil.",
+  "onboardingProtectionIgnore": "Ignorer"
 }

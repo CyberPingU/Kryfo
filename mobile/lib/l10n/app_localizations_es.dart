@@ -11673,23 +11673,25 @@ class AppLocalizationsEs extends AppLocalizations {
   String get onboardingProtectionHeadline => "Archivo aislado";
 
   @override
-  String get onboardingProtectionLead => "Separaci\u00f3n segura para conversaciones dedicadas en este dispositivo.";
+  String get onboardingProtectionLead => "Espacio opcional separado para conversaciones dedicadas en este dispositivo.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Configuraci\u00f3n inicial";
+  String get onboardingProtectionOneTimeTitle => "Disponible solo durante la configuración inicial";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Por seguridad y privacidad del dispositivo, la activaci\u00f3n de un archivo aislado solo est\u00e1 disponible en esta fase.";
+  String get onboardingProtectionOneTimeLine => "La configuración de un archivo aislado solo está disponible en esta fase inicial. Si tocas «Ignorar», el archivo no se configurará y no estará accesible en este dispositivo.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Segundo PIN de acceso";
+  String get onboardingProtectionDualPinTitle => "PIN de acceso secundario";
 
   @override
-  String get onboardingProtectionDualPinLine => "El PIN principal abre el entorno habitual. Puedes definir un segundo PIN para gestionar un archivo aislado.";
+  String get onboardingProtectionDualPinLine => "Tu PIN principal abre el entorno habitual. Puedes configurar un segundo PIN opcional para gestionar un archivo aislado.";
 
   @override
   String get onboardingAppLockMandatoryLine => "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.";
 
   @override
   String get onboardingProtectionSetupVault => "Configurar archivo aislado";
+  @override
+  String get onboardingProtectionIgnore => "Ignorar";
 }

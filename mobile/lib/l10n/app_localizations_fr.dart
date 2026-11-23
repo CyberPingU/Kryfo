@@ -11669,26 +11669,28 @@ class AppLocalizationsFr extends AppLocalizations {
     return 'GIF favori $number';
   }
   @override
-  String get onboardingProtectionHeadline => "Archive isol\u00e9e";
+  String get onboardingProtectionHeadline => "Archive isolée";
 
   @override
-  String get onboardingProtectionLead => "S\u00e9paration s\u00e9curis\u00e9e pour les conversations d\u00e9di\u00e9es sur cet appareil.";
+  String get onboardingProtectionLead => "Espace facultatif séparé pour les conversations dédiées sur cet appareil.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Configuration initiale";
+  String get onboardingProtectionOneTimeTitle => "Disponible uniquement lors de la configuration initiale";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Pour la s\u00e9curit\u00e9 et la confidentialit\u00e9 de l'appareil, l'activation d'une archive isol\u00e9e n'est possible qu'\u00e0 cette \u00e9tape.";
+  String get onboardingProtectionOneTimeLine => "La configuration d'une archive isolée n'est possible que lors de cette phase initiale. Si vous appuyez sur « Ignorer », l'archive ne sera pas configurée et ne sera pas accessible sur cet appareil.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Second code d'acc\u00e8s";
+  String get onboardingProtectionDualPinTitle => "Code PIN d'accès secondaire";
 
   @override
-  String get onboardingProtectionDualPinLine => "Le code principal ouvre l'environnement habituel. Vous pouvez d\u00e9finir un second code pour g\u00e9rer une archive isol\u00e9e.";
+  String get onboardingProtectionDualPinLine => "Votre code PIN principal ouvre l'environnement habituel. Vous pouvez définir un deuxième code PIN facultatif pour gérer une archive isolée.";
 
   @override
   String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour prot\u00e9ger vos \u00e9changes sur cet appareil.";
 
   @override
-  String get onboardingProtectionSetupVault => "Configurer une archive isol\u00e9e";
+  String get onboardingProtectionSetupVault => "Configurer une archive isolée";
+  @override
+  String get onboardingProtectionIgnore => "Ignorer";
 }

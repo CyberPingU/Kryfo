@@ -11672,23 +11672,25 @@ class AppLocalizationsPt extends AppLocalizations {
   String get onboardingProtectionHeadline => "Arquivo isolado";
 
   @override
-  String get onboardingProtectionLead => "Separa\u00e7\u00e3o segura para conversas dedicadas neste dispositivo.";
+  String get onboardingProtectionLead => "Espaço opcional separado para conversas dedicadas neste dispositivo.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Apenas na configura\u00e7\u00e3o inicial";
+  String get onboardingProtectionOneTimeTitle => "Disponível apenas na configuração inicial";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Para seguran\u00e7a e privacidade do dispositivo, a ativa\u00e7\u00e3o de um arquivo isolado s\u00f3 est\u00e1 dispon\u00edvel nesta etapa.";
+  String get onboardingProtectionOneTimeLine => "A configuração de um arquivo isolado só está disponível nesta fase inicial. Se tocar em «Ignorar», o arquivo não será configurado e não estará acessível neste dispositivo.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Segundo PIN de acesso";
+  String get onboardingProtectionDualPinTitle => "PIN de acesso secundário";
 
   @override
-  String get onboardingProtectionDualPinLine => "O PIN principal abre o ambiente normal. Voc\u00ea pode definir um segundo PIN para gerenciar um arquivo isolado.";
+  String get onboardingProtectionDualPinLine => "Seu PIN principal abre o ambiente cotidiano. Você pode definir um segundo PIN opcional para gerenciar um arquivo isolado.";
 
   @override
   String get onboardingAppLockMandatoryLine => "O bloqueio do app \u00e9 obrigat\u00f3rio para proteger suas conversas neste dispositivo.";
 
   @override
   String get onboardingProtectionSetupVault => "Configurar arquivo isolado";
+  @override
+  String get onboardingProtectionIgnore => "Ignorar";
 }

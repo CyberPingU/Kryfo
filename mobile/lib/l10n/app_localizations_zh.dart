@@ -11599,28 +11599,31 @@ class AppLocalizationsZh extends AppLocalizations {
     return '收藏的 GIF $number';
   }
   @override
-  String get onboardingProtectionHeadline => "\u72ec\u7acb\u5f52\u6863";
+  String get onboardingProtectionHeadline => "隔离归档";
 
   @override
-  String get onboardingProtectionLead => "\u5728\u6b64\u8bbe\u5907\u4e0a\u5bf9\u4e13\u5c5e\u5bf9\u8bdd\u8fdb\u884c\u5b89\u5168\u9694\u79bb\u3002";
+  String get onboardingProtectionLead => "在此设备上用于专属对话的可选独立空间。";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "\u4ec5\u5728\u521d\u59cb\u8bbe\u7f6e\u65f6";
+  String get onboardingProtectionOneTimeTitle => "仅在初始设置期间可用";
 
   @override
-  String get onboardingProtectionOneTimeLine => "\u4e3a\u4fdd\u969c\u8bbe\u5907\u5b89\u5168\u4e0e\u9690\u79c1\uff0c\u4ec5\u53ef\u5728\u6b64\u9636\u6bb5\u542f\u7528\u72ec\u7acb\u5f52\u6863\u3002";
+  String get onboardingProtectionOneTimeLine => "隔离归档的设置仅在此初始阶段可用。如果您点击“忽略”，归档将不会被配置，且无法在此设备上访问。";
 
   @override
-  String get onboardingProtectionDualPinTitle => "\u7b2c\u4e8c\u8bbf\u95ee PIN \u7801";
+  String get onboardingProtectionDualPinTitle => "辅助访问 PIN 码";
 
   @override
-  String get onboardingProtectionDualPinLine => "\u4e3b PIN \u7801\u7528\u4e8e\u6253\u5f00\u5e38\u89c4\u73af\u5883\u3002\u60a8\u53ef\u8bbe\u7f6e\u7b2c\u4e8c\u4e2a\u4e13\u5c5e PIN \u7801\u4ee5\u7ba1\u7406\u72ec\u7acb\u5f52\u6863\u3002";
+  String get onboardingProtectionDualPinLine => "您的主 PIN 码用于打开日常环境。您可以设置一个可选的第二个 PIN 码来管理隔离归档。";
 
   @override
   String get onboardingAppLockMandatoryLine => "\u5fc5\u987b\u8bbe\u7f6e\u5e94\u7528\u9501\u4ee5\u4fdd\u62a4\u6b64\u8bbe\u5907\u4e0a\u7684\u804a\u5929\u8bb0\u5f55\u3002";
 
   @override
-  String get onboardingProtectionSetupVault => "\u8bbe\u7f6e\u72ec\u7acb\u5f52\u6863";
+  String get onboardingProtectionSetupVault => "设置隔离归档";
+
+  @override
+  String get onboardingProtectionIgnore => "忽略";
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -23100,26 +23103,28 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
     return '收藏的 GIF $number';
   }
   @override
-  String get onboardingProtectionHeadline => "\u7368\u7acb\u5c01\u5b58";
+  String get onboardingProtectionHeadline => "隔离归档";
 
   @override
-  String get onboardingProtectionLead => "\u5728\u6b64\u88dd\u7f6e\u4e0a\u5c0d\u5c08\u5c6c\u5c0d\u8a71\u9032\u884c\u5b89\u5168\u9694\u96e2\u3002";
+  String get onboardingProtectionLead => "在此设备上用于专属对话的可选独立空间。";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "\u50c5\u5728\u521d\u59cb\u8a2d\u5b9a\u6642";
+  String get onboardingProtectionOneTimeTitle => "仅在初始设置期间可用";
 
   @override
-  String get onboardingProtectionOneTimeLine => "\u70ba\u4fdd\u969c\u88dd\u7f6e\u5b89\u5168\u8207\u96b1\u79c1\uff0c\u50c5\u53ef\u5728\u6b64\u968e\u6bb5\u555f\u7528\u7368\u7acb\u5c01\u5b58\u3002";
+  String get onboardingProtectionOneTimeLine => "隔离归档的设置仅在此初始阶段可用。如果您点击“忽略”，归档将不会被配置，且无法在此设备上访问。";
 
   @override
-  String get onboardingProtectionDualPinTitle => "\u7b2c\u4e8c\u5b58\u53d6 PIN \u78bc";
+  String get onboardingProtectionDualPinTitle => "辅助访问 PIN 码";
 
   @override
-  String get onboardingProtectionDualPinLine => "\u4e3b\u8981 PIN \u78bc\u7528\u65bc\u958b\u555f\u5e38\u898f\u74b0\u5883\u3002\u60a8\u53ef\u8a2d\u5b9a\u7b2c\u4e8c\u500b\u5c08\u5c6c PIN \u78bc\u4ee5\u7ba1\u7406\u7368\u7acb\u5c01\u5b58\u3002";
+  String get onboardingProtectionDualPinLine => "您的主 PIN 码用于打开日常环境。您可以设置一个可选的第二个 PIN 码来管理隔离归档。";
 
   @override
   String get onboardingAppLockMandatoryLine => "\u5fc5\u9808\u8a2d\u5b9a\u61c9\u7528\u7a0b\u5f0f\u9396\u5b9a\u4ee5\u4fdd\u8b77\u6b64\u88dd\u7f6e\u4e0a\u7684\u804a\u5929\u8a18\u9304\u3002";
 
   @override
-  String get onboardingProtectionSetupVault => "\u8a2d\u5b9a\u7368\u7acb\u5c01\u5b58";
+  String get onboardingProtectionSetupVault => "设置隔离归档";
+  @override
+  String get onboardingProtectionIgnore => "忽略";
 }

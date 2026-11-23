@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Sposta prima",
   "gifFavMoveLater": "Sposta dopo",
   "gifFavTileA11y": "GIF preferita {number}",
-  "onboardingProtectionOneTimeTitle": "Configurazione iniziale",
-  "onboardingProtectionOneTimeLine": "Per garantire la sicurezza e la riservatezza del dispositivo, l'attivazione di un archivio isolato è disponibile solo in questa fase.",
+  "onboardingProtectionOneTimeTitle": "Disponibile solo ora",
+  "onboardingProtectionOneTimeLine": "L'attivazione dell'archivio isolato è possibile solo in questa fase iniziale. Se premi «Ignora», l'archivio non verrà configurato e non sarà accessibile su questo dispositivo.",
   "onboardingProtectionDualPinTitle": "Secondo PIN di accesso",
   "onboardingProtectionDualPinLine": "Il PIN principale apre l'ambiente ordinario. Puoi associare un secondo PIN dedicato per gestire un archivio isolato.",
   "onboardingAppLockMandatoryLine": "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.",
   "onboardingProtectionSetupVault": "Configura archivio isolato",
   "onboardingProtectionHeadline": "Archivio isolato",
-  "onboardingProtectionLead": "Separazione sicura per conversazioni dedicate su questo dispositivo."
+  "onboardingProtectionLead": "Spazio opzionale separato per conversazioni dedicate su questo dispositivo.",
+  "onboardingProtectionIgnore": "Ignora"
 }

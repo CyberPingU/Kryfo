@@ -11674,13 +11674,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get onboardingProtectionHeadline => "Archivio isolato";
 
   @override
-  String get onboardingProtectionLead => "Separazione sicura per conversazioni dedicate su questo dispositivo.";
+  String get onboardingProtectionLead => "Spazio opzionale separato per conversazioni dedicate su questo dispositivo.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Configurazione iniziale";
+  String get onboardingProtectionOneTimeTitle => "Disponibile solo ora";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Per garantire la sicurezza e la riservatezza del dispositivo, l'attivazione di un archivio isolato \u00e8 disponibile solo in questa fase.";
+  String get onboardingProtectionOneTimeLine => "L'attivazione dell'archivio isolato è possibile solo in questa fase iniziale. Se premi «Ignora», l'archivio non verrà configurato e non sarà accessibile su questo dispositivo.";
 
   @override
   String get onboardingProtectionDualPinTitle => "Secondo PIN di accesso";
@@ -11693,4 +11693,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get onboardingProtectionSetupVault => "Configura archivio isolato";
+  @override
+  String get onboardingProtectionIgnore => "Ignora";
 }

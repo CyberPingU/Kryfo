@@ -11838,23 +11838,25 @@ class AppLocalizationsPl extends AppLocalizations {
   String get onboardingProtectionHeadline => "Izolowane archiwum";
 
   @override
-  String get onboardingProtectionLead => "Bezpieczna separacja dedykowanych rozm\u00f3w na tym urz\u0105dzeniu.";
+  String get onboardingProtectionLead => "Opcjonalna wydzielona przestrzeń na dedykowane rozmowy na tym urządzeniu.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Tylko wst\u0119pna konfiguracja";
+  String get onboardingProtectionOneTimeTitle => "Dostępne tylko podczas wstępnej konfiguracji";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Dla bezpiecze\u0144stwa i prywatno\u015bci urz\u0105dzenia aktywacja izolowanego archiwum jest mo\u017cliwa tylko na tym etapie.";
+  String get onboardingProtectionOneTimeLine => "Konfiguracja izolowanego archiwum jest możliwa tylko na tym początkowym etapie. Jeśli wybierzesz „Ignoruj”, archiwum nie zostanie skonfigurowane i nie będzie dostępne na tym urządzeniu.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Drugi PIN dost\u0119pu";
+  String get onboardingProtectionDualPinTitle => "Dodatkowy kod PIN dostępu";
 
   @override
-  String get onboardingProtectionDualPinLine => "G\u0142\u00f3wny PIN otwiera standardowe \u015brodowisko. Mo\u017cesz ustawi\u0107 drugi PIN, aby zarz\u0105dza\u0107 izolowanym archiwum.";
+  String get onboardingProtectionDualPinLine => "Twój główny kod PIN otwiera standardowe środowisko. Możesz ustawić opcjonalny drugi kod PIN, aby zarządzać izolowanym archiwum.";
 
   @override
   String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chroni\u0107 Twoje czaty na tym urz\u0105dzeniu.";
 
   @override
   String get onboardingProtectionSetupVault => "Skonfiguruj izolowane archiwum";
+  @override
+  String get onboardingProtectionIgnore => "Ignoruj";
 }

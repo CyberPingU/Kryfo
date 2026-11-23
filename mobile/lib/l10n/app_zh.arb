@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "前移",
   "gifFavMoveLater": "后移",
   "gifFavTileA11y": "收藏的 GIF {number}",
-  "onboardingProtectionOneTimeTitle": "仅在初始设置时",
-  "onboardingProtectionOneTimeLine": "为保障设备安全与隐私，仅可在此阶段启用独立归档。",
-  "onboardingProtectionDualPinTitle": "第二访问 PIN 码",
-  "onboardingProtectionDualPinLine": "主 PIN 码用于打开常规环境。您可设置第二个专属 PIN 码以管理独立归档。",
+  "onboardingProtectionOneTimeTitle": "仅在初始设置期间可用",
+  "onboardingProtectionOneTimeLine": "隔离归档的设置仅在此初始阶段可用。如果您点击“忽略”，归档将不会被配置，且无法在此设备上访问。",
+  "onboardingProtectionDualPinTitle": "辅助访问 PIN 码",
+  "onboardingProtectionDualPinLine": "您的主 PIN 码用于打开日常环境。您可以设置一个可选的第二个 PIN 码来管理隔离归档。",
   "onboardingAppLockMandatoryLine": "必须设置应用锁以保护此设备上的聊天记录。",
-  "onboardingProtectionSetupVault": "设置独立归档",
-  "onboardingProtectionHeadline": "独立归档",
-  "onboardingProtectionLead": "在此设备上对专属对话进行安全隔离。"
+  "onboardingProtectionSetupVault": "设置隔离归档",
+  "onboardingProtectionHeadline": "隔离归档",
+  "onboardingProtectionLead": "在此设备上用于专属对话的可选独立空间。",
+  "onboardingProtectionIgnore": "忽略"
 }

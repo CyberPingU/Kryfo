@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "نقل إلى الأمام",
   "gifFavMoveLater": "نقل إلى الخلف",
   "gifFavTileA11y": "صورة GIF مفضلة {number}",
-  "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأولي فقط",
-  "onboardingProtectionOneTimeLine": "لأمان الجهاز وخصوصيته، يتوفر تفعيل الأرشيف المعزول في هذه المرحلة فقط.",
-  "onboardingProtectionDualPinTitle": "رمز PIN ثانٍ للوصول",
-  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي البيئة العادية. يمكنك تعيين رمز PIN ثانٍ لإدارة أرشيف معزول.",
+  "onboardingProtectionOneTimeTitle": "متاح أثناء الإعداد الأولي فقط",
+  "onboardingProtectionOneTimeLine": "إعداد الأرشيف المعزول متاح فقط خلال هذه المرحلة الأولية. إذا نقرت على \"تجاهل\"، فلن يتم تكوين الأرشيف ولن يمكن الوصول إليه على هذا الجهاز.",
+  "onboardingProtectionDualPinTitle": "رمز PIN إضافي للوصول",
+  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي بيئتك اليومية. يمكنك تعيين رمز PIN ثانٍ اختياري لإدارة أرشيف معزول.",
   "onboardingAppLockMandatoryLine": "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.",
-  "onboardingProtectionSetupVault": "إعداد الأرشيف المعزول",
-  "onboardingProtectionHeadline": "الأرشيف المعزول",
-  "onboardingProtectionLead": "فصل آمن للمحادثات المخصصة على هذا الجهاز."
+  "onboardingProtectionSetupVault": "إعداد أرشيف معزول",
+  "onboardingProtectionHeadline": "أرشيف معزول",
+  "onboardingProtectionLead": "مساحة منفصلة اختيارية للمحادثات المخصصة على هذا الجهاز.",
+  "onboardingProtectionIgnore": "تجاهل"
 }

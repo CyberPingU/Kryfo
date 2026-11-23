@@ -11798,26 +11798,28 @@ class AppLocalizationsUk extends AppLocalizations {
     return 'Обраний GIF $number';
   }
   @override
-  String get onboardingProtectionHeadline => "\u0406\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u0438\u0439 \u0430\u0440\u0445\u0456\u0432";
+  String get onboardingProtectionHeadline => "Ізольований архів";
 
   @override
-  String get onboardingProtectionLead => "\u0411\u0435\u0437\u043f\u0435\u0447\u043d\u0435 \u0440\u043e\u0437\u0434\u0456\u043b\u0435\u043d\u043d\u044f \u0434\u043b\u044f \u0432\u0438\u0434\u0456\u043b\u0435\u043d\u0438\u0445 \u0440\u043e\u0437\u043c\u043e\u0432 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u0457.";
+  String get onboardingProtectionLead => "Додатковий окремий простір для спеціальних розмов на цьому пристрої.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "\u041b\u0438\u0448\u0435 \u043f\u0456\u0434 \u0447\u0430\u0441 \u043f\u043e\u0447\u0430\u0442\u043a\u043e\u0432\u043e\u0433\u043e \u043d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u043d\u043d\u044f";
+  String get onboardingProtectionOneTimeTitle => "Доступно лише під час початкового налаштування";
 
   @override
-  String get onboardingProtectionOneTimeLine => "\u0417\u0430\u0434\u043b\u044f \u0431\u0435\u0437\u043f\u0435\u043a\u0438 \u0442\u0430 \u043a\u043e\u043d\u0444\u0456\u0434\u0435\u043d\u0446\u0456\u0439\u043d\u043e\u0441\u0442\u0456 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u044e \u0430\u043a\u0442\u0438\u0432\u0430\u0446\u0456\u044f \u0456\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u043e\u0433\u043e \u0430\u0440\u0445\u0456\u0432\u0443 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u043b\u0438\u0448\u0435 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u0435\u0442\u0430\u043f\u0456.";
+  String get onboardingProtectionOneTimeLine => "Налаштування ізольованого архіву можливе лише на цьому початковому етапі. Якщо натиснути «Ігнорувати», архів не буде налаштовано і він буде недоступний на цьому пристрої.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "\u0414\u0440\u0443\u0433\u0438\u0439 PIN-\u043a\u043e\u0434 \u0434\u043e\u0441\u0442\u0443\u043f\u0443";
+  String get onboardingProtectionDualPinTitle => "Вторинний PIN-код доступу";
 
   @override
-  String get onboardingProtectionDualPinLine => "\u041e\u0441\u043d\u043e\u0432\u043d\u0438\u0439 PIN \u0432\u0456\u0434\u043a\u0440\u0438\u0432\u0430\u0454 \u0437\u0432\u0438\u0447\u0430\u0439\u043d\u0435 \u0441\u0435\u0440\u0435\u0434\u043e\u0432\u0438\u0449\u0435. \u0412\u0438 \u043c\u043e\u0436\u0435\u0442\u0435 \u043d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u0442\u0438 \u0434\u0440\u0443\u0433\u0438\u0439 PIN \u0434\u043b\u044f \u043a\u0435\u0440\u0443\u0432\u0430\u043d\u043d\u044f \u0456\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u0438\u043c \u0430\u0440\u0445\u0456\u0432\u043e\u043c.";
+  String get onboardingProtectionDualPinLine => "Основний PIN-код відкриває звичайне середовище. Ви можете встановити додатковий другий PIN-код для керування ізольованим архівом.";
 
   @override
   String get onboardingAppLockMandatoryLine => "\u0411\u043b\u043e\u043a\u0443\u0432\u0430\u043d\u043d\u044f \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u043e\u0431\u043e\u0432'\u044f\u0437\u043a\u043e\u0432\u0435 \u0434\u043b\u044f \u0437\u0430\u0445\u0438\u0441\u0442\u0443 \u0432\u0430\u0448\u0438\u0445 \u0447\u0430\u0442\u0456\u0432 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u0457.";
 
   @override
-  String get onboardingProtectionSetupVault => "\u041d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u0442\u0438 \u0456\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u0438\u0439 \u0430\u0440\u0445\u0456\u0432";
+  String get onboardingProtectionSetupVault => "Налаштувати ізольований архів";
+  @override
+  String get onboardingProtectionIgnore => "Ігнорувати";
 }

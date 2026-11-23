@@ -1922,7 +1922,7 @@ class _ProtectionScreenState extends State<ProtectionScreen> {
         : _StepPage(
             footer: [
               _Cta(
-                label: l10n.commonContinue,
+                label: l10n.onboardingProtectionIgnore,
                 onTap: _skipAndSealRandomVault,
               ),
               const SizedBox(height: 4),

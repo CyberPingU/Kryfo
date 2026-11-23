@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Pindah ke depan",
   "gifFavMoveLater": "Pindah ke belakang",
   "gifFavTileA11y": "GIF favorit {number}",
-  "onboardingProtectionOneTimeTitle": "Hanya saat penyiapan awal",
-  "onboardingProtectionOneTimeLine": "Demi keamanan dan privasi perangkat, pengaktifan arsip terisolasi hanya tersedia pada tahap ini.",
-  "onboardingProtectionDualPinTitle": "PIN akses kedua",
-  "onboardingProtectionDualPinLine": "PIN utama membuka lingkungan biasa. Anda dapat menyetel PIN kedua untuk mengelola arsip terisolasi.",
+  "onboardingProtectionOneTimeTitle": "Hanya tersedia saat penyiapan awal",
+  "onboardingProtectionOneTimeLine": "Menyiapkan arsip terisolasi hanya tersedia selama fase awal ini. Jika Anda mengetuk \"Abaikan\", arsip tidak akan dikonfigurasi dan tidak dapat diakses di perangkat ini.",
+  "onboardingProtectionDualPinTitle": "PIN akses sekunder",
+  "onboardingProtectionDualPinLine": "PIN utama membuka lingkungan sehari-hari. Anda dapat menetapkan PIN kedua opsional untuk mengelola arsip terisolasi.",
   "onboardingAppLockMandatoryLine": "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.",
-  "onboardingProtectionSetupVault": "Atur arsip terisolasi",
+  "onboardingProtectionSetupVault": "Siapkan arsip terisolasi",
   "onboardingProtectionHeadline": "Arsip terisolasi",
-  "onboardingProtectionLead": "Pemisahan aman untuk percakapan khusus di perangkat ini."
+  "onboardingProtectionLead": "Ruang terpisah opsional untuk percakapan khusus di perangkat ini.",
+  "onboardingProtectionIgnore": "Abaikan"
 }

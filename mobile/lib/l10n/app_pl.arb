@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Przesuń wcześniej",
   "gifFavMoveLater": "Przesuń później",
   "gifFavTileA11y": "Ulubiony GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Tylko wstępna konfiguracja",
-  "onboardingProtectionOneTimeLine": "Dla bezpieczeństwa i prywatności urządzenia aktywacja izolowanego archiwum jest możliwa tylko na tym etapie.",
-  "onboardingProtectionDualPinTitle": "Drugi PIN dostępu",
-  "onboardingProtectionDualPinLine": "Główny PIN otwiera standardowe środowisko. Możesz ustawić drugi PIN, aby zarządzać izolowanym archiwum.",
+  "onboardingProtectionOneTimeTitle": "Dostępne tylko podczas wstępnej konfiguracji",
+  "onboardingProtectionOneTimeLine": "Konfiguracja izolowanego archiwum jest możliwa tylko na tym początkowym etapie. Jeśli wybierzesz „Ignoruj”, archiwum nie zostanie skonfigurowane i nie będzie dostępne na tym urządzeniu.",
+  "onboardingProtectionDualPinTitle": "Dodatkowy kod PIN dostępu",
+  "onboardingProtectionDualPinLine": "Twój główny kod PIN otwiera standardowe środowisko. Możesz ustawić opcjonalny drugi kod PIN, aby zarządzać izolowanym archiwum.",
   "onboardingAppLockMandatoryLine": "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.",
   "onboardingProtectionSetupVault": "Skonfiguruj izolowane archiwum",
   "onboardingProtectionHeadline": "Izolowane archiwum",
-  "onboardingProtectionLead": "Bezpieczna separacja dedykowanych rozmów na tym urządzeniu."
+  "onboardingProtectionLead": "Opcjonalna wydzielona przestrzeń na dedykowane rozmowy na tym urządzeniu.",
+  "onboardingProtectionIgnore": "Ignoruj"
 }

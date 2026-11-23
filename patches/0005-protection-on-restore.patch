@@ -1,8 +1,8 @@
 diff --git a/mobile/lib/l10n/app_ar.arb b/mobile/lib/l10n/app_ar.arb
-index 0a884b44c..e0be1b474 100644
+index 0a884b44c..98c3f0e49 100644
 --- a/mobile/lib/l10n/app_ar.arb
 +++ b/mobile/lib/l10n/app_ar.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "نقل إلى الأمام",
    "gifFavMoveLater": "نقل إلى الخلف",
    "gifFavTileA11y": "صورة GIF مفضلة {number}",
@@ -10,21 +10,22 @@ index 0a884b44c..e0be1b474 100644
 -  "onboardingProtectionOneTimeLine": "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.",
 -  "onboardingProtectionDualPinTitle": "رمزا PIN منفصلان",
 -  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية.",
-+  "onboardingProtectionOneTimeTitle": "أثناء الإعداد الأولي فقط",
-+  "onboardingProtectionOneTimeLine": "لأمان الجهاز وخصوصيته، يتوفر تفعيل الأرشيف المعزول في هذه المرحلة فقط.",
-+  "onboardingProtectionDualPinTitle": "رمز PIN ثانٍ للوصول",
-+  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي البيئة العادية. يمكنك تعيين رمز PIN ثانٍ لإدارة أرشيف معزول.",
++  "onboardingProtectionOneTimeTitle": "متاح أثناء الإعداد الأولي فقط",
++  "onboardingProtectionOneTimeLine": "إعداد الأرشيف المعزول متاح فقط خلال هذه المرحلة الأولية. إذا نقرت على \"تجاهل\"، فلن يتم تكوين الأرشيف ولن يمكن الوصول إليه على هذا الجهاز.",
++  "onboardingProtectionDualPinTitle": "رمز PIN إضافي للوصول",
++  "onboardingProtectionDualPinLine": "يفتح رمز PIN الرئيسي بيئتك اليومية. يمكنك تعيين رمز PIN ثانٍ اختياري لإدارة أرشيف معزول.",
    "onboardingAppLockMandatoryLine": "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.",
 -  "onboardingProtectionSetupVault": "إعداد المحادثات المخفية"
-+  "onboardingProtectionSetupVault": "إعداد الأرشيف المعزول",
-+  "onboardingProtectionHeadline": "الأرشيف المعزول",
-+  "onboardingProtectionLead": "فصل آمن للمحادثات المخصصة على هذا الجهاز."
++  "onboardingProtectionSetupVault": "إعداد أرشيف معزول",
++  "onboardingProtectionHeadline": "أرشيف معزول",
++  "onboardingProtectionLead": "مساحة منفصلة اختيارية للمحادثات المخصصة على هذا الجهاز.",
++  "onboardingProtectionIgnore": "تجاهل"
  }
 diff --git a/mobile/lib/l10n/app_de.arb b/mobile/lib/l10n/app_de.arb
-index 2e93682bf..734efe731 100644
+index 2e93682bf..0bf525976 100644
 --- a/mobile/lib/l10n/app_de.arb
 +++ b/mobile/lib/l10n/app_de.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Nach vorne",
    "gifFavMoveLater": "Nach hinten",
    "gifFavTileA11y": "Lieblings-GIF {number}",
@@ -32,18 +33,19 @@ index 2e93682bf..734efe731 100644
 -  "onboardingProtectionOneTimeLine": "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.",
 -  "onboardingProtectionDualPinTitle": "Zwei getrennte PINs",
 -  "onboardingProtectionDualPinLine": "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats.",
-+  "onboardingProtectionOneTimeTitle": "Ersteinrichtung",
-+  "onboardingProtectionOneTimeLine": "Aus Sicherheitsgründen kann ein isoliertes Archiv nur in dieser Phase eingerichtet werden.",
-+  "onboardingProtectionDualPinTitle": "Zweite Zugangs-PIN",
-+  "onboardingProtectionDualPinLine": "Die Haupt-PIN öffnet die gewohnte Umgebung. Sie können eine zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.",
++  "onboardingProtectionOneTimeTitle": "Nur bei Ersteinrichtung verfügbar",
++  "onboardingProtectionOneTimeLine": "Das Einrichten eines isolierten Archivs ist nur in dieser Anfangsphase möglich. Wenn Sie auf „Ignorieren“ tippen, wird das Archiv nicht konfiguriert und ist auf diesem Gerät nicht zugänglich.",
++  "onboardingProtectionDualPinTitle": "Sekundäre Zugangs-PIN",
++  "onboardingProtectionDualPinLine": "Ihre Haupt-PIN öffnet die reguläre Umgebung. Sie können eine optionale zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.",
    "onboardingAppLockMandatoryLine": "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.",
 -  "onboardingProtectionSetupVault": "Versteckte Chats einrichten"
 +  "onboardingProtectionSetupVault": "Isoliertes Archiv einrichten",
 +  "onboardingProtectionHeadline": "Isoliertes Archiv",
-+  "onboardingProtectionLead": "Sichere Trennung für dedizierte Konversationen auf diesem Gerät."
++  "onboardingProtectionLead": "Optionaler getrennter Bereich für dedizierte Unterhaltungen auf diesem Gerät.",
++  "onboardingProtectionIgnore": "Ignorieren"
  }
 diff --git a/mobile/lib/l10n/app_en.arb b/mobile/lib/l10n/app_en.arb
-index ef38843ae..85959eaf8 100644
+index ef38843ae..1827adb5b 100644
 --- a/mobile/lib/l10n/app_en.arb
 +++ b/mobile/lib/l10n/app_en.arb
 @@ -10108,7 +10108,7 @@
@@ -55,15 +57,18 @@ index ef38843ae..85959eaf8 100644
    "@pinsHiddenLine": {
      "description": "App lock, Advanced protection: the hidden chats row, its line"
    },
-@@ -15862,20 +15862,31 @@
+@@ -15860,22 +15860,37 @@
+       }
+     }
    },
-   "onboardingProtectionOneTimeTitle": "Initial setup only",
+-  "onboardingProtectionOneTimeTitle": "Initial setup only",
++  "onboardingProtectionOneTimeTitle": "Available during initial setup only",
    "@onboardingProtectionOneTimeTitle": {
 -    "description": "screens/onboarding_screen.dart: title of the warning card on advanced protection step"
 +    "description": "screens/onboarding_screen.dart: onboardingProtectionOneTimeTitle"
    },
 -  "onboardingProtectionOneTimeLine": "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.",
-+  "onboardingProtectionOneTimeLine": "For device security and privacy, setting up an isolated archive is only available during this phase.",
++  "onboardingProtectionOneTimeLine": "Setting up an isolated archive is only available during this initial phase. If you tap \"Ignore\", the archive will not be configured and cannot be accessed on this device.",
    "@onboardingProtectionOneTimeLine": {
 -    "description": "screens/onboarding_screen.dart: line of the warning card on advanced protection step"
 +    "description": "screens/onboarding_screen.dart: onboardingProtectionOneTimeLine"
@@ -87,19 +92,23 @@ index ef38843ae..85959eaf8 100644
 +  "@onboardingProtectionHeadline": {
 +    "description": "screens/onboarding_screen.dart: onboardingProtectionHeadline"
 +  },
-+  "onboardingProtectionLead": "Secure separation for dedicated conversations on this device.",
++  "onboardingProtectionLead": "Optional separated space for dedicated conversations on this device.",
 +  "@onboardingProtectionLead": {
 +    "description": "screens/onboarding_screen.dart: onboardingProtectionLead"
 +  },
 +  "@onboardingProtectionSetupVault": {
 +    "description": "screens/onboarding_screen.dart: onboardingProtectionSetupVault"
++  },
++  "onboardingProtectionIgnore": "Ignore",
++  "@onboardingProtectionIgnore": {
++    "description": "screens/onboarding_screen.dart: onboardingProtectionIgnore"
 +  }
  }
 diff --git a/mobile/lib/l10n/app_es.arb b/mobile/lib/l10n/app_es.arb
-index 4eba46aaf..a7178e89c 100644
+index 4eba46aaf..045528ec9 100644
 --- a/mobile/lib/l10n/app_es.arb
 +++ b/mobile/lib/l10n/app_es.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Mover antes",
    "gifFavMoveLater": "Mover después",
    "gifFavTileA11y": "GIF favorito {number}",
@@ -107,21 +116,22 @@ index 4eba46aaf..a7178e89c 100644
 -  "onboardingProtectionOneTimeLine": "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.",
 -  "onboardingProtectionDualPinTitle": "Dos PIN distintos",
 -  "onboardingProtectionDualPinLine": "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos.",
-+  "onboardingProtectionOneTimeTitle": "Configuración inicial",
-+  "onboardingProtectionOneTimeLine": "Por seguridad y privacidad del dispositivo, la activación de un archivo aislado solo está disponible en esta fase.",
-+  "onboardingProtectionDualPinTitle": "Segundo PIN de acceso",
-+  "onboardingProtectionDualPinLine": "El PIN principal abre el entorno habitual. Puedes definir un segundo PIN para gestionar un archivo aislado.",
++  "onboardingProtectionOneTimeTitle": "Disponible solo durante la configuración inicial",
++  "onboardingProtectionOneTimeLine": "La configuración de un archivo aislado solo está disponible en esta fase inicial. Si tocas «Ignorar», el archivo no se configurará y no estará accesible en este dispositivo.",
++  "onboardingProtectionDualPinTitle": "PIN de acceso secundario",
++  "onboardingProtectionDualPinLine": "Tu PIN principal abre el entorno habitual. Puedes configurar un segundo PIN opcional para gestionar un archivo aislado.",
    "onboardingAppLockMandatoryLine": "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.",
 -  "onboardingProtectionSetupVault": "Configurar chats ocultos"
 +  "onboardingProtectionSetupVault": "Configurar archivo aislado",
 +  "onboardingProtectionHeadline": "Archivo aislado",
-+  "onboardingProtectionLead": "Separación segura para conversaciones dedicadas en este dispositivo."
++  "onboardingProtectionLead": "Espacio opcional separado para conversaciones dedicadas en este dispositivo.",
++  "onboardingProtectionIgnore": "Ignorar"
  }
 diff --git a/mobile/lib/l10n/app_fa.arb b/mobile/lib/l10n/app_fa.arb
-index 781a82175..f8afffb89 100644
+index 781a82175..9449275bd 100644
 --- a/mobile/lib/l10n/app_fa.arb
 +++ b/mobile/lib/l10n/app_fa.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "جابه‌جایی به قبل",
    "gifFavMoveLater": "جابه‌جایی به بعد",
    "gifFavTileA11y": "GIF برگزیده {number}",
@@ -129,41 +139,45 @@ index 781a82175..f8afffb89 100644
 -  "onboardingProtectionOneTimeLine": "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.",
 -  "onboardingProtectionDualPinTitle": "دو پین جداگانه",
 -  "onboardingProtectionDualPinLine": "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند.",
-+  "onboardingProtectionOneTimeTitle": "تنها هنگام راه‌اندازی اولیه",
-+  "onboardingProtectionOneTimeLine": "برای امنیت و حریم خصوصی دستگاه، فعال‌سازی بایگانی مجزا تنها در این مرحله امکان‌پذیر است.",
-+  "onboardingProtectionDualPinTitle": "پین دسترسی دوم",
-+  "onboardingProtectionDualPinLine": "پین اصلی محیط عادی را باز می‌کند. می‌توانید برای مدیریت بایگانی مجزا یک پین اختیاری دوم تنظیم کنید.",
++  "onboardingProtectionOneTimeTitle": "فقط در طول راه‌اندازی اولیه در دسترس است",
++  "onboardingProtectionOneTimeLine": "راه‌اندازی بایگانی ایzوله فقط در این مرحله اولیه امکان‌پذیر است. اگر روی «صرف‌نظر» ضربه بزنید، بایگانی پیکربندی نخواهد شد و در این دستگاه قابل دسترسی نیست.",
++  "onboardingProtectionDualPinTitle": "پین دسترسی ثانویه",
++  "onboardingProtectionDualPinLine": "پین اصلی شما محیط روزمره را باز می‌کند. می‌توانید برای مدیریت یک بایگانی ایزوله یک پین دوم اختیاری تنظیم کنید.",
    "onboardingAppLockMandatoryLine": "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.",
 -  "onboardingProtectionSetupVault": "راه‌اندازی گفتگوهای پنهان"
-+  "onboardingProtectionSetupVault": "راه‌اندازی بایگانی مجزا",
-+  "onboardingProtectionHeadline": "بایگانی مجزا",
-+  "onboardingProtectionLead": "جداسازی امن برای گفتگوهای اختصاصی در این دستگاه."
++  "onboardingProtectionSetupVault": "راه‌اندازی بایگانی ایزوله",
++  "onboardingProtectionHeadline": "بایگانی ایزوله",
++  "onboardingProtectionLead": "فضای مجزای اختیاری برای گفتگوهای اختصاصی در این دستگاه.",
++  "onboardingProtectionIgnore": "صرف‌نظر"
  }
 diff --git a/mobile/lib/l10n/app_fr.arb b/mobile/lib/l10n/app_fr.arb
-index 54af1931d..a11f2631e 100644
+index 54af1931d..3f9bdffe8 100644
 --- a/mobile/lib/l10n/app_fr.arb
 +++ b/mobile/lib/l10n/app_fr.arb
-@@ -3312,9 +3312,11 @@
+@@ -3311,10 +3311,13 @@
+   "gifFavMoveEarlier": "Avancer",
    "gifFavMoveLater": "Reculer",
    "gifFavTileA11y": "GIF favori {number}",
-   "onboardingProtectionOneTimeTitle": "Configuration initiale",
+-  "onboardingProtectionOneTimeTitle": "Configuration initiale",
 -  "onboardingProtectionOneTimeLine": "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.",
 -  "onboardingProtectionDualPinTitle": "Deux codes PIN distincts",
 -  "onboardingProtectionDualPinLine": "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées.",
-+  "onboardingProtectionOneTimeLine": "Pour la sécurité et la confidentialité de l'appareil, l'activation d'une archive isolée n'est possible qu'à cette étape.",
-+  "onboardingProtectionDualPinTitle": "Second code d'accès",
-+  "onboardingProtectionDualPinLine": "Le code principal ouvre l'environnement habituel. Vous pouvez définir un second code pour gérer une archive isolée.",
++  "onboardingProtectionOneTimeTitle": "Disponible uniquement lors de la configuration initiale",
++  "onboardingProtectionOneTimeLine": "La configuration d'une archive isolée n'est possible que lors de cette phase initiale. Si vous appuyez sur « Ignorer », l'archive ne sera pas configurée et ne sera pas accessible sur cet appareil.",
++  "onboardingProtectionDualPinTitle": "Code PIN d'accès secondaire",
++  "onboardingProtectionDualPinLine": "Votre code PIN principal ouvre l'environnement habituel. Vous pouvez définir un deuxième code PIN facultatif pour gérer une archive isolée.",
    "onboardingAppLockMandatoryLine": "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.",
 -  "onboardingProtectionSetupVault": "Configurer les discussions cachées"
 +  "onboardingProtectionSetupVault": "Configurer une archive isolée",
 +  "onboardingProtectionHeadline": "Archive isolée",
-+  "onboardingProtectionLead": "Séparation sécurisée pour les conversations dédiées sur cet appareil."
++  "onboardingProtectionLead": "Espace facultatif séparé pour les conversations dédiées sur cet appareil.",
++  "onboardingProtectionIgnore": "Ignorer"
  }
 diff --git a/mobile/lib/l10n/app_hi.arb b/mobile/lib/l10n/app_hi.arb
-index a329baeae..6b53bc1e5 100644
+index a329baeae..2997eceb9 100644
 --- a/mobile/lib/l10n/app_hi.arb
 +++ b/mobile/lib/l10n/app_hi.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "पहले ले जाएँ",
    "gifFavMoveLater": "बाद में ले जाएँ",
    "gifFavTileA11y": "पसंदीदा GIF {number}",
@@ -171,21 +185,22 @@ index a329baeae..6b53bc1e5 100644
 -  "onboardingProtectionOneTimeLine": "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।",
 -  "onboardingProtectionDualPinTitle": "दो अलग पिन",
 -  "onboardingProtectionDualPinLine": "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।",
-+  "onboardingProtectionOneTimeTitle": "केवल प्रारंभिक सेटअप पर",
-+  "onboardingProtectionOneTimeLine": "डिवाइस की सुरक्षा और गोपनीयता के लिए, अलग संग्रह केवल इसी चरण में सक्रिय किया जा सकता है।",
-+  "onboardingProtectionDualPinTitle": "दूसरा एक्सेस पिन",
-+  "onboardingProtectionDualPinLine": "मुख्य पिन सामान्य वातावरण खोलता है। आप अलग संग्रह प्रबंधित करने के लिए एक वैकल्पिक दूसरा पिन सेट कर सकते हैं।",
++  "onboardingProtectionOneTimeTitle": "केवल प्रारंभिक सेटअप के दौरान उपलब्ध",
++  "onboardingProtectionOneTimeLine": "एक अलग संग्रह की स्थापना केवल इस प्रारंभिक चरण के दौरान उपलब्ध है। यदि आप \"अनदेखा करें\" पर टैप करते हैं, तो संग्रह कॉन्फ़िगर नहीं होगा और इस डिवाइस पर पहुंच योग्य नहीं होगा।",
++  "onboardingProtectionDualPinTitle": "द्वितीयक एक्सेस पिन",
++  "onboardingProtectionDualPinLine": "आपका मुख्य पिन रोजमर्रा के माहौल को खोलता है। आप एक अलग संग्रह को प्रबंधित करने के लिए एक वैकल्पिक दूसरा पिन सेट कर सकते हैं।",
    "onboardingAppLockMandatoryLine": "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।",
 -  "onboardingProtectionSetupVault": "छुपी हुई चैट सेट करें"
 +  "onboardingProtectionSetupVault": "अलग संग्रह सेट करें",
 +  "onboardingProtectionHeadline": "अलग संग्रह",
-+  "onboardingProtectionLead": "इस डिवाइस पर समर्पित बातचीत के लिए सुरक्षित अलगाव।"
++  "onboardingProtectionLead": "इस डिवाइस पर समर्पित बातचीत के लिए वैकल्पिक अलग स्थान।",
++  "onboardingProtectionIgnore": "अनदेखा करें"
  }
 diff --git a/mobile/lib/l10n/app_id.arb b/mobile/lib/l10n/app_id.arb
-index 839c17b42..f4c61c812 100644
+index 839c17b42..cf21d2507 100644
 --- a/mobile/lib/l10n/app_id.arb
 +++ b/mobile/lib/l10n/app_id.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Pindah ke depan",
    "gifFavMoveLater": "Pindah ke belakang",
    "gifFavTileA11y": "GIF favorit {number}",
@@ -193,18 +208,19 @@ index 839c17b42..f4c61c812 100644
 -  "onboardingProtectionOneTimeLine": "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.",
 -  "onboardingProtectionDualPinTitle": "Dua PIN terpisah",
 -  "onboardingProtectionDualPinLine": "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi.",
-+  "onboardingProtectionOneTimeTitle": "Hanya saat penyiapan awal",
-+  "onboardingProtectionOneTimeLine": "Demi keamanan dan privasi perangkat, pengaktifan arsip terisolasi hanya tersedia pada tahap ini.",
-+  "onboardingProtectionDualPinTitle": "PIN akses kedua",
-+  "onboardingProtectionDualPinLine": "PIN utama membuka lingkungan biasa. Anda dapat menyetel PIN kedua untuk mengelola arsip terisolasi.",
++  "onboardingProtectionOneTimeTitle": "Hanya tersedia saat penyiapan awal",
++  "onboardingProtectionOneTimeLine": "Menyiapkan arsip terisolasi hanya tersedia selama fase awal ini. Jika Anda mengetuk \"Abaikan\", arsip tidak akan dikonfigurasi dan tidak dapat diakses di perangkat ini.",
++  "onboardingProtectionDualPinTitle": "PIN akses sekunder",
++  "onboardingProtectionDualPinLine": "PIN utama membuka lingkungan sehari-hari. Anda dapat menetapkan PIN kedua opsional untuk mengelola arsip terisolasi.",
    "onboardingAppLockMandatoryLine": "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.",
 -  "onboardingProtectionSetupVault": "Atur obrolan tersembunyi"
-+  "onboardingProtectionSetupVault": "Atur arsip terisolasi",
++  "onboardingProtectionSetupVault": "Siapkan arsip terisolasi",
 +  "onboardingProtectionHeadline": "Arsip terisolasi",
-+  "onboardingProtectionLead": "Pemisahan aman untuk percakapan khusus di perangkat ini."
++  "onboardingProtectionLead": "Ruang terpisah opsional untuk percakapan khusus di perangkat ini.",
++  "onboardingProtectionIgnore": "Abaikan"
  }
 diff --git a/mobile/lib/l10n/app_it.arb b/mobile/lib/l10n/app_it.arb
-index 5f1cf313e..a976aeb85 100644
+index 5f1cf313e..daf2a5b4f 100644
 --- a/mobile/lib/l10n/app_it.arb
 +++ b/mobile/lib/l10n/app_it.arb
 @@ -2142,7 +2142,7 @@
@@ -216,7 +232,7 @@ index 5f1cf313e..a976aeb85 100644
    "pinsSetUp": "Configura",
    "pinsChangeHiddenPin": "Cambia PIN delle chat nascoste",
    "pinsHideMoreChats": "Nascondi altre chat",
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Sposta prima",
    "gifFavMoveLater": "Sposta dopo",
    "gifFavTileA11y": "GIF preferita {number}",
@@ -224,21 +240,22 @@ index 5f1cf313e..a976aeb85 100644
 -  "onboardingProtectionOneTimeLine": "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.",
 -  "onboardingProtectionDualPinTitle": "Due PIN distinti",
 -  "onboardingProtectionDualPinLine": "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste.",
-+  "onboardingProtectionOneTimeTitle": "Configurazione iniziale",
-+  "onboardingProtectionOneTimeLine": "Per garantire la sicurezza e la riservatezza del dispositivo, l'attivazione di un archivio isolato è disponibile solo in questa fase.",
++  "onboardingProtectionOneTimeTitle": "Disponibile solo ora",
++  "onboardingProtectionOneTimeLine": "L'attivazione dell'archivio isolato è possibile solo in questa fase iniziale. Se premi «Ignora», l'archivio non verrà configurato e non sarà accessibile su questo dispositivo.",
 +  "onboardingProtectionDualPinTitle": "Secondo PIN di accesso",
 +  "onboardingProtectionDualPinLine": "Il PIN principale apre l'ambiente ordinario. Puoi associare un secondo PIN dedicato per gestire un archivio isolato.",
    "onboardingAppLockMandatoryLine": "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.",
 -  "onboardingProtectionSetupVault": "Configura chat nascoste"
 +  "onboardingProtectionSetupVault": "Configura archivio isolato",
 +  "onboardingProtectionHeadline": "Archivio isolato",
-+  "onboardingProtectionLead": "Separazione sicura per conversazioni dedicate su questo dispositivo."
++  "onboardingProtectionLead": "Spazio opzionale separato per conversazioni dedicate su questo dispositivo.",
++  "onboardingProtectionIgnore": "Ignora"
  }
 diff --git a/mobile/lib/l10n/app_localizations.dart b/mobile/lib/l10n/app_localizations.dart
-index 331bc06d3..a12e5b43c 100644
+index 331bc06d3..e1d031b1a 100644
 --- a/mobile/lib/l10n/app_localizations.dart
 +++ b/mobile/lib/l10n/app_localizations.dart
-@@ -20157,6 +20157,22 @@ abstract class AppLocalizations {
+@@ -20157,6 +20157,24 @@ abstract class AppLocalizations {
    /// In en, this message translates to:
    /// **'Favourite GIF {number}'**
    String gifFavTileA11y(String number);
@@ -258,10 +275,12 @@ index 331bc06d3..a12e5b43c 100644
 +  String get onboardingAppLockMandatoryLine;
 +
 +  String get onboardingProtectionSetupVault;
++
++  String get onboardingProtectionIgnore;
  }
  
  class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
-@@ -20212,33 +20228,4 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
+@@ -20212,33 +20230,4 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
      'on GitHub with a reproducible sample app and the gen-l10n configuration '
      'that was used.'
    );
@@ -296,106 +315,114 @@ index 331bc06d3..a12e5b43c 100644
 -
  }
 diff --git a/mobile/lib/l10n/app_localizations_ar.dart b/mobile/lib/l10n/app_localizations_ar.dart
-index 8f1690d0e..dab6b0c28 100644
+index 8f1690d0e..2bbd78a60 100644
 --- a/mobile/lib/l10n/app_localizations_ar.dart
 +++ b/mobile/lib/l10n/app_localizations_ar.dart
-@@ -11908,21 +11908,27 @@ class AppLocalizationsAr extends AppLocalizations {
+@@ -11908,21 +11908,29 @@ class AppLocalizationsAr extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'صورة GIF مفضلة $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u0627\u0644\u0623\u0631\u0634\u064a\u0641 \u0627\u0644\u0645\u0639\u0632\u0648\u0644";
-+
-+  @override
-+  String get onboardingProtectionLead => "\u0641\u0635\u0644 \u0622\u0645\u0646 \u0644\u0644\u0645\u062d\u0627\u062f\u062b\u0627\u062a \u0627\u0644\u0645\u062e\u0635\u0635\u0629 \u0639\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u062c\u0647\u0627\u0632.";
++  String get onboardingProtectionHeadline => "أرشيف معزول";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "رمزا PIN منفصلان";
-+  String get onboardingProtectionOneTimeTitle => "\u0623\u062b\u0646\u0627\u0621 \u0627\u0644\u0625\u0639\u062f\u0627\u062f \u0627\u0644\u0623\u0648\u0644\u064a \u0641\u0642\u0637";
++  String get onboardingProtectionLead => "مساحة منفصلة اختيارية للمحادثات المخصصة على هذا الجهاز.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "يفتح رمز PIN الرئيسي (٤ أرقام فأكثر) المحادثات العادية. يفتح الرمز السري (٦ أرقام فأكثر) المحادثات المخفية.";
-+  String get onboardingProtectionOneTimeLine => "\u0644\u0623\u0645\u0627\u0646 \u0627\u0644\u062c\u0647\u0627\u0632 \u0648\u062e\u0635\u0648\u0635\u064a\u062a\u0647\u060c \u064a\u062a\u0648\u0641\u0631 \u062a\u0641\u0639\u064a\u0644 \u0627\u0644\u0623\u0631\u0634\u064a\u0641 \u0627\u0644\u0645\u0639\u0632\u0648\u0644 \u0641\u064a \u0647\u0630\u0647 \u0627\u0644\u0645\u0631\u062d\u0644\u0629 \u0641\u0642\u0637.";
++  String get onboardingProtectionOneTimeTitle => "متاح أثناء الإعداد الأولي فقط";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "أثناء الإعداد الأول فقط";
-+  String get onboardingProtectionDualPinTitle => "\u0631\u0645\u0632 PIN \u062b\u0627\u0646\u064d \u0644\u0644\u0648\u0635\u0648\u0644";
++  String get onboardingProtectionOneTimeLine => "إعداد الأرشيف المعزول متاح فقط خلال هذه المرحلة الأولية. إذا نقرت على \"تجاهل\"، فلن يتم تكوين الأرشيف ولن يمكن الوصول إليه على هذا الجهاز.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "متاح الآن فقط. لأمانك، لن تظهر أي قائمة للمحادثات المخفية في الإعدادات العادية.";
-+  String get onboardingProtectionDualPinLine => "\u064a\u0641\u062a\u062d \u0631\u0645\u0632 PIN \u0627\u0644\u0631\u0626\u064a\u0633\u064a \u0627\u0644\u0628\u064a\u0626\u0629 \u0627\u0644\u0639\u0627\u062f\u064a\u0629. \u064a\u0645\u0643\u0646\u0643 \u062a\u0639\u064a\u064a\u0646 \u0631\u0645\u0632 PIN \u062b\u0627\u0646\u064d \u0644\u0625\u062f\u0627\u0631\u0629 \u0623\u0631\u0634\u064a\u0641 \u0645\u0639\u0632\u0648\u0644.";
++  String get onboardingProtectionDualPinTitle => "رمز PIN إضافي للوصول";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "قفل التطبيق مطلوب لحماية محادثاتك على هذا الجهاز.";
-+  String get onboardingAppLockMandatoryLine => "\u0642\u0641\u0644 \u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0645\u0637\u0644\u0648\u0628 \u0644\u062d\u0645\u0627\u064a\u0629 \u0645\u062d\u0627\u062f\u062b\u0627\u062a\u0643 \u0639\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u062c\u0647\u0627\u0632.";
++  String get onboardingProtectionDualPinLine => "يفتح رمز PIN الرئيسي بيئتك اليومية. يمكنك تعيين رمز PIN ثانٍ اختياري لإدارة أرشيف معزول.";
  
    @override
 -  String get onboardingProtectionSetupVault => "إعداد المحادثات المخفية";
-+  String get onboardingProtectionSetupVault => "\u0625\u0639\u062f\u0627\u062f \u0627\u0644\u0623\u0631\u0634\u064a\u0641 \u0627\u0644\u0645\u0639\u0632\u0648\u0644";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "\u0642\u0641\u0644 \u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0645\u0637\u0644\u0648\u0628 \u0644\u062d\u0645\u0627\u064a\u0629 \u0645\u062d\u0627\u062f\u062b\u0627\u062a\u0643 \u0639\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u062c\u0647\u0627\u0632.";
++
++  @override
++  String get onboardingProtectionSetupVault => "إعداد أرشيف معزول";
++  @override
++  String get onboardingProtectionIgnore => "تجاهل";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_de.dart b/mobile/lib/l10n/app_localizations_de.dart
-index 3ce4da52f..cc632fb5f 100644
+index 3ce4da52f..dc0e8ae19 100644
 --- a/mobile/lib/l10n/app_localizations_de.dart
 +++ b/mobile/lib/l10n/app_localizations_de.dart
-@@ -11668,21 +11668,27 @@ class AppLocalizationsDe extends AppLocalizations {
+@@ -11668,21 +11668,29 @@ class AppLocalizationsDe extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Lieblings-GIF $number';
    }
 +  @override
 +  String get onboardingProtectionHeadline => "Isoliertes Archiv";
-+
-+  @override
-+  String get onboardingProtectionLead => "Sichere Trennung f\u00fcr dedizierte Konversationen auf diesem Ger\u00e4t.";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Zwei getrennte PINs";
-+  String get onboardingProtectionOneTimeTitle => "Ersteinrichtung";
++  String get onboardingProtectionLead => "Optionaler getrennter Bereich für dedizierte Unterhaltungen auf diesem Gerät.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Die Haupt-PIN (ab 4 Ziffern) öffnet Kryfo mit gewöhnlichen Chats. Die geheime PIN (ab 6 Ziffern) entsperrt alle versteckten Chats.";
-+  String get onboardingProtectionOneTimeLine => "Aus Sicherheitsgr\u00fcnden kann ein isoliertes Archiv nur in dieser Phase eingerichtet werden.";
++  String get onboardingProtectionOneTimeTitle => "Nur bei Ersteinrichtung verfügbar";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Nur bei Ersteinrichtung";
-+  String get onboardingProtectionDualPinTitle => "Zweite Zugangs-PIN";
++  String get onboardingProtectionOneTimeLine => "Das Einrichten eines isolierten Archivs ist nur in dieser Anfangsphase möglich. Wenn Sie auf „Ignorieren“ tippen, wird das Archiv nicht konfiguriert und ist auf diesem Gerät nicht zugänglich.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Nur jetzt verfügbar. Zu Ihrem Schutz erscheinen in den normalen Einstellungen keine Menüs für versteckte Chats.";
-+  String get onboardingProtectionDualPinLine => "Die Haupt-PIN \u00f6ffnet die gewohnte Umgebung. Sie k\u00f6nnen eine zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.";
++  String get onboardingProtectionDualPinTitle => "Sekundäre Zugangs-PIN";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.";
-+  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Ger\u00e4t zu sch\u00fctzen.";
++  String get onboardingProtectionDualPinLine => "Ihre Haupt-PIN öffnet die reguläre Umgebung. Sie können eine optionale zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Versteckte Chats einrichten";
+-}
++  String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Ger\u00e4t zu sch\u00fctzen.";
++
++  @override
 +  String get onboardingProtectionSetupVault => "Isoliertes Archiv einrichten";
- }
++  @override
++  String get onboardingProtectionIgnore => "Ignorieren";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_en.dart b/mobile/lib/l10n/app_localizations_en.dart
-index 3643d11df..7e3603419 100644
+index 3643d11df..4e08fea24 100644
 --- a/mobile/lib/l10n/app_localizations_en.dart
 +++ b/mobile/lib/l10n/app_localizations_en.dart
-@@ -11663,21 +11663,27 @@ class AppLocalizationsEn extends AppLocalizations {
+@@ -11663,21 +11663,29 @@ class AppLocalizationsEn extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Favourite GIF $number';
    }
--
-   @override
--  String get onboardingProtectionDualPinTitle => "Dual PIN protection";
++  @override
 +  String get onboardingProtectionHeadline => "Isolated archive";
  
    @override
--  String get onboardingProtectionDualPinLine => "Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.";
-+  String get onboardingProtectionLead => "Secure separation for dedicated conversations on this device.";
+-  String get onboardingProtectionDualPinTitle => "Dual PIN protection";
++  String get onboardingProtectionLead => "Optional separated space for dedicated conversations on this device.";
  
    @override
-   String get onboardingProtectionOneTimeTitle => "Initial setup only";
+-  String get onboardingProtectionDualPinLine => "Main PIN (4+ digits) opens everyday chats to show if coerced. Hidden PIN (6+ digits) unlocks the vault and reveals all chats.";
++  String get onboardingProtectionOneTimeTitle => "Available during initial setup only";
+ 
+   @override
+-  String get onboardingProtectionOneTimeTitle => "Initial setup only";
++  String get onboardingProtectionOneTimeLine => "Setting up an isolated archive is only available during this initial phase. If you tap \"Ignore\", the archive will not be configured and cannot be accessed on this device.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "This is only available during setup. For your safety, no hidden chat menus or options will appear in regular settings.";
-+  String get onboardingProtectionOneTimeLine => "For device security and privacy, setting up an isolated archive is only available during this phase.";
-+
-+  @override
 +  String get onboardingProtectionDualPinTitle => "Secondary access PIN";
 +
 +  @override
@@ -406,544 +433,603 @@ index 3643d11df..7e3603419 100644
  
    @override
 -  String get onboardingProtectionSetupVault => "Set up hidden chats";
+-}
 +  String get onboardingProtectionSetupVault => "Set up isolated archive";
- }
++  @override
++  String get onboardingProtectionIgnore => "Ignore";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_es.dart b/mobile/lib/l10n/app_localizations_es.dart
-index 5b2528281..a2e208580 100644
+index 5b2528281..4aa7c42fa 100644
 --- a/mobile/lib/l10n/app_localizations_es.dart
 +++ b/mobile/lib/l10n/app_localizations_es.dart
-@@ -11669,21 +11669,27 @@ class AppLocalizationsEs extends AppLocalizations {
+@@ -11669,21 +11669,29 @@ class AppLocalizationsEs extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favorito $number';
    }
 +  @override
 +  String get onboardingProtectionHeadline => "Archivo aislado";
-+
-+  @override
-+  String get onboardingProtectionLead => "Separaci\u00f3n segura para conversaciones dedicadas en este dispositivo.";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Dos PIN distintos";
-+  String get onboardingProtectionOneTimeTitle => "Configuraci\u00f3n inicial";
++  String get onboardingProtectionLead => "Espacio opcional separado para conversaciones dedicadas en este dispositivo.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "El PIN principal (4+ dígitos) abre la app con los chats cotidianos. El PIN secreto (6+ dígitos) desbloquea todos los chats ocultos.";
-+  String get onboardingProtectionOneTimeLine => "Por seguridad y privacidad del dispositivo, la activaci\u00f3n de un archivo aislado solo est\u00e1 disponible en esta fase.";
++  String get onboardingProtectionOneTimeTitle => "Disponible solo durante la configuración inicial";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Solo al primer inicio";
-+  String get onboardingProtectionDualPinTitle => "Segundo PIN de acceso";
++  String get onboardingProtectionOneTimeLine => "La configuración de un archivo aislado solo está disponible en esta fase inicial. Si tocas «Ignorar», el archivo no se configurará y no estará accesible en este dispositivo.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Disponible solo ahora. Para tu seguridad, no aparecerá ninguna opción de chats ocultos en los ajustes normales.";
-+  String get onboardingProtectionDualPinLine => "El PIN principal abre el entorno habitual. Puedes definir un segundo PIN para gestionar un archivo aislado.";
++  String get onboardingProtectionDualPinTitle => "PIN de acceso secundario";
++
++  @override
++  String get onboardingProtectionDualPinLine => "Tu PIN principal abre el entorno habitual. Puedes configurar un segundo PIN opcional para gestionar un archivo aislado.";
 +
    @override
    String get onboardingAppLockMandatoryLine => "El bloqueo de la app es obligatorio para proteger tus chats en este dispositivo.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Configurar chats ocultos";
+-}
 +  String get onboardingProtectionSetupVault => "Configurar archivo aislado";
- }
++  @override
++  String get onboardingProtectionIgnore => "Ignorar";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_fa.dart b/mobile/lib/l10n/app_localizations_fa.dart
-index 828ec0f83..40ef7a07a 100644
+index 828ec0f83..5df7c7703 100644
 --- a/mobile/lib/l10n/app_localizations_fa.dart
 +++ b/mobile/lib/l10n/app_localizations_fa.dart
-@@ -11648,21 +11648,27 @@ class AppLocalizationsFa extends AppLocalizations {
+@@ -11648,21 +11648,29 @@ class AppLocalizationsFa extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF برگزیده $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627";
-+
-+  @override
-+  String get onboardingProtectionLead => "\u062c\u062f\u0627\u0633\u0627\u0632\u06cc \u0627\u0645\u0646 \u0628\u0631\u0627\u06cc \u06af\u0641\u062a\u06af\u0648\u0647\u0627\u06cc \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062f\u0631 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06af\u0627\u0647.";
++  String get onboardingProtectionHeadline => "بایگانی ایزوله";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "دو پین جداگانه";
-+  String get onboardingProtectionOneTimeTitle => "\u062a\u0646\u0647\u0627 \u0647\u0646\u06af\u0627\u0645 \u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc \u0627\u0648\u0644\u06cc\u0647";
++  String get onboardingProtectionLead => "فضای مجزای اختیاری برای گفتگوهای اختصاصی در این دستگاه.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "پین اصلی (۴ رقم به بالا) گفتگوهای عادی را باز می‌کند. پین مخفی (۶ رقم به بالا) گفتگوهای پنهان را باز می‌کند.";
-+  String get onboardingProtectionOneTimeLine => "\u0628\u0631\u0627\u06cc \u0627\u0645\u0646\u06cc\u062a \u0648 \u062d\u0631\u06cc\u0645 \u062e\u0635\u0648\u0635\u06cc \u062f\u0633\u062a\u06af\u0627\u0647\u060c \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627 \u062a\u0646\u0647\u0627 \u062f\u0631 \u0627\u06cc\u0646 \u0645\u0631\u062d\u0644\u0647 \u0627\u0645\u06a9\u0627\u0646\u200c\u067e\u0630\u06cc\u0631 \u0627\u0633\u062a.";
++  String get onboardingProtectionOneTimeTitle => "فقط در طول راه‌اندازی اولیه در دسترس است";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "تنها هنگام راه‌اندازی نخست";
-+  String get onboardingProtectionDualPinTitle => "\u067e\u06cc\u0646 \u062f\u0633\u062a\u0631\u0633\u06cc \u062f\u0648\u0645";
++  String get onboardingProtectionOneTimeLine => "راه‌اندازی بایگانی ایزوله فقط در این مرحله اولیه امکان‌پذیر است. اگر روی «صرف‌نظر» ضربه بزنید، بایگانی پیکربندی نخواهد شد و در این دستگاه قابل دسترسی نیست.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "تنها اکنون در دسترس است. برای امنیت شما هیچ منویی برای گفتگوهای پنهان در تنظیمات عادی نمایش داده نمی‌شود.";
-+  String get onboardingProtectionDualPinLine => "\u067e\u06cc\u0646 \u0627\u0635\u0644\u06cc \u0645\u062d\u06cc\u0637 \u0639\u0627\u062f\u06cc \u0631\u0627 \u0628\u0627\u0632 \u0645\u06cc\u200c\u06a9\u0646\u062f. \u0645\u06cc\u200c\u062a\u0648\u0627\u0646\u06cc\u062f \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627 \u06cc\u06a9 \u067e\u06cc\u0646 \u0627\u062e\u062a\u06cc\u0627\u0631\u06cc \u062f\u0648\u0645 \u062a\u0646\u0638\u06cc\u0645 \u06a9\u0646\u06cc\u062f.";
++  String get onboardingProtectionDualPinTitle => "پین دسترسی ثانویه";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "قفل برنامه برای محافظت از گفتگوهای شما در این دستگاه الزامی است.";
-+  String get onboardingAppLockMandatoryLine => "\u0642\u0641\u0644 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0631\u0627\u06cc \u0645\u062d\u0627\u0641\u0638\u062a \u0627\u0632 \u06af\u0641\u062a\u06af\u0648\u0647\u0627\u06cc \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06af\u0627\u0647 \u0627\u0644\u0632\u0627\u0645\u06cc \u0627\u0633\u062a.";
++  String get onboardingProtectionDualPinLine => "پین اصلی شما محیط روزمره را باز می‌کند. می‌توانید برای مدیریت یک بایگانی ایزوله یک پین دوم اختیاری تنظیم کنید.";
  
    @override
 -  String get onboardingProtectionSetupVault => "راه‌اندازی گفتگوهای پنهان";
-+  String get onboardingProtectionSetupVault => "\u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc \u0628\u0627\u06cc\u06af\u0627\u0646\u06cc \u0645\u062c\u0632\u0627";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "\u0642\u0641\u0644 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0631\u0627\u06cc \u0645\u062d\u0627\u0641\u0638\u062a \u0627\u0632 \u06af\u0641\u062a\u06af\u0648\u0647\u0627\u06cc \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06af\u0627\u0647 \u0627\u0644\u0632\u0627\u0645\u06cc \u0627\u0633\u062a.";
++
++  @override
++  String get onboardingProtectionSetupVault => "راه‌اندازی بایگانی ایزوله";
++  @override
++  String get onboardingProtectionIgnore => "صرف‌نظر";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_fr.dart b/mobile/lib/l10n/app_localizations_fr.dart
-index 5eb8fde71..404e26f23 100644
+index 5eb8fde71..09233af19 100644
 --- a/mobile/lib/l10n/app_localizations_fr.dart
 +++ b/mobile/lib/l10n/app_localizations_fr.dart
-@@ -11668,21 +11668,27 @@ class AppLocalizationsFr extends AppLocalizations {
+@@ -11668,21 +11668,29 @@ class AppLocalizationsFr extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favori $number';
    }
--
++  @override
++  String get onboardingProtectionHeadline => "Archive isolée";
+ 
    @override
 -  String get onboardingProtectionDualPinTitle => "Deux codes PIN distincts";
-+  String get onboardingProtectionHeadline => "Archive isol\u00e9e";
++  String get onboardingProtectionLead => "Espace facultatif séparé pour les conversations dédiées sur cet appareil.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Le code principal (4+ chiffres) ouvre l'application avec les discussions ordinaires. Le code secret (6+ chiffres) déverrouille toutes les discussions cachées.";
-+  String get onboardingProtectionLead => "S\u00e9paration s\u00e9curis\u00e9e pour les conversations d\u00e9di\u00e9es sur cet appareil.";
++  String get onboardingProtectionOneTimeTitle => "Disponible uniquement lors de la configuration initiale";
  
    @override
-   String get onboardingProtectionOneTimeTitle => "Configuration initiale";
+-  String get onboardingProtectionOneTimeTitle => "Configuration initiale";
++  String get onboardingProtectionOneTimeLine => "La configuration d'une archive isolée n'est possible que lors de cette phase initiale. Si vous appuyez sur « Ignorer », l'archive ne sera pas configurée et ne sera pas accessible sur cet appareil.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Disponible uniquement maintenant. Pour votre sécurité, aucun menu de discussion cachée n'apparaîtra dans les paramètres habituels.";
-+  String get onboardingProtectionOneTimeLine => "Pour la s\u00e9curit\u00e9 et la confidentialit\u00e9 de l'appareil, l'activation d'une archive isol\u00e9e n'est possible qu'\u00e0 cette \u00e9tape.";
-+
-+  @override
-+  String get onboardingProtectionDualPinTitle => "Second code d'acc\u00e8s";
-+
-+  @override
-+  String get onboardingProtectionDualPinLine => "Le code principal ouvre l'environnement habituel. Vous pouvez d\u00e9finir un second code pour g\u00e9rer une archive isol\u00e9e.";
++  String get onboardingProtectionDualPinTitle => "Code PIN d'accès secondaire";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour protéger vos échanges sur cet appareil.";
-+  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour prot\u00e9ger vos \u00e9changes sur cet appareil.";
++  String get onboardingProtectionDualPinLine => "Votre code PIN principal ouvre l'environnement habituel. Vous pouvez définir un deuxième code PIN facultatif pour gérer une archive isolée.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Configurer les discussions cachées";
-+  String get onboardingProtectionSetupVault => "Configurer une archive isol\u00e9e";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "Le verrouillage de l'application est obligatoire pour prot\u00e9ger vos \u00e9changes sur cet appareil.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Configurer une archive isolée";
++  @override
++  String get onboardingProtectionIgnore => "Ignorer";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_hi.dart b/mobile/lib/l10n/app_localizations_hi.dart
-index 4ba2a3fef..4b50259a2 100644
+index 4ba2a3fef..472655909 100644
 --- a/mobile/lib/l10n/app_localizations_hi.dart
 +++ b/mobile/lib/l10n/app_localizations_hi.dart
-@@ -11656,21 +11656,27 @@ class AppLocalizationsHi extends AppLocalizations {
+@@ -11656,21 +11656,29 @@ class AppLocalizationsHi extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'पसंदीदा GIF $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939";
-+
-+  @override
-+  String get onboardingProtectionLead => "\u0907\u0938 \u0921\u093f\u0935\u093e\u0907\u0938 \u092a\u0930 \u0938\u092e\u0930\u094d\u092a\u093f\u0924 \u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0947 \u0932\u093f\u090f \u0938\u0941\u0930\u0915\u094d\u0937\u093f\u0924 \u0905\u0932\u0917\u093e\u0935\u0964";
++  String get onboardingProtectionHeadline => "अलग संग्रह";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "दो अलग पिन";
-+  String get onboardingProtectionOneTimeTitle => "\u0915\u0947\u0935\u0932 \u092a\u094d\u0930\u093e\u0930\u0902\u092d\u093f\u0915 \u0938\u0947\u091f\u0905\u092a \u092a\u0930";
++  String get onboardingProtectionLead => "इस डिवाइस पर समर्पित बातचीत के लिए वैकल्पिक अलग स्थान।";
  
    @override
 -  String get onboardingProtectionDualPinLine => "मुख्य पिन (4+ अंक) सामान्य चैट खोलता है। गुप्त पिन (6+ अंक) छिपी हुई चैट को अनलॉक करता है।";
-+  String get onboardingProtectionOneTimeLine => "\u0921\u093f\u0935\u093e\u0907\u0938 \u0915\u0940 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0914\u0930 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e \u0915\u0947 \u0932\u093f\u090f, \u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939 \u0915\u0947\u0935\u0932 \u0907\u0938\u0940 \u091a\u0930\u0923 \u092e\u0947\u0902 \u0938\u0915\u094d\u0930\u093f\u092f \u0915\u093f\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964";
++  String get onboardingProtectionOneTimeTitle => "केवल प्रारंभिक सेटअप के दौरान उपलब्ध";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "केवल पहले सेटअप पर";
-+  String get onboardingProtectionDualPinTitle => "\u0926\u0942\u0938\u0930\u093e \u090f\u0915\u094d\u0938\u0947\u0938 \u092a\u093f\u0928";
++  String get onboardingProtectionOneTimeLine => "एक अलग संग्रह की स्थापना केवल इस प्रारंभिक चरण के दौरान उपलब्ध है। यदि आप \"अनदेखा करें\" पर टैप करते हैं, तो संग्रह कॉन्फ़िगर नहीं होगा और इस डिवाइस पर पहुंच योग्य नहीं होगा।";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "यह केवल अभी उपलब्ध है। आपकी सुरक्षा के लिए सामान्य सेटिंग्स में छिपी चैट का कोई विकल्प नहीं दिखेगा।";
-+  String get onboardingProtectionDualPinLine => "\u092e\u0941\u0916\u094d\u092f \u092a\u093f\u0928 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0935\u093e\u0924\u093e\u0935\u0930\u0923 \u0916\u094b\u0932\u0924\u093e \u0939\u0948\u0964 \u0906\u092a \u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939 \u092a\u094d\u0930\u092c\u0902\u0927\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 \u0935\u0948\u0915\u0932\u094d\u092a\u093f\u0915 \u0926\u0942\u0938\u0930\u093e \u092a\u093f\u0928 \u0938\u0947\u091f \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\u0964";
++  String get onboardingProtectionDualPinTitle => "द्वितीयक एक्सेस पिन";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "इस डिवाइस पर आपकी बातचीत की सुरक्षा के लिए ऐप लॉक अनिवार्य है।";
-+  String get onboardingAppLockMandatoryLine => "\u0907\u0938 \u0921\u093f\u0935\u093e\u0907\u0938 \u092a\u0930 \u0906\u092a\u0915\u0940 \u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0940 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0915\u0947 \u0932\u093f\u090f \u0910\u092a \u0932\u0949\u0915 \u0905\u0928\u093f\u0935\u093e\u0930\u094d\u092f \u0939\u0948\u0964";
++  String get onboardingProtectionDualPinLine => "आपका मुख्य पिन रोजमर्रा के माहौल को खोलता है। आप एक अलग संग्रह को प्रबंधित करने के लिए एक वैकल्पिक दूसरा पिन सेट कर सकते हैं।";
  
    @override
 -  String get onboardingProtectionSetupVault => "छुपी हुई चैट सेट करें";
-+  String get onboardingProtectionSetupVault => "\u0905\u0932\u0917 \u0938\u0902\u0917\u094d\u0930\u0939 \u0938\u0947\u091f \u0915\u0930\u0947\u0902";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "\u0907\u0938 \u0921\u093f\u0935\u093e\u0907\u0938 \u092a\u0930 \u0906\u092a\u0915\u0940 \u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0940 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0915\u0947 \u0932\u093f\u090f \u0910\u092a \u0932\u0949\u0915 \u0905\u0928\u093f\u0935\u093e\u0930\u094d\u092f \u0939\u0948\u0964";
++
++  @override
++  String get onboardingProtectionSetupVault => "अलग संग्रह सेट करें";
++  @override
++  String get onboardingProtectionIgnore => "अनदेखा करें";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_id.dart b/mobile/lib/l10n/app_localizations_id.dart
-index 4c62ab61b..cc6685ac8 100644
+index 4c62ab61b..366c9285f 100644
 --- a/mobile/lib/l10n/app_localizations_id.dart
 +++ b/mobile/lib/l10n/app_localizations_id.dart
-@@ -11598,21 +11598,27 @@ class AppLocalizationsId extends AppLocalizations {
+@@ -11598,21 +11598,29 @@ class AppLocalizationsId extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favorit $number';
    }
 +  @override
 +  String get onboardingProtectionHeadline => "Arsip terisolasi";
-+
-+  @override
-+  String get onboardingProtectionLead => "Pemisahan aman untuk percakapan khusus di perangkat ini.";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Dua PIN terpisah";
-+  String get onboardingProtectionOneTimeTitle => "Hanya saat penyiapan awal";
++  String get onboardingProtectionLead => "Ruang terpisah opsional untuk percakapan khusus di perangkat ini.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "PIN utama (4+ digit) membuka obrolan biasa. PIN rahasia (6+ digit) membuka semua obrolan tersembunyi.";
-+  String get onboardingProtectionOneTimeLine => "Demi keamanan dan privasi perangkat, pengaktifan arsip terisolasi hanya tersedia pada tahap ini.";
++  String get onboardingProtectionOneTimeTitle => "Hanya tersedia saat penyiapan awal";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Hanya pada awal penyiapan";
-+  String get onboardingProtectionDualPinTitle => "PIN akses kedua";
++  String get onboardingProtectionOneTimeLine => "Menyiapkan arsip terisolasi hanya tersedia selama fase awal ini. Jika Anda mengetuk \"Abaikan\", arsip tidak akan dikonfigurasi dan tidak dapat diakses di perangkat ini.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Hanya tersedia sekarang. Demi keamananmu, tidak ada menu obrolan tersembunyi di pengaturan biasa.";
-+  String get onboardingProtectionDualPinLine => "PIN utama membuka lingkungan biasa. Anda dapat menyetel PIN kedua untuk mengelola arsip terisolasi.";
++  String get onboardingProtectionDualPinTitle => "PIN akses sekunder";
++
++  @override
++  String get onboardingProtectionDualPinLine => "PIN utama membuka lingkungan sehari-hari. Anda dapat menetapkan PIN kedua opsional untuk mengelola arsip terisolasi.";
 +
    @override
    String get onboardingAppLockMandatoryLine => "Kunci aplikasi wajib untuk melindungi percakapan Anda di perangkat ini.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Atur obrolan tersembunyi";
-+  String get onboardingProtectionSetupVault => "Atur arsip terisolasi";
- }
+-}
++  String get onboardingProtectionSetupVault => "Siapkan arsip terisolasi";
++  @override
++  String get onboardingProtectionIgnore => "Abaikan";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_it.dart b/mobile/lib/l10n/app_localizations_it.dart
-index 860ca4af7..4edf827fb 100644
+index 860ca4af7..2e91d0c55 100644
 --- a/mobile/lib/l10n/app_localizations_it.dart
 +++ b/mobile/lib/l10n/app_localizations_it.dart
-@@ -11670,21 +11670,27 @@ class AppLocalizationsIt extends AppLocalizations {
+@@ -11670,21 +11670,29 @@ class AppLocalizationsIt extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF preferita $number';
    }
 +  @override
 +  String get onboardingProtectionHeadline => "Archivio isolato";
-+
-+  @override
-+  String get onboardingProtectionLead => "Separazione sicura per conversazioni dedicate su questo dispositivo.";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Due PIN distinti";
-+  String get onboardingProtectionOneTimeTitle => "Configurazione iniziale";
++  String get onboardingProtectionLead => "Spazio opzionale separato per conversazioni dedicate su questo dispositivo.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Il PIN principale (4 o più cifre) apre l'app mostrando solo le conversazioni ordinarie. Il PIN segreto (6 o più cifre) sblocca tutte le chat nascoste.";
-+  String get onboardingProtectionOneTimeLine => "Per garantire la sicurezza e la riservatezza del dispositivo, l'attivazione di un archivio isolato \u00e8 disponibile solo in questa fase.";
++  String get onboardingProtectionOneTimeTitle => "Disponibile solo ora";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Configurazione riservata";
-+  String get onboardingProtectionDualPinTitle => "Secondo PIN di accesso";
++  String get onboardingProtectionOneTimeLine => "L'attivazione dell'archivio isolato è possibile solo in questa fase iniziale. Se premi «Ignora», l'archivio non verrà configurato e non sarà accessibile su questo dispositivo.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Questa opzione è disponibile solo ora. Per la tua sicurezza, nelle normali impostazioni non rimarrà alcuna voce relativa alle chat nascoste.";
-+  String get onboardingProtectionDualPinLine => "Il PIN principale apre l'ambiente ordinario. Puoi associare un secondo PIN dedicato per gestire un archivio isolato.";
++  String get onboardingProtectionDualPinTitle => "Secondo PIN di accesso";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Il codice di blocco è obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
-+  String get onboardingAppLockMandatoryLine => "Il codice di blocco \u00e8 obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
++  String get onboardingProtectionDualPinLine => "Il PIN principale apre l'ambiente ordinario. Puoi associare un secondo PIN dedicato per gestire un archivio isolato.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Configura chat nascoste";
+-}
++  String get onboardingAppLockMandatoryLine => "Il codice di blocco \u00e8 obbligatorio per proteggere le tue conversazioni su questo dispositivo.";
++
++  @override
 +  String get onboardingProtectionSetupVault => "Configura archivio isolato";
- }
++  @override
++  String get onboardingProtectionIgnore => "Ignora";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_pl.dart b/mobile/lib/l10n/app_localizations_pl.dart
-index 9dd9f7dc1..ab12650e7 100644
+index 9dd9f7dc1..f26015dbd 100644
 --- a/mobile/lib/l10n/app_localizations_pl.dart
 +++ b/mobile/lib/l10n/app_localizations_pl.dart
-@@ -11834,21 +11834,27 @@ class AppLocalizationsPl extends AppLocalizations {
+@@ -11834,21 +11834,29 @@ class AppLocalizationsPl extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Ulubiony GIF $number';
    }
 +  @override
 +  String get onboardingProtectionHeadline => "Izolowane archiwum";
-+
-+  @override
-+  String get onboardingProtectionLead => "Bezpieczna separacja dedykowanych rozm\u00f3w na tym urz\u0105dzeniu.";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Dwa różne kody PIN";
-+  String get onboardingProtectionOneTimeTitle => "Tylko wst\u0119pna konfiguracja";
++  String get onboardingProtectionLead => "Opcjonalna wydzielona przestrzeń na dedykowane rozmowy na tym urządzeniu.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty.";
-+  String get onboardingProtectionOneTimeLine => "Dla bezpiecze\u0144stwa i prywatno\u015bci urz\u0105dzenia aktywacja izolowanego archiwum jest mo\u017cliwa tylko na tym etapie.";
++  String get onboardingProtectionOneTimeTitle => "Dostępne tylko podczas wstępnej konfiguracji";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Tylko przy pierwszym uruchomieniu";
-+  String get onboardingProtectionDualPinTitle => "Drugi PIN dost\u0119pu";
++  String get onboardingProtectionOneTimeLine => "Konfiguracja izolowanego archiwum jest możliwa tylko na tym początkowym etapie. Jeśli wybierzesz „Ignoruj”, archiwum nie zostanie skonfigurowane i nie będzie dostępne na tym urządzeniu.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.";
-+  String get onboardingProtectionDualPinLine => "G\u0142\u00f3wny PIN otwiera standardowe \u015brodowisko. Mo\u017cesz ustawi\u0107 drugi PIN, aby zarz\u0105dza\u0107 izolowanym archiwum.";
++  String get onboardingProtectionDualPinTitle => "Dodatkowy kod PIN dostępu";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.";
-+  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chroni\u0107 Twoje czaty na tym urz\u0105dzeniu.";
++  String get onboardingProtectionDualPinLine => "Twój główny kod PIN otwiera standardowe środowisko. Możesz ustawić opcjonalny drugi kod PIN, aby zarządzać izolowanym archiwum.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Skonfiguruj ukryte czaty";
+-}
++  String get onboardingAppLockMandatoryLine => "Blokada aplikacji jest wymagana, aby chroni\u0107 Twoje czaty na tym urz\u0105dzeniu.";
++
++  @override
 +  String get onboardingProtectionSetupVault => "Skonfiguruj izolowane archiwum";
- }
++  @override
++  String get onboardingProtectionIgnore => "Ignoruj";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_pt.dart b/mobile/lib/l10n/app_localizations_pt.dart
-index 4a27c1964..0f1d411eb 100644
+index 4a27c1964..792ec02c9 100644
 --- a/mobile/lib/l10n/app_localizations_pt.dart
 +++ b/mobile/lib/l10n/app_localizations_pt.dart
-@@ -11668,21 +11668,27 @@ class AppLocalizationsPt extends AppLocalizations {
+@@ -11668,21 +11668,29 @@ class AppLocalizationsPt extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF favorito $number';
    }
 +  @override
 +  String get onboardingProtectionHeadline => "Arquivo isolado";
-+
-+  @override
-+  String get onboardingProtectionLead => "Separa\u00e7\u00e3o segura para conversas dedicadas neste dispositivo.";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Dois PINs distintos";
-+  String get onboardingProtectionOneTimeTitle => "Apenas na configura\u00e7\u00e3o inicial";
++  String get onboardingProtectionLead => "Espaço opcional separado para conversas dedicadas neste dispositivo.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.";
-+  String get onboardingProtectionOneTimeLine => "Para seguran\u00e7a e privacidade do dispositivo, a ativa\u00e7\u00e3o de um arquivo isolado s\u00f3 est\u00e1 dispon\u00edvel nesta etapa.";
++  String get onboardingProtectionOneTimeTitle => "Disponível apenas na configuração inicial";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Apenas na primeira inicialização";
-+  String get onboardingProtectionDualPinTitle => "Segundo PIN de acesso";
++  String get onboardingProtectionOneTimeLine => "A configuração de um arquivo isolado só está disponível nesta fase inicial. Se tocar em «Ignorar», o arquivo não será configurado e não estará acessível neste dispositivo.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.";
-+  String get onboardingProtectionDualPinLine => "O PIN principal abre o ambiente normal. Voc\u00ea pode definir um segundo PIN para gerenciar um arquivo isolado.";
++  String get onboardingProtectionDualPinTitle => "PIN de acesso secundário";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.";
-+  String get onboardingAppLockMandatoryLine => "O bloqueio do app \u00e9 obrigat\u00f3rio para proteger suas conversas neste dispositivo.";
++  String get onboardingProtectionDualPinLine => "Seu PIN principal abre o ambiente cotidiano. Você pode definir um segundo PIN opcional para gerenciar um arquivo isolado.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Configurar conversas ocultas";
+-}
++  String get onboardingAppLockMandatoryLine => "O bloqueio do app \u00e9 obrigat\u00f3rio para proteger suas conversas neste dispositivo.";
++
++  @override
 +  String get onboardingProtectionSetupVault => "Configurar arquivo isolado";
- }
++  @override
++  String get onboardingProtectionIgnore => "Ignorar";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_ru.dart b/mobile/lib/l10n/app_localizations_ru.dart
-index e9f8a56c0..4aab2ac18 100644
+index e9f8a56c0..d05a9c458 100644
 --- a/mobile/lib/l10n/app_localizations_ru.dart
 +++ b/mobile/lib/l10n/app_localizations_ru.dart
-@@ -11800,21 +11800,27 @@ class AppLocalizationsRu extends AppLocalizations {
+@@ -11800,21 +11800,29 @@ class AppLocalizationsRu extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Избранный GIF $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u0418\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0430\u0440\u0445\u0438\u0432";
-+
-+  @override
-+  String get onboardingProtectionLead => "\u0411\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0435 \u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0434\u043b\u044f \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0445 \u0431\u0435\u0441\u0435\u0434 \u043d\u0430 \u044d\u0442\u043e\u043c \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0435.";
++  String get onboardingProtectionHeadline => "Изолированный архив";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Два разных PIN-кода";
-+  String get onboardingProtectionOneTimeTitle => "\u0422\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u043d\u0430\u0447\u0430\u043b\u044c\u043d\u043e\u0439 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0435";
++  String get onboardingProtectionLead => "Дополнительное изолированное пространство для выделенных бесед на этом устройстве.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты.";
-+  String get onboardingProtectionOneTimeLine => "\u0414\u043b\u044f \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u0438 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430 \u0430\u043a\u0442\u0438\u0432\u0430\u0446\u0438\u044f \u0438\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0430\u0440\u0445\u0438\u0432\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u0442\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u044d\u0442\u043e\u043c \u044d\u0442\u0430\u043f\u0435.";
++  String get onboardingProtectionOneTimeTitle => "Доступно только при начальной настройке";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Только при первом запуске";
-+  String get onboardingProtectionDualPinTitle => "\u0412\u0442\u043e\u0440\u043e\u0439 PIN-\u043a\u043e\u0434 \u0434\u043e\u0441\u0442\u0443\u043f\u0430";
++  String get onboardingProtectionOneTimeLine => "Настройка изолированного архива возможна только на этом начальном этапе. Если нажать «Игнорировать», архив не будет настроен и будет недоступен на этом устройстве.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.";
-+  String get onboardingProtectionDualPinLine => "\u041e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 PIN \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u043e\u0431\u044b\u0447\u043d\u0443\u044e \u0441\u0440\u0435\u0434\u0443. \u0412\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u0437\u0430\u0434\u0430\u0442\u044c \u0432\u0442\u043e\u0440\u043e\u0439 PIN \u0434\u043b\u044f \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0438\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u0430\u0440\u0445\u0438\u0432\u043e\u043c.";
++  String get onboardingProtectionDualPinTitle => "Вторичный PIN-код доступа";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.";
-+  String get onboardingAppLockMandatoryLine => "\u0411\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u0430 \u0434\u043b\u044f \u0437\u0430\u0449\u0438\u0442\u044b \u0432\u0430\u0448\u0438\u0445 \u0447\u0430\u0442\u043e\u0432 \u043d\u0430 \u044d\u0442\u043e\u043c \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0435.";
++  String get onboardingProtectionDualPinLine => "Основной PIN-код открывает повседневную среду. Вы можете установить дополнительный второй PIN-код для управления изолированным архивом.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Настроить скрытые чаты";
-+  String get onboardingProtectionSetupVault => "\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0438\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0430\u0440\u0445\u0438\u0432";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "\u0411\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u0430 \u0434\u043b\u044f \u0437\u0430\u0449\u0438\u0442\u044b \u0432\u0430\u0448\u0438\u0445 \u0447\u0430\u0442\u043e\u0432 \u043d\u0430 \u044d\u0442\u043e\u043c \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0435.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Настроить изолированный архив";
++  @override
++  String get onboardingProtectionIgnore => "Игнорировать";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_tr.dart b/mobile/lib/l10n/app_localizations_tr.dart
-index 9a97b0098..85e988be1 100644
+index 9a97b0098..df14d25cb 100644
 --- a/mobile/lib/l10n/app_localizations_tr.dart
 +++ b/mobile/lib/l10n/app_localizations_tr.dart
-@@ -11654,21 +11654,27 @@ class AppLocalizationsTr extends AppLocalizations {
+@@ -11654,21 +11654,29 @@ class AppLocalizationsTr extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Favori GIF $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "Ayr\u0131lm\u0131\u015f ar\u015fiv";
-+
-+  @override
-+  String get onboardingProtectionLead => "Bu cihazdaki \u00f6zel sohbetler i\u00e7in g\u00fcvenli ayr\u0131m.";
++  String get onboardingProtectionHeadline => "Yalıtılmış arşiv";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "İki ayrı PIN";
-+  String get onboardingProtectionOneTimeTitle => "Yaln\u0131zca ilk kurulumda";
++  String get onboardingProtectionLead => "Bu cihazdaki özel konuşmalar için isteğe bağlı ayrı alan.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.";
-+  String get onboardingProtectionOneTimeLine => "Cihaz g\u00fcvenli\u011fi ve gizlili\u011fi i\u00e7in ayr\u0131lm\u0131\u015f ar\u015fivin etkinle\u015ftirilmesi yaln\u0131zca bu a\u015famada m\u00fcmk\u00fcnd\u00fcr.";
++  String get onboardingProtectionOneTimeTitle => "Yalnızca ilk kurulum sırasında kullanılabilir";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Yalnızca ilk başlatmada";
-+  String get onboardingProtectionDualPinTitle => "\u0130kinci eri\u015fim PIN'i";
++  String get onboardingProtectionOneTimeLine => "Yalıtılmış bir arşiv kurulumu yalnızca bu ilk aşamada mümkündür. \"Yoksay\" seçeneğine dokunursanız arşiv yapılandırılmayacak ve bu cihazda erişilemeyecektir.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.";
-+  String get onboardingProtectionDualPinLine => "Ana PIN normal ortam\u0131 a\u00e7ar. Ayr\u0131lm\u0131\u015f ar\u015fivi y\u00f6netmek i\u00e7in iste\u011fe ba\u011fl\u0131 ikinci bir PIN belirleyebilirsiniz.";
++  String get onboardingProtectionDualPinTitle => "İkincil erişim PIN'i";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.";
-+  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak i\u00e7in uygulama kilidi zorunludur.";
++  String get onboardingProtectionDualPinLine => "Ana PIN'iniz standart ortamı açar. Yalıtılmış bir arşivi yönetmek için isteğe bağlı ikinci bir PIN belirleyebilirsiniz.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Gizli sohbetleri ayarla";
-+  String get onboardingProtectionSetupVault => "Ayr\u0131lm\u0131\u015f ar\u015fivi ayarla";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "Bu cihazdaki sohbetlerinizi korumak i\u00e7in uygulama kilidi zorunludur.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Yalıtılmış arşiv oluştur";
++  @override
++  String get onboardingProtectionIgnore => "Yoksay";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_uk.dart b/mobile/lib/l10n/app_localizations_uk.dart
-index 0b370dc21..bc7d2f821 100644
+index 0b370dc21..881be46af 100644
 --- a/mobile/lib/l10n/app_localizations_uk.dart
 +++ b/mobile/lib/l10n/app_localizations_uk.dart
-@@ -11797,21 +11797,27 @@ class AppLocalizationsUk extends AppLocalizations {
+@@ -11797,21 +11797,29 @@ class AppLocalizationsUk extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'Обраний GIF $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u0406\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u0438\u0439 \u0430\u0440\u0445\u0456\u0432";
-+
-+  @override
-+  String get onboardingProtectionLead => "\u0411\u0435\u0437\u043f\u0435\u0447\u043d\u0435 \u0440\u043e\u0437\u0434\u0456\u043b\u0435\u043d\u043d\u044f \u0434\u043b\u044f \u0432\u0438\u0434\u0456\u043b\u0435\u043d\u0438\u0445 \u0440\u043e\u0437\u043c\u043e\u0432 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u0457.";
++  String get onboardingProtectionHeadline => "Ізольований архів";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Два окремих PIN-коди";
-+  String get onboardingProtectionOneTimeTitle => "\u041b\u0438\u0448\u0435 \u043f\u0456\u0434 \u0447\u0430\u0441 \u043f\u043e\u0447\u0430\u0442\u043a\u043e\u0432\u043e\u0433\u043e \u043d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u043d\u043d\u044f";
++  String get onboardingProtectionLead => "Додатковий окремий простір для спеціальних розмов на цьому пристрої.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Основний PIN (від 4 цифр) відкриває звичайні чати. Секретний PIN (від 6 цифр) розблоковує приховані чати.";
-+  String get onboardingProtectionOneTimeLine => "\u0417\u0430\u0434\u043b\u044f \u0431\u0435\u0437\u043f\u0435\u043a\u0438 \u0442\u0430 \u043a\u043e\u043d\u0444\u0456\u0434\u0435\u043d\u0446\u0456\u0439\u043d\u043e\u0441\u0442\u0456 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u044e \u0430\u043a\u0442\u0438\u0432\u0430\u0446\u0456\u044f \u0456\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u043e\u0433\u043e \u0430\u0440\u0445\u0456\u0432\u0443 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u043b\u0438\u0448\u0435 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u0435\u0442\u0430\u043f\u0456.";
++  String get onboardingProtectionOneTimeTitle => "Доступно лише під час початкового налаштування";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Лише під час першого запуску";
-+  String get onboardingProtectionDualPinTitle => "\u0414\u0440\u0443\u0433\u0438\u0439 PIN-\u043a\u043e\u0434 \u0434\u043e\u0441\u0442\u0443\u043f\u0443";
++  String get onboardingProtectionOneTimeLine => "Налаштування ізольованого архіву можливе лише на цьому початковому етапі. Якщо натиснути «Ігнорувати», архів не буде налаштовано і він буде недоступний на цьому пристрої.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.";
-+  String get onboardingProtectionDualPinLine => "\u041e\u0441\u043d\u043e\u0432\u043d\u0438\u0439 PIN \u0432\u0456\u0434\u043a\u0440\u0438\u0432\u0430\u0454 \u0437\u0432\u0438\u0447\u0430\u0439\u043d\u0435 \u0441\u0435\u0440\u0435\u0434\u043e\u0432\u0438\u0449\u0435. \u0412\u0438 \u043c\u043e\u0436\u0435\u0442\u0435 \u043d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u0442\u0438 \u0434\u0440\u0443\u0433\u0438\u0439 PIN \u0434\u043b\u044f \u043a\u0435\u0440\u0443\u0432\u0430\u043d\u043d\u044f \u0456\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u0438\u043c \u0430\u0440\u0445\u0456\u0432\u043e\u043c.";
++  String get onboardingProtectionDualPinTitle => "Вторинний PIN-код доступу";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Блокування застосунку обов'язкове для захисту ваших чатів на цьому пристрої.";
-+  String get onboardingAppLockMandatoryLine => "\u0411\u043b\u043e\u043a\u0443\u0432\u0430\u043d\u043d\u044f \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u043e\u0431\u043e\u0432'\u044f\u0437\u043a\u043e\u0432\u0435 \u0434\u043b\u044f \u0437\u0430\u0445\u0438\u0441\u0442\u0443 \u0432\u0430\u0448\u0438\u0445 \u0447\u0430\u0442\u0456\u0432 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u0457.";
++  String get onboardingProtectionDualPinLine => "Основний PIN-код відкриває звичайне середовище. Ви можете встановити додатковий другий PIN-код для керування ізольованим архівом.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Налаштувати приховані чати";
-+  String get onboardingProtectionSetupVault => "\u041d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u0442\u0438 \u0456\u0437\u043e\u043b\u044c\u043e\u0432\u0430\u043d\u0438\u0439 \u0430\u0440\u0445\u0456\u0432";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "\u0411\u043b\u043e\u043a\u0443\u0432\u0430\u043d\u043d\u044f \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u043e\u0431\u043e\u0432'\u044f\u0437\u043a\u043e\u0432\u0435 \u0434\u043b\u044f \u0437\u0430\u0445\u0438\u0441\u0442\u0443 \u0432\u0430\u0448\u0438\u0445 \u0447\u0430\u0442\u0456\u0432 \u043d\u0430 \u0446\u044c\u043e\u043c\u0443 \u043f\u0440\u0438\u0441\u0442\u0440\u043e\u0457.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Налаштувати ізольований архів";
++  @override
++  String get onboardingProtectionIgnore => "Ігнорувати";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_vi.dart b/mobile/lib/l10n/app_localizations_vi.dart
-index 73b53584c..cd2ad372d 100644
+index 73b53584c..672cd4980 100644
 --- a/mobile/lib/l10n/app_localizations_vi.dart
 +++ b/mobile/lib/l10n/app_localizations_vi.dart
-@@ -11598,21 +11598,27 @@ class AppLocalizationsVi extends AppLocalizations {
+@@ -11598,21 +11598,29 @@ class AppLocalizationsVi extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return 'GIF yêu thích $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "Kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp";
-+
-+  @override
-+  String get onboardingProtectionLead => "T\u00e1ch bi\u1ec7t an to\u00e0n cho c\u00e1c cu\u1ed9c tr\u00f2 chuy\u1ec7n ri\u00eang tr\u00ean thi\u1ebft b\u1ecb n\u00e0y.";
++  String get onboardingProtectionHeadline => "Kho lưu trữ tách biệt";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "Hai mã PIN riêng biệt";
-+  String get onboardingProtectionOneTimeTitle => "Ch\u1ec9 khi thi\u1ebft l\u1eadp ban \u0111\u1ea7u";
++  String get onboardingProtectionLead => "Không gian riêng tư tùy chọn cho các cuộc trò chuyện trên thiết bị này.";
  
    @override
 -  String get onboardingProtectionDualPinLine => "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn.";
-+  String get onboardingProtectionOneTimeLine => "\u0110\u1ec3 b\u1ea3o m\u1eadt v\u00e0 ri\u00eang t\u01b0 cho thi\u1ebft b\u1ecb, vi\u1ec7c k\u00edch ho\u1ea1t kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp ch\u1ec9 kh\u1ea3 d\u1ee5ng \u1edf giai \u0111o\u1ea1n n\u00e0y.";
++  String get onboardingProtectionOneTimeTitle => "Chỉ khả dụng trong quá trình thiết lập ban đầu";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "Chỉ khi thiết lập ban đầu";
-+  String get onboardingProtectionDualPinTitle => "M\u00e3 PIN truy c\u1eadp th\u1ee9 hai";
++  String get onboardingProtectionOneTimeLine => "Thiết lập kho lưu trữ tách biệt chỉ khả dụng trong giai đoạn ban đầu này. Nếu bạn nhấn «Bỏ qua», kho lưu trữ sẽ không được định cấu hình và không thể truy cập trên thiết bị này.";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.";
-+  String get onboardingProtectionDualPinLine => "M\u00e3 PIN ch\u00ednh m\u1edf m\u00f4i tr\u01b0\u1eddng th\u00f4ng th\u01b0\u1eddng. B\u1ea1n c\u00f3 th\u1ec3 \u0111\u1eb7t m\u00e3 PIN th\u1ee9 hai \u0111\u1ec3 qu\u1ea3n l\u00fd kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp.";
++  String get onboardingProtectionDualPinTitle => "Mã PIN truy cập phụ";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.";
-+  String get onboardingAppLockMandatoryLine => "Kh\u00f3a \u1ee9ng d\u1ee5ng l\u00e0 b\u1eaft bu\u1ed9c \u0111\u1ec3 b\u1ea3o v\u1ec7 c\u00e1c cu\u1ed9c tr\u00f2 chuy\u1ec7n c\u1ee7a b\u1ea1n tr\u00ean thi\u1ebft b\u1ecb n\u00e0y.";
++  String get onboardingProtectionDualPinLine => "Mã PIN chính mở môi trường thông thường. Bạn có thể đặt mã PIN thứ hai tùy chọn để quản lý kho lưu trữ tách biệt.";
  
    @override
 -  String get onboardingProtectionSetupVault => "Thiết lập cuộc trò chuyện ẩn";
-+  String get onboardingProtectionSetupVault => "Thi\u1ebft l\u1eadp kho l\u01b0u tr\u1eef c\u00f4 l\u1eadp";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "Kh\u00f3a \u1ee9ng d\u1ee5ng l\u00e0 b\u1eaft bu\u1ed9c \u0111\u1ec3 b\u1ea3o v\u1ec7 c\u00e1c cu\u1ed9c tr\u00f2 chuy\u1ec7n c\u1ee7a b\u1ea1n tr\u00ean thi\u1ebft b\u1ecb n\u00e0y.";
++
++  @override
++  String get onboardingProtectionSetupVault => "Thiết lập kho lưu trữ tách biệt";
++  @override
++  String get onboardingProtectionIgnore => "Bỏ qua";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_localizations_zh.dart b/mobile/lib/l10n/app_localizations_zh.dart
-index 669469c50..d44325675 100644
+index 669469c50..fd4d3b845 100644
 --- a/mobile/lib/l10n/app_localizations_zh.dart
 +++ b/mobile/lib/l10n/app_localizations_zh.dart
-@@ -11598,24 +11598,32 @@ class AppLocalizationsZh extends AppLocalizations {
+@@ -11598,24 +11598,35 @@ class AppLocalizationsZh extends AppLocalizations {
    String gifFavTileA11y(String number) {
      return '收藏的 GIF $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u72ec\u7acb\u5f52\u6863";
++  String get onboardingProtectionHeadline => "隔离归档";
++
++  @override
++  String get onboardingProtectionLead => "在此设备上用于专属对话的可选独立空间。";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "两个独立 PIN 码";
-+  String get onboardingProtectionLead => "\u5728\u6b64\u8bbe\u5907\u4e0a\u5bf9\u4e13\u5c5e\u5bf9\u8bdd\u8fdb\u884c\u5b89\u5168\u9694\u79bb\u3002";
++  String get onboardingProtectionOneTimeTitle => "仅在初始设置期间可用";
  
    @override
 -  String get onboardingProtectionDualPinLine => "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。";
-+  String get onboardingProtectionOneTimeTitle => "\u4ec5\u5728\u521d\u59cb\u8bbe\u7f6e\u65f6";
++  String get onboardingProtectionOneTimeLine => "隔离归档的设置仅在此初始阶段可用。如果您点击“忽略”，归档将不会被配置，且无法在此设备上访问。";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "仅在首次设置时";
-+  String get onboardingProtectionOneTimeLine => "\u4e3a\u4fdd\u969c\u8bbe\u5907\u5b89\u5168\u4e0e\u9690\u79c1\uff0c\u4ec5\u53ef\u5728\u6b64\u9636\u6bb5\u542f\u7528\u72ec\u7acb\u5f52\u6863\u3002";
++  String get onboardingProtectionDualPinTitle => "辅助访问 PIN 码";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。";
-+  String get onboardingProtectionDualPinTitle => "\u7b2c\u4e8c\u8bbf\u95ee PIN \u7801";
++  String get onboardingProtectionDualPinLine => "您的主 PIN 码用于打开日常环境。您可以设置一个可选的第二个 PIN 码来管理隔离归档。";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "必须设置应用锁以保护此设备上的聊天记录。";
-+  String get onboardingProtectionDualPinLine => "\u4e3b PIN \u7801\u7528\u4e8e\u6253\u5f00\u5e38\u89c4\u73af\u5883\u3002\u60a8\u53ef\u8bbe\u7f6e\u7b2c\u4e8c\u4e2a\u4e13\u5c5e PIN \u7801\u4ee5\u7ba1\u7406\u72ec\u7acb\u5f52\u6863\u3002";
++  String get onboardingAppLockMandatoryLine => "\u5fc5\u987b\u8bbe\u7f6e\u5e94\u7528\u9501\u4ee5\u4fdd\u62a4\u6b64\u8bbe\u5907\u4e0a\u7684\u804a\u5929\u8bb0\u5f55\u3002";
  
    @override
 -  String get onboardingProtectionSetupVault => "设置隐藏聊天";
-+  String get onboardingAppLockMandatoryLine => "\u5fc5\u987b\u8bbe\u7f6e\u5e94\u7528\u9501\u4ee5\u4fdd\u62a4\u6b64\u8bbe\u5907\u4e0a\u7684\u804a\u5929\u8bb0\u5f55\u3002";
++  String get onboardingProtectionSetupVault => "设置隔离归档";
 +
 +  @override
-+  String get onboardingProtectionSetupVault => "\u8bbe\u7f6e\u72ec\u7acb\u5f52\u6863";
++  String get onboardingProtectionIgnore => "忽略";
  }
 +
 +/// The translations for Chinese, using the Han script (`zh_Hant`).
  class AppLocalizationsZhHant extends AppLocalizationsZh {
    AppLocalizationsZhHant(): super('zh_Hant');
  
-@@ -23091,21 +23099,27 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
+@@ -23091,21 +23102,29 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
    String gifFavTileA11y(String number) {
      return '收藏的 GIF $number';
    }
 +  @override
-+  String get onboardingProtectionHeadline => "\u7368\u7acb\u5c01\u5b58";
-+
-+  @override
-+  String get onboardingProtectionLead => "\u5728\u6b64\u88dd\u7f6e\u4e0a\u5c0d\u5c08\u5c6c\u5c0d\u8a71\u9032\u884c\u5b89\u5168\u9694\u96e2\u3002";
++  String get onboardingProtectionHeadline => "隔离归档";
  
    @override
 -  String get onboardingProtectionDualPinTitle => "兩個獨立 PIN 碼";
-+  String get onboardingProtectionOneTimeTitle => "\u50c5\u5728\u521d\u59cb\u8a2d\u5b9a\u6642";
++  String get onboardingProtectionLead => "在此设备上用于专属对话的可选独立空间。";
  
    @override
 -  String get onboardingProtectionDualPinLine => "主 PIN 碼（4 位以上）開啟普通聊天。私密 PIN 碼（6 位以上）解鎖所有隱藏聊天。";
-+  String get onboardingProtectionOneTimeLine => "\u70ba\u4fdd\u969c\u88dd\u7f6e\u5b89\u5168\u8207\u96b1\u79c1\uff0c\u50c5\u53ef\u5728\u6b64\u968e\u6bb5\u555f\u7528\u7368\u7acb\u5c01\u5b58\u3002";
++  String get onboardingProtectionOneTimeTitle => "仅在初始设置期间可用";
  
    @override
 -  String get onboardingProtectionOneTimeTitle => "僅在首次設定時";
-+  String get onboardingProtectionDualPinTitle => "\u7b2c\u4e8c\u5b58\u53d6 PIN \u78bc";
++  String get onboardingProtectionOneTimeLine => "隔离归档的设置仅在此初始阶段可用。如果您点击“忽略”，归档将不会被配置，且无法在此设备上访问。";
  
    @override
 -  String get onboardingProtectionOneTimeLine => "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。";
-+  String get onboardingProtectionDualPinLine => "\u4e3b\u8981 PIN \u78bc\u7528\u65bc\u958b\u555f\u5e38\u898f\u74b0\u5883\u3002\u60a8\u53ef\u8a2d\u5b9a\u7b2c\u4e8c\u500b\u5c08\u5c6c PIN \u78bc\u4ee5\u7ba1\u7406\u7368\u7acb\u5c01\u5b58\u3002";
++  String get onboardingProtectionDualPinTitle => "辅助访问 PIN 码";
 +
    @override
 -  String get onboardingAppLockMandatoryLine => "必須設定應用程式鎖定以保護此裝置上的聊天記錄。";
-+  String get onboardingAppLockMandatoryLine => "\u5fc5\u9808\u8a2d\u5b9a\u61c9\u7528\u7a0b\u5f0f\u9396\u5b9a\u4ee5\u4fdd\u8b77\u6b64\u88dd\u7f6e\u4e0a\u7684\u804a\u5929\u8a18\u9304\u3002";
++  String get onboardingProtectionDualPinLine => "您的主 PIN 码用于打开日常环境。您可以设置一个可选的第二个 PIN 码来管理隔离归档。";
  
    @override
 -  String get onboardingProtectionSetupVault => "設定隱藏聊天";
-+  String get onboardingProtectionSetupVault => "\u8a2d\u5b9a\u7368\u7acb\u5c01\u5b58";
- }
+-}
++  String get onboardingAppLockMandatoryLine => "\u5fc5\u9808\u8a2d\u5b9a\u61c9\u7528\u7a0b\u5f0f\u9396\u5b9a\u4ee5\u4fdd\u8b77\u6b64\u88dd\u7f6e\u4e0a\u7684\u804a\u5929\u8a18\u9304\u3002";
++
++  @override
++  String get onboardingProtectionSetupVault => "设置隔离归档";
++  @override
++  String get onboardingProtectionIgnore => "忽略";
++}
+\ No newline at end of file
 diff --git a/mobile/lib/l10n/app_pl.arb b/mobile/lib/l10n/app_pl.arb
-index 387bd6e92..5abecaf4f 100644
+index 387bd6e92..ce69b6842 100644
 --- a/mobile/lib/l10n/app_pl.arb
 +++ b/mobile/lib/l10n/app_pl.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Przesuń wcześniej",
    "gifFavMoveLater": "Przesuń później",
    "gifFavTileA11y": "Ulubiony GIF {number}",
@@ -951,21 +1037,22 @@ index 387bd6e92..5abecaf4f 100644
 -  "onboardingProtectionOneTimeLine": "Dostępne tylko teraz. Dla Twojego bezpieczeństwa w zwykłych ustawieniach nie pojawią się opcje ukrytych czatów.",
 -  "onboardingProtectionDualPinTitle": "Dwa różne kody PIN",
 -  "onboardingProtectionDualPinLine": "Główny PIN (4+ cyfry) otwiera zwykłe czaty. Tajny PIN (6+ cyfr) odblokowuje ukryte czaty.",
-+  "onboardingProtectionOneTimeTitle": "Tylko wstępna konfiguracja",
-+  "onboardingProtectionOneTimeLine": "Dla bezpieczeństwa i prywatności urządzenia aktywacja izolowanego archiwum jest możliwa tylko na tym etapie.",
-+  "onboardingProtectionDualPinTitle": "Drugi PIN dostępu",
-+  "onboardingProtectionDualPinLine": "Główny PIN otwiera standardowe środowisko. Możesz ustawić drugi PIN, aby zarządzać izolowanym archiwum.",
++  "onboardingProtectionOneTimeTitle": "Dostępne tylko podczas wstępnej konfiguracji",
++  "onboardingProtectionOneTimeLine": "Konfiguracja izolowanego archiwum jest możliwa tylko na tym początkowym etapie. Jeśli wybierzesz „Ignoruj”, archiwum nie zostanie skonfigurowane i nie będzie dostępne na tym urządzeniu.",
++  "onboardingProtectionDualPinTitle": "Dodatkowy kod PIN dostępu",
++  "onboardingProtectionDualPinLine": "Twój główny kod PIN otwiera standardowe środowisko. Możesz ustawić opcjonalny drugi kod PIN, aby zarządzać izolowanym archiwum.",
    "onboardingAppLockMandatoryLine": "Blokada aplikacji jest wymagana, aby chronić Twoje czaty na tym urządzeniu.",
 -  "onboardingProtectionSetupVault": "Skonfiguruj ukryte czaty"
 +  "onboardingProtectionSetupVault": "Skonfiguruj izolowane archiwum",
 +  "onboardingProtectionHeadline": "Izolowane archiwum",
-+  "onboardingProtectionLead": "Bezpieczna separacja dedykowanych rozmów na tym urządzeniu."
++  "onboardingProtectionLead": "Opcjonalna wydzielona przestrzeń na dedykowane rozmowy na tym urządzeniu.",
++  "onboardingProtectionIgnore": "Ignoruj"
  }
 diff --git a/mobile/lib/l10n/app_pt.arb b/mobile/lib/l10n/app_pt.arb
-index 87caacc14..041fd6913 100644
+index 87caacc14..9c939e141 100644
 --- a/mobile/lib/l10n/app_pt.arb
 +++ b/mobile/lib/l10n/app_pt.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Mover para antes",
    "gifFavMoveLater": "Mover para depois",
    "gifFavTileA11y": "GIF favorito {number}",
@@ -973,21 +1060,22 @@ index 87caacc14..041fd6913 100644
 -  "onboardingProtectionOneTimeLine": "Disponível apenas agora. Para sua segurança, nenhum menu de conversas ocultas aparecerá nas configurações normais.",
 -  "onboardingProtectionDualPinTitle": "Dois PINs distintos",
 -  "onboardingProtectionDualPinLine": "O PIN principal (4+ dígitos) abre o app com as conversas normais. O PIN secreto (6+ dígitos) desbloqueia todas as conversas ocultas.",
-+  "onboardingProtectionOneTimeTitle": "Apenas na configuração inicial",
-+  "onboardingProtectionOneTimeLine": "Para segurança e privacidade do dispositivo, a ativação de um arquivo isolado só está disponível nesta etapa.",
-+  "onboardingProtectionDualPinTitle": "Segundo PIN de acesso",
-+  "onboardingProtectionDualPinLine": "O PIN principal abre o ambiente normal. Você pode definir um segundo PIN para gerenciar um arquivo isolado.",
++  "onboardingProtectionOneTimeTitle": "Disponível apenas na configuração inicial",
++  "onboardingProtectionOneTimeLine": "A configuração de um arquivo isolado só está disponível nesta fase inicial. Se tocar em «Ignorar», o arquivo não será configurado e não estará acessível neste dispositivo.",
++  "onboardingProtectionDualPinTitle": "PIN de acesso secundário",
++  "onboardingProtectionDualPinLine": "Seu PIN principal abre o ambiente cotidiano. Você pode definir um segundo PIN opcional para gerenciar um arquivo isolado.",
    "onboardingAppLockMandatoryLine": "O bloqueio do app é obrigatório para proteger suas conversas neste dispositivo.",
 -  "onboardingProtectionSetupVault": "Configurar conversas ocultas"
 +  "onboardingProtectionSetupVault": "Configurar arquivo isolado",
 +  "onboardingProtectionHeadline": "Arquivo isolado",
-+  "onboardingProtectionLead": "Separação segura para conversas dedicadas neste dispositivo."
++  "onboardingProtectionLead": "Espaço opcional separado para conversas dedicadas neste dispositivo.",
++  "onboardingProtectionIgnore": "Ignorar"
  }
 diff --git a/mobile/lib/l10n/app_ru.arb b/mobile/lib/l10n/app_ru.arb
-index 52a503796..32f4f96dc 100644
+index 52a503796..5f4bbe2a8 100644
 --- a/mobile/lib/l10n/app_ru.arb
 +++ b/mobile/lib/l10n/app_ru.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Переместить раньше",
    "gifFavMoveLater": "Переместить позже",
    "gifFavTileA11y": "Избранный GIF {number}",
@@ -995,21 +1083,22 @@ index 52a503796..32f4f96dc 100644
 -  "onboardingProtectionOneTimeLine": "Доступно только сейчас. Для вашей безопасности в обычных настройках не будет пунктов для скрытых чатов.",
 -  "onboardingProtectionDualPinTitle": "Два разных PIN-кода",
 -  "onboardingProtectionDualPinLine": "Основной PIN (от 4 цифр) открывает обычные чаты. Секретный PIN (от 6 цифр) разблокирует скрытые чаты.",
-+  "onboardingProtectionOneTimeTitle": "Только при начальной настройке",
-+  "onboardingProtectionOneTimeLine": "Для безопасности и конфиденциальности устройства активация изолированного архива доступна только на этом этапе.",
-+  "onboardingProtectionDualPinTitle": "Второй PIN-код доступа",
-+  "onboardingProtectionDualPinLine": "Основной PIN открывает обычную среду. Вы можете задать второй PIN для управления изолированным архивом.",
++  "onboardingProtectionOneTimeTitle": "Доступно только при начальной настройке",
++  "onboardingProtectionOneTimeLine": "Настройка изолированного архива возможна только на этом начальном этапе. Если нажать «Игнорировать», архив не будет настроен и будет недоступен на этом устройстве.",
++  "onboardingProtectionDualPinTitle": "Вторичный PIN-код доступа",
++  "onboardingProtectionDualPinLine": "Основной PIN-код открывает повседневную среду. Вы можете установить дополнительный второй PIN-код для управления изолированным архивом.",
    "onboardingAppLockMandatoryLine": "Блокировка приложения обязательна для защиты ваших чатов на этом устройстве.",
 -  "onboardingProtectionSetupVault": "Настроить скрытые чаты"
 +  "onboardingProtectionSetupVault": "Настроить изолированный архив",
 +  "onboardingProtectionHeadline": "Изолированный архив",
-+  "onboardingProtectionLead": "Безопасное разделение для выделенных бесед на этом устройстве."
++  "onboardingProtectionLead": "Дополнительное изолированное пространство для выделенных бесед на этом устройстве.",
++  "onboardingProtectionIgnore": "Игнорировать"
  }
 diff --git a/mobile/lib/l10n/app_tr.arb b/mobile/lib/l10n/app_tr.arb
-index b7874512d..d04e84ef3 100644
+index b7874512d..ac1f9e1d8 100644
 --- a/mobile/lib/l10n/app_tr.arb
 +++ b/mobile/lib/l10n/app_tr.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Öne al",
    "gifFavMoveLater": "Arkaya al",
    "gifFavTileA11y": "Favori GIF {number}",
@@ -1017,21 +1106,22 @@ index b7874512d..d04e84ef3 100644
 -  "onboardingProtectionOneTimeLine": "Yalnızca şimdi kullanılabilir. Güvenliğiniz için normal ayarlarda gizli sohbet menüsü görünmez.",
 -  "onboardingProtectionDualPinTitle": "İki ayrı PIN",
 -  "onboardingProtectionDualPinLine": "Ana PIN (4+ basamak) normal sohbetleri açar. Gizli PIN (6+ basamak) gizli sohbetlerin kilidini açar.",
-+  "onboardingProtectionOneTimeTitle": "Yalnızca ilk kurulumda",
-+  "onboardingProtectionOneTimeLine": "Cihaz güvenliği ve gizliliği için ayrılmış arşivin etkinleştirilmesi yalnızca bu aşamada mümkündür.",
-+  "onboardingProtectionDualPinTitle": "İkinci erişim PIN'i",
-+  "onboardingProtectionDualPinLine": "Ana PIN normal ortamı açar. Ayrılmış arşivi yönetmek için isteğe bağlı ikinci bir PIN belirleyebilirsiniz.",
++  "onboardingProtectionOneTimeTitle": "Yalnızca ilk kurulum sırasında kullanılabilir",
++  "onboardingProtectionOneTimeLine": "Yalıtılmış bir arşiv kurulumu yalnızca bu ilk aşamada mümkündür. \"Yoksay\" seçeneğine dokunursanız arşiv yapılandırılmayacak ve bu cihazda erişilemeyecektir.",
++  "onboardingProtectionDualPinTitle": "İkincil erişim PIN'i",
++  "onboardingProtectionDualPinLine": "Ana PIN'iniz standart ortamı açar. Yalıtılmış bir arşivi yönetmek için isteğe bağlı ikinci bir PIN belirleyebilirsiniz.",
    "onboardingAppLockMandatoryLine": "Bu cihazdaki sohbetlerinizi korumak için uygulama kilidi zorunludur.",
 -  "onboardingProtectionSetupVault": "Gizli sohbetleri ayarla"
-+  "onboardingProtectionSetupVault": "Ayrılmış arşivi ayarla",
-+  "onboardingProtectionHeadline": "Ayrılmış arşiv",
-+  "onboardingProtectionLead": "Bu cihazdaki özel sohbetler için güvenli ayrım."
++  "onboardingProtectionSetupVault": "Yalıtılmış arşiv oluştur",
++  "onboardingProtectionHeadline": "Yalıtılmış arşiv",
++  "onboardingProtectionLead": "Bu cihazdaki özel konuşmalar için isteğe bağlı ayrı alan.",
++  "onboardingProtectionIgnore": "Yoksay"
  }
 diff --git a/mobile/lib/l10n/app_uk.arb b/mobile/lib/l10n/app_uk.arb
-index 9f736a04e..0c1757b67 100644
+index 9f736a04e..d44589332 100644
 --- a/mobile/lib/l10n/app_uk.arb
 +++ b/mobile/lib/l10n/app_uk.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "Перемістити раніше",
    "gifFavMoveLater": "Перемістити пізніше",
    "gifFavTileA11y": "Обраний GIF {number}",
@@ -1039,41 +1129,45 @@ index 9f736a04e..0c1757b67 100644
 -  "onboardingProtectionOneTimeLine": "Доступно лише зараз. Задля вашої безпеки у звичайних налаштуваннях не буде меню прихованих чатів.",
 -  "onboardingProtectionDualPinTitle": "Два окремих PIN-коди",
 -  "onboardingProtectionDualPinLine": "Основний PIN (від 4 цифр) відкриває звичайні чати. Секретний PIN (від 6 цифр) розблоковує приховані чати.",
-+  "onboardingProtectionOneTimeTitle": "Лише під час початкового налаштування",
-+  "onboardingProtectionOneTimeLine": "Задля безпеки та конфіденційності пристрою активація ізольованого архіву доступна лише на цьому етапі.",
-+  "onboardingProtectionDualPinTitle": "Другий PIN-код доступу",
-+  "onboardingProtectionDualPinLine": "Основний PIN відкриває звичайне середовище. Ви можете налаштувати другий PIN для керування ізольованим архівом.",
++  "onboardingProtectionOneTimeTitle": "Доступно лише під час початкового налаштування",
++  "onboardingProtectionOneTimeLine": "Налаштування ізольованого архіву можливе лише на цьому початковому етапі. Якщо натиснути «Ігнорувати», архів не буде налаштовано і він буде недоступний на цьому пристрої.",
++  "onboardingProtectionDualPinTitle": "Вторинний PIN-код доступу",
++  "onboardingProtectionDualPinLine": "Основний PIN-код відкриває звичайне середовище. Ви можете встановити додатковий другий PIN-код для керування ізольованим архівом.",
    "onboardingAppLockMandatoryLine": "Блокування застосунку обов'язкове для захисту ваших чатів на цьому пристрої.",
 -  "onboardingProtectionSetupVault": "Налаштувати приховані чати"
 +  "onboardingProtectionSetupVault": "Налаштувати ізольований архів",
 +  "onboardingProtectionHeadline": "Ізольований архів",
-+  "onboardingProtectionLead": "Безпечне розділення для виділених розмов на цьому пристрої."
++  "onboardingProtectionLead": "Додатковий окремий простір для спеціальних розмов на цьому пристрої.",
++  "onboardingProtectionIgnore": "Ігнорувати"
  }
 diff --git a/mobile/lib/l10n/app_vi.arb b/mobile/lib/l10n/app_vi.arb
-index 16b2dc66e..d4723dfa9 100644
+index 16b2dc66e..10cf12f4b 100644
 --- a/mobile/lib/l10n/app_vi.arb
 +++ b/mobile/lib/l10n/app_vi.arb
-@@ -3312,9 +3312,11 @@
+@@ -3311,10 +3311,13 @@
+   "gifFavMoveEarlier": "Chuyển lên trước",
    "gifFavMoveLater": "Chuyển ra sau",
    "gifFavTileA11y": "GIF yêu thích {number}",
-   "onboardingProtectionOneTimeTitle": "Chỉ khi thiết lập ban đầu",
+-  "onboardingProtectionOneTimeTitle": "Chỉ khi thiết lập ban đầu",
 -  "onboardingProtectionOneTimeLine": "Chỉ khả dụng lúc này. Để bảo vệ bạn, không có menu cuộc trò chuyện ẩn trong cài đặt thông thường.",
 -  "onboardingProtectionDualPinTitle": "Hai mã PIN riêng biệt",
 -  "onboardingProtectionDualPinLine": "Mã PIN chính (4+ chữ số) mở cuộc trò chuyện thông thường. Mã PIN bí mật (6+ chữ số) mở khóa các cuộc trò chuyện ẩn.",
-+  "onboardingProtectionOneTimeLine": "Để bảo mật và riêng tư cho thiết bị, việc kích hoạt kho lưu trữ cô lập chỉ khả dụng ở giai đoạn này.",
-+  "onboardingProtectionDualPinTitle": "Mã PIN truy cập thứ hai",
-+  "onboardingProtectionDualPinLine": "Mã PIN chính mở môi trường thông thường. Bạn có thể đặt mã PIN thứ hai để quản lý kho lưu trữ cô lập.",
++  "onboardingProtectionOneTimeTitle": "Chỉ khả dụng trong quá trình thiết lập ban đầu",
++  "onboardingProtectionOneTimeLine": "Thiết lập kho lưu trữ tách biệt chỉ khả dụng trong giai đoạn ban đầu này. Nếu bạn nhấn «Bỏ qua», kho lưu trữ sẽ không được định cấu hình và không thể truy cập trên thiết bị này.",
++  "onboardingProtectionDualPinTitle": "Mã PIN truy cập phụ",
++  "onboardingProtectionDualPinLine": "Mã PIN chính mở môi trường thông thường. Bạn có thể đặt mã PIN thứ hai tùy chọn để quản lý kho lưu trữ tách biệt.",
    "onboardingAppLockMandatoryLine": "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.",
 -  "onboardingProtectionSetupVault": "Thiết lập cuộc trò chuyện ẩn"
-+  "onboardingProtectionSetupVault": "Thiết lập kho lưu trữ cô lập",
-+  "onboardingProtectionHeadline": "Kho lưu trữ cô lập",
-+  "onboardingProtectionLead": "Tách biệt an toàn cho các cuộc trò chuyện riêng trên thiết bị này."
++  "onboardingProtectionSetupVault": "Thiết lập kho lưu trữ tách biệt",
++  "onboardingProtectionHeadline": "Kho lưu trữ tách biệt",
++  "onboardingProtectionLead": "Không gian riêng tư tùy chọn cho các cuộc trò chuyện trên thiết bị này.",
++  "onboardingProtectionIgnore": "Bỏ qua"
  }
 diff --git a/mobile/lib/l10n/app_zh.arb b/mobile/lib/l10n/app_zh.arb
-index 009022523..1972aff3c 100644
+index 009022523..7302dd54c 100644
 --- a/mobile/lib/l10n/app_zh.arb
 +++ b/mobile/lib/l10n/app_zh.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "前移",
    "gifFavMoveLater": "后移",
    "gifFavTileA11y": "收藏的 GIF {number}",
@@ -1081,21 +1175,22 @@ index 009022523..1972aff3c 100644
 -  "onboardingProtectionOneTimeLine": "仅在此时可用。为了您的安全，常规设置中不会显示任何隐藏聊天选项。",
 -  "onboardingProtectionDualPinTitle": "两个独立 PIN 码",
 -  "onboardingProtectionDualPinLine": "主 PIN 码（4 位以上）打开普通聊天。私密 PIN 码（6 位以上）解锁所有隐藏聊天。",
-+  "onboardingProtectionOneTimeTitle": "仅在初始设置时",
-+  "onboardingProtectionOneTimeLine": "为保障设备安全与隐私，仅可在此阶段启用独立归档。",
-+  "onboardingProtectionDualPinTitle": "第二访问 PIN 码",
-+  "onboardingProtectionDualPinLine": "主 PIN 码用于打开常规环境。您可设置第二个专属 PIN 码以管理独立归档。",
++  "onboardingProtectionOneTimeTitle": "仅在初始设置期间可用",
++  "onboardingProtectionOneTimeLine": "隔离归档的设置仅在此初始阶段可用。如果您点击“忽略”，归档将不会被配置，且无法在此设备上访问。",
++  "onboardingProtectionDualPinTitle": "辅助访问 PIN 码",
++  "onboardingProtectionDualPinLine": "您的主 PIN 码用于打开日常环境。您可以设置一个可选的第二个 PIN 码来管理隔离归档。",
    "onboardingAppLockMandatoryLine": "必须设置应用锁以保护此设备上的聊天记录。",
 -  "onboardingProtectionSetupVault": "设置隐藏聊天"
-+  "onboardingProtectionSetupVault": "设置独立归档",
-+  "onboardingProtectionHeadline": "独立归档",
-+  "onboardingProtectionLead": "在此设备上对专属对话进行安全隔离。"
++  "onboardingProtectionSetupVault": "设置隔离归档",
++  "onboardingProtectionHeadline": "隔离归档",
++  "onboardingProtectionLead": "在此设备上用于专属对话的可选独立空间。",
++  "onboardingProtectionIgnore": "忽略"
  }
 diff --git a/mobile/lib/l10n/app_zh_Hant.arb b/mobile/lib/l10n/app_zh_Hant.arb
-index 9d39527c3..30fac65b2 100644
+index 9d39527c3..fbe2ca4f7 100644
 --- a/mobile/lib/l10n/app_zh_Hant.arb
 +++ b/mobile/lib/l10n/app_zh_Hant.arb
-@@ -3311,10 +3311,12 @@
+@@ -3311,10 +3311,13 @@
    "gifFavMoveEarlier": "往前移",
    "gifFavMoveLater": "往後移",
    "gifFavTileA11y": "收藏的 GIF {number}",
@@ -1103,18 +1198,19 @@ index 9d39527c3..30fac65b2 100644
 -  "onboardingProtectionOneTimeLine": "僅在目前可用。為了您的安全，常規設定中不會顯示任何隱藏聊天選項。",
 -  "onboardingProtectionDualPinTitle": "兩個獨立 PIN 碼",
 -  "onboardingProtectionDualPinLine": "主 PIN 碼（4 位以上）開啟普通聊天。私密 PIN 碼（6 位以上）解鎖所有隱藏聊天。",
-+  "onboardingProtectionOneTimeTitle": "僅在初始設定時",
-+  "onboardingProtectionOneTimeLine": "為保障裝置安全與隱私，僅可在此階段啟用獨立封存。",
-+  "onboardingProtectionDualPinTitle": "第二存取 PIN 碼",
-+  "onboardingProtectionDualPinLine": "主要 PIN 碼用於開啟常規環境。您可設定第二個專屬 PIN 碼以管理獨立封存。",
++  "onboardingProtectionOneTimeTitle": "僅在初始設定期間可用",
++  "onboardingProtectionOneTimeLine": "隔離封存的設定僅在此初始階段可用。如果您點選「忽略」，封存將不會被設定，且無法在此裝置上存取。",
++  "onboardingProtectionDualPinTitle": "次要存取 PIN 碼",
++  "onboardingProtectionDualPinLine": "您的主要 PIN 碼用於開啟日常環境。您可以設定可選的第二個 PIN 碼來管理隔離封存。",
    "onboardingAppLockMandatoryLine": "必須設定應用程式鎖定以保護此裝置上的聊天記錄。",
 -  "onboardingProtectionSetupVault": "設定隱藏聊天"
-+  "onboardingProtectionSetupVault": "設定獨立封存",
-+  "onboardingProtectionHeadline": "獨立封存",
-+  "onboardingProtectionLead": "在此裝置上對專屬對話進行安全隔離。"
++  "onboardingProtectionSetupVault": "設定隔離封存",
++  "onboardingProtectionHeadline": "隔離封存",
++  "onboardingProtectionLead": "在此裝置上用於專屬對話的可選獨立空間。",
++  "onboardingProtectionIgnore": "忽略"
  }
 diff --git a/mobile/lib/screens/onboarding_screen.dart b/mobile/lib/screens/onboarding_screen.dart
-index b4d20129b..e130bb16e 100644
+index b4d20129b..f5982c6d4 100644
 --- a/mobile/lib/screens/onboarding_screen.dart
 +++ b/mobile/lib/screens/onboarding_screen.dart
 @@ -228,7 +228,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
@@ -1235,7 +1331,7 @@ index b4d20129b..e130bb16e 100644
 +        : _StepPage(
 +            footer: [
 +              _Cta(
-+                label: l10n.commonContinue,
++                label: l10n.onboardingProtectionIgnore,
 +                onTap: _skipAndSealRandomVault,
 +              ),
 +              const SizedBox(height: 4),

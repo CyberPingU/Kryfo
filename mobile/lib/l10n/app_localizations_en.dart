@@ -11667,13 +11667,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingProtectionHeadline => "Isolated archive";
 
   @override
-  String get onboardingProtectionLead => "Secure separation for dedicated conversations on this device.";
+  String get onboardingProtectionLead => "Optional separated space for dedicated conversations on this device.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Initial setup only";
+  String get onboardingProtectionOneTimeTitle => "Available during initial setup only";
 
   @override
-  String get onboardingProtectionOneTimeLine => "For device security and privacy, setting up an isolated archive is only available during this phase.";
+  String get onboardingProtectionOneTimeLine => "Setting up an isolated archive is only available during this initial phase. If you tap \"Ignore\", the archive will not be configured and cannot be accessed on this device.";
 
   @override
   String get onboardingProtectionDualPinTitle => "Secondary access PIN";
@@ -11686,4 +11686,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingProtectionSetupVault => "Set up isolated archive";
+  @override
+  String get onboardingProtectionIgnore => "Ignore";
 }

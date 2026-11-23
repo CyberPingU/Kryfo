@@ -15860,11 +15860,11 @@
       }
     }
   },
-  "onboardingProtectionOneTimeTitle": "Initial setup only",
+  "onboardingProtectionOneTimeTitle": "Available during initial setup only",
   "@onboardingProtectionOneTimeTitle": {
     "description": "screens/onboarding_screen.dart: onboardingProtectionOneTimeTitle"
   },
-  "onboardingProtectionOneTimeLine": "For device security and privacy, setting up an isolated archive is only available during this phase.",
+  "onboardingProtectionOneTimeLine": "Setting up an isolated archive is only available during this initial phase. If you tap \"Ignore\", the archive will not be configured and cannot be accessed on this device.",
   "@onboardingProtectionOneTimeLine": {
     "description": "screens/onboarding_screen.dart: onboardingProtectionOneTimeLine"
   },
@@ -15882,11 +15882,15 @@
   "@onboardingProtectionHeadline": {
     "description": "screens/onboarding_screen.dart: onboardingProtectionHeadline"
   },
-  "onboardingProtectionLead": "Secure separation for dedicated conversations on this device.",
+  "onboardingProtectionLead": "Optional separated space for dedicated conversations on this device.",
   "@onboardingProtectionLead": {
     "description": "screens/onboarding_screen.dart: onboardingProtectionLead"
   },
   "@onboardingProtectionSetupVault": {
     "description": "screens/onboarding_screen.dart: onboardingProtectionSetupVault"
+  },
+  "onboardingProtectionIgnore": "Ignore",
+  "@onboardingProtectionIgnore": {
+    "description": "screens/onboarding_screen.dart: onboardingProtectionIgnore"
   }
 }

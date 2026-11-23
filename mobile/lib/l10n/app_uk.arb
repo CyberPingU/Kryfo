@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Перемістити раніше",
   "gifFavMoveLater": "Перемістити пізніше",
   "gifFavTileA11y": "Обраний GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Лише під час початкового налаштування",
-  "onboardingProtectionOneTimeLine": "Задля безпеки та конфіденційності пристрою активація ізольованого архіву доступна лише на цьому етапі.",
-  "onboardingProtectionDualPinTitle": "Другий PIN-код доступу",
-  "onboardingProtectionDualPinLine": "Основний PIN відкриває звичайне середовище. Ви можете налаштувати другий PIN для керування ізольованим архівом.",
+  "onboardingProtectionOneTimeTitle": "Доступно лише під час початкового налаштування",
+  "onboardingProtectionOneTimeLine": "Налаштування ізольованого архіву можливе лише на цьому початковому етапі. Якщо натиснути «Ігнорувати», архів не буде налаштовано і він буде недоступний на цьому пристрої.",
+  "onboardingProtectionDualPinTitle": "Вторинний PIN-код доступу",
+  "onboardingProtectionDualPinLine": "Основний PIN-код відкриває звичайне середовище. Ви можете встановити додатковий другий PIN-код для керування ізольованим архівом.",
   "onboardingAppLockMandatoryLine": "Блокування застосунку обов'язкове для захисту ваших чатів на цьому пристрої.",
   "onboardingProtectionSetupVault": "Налаштувати ізольований архів",
   "onboardingProtectionHeadline": "Ізольований архів",
-  "onboardingProtectionLead": "Безпечне розділення для виділених розмов на цьому пристрої."
+  "onboardingProtectionLead": "Додатковий окремий простір для спеціальних розмов на цьому пристрої.",
+  "onboardingProtectionIgnore": "Ігнорувати"
 }

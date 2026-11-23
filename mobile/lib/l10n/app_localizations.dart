@@ -20173,6 +20173,8 @@ abstract class AppLocalizations {
   String get onboardingAppLockMandatoryLine;
 
   String get onboardingProtectionSetupVault;
+
+  String get onboardingProtectionIgnore;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

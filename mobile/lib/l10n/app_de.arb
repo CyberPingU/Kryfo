@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Nach vorne",
   "gifFavMoveLater": "Nach hinten",
   "gifFavTileA11y": "Lieblings-GIF {number}",
-  "onboardingProtectionOneTimeTitle": "Ersteinrichtung",
-  "onboardingProtectionOneTimeLine": "Aus Sicherheitsgründen kann ein isoliertes Archiv nur in dieser Phase eingerichtet werden.",
-  "onboardingProtectionDualPinTitle": "Zweite Zugangs-PIN",
-  "onboardingProtectionDualPinLine": "Die Haupt-PIN öffnet die gewohnte Umgebung. Sie können eine zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.",
+  "onboardingProtectionOneTimeTitle": "Nur bei Ersteinrichtung verfügbar",
+  "onboardingProtectionOneTimeLine": "Das Einrichten eines isolierten Archivs ist nur in dieser Anfangsphase möglich. Wenn Sie auf „Ignorieren“ tippen, wird das Archiv nicht konfiguriert und ist auf diesem Gerät nicht zugänglich.",
+  "onboardingProtectionDualPinTitle": "Sekundäre Zugangs-PIN",
+  "onboardingProtectionDualPinLine": "Ihre Haupt-PIN öffnet die reguläre Umgebung. Sie können eine optionale zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.",
   "onboardingAppLockMandatoryLine": "Die App-Sperre ist erforderlich, um deine Chats auf diesem Gerät zu schützen.",
   "onboardingProtectionSetupVault": "Isoliertes Archiv einrichten",
   "onboardingProtectionHeadline": "Isoliertes Archiv",
-  "onboardingProtectionLead": "Sichere Trennung für dedizierte Konversationen auf diesem Gerät."
+  "onboardingProtectionLead": "Optionaler getrennter Bereich für dedizierte Unterhaltungen auf diesem Gerät.",
+  "onboardingProtectionIgnore": "Ignorieren"
 }

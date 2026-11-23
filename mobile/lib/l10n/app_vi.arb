@@ -3311,12 +3311,13 @@
   "gifFavMoveEarlier": "Chuyển lên trước",
   "gifFavMoveLater": "Chuyển ra sau",
   "gifFavTileA11y": "GIF yêu thích {number}",
-  "onboardingProtectionOneTimeTitle": "Chỉ khi thiết lập ban đầu",
-  "onboardingProtectionOneTimeLine": "Để bảo mật và riêng tư cho thiết bị, việc kích hoạt kho lưu trữ cô lập chỉ khả dụng ở giai đoạn này.",
-  "onboardingProtectionDualPinTitle": "Mã PIN truy cập thứ hai",
-  "onboardingProtectionDualPinLine": "Mã PIN chính mở môi trường thông thường. Bạn có thể đặt mã PIN thứ hai để quản lý kho lưu trữ cô lập.",
+  "onboardingProtectionOneTimeTitle": "Chỉ khả dụng trong quá trình thiết lập ban đầu",
+  "onboardingProtectionOneTimeLine": "Thiết lập kho lưu trữ tách biệt chỉ khả dụng trong giai đoạn ban đầu này. Nếu bạn nhấn «Bỏ qua», kho lưu trữ sẽ không được định cấu hình và không thể truy cập trên thiết bị này.",
+  "onboardingProtectionDualPinTitle": "Mã PIN truy cập phụ",
+  "onboardingProtectionDualPinLine": "Mã PIN chính mở môi trường thông thường. Bạn có thể đặt mã PIN thứ hai tùy chọn để quản lý kho lưu trữ tách biệt.",
   "onboardingAppLockMandatoryLine": "Khóa ứng dụng là bắt buộc để bảo vệ các cuộc trò chuyện của bạn trên thiết bị này.",
-  "onboardingProtectionSetupVault": "Thiết lập kho lưu trữ cô lập",
-  "onboardingProtectionHeadline": "Kho lưu trữ cô lập",
-  "onboardingProtectionLead": "Tách biệt an toàn cho các cuộc trò chuyện riêng trên thiết bị này."
+  "onboardingProtectionSetupVault": "Thiết lập kho lưu trữ tách biệt",
+  "onboardingProtectionHeadline": "Kho lưu trữ tách biệt",
+  "onboardingProtectionLead": "Không gian riêng tư tùy chọn cho các cuộc trò chuyện trên thiết bị này.",
+  "onboardingProtectionIgnore": "Bỏ qua"
 }

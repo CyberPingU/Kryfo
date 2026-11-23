@@ -11672,23 +11672,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String get onboardingProtectionHeadline => "Isoliertes Archiv";
 
   @override
-  String get onboardingProtectionLead => "Sichere Trennung f\u00fcr dedizierte Konversationen auf diesem Ger\u00e4t.";
+  String get onboardingProtectionLead => "Optionaler getrennter Bereich für dedizierte Unterhaltungen auf diesem Gerät.";
 
   @override
-  String get onboardingProtectionOneTimeTitle => "Ersteinrichtung";
+  String get onboardingProtectionOneTimeTitle => "Nur bei Ersteinrichtung verfügbar";
 
   @override
-  String get onboardingProtectionOneTimeLine => "Aus Sicherheitsgr\u00fcnden kann ein isoliertes Archiv nur in dieser Phase eingerichtet werden.";
+  String get onboardingProtectionOneTimeLine => "Das Einrichten eines isolierten Archivs ist nur in dieser Anfangsphase möglich. Wenn Sie auf „Ignorieren“ tippen, wird das Archiv nicht konfiguriert und ist auf diesem Gerät nicht zugänglich.";
 
   @override
-  String get onboardingProtectionDualPinTitle => "Zweite Zugangs-PIN";
+  String get onboardingProtectionDualPinTitle => "Sekundäre Zugangs-PIN";
 
   @override
-  String get onboardingProtectionDualPinLine => "Die Haupt-PIN \u00f6ffnet die gewohnte Umgebung. Sie k\u00f6nnen eine zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.";
+  String get onboardingProtectionDualPinLine => "Ihre Haupt-PIN öffnet die reguläre Umgebung. Sie können eine optionale zweite PIN festlegen, um ein isoliertes Archiv zu verwalten.";
 
   @override
   String get onboardingAppLockMandatoryLine => "Die App-Sperre ist erforderlich, um deine Chats auf diesem Ger\u00e4t zu sch\u00fctzen.";
 
   @override
   String get onboardingProtectionSetupVault => "Isoliertes Archiv einrichten";
+  @override
+  String get onboardingProtectionIgnore => "Ignorieren";
 }
