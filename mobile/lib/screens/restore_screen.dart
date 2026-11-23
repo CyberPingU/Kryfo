@@ -21,6 +21,7 @@ import '../main.dart'
     show
         appState,
         navRevision,
+        renewDatabasesAfterRestore,
         rootNavKey,
         shredFile,
         AppStateProfile,
@@ -111,6 +112,7 @@ Future<void> endRestoreAway(
     await WidgetsBinding.instance.endOfFrame;
     final nav = rootNavKey.currentState;
     if (nav == null || !nav.mounted) continue;
+    renewDatabasesAfterRestore();
     if (restoredHidden && !cutShort) {
       final gone = await _navGoneBefore(
         nav.push<bool>(
@@ -449,8 +451,9 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
       // the face were carried: the key still proves the handle, so keep the
       // name, and the face picked stays too
       await keepIfDropped(kept);
-      if (!mounted) return endRestoreAway(s.haloId, decoy: decoy);
+      if (!mounted) return await endRestoreAway(s.haloId, decoy: decoy);
       HapticFeedback.mediumImpact();
+      renewDatabasesAfterRestore();
       // hidden chats came back: they open with a PIN chosen now, and the
       // app lock first if there is none
       if (restoredHidden) {
@@ -461,12 +464,12 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
             ),
           ),
         );
-        if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
+        if (gone || !mounted) return await endRestoreAway(s.haloId, decoy: decoy);
       } else {
         final gone = await _navGoneBefore(
           ProtectionScreen.pushStandalone(context),
         );
-        if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
+        if (gone || !mounted) return await endRestoreAway(s.haloId, decoy: decoy);
       }
       if (widget.onRestored != null) {
         widget.onRestored!();
@@ -484,7 +487,7 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
           ok: l10n.restoreReopenKryfo,
         ),
       );
-      if (gone) return endRestoreAway(s.haloId, decoy: decoy);
+      if (gone) return await endRestoreAway(s.haloId, decoy: decoy);
       // exit so the next launch boots fresh from the restored db
       Future.delayed(
         const Duration(milliseconds: 200),

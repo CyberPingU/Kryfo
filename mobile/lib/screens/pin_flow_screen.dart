@@ -358,7 +358,9 @@ class _PinFlowScreenState extends State<PinFlowScreen>
       _first = '';
       HapticFeedback.lightImpact();
       _go((_restoring || widget.host.hideable().isEmpty) ? _Step.done : _Step.pick);
-    } catch (e) {
+    } catch (e, st) {
+      // ignore: avoid_print
+      print('PinFlowScreen._make failed: $e\n$st');
       if (mounted) {
         await _rechoose(e is PinKeyBusy ? l10n.lockKeyBusy : l10n.flowNotSet);
       }

@@ -72,6 +72,14 @@ void useDatabasesForTest(HaloDb everyday, Session open) {
   _session = open;
 }
 
+/// a restore replaced halo.db on disk and retired the old connection handle.
+/// renews the live database and session wrappers so that subsequent flows
+/// (such as setting up an isolated archive / vault) can open the new database.
+void renewDatabasesAfterRestore() {
+  _live = HaloDb();
+  _session = Session(_live);
+}
+
 // what the screens read and write: the everyday database, or the decoy's
 // while a decoy session is open
 Session get session => _session;

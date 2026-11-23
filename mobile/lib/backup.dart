@@ -29,6 +29,7 @@ import 'main.dart'
         holdRestoredOutbox,
         live,
         photosUnsentInCopy,
+        renewDatabasesAfterRestore,
         session,
         sessionQuiet,
         engine,
@@ -455,6 +456,7 @@ Future<void> landV1Payload(
     // restoring the identity in the engine also rehydrates myId
     engine.restoreIdentity(edPriv, xPriv);
     identityReplaced();
+    renewDatabasesAfterRestore();
   });
   dlog('backup: restored identity');
 }
@@ -2017,6 +2019,7 @@ Future<void> _restoreFile(
       manifest['xPriv'] as String,
     );
     identityReplaced();
+    renewDatabasesAfterRestore();
   });
   if (quiet) return;
   dlog('backup: restored identity from a v2 file');

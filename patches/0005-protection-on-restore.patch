@@ -1,3 +1,50 @@
+diff --git a/mobile/lib/app/state.dart b/mobile/lib/app/state.dart
+index e1d37fc4a..85fcec85b 100644
+--- a/mobile/lib/app/state.dart
++++ b/mobile/lib/app/state.dart
+@@ -72,6 +72,14 @@ void useDatabasesForTest(HaloDb everyday, Session open) {
+   _session = open;
+ }
+ 
++/// a restore replaced halo.db on disk and retired the old connection handle.
++/// renews the live database and session wrappers so that subsequent flows
++/// (such as setting up an isolated archive / vault) can open the new database.
++void renewDatabasesAfterRestore() {
++  _live = HaloDb();
++  _session = Session(_live);
++}
++
+ // what the screens read and write: the everyday database, or the decoy's
+ // while a decoy session is open
+ Session get session => _session;
+diff --git a/mobile/lib/backup.dart b/mobile/lib/backup.dart
+index 844c68e8e..decf8defc 100644
+--- a/mobile/lib/backup.dart
++++ b/mobile/lib/backup.dart
+@@ -29,6 +29,7 @@ import 'main.dart'
+         holdRestoredOutbox,
+         live,
+         photosUnsentInCopy,
++        renewDatabasesAfterRestore,
+         session,
+         sessionQuiet,
+         engine,
+@@ -455,6 +456,7 @@ Future<void> landV1Payload(
+     // restoring the identity in the engine also rehydrates myId
+     engine.restoreIdentity(edPriv, xPriv);
+     identityReplaced();
++    renewDatabasesAfterRestore();
+   });
+   dlog('backup: restored identity');
+ }
+@@ -2017,6 +2019,7 @@ Future<void> _restoreFile(
+       manifest['xPriv'] as String,
+     );
+     identityReplaced();
++    renewDatabasesAfterRestore();
+   });
+   if (quiet) return;
+   dlog('backup: restored identity from a v2 file');
 diff --git a/mobile/lib/l10n/app_ar.arb b/mobile/lib/l10n/app_ar.arb
 index 0a884b44c..98c3f0e49 100644
 --- a/mobile/lib/l10n/app_ar.arb
@@ -1409,6 +1456,21 @@ index b4d20129b..f5982c6d4 100644
    }
  }
  
+diff --git a/mobile/lib/screens/pin_flow_screen.dart b/mobile/lib/screens/pin_flow_screen.dart
+index 62f3e3c5a..36846d0bb 100644
+--- a/mobile/lib/screens/pin_flow_screen.dart
++++ b/mobile/lib/screens/pin_flow_screen.dart
+@@ -358,7 +358,9 @@ class _PinFlowScreenState extends State<PinFlowScreen>
+       _first = '';
+       HapticFeedback.lightImpact();
+       _go((_restoring || widget.host.hideable().isEmpty) ? _Step.done : _Step.pick);
+-    } catch (e) {
++    } catch (e, st) {
++      // ignore: avoid_print
++      print('PinFlowScreen._make failed: $e\n$st');
+       if (mounted) {
+         await _rechoose(e is PinKeyBusy ? l10n.lockKeyBusy : l10n.flowNotSet);
+       }
 diff --git a/mobile/lib/screens/pins_screen.dart b/mobile/lib/screens/pins_screen.dart
 index 226626c57..2556596ff 100644
 --- a/mobile/lib/screens/pins_screen.dart
@@ -1426,10 +1488,18 @@ index 226626c57..2556596ff 100644
                          state: l10n.pinsSet,
                          stateColor: HaloColors.violet,
 diff --git a/mobile/lib/screens/restore_screen.dart b/mobile/lib/screens/restore_screen.dart
-index b886a6407..416ed314f 100644
+index b886a6407..7acb8f856 100644
 --- a/mobile/lib/screens/restore_screen.dart
 +++ b/mobile/lib/screens/restore_screen.dart
-@@ -43,6 +43,7 @@ import '../widgets/halo_sheet.dart';
+@@ -21,6 +21,7 @@ import '../main.dart'
+     show
+         appState,
+         navRevision,
++        renewDatabasesAfterRestore,
+         rootNavKey,
+         shredFile,
+         AppStateProfile,
+@@ -43,6 +44,7 @@ import '../widgets/halo_sheet.dart';
  import '../widgets/motion.dart' show haloRoute, kHouseCurve, motionStill;
  import '../widgets/sheet_handle.dart';
  import 'pin_flow_screen.dart';
@@ -1437,7 +1507,15 @@ index b886a6407..416ed314f 100644
  import '../l10n/l10n.dart';
  import '../l10n/dates.dart';
  import '../l10n/numbers.dart';
-@@ -117,6 +118,20 @@ Future<void> endRestoreAway(
+@@ -110,6 +112,7 @@ Future<void> endRestoreAway(
+     await WidgetsBinding.instance.endOfFrame;
+     final nav = rootNavKey.currentState;
+     if (nav == null || !nav.mounted) continue;
++    renewDatabasesAfterRestore();
+     if (restoredHidden && !cutShort) {
+       final gone = await _navGoneBefore(
+         nav.push<bool>(
+@@ -117,6 +120,20 @@ Future<void> endRestoreAway(
          ),
        );
        if (gone) continue;
@@ -1458,15 +1536,37 @@ index b886a6407..416ed314f 100644
      }
      final ctx = nav.overlay?.context;
      if (ctx != null && ctx.mounted) {
-@@ -447,6 +462,11 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
+@@ -434,8 +451,9 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
+       // the face were carried: the key still proves the handle, so keep the
+       // name, and the face picked stays too
+       await keepIfDropped(kept);
+-      if (!mounted) return endRestoreAway(s.haloId, decoy: decoy);
++      if (!mounted) return await endRestoreAway(s.haloId, decoy: decoy);
+       HapticFeedback.mediumImpact();
++      renewDatabasesAfterRestore();
+       // hidden chats came back: they open with a PIN chosen now, and the
+       // app lock first if there is none
+       if (restoredHidden) {
+@@ -446,7 +464,12 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
+             ),
            ),
          );
-         if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
+-        if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
++        if (gone || !mounted) return await endRestoreAway(s.haloId, decoy: decoy);
 +      } else {
 +        final gone = await _navGoneBefore(
 +          ProtectionScreen.pushStandalone(context),
 +        );
-+        if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
++        if (gone || !mounted) return await endRestoreAway(s.haloId, decoy: decoy);
        }
        if (widget.onRestored != null) {
          widget.onRestored!();
+@@ -464,7 +487,7 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
+           ok: l10n.restoreReopenKryfo,
+         ),
+       );
+-      if (gone) return endRestoreAway(s.haloId, decoy: decoy);
++      if (gone) return await endRestoreAway(s.haloId, decoy: decoy);
+       // exit so the next launch boots fresh from the restored db
+       Future.delayed(
+         const Duration(milliseconds: 200),
