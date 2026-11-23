@@ -193,8 +193,8 @@ jobs:
 
             #### Features & Hardening:
             - **Application ID**: `work.dreadful.kryfo` (installs cleanly alongside official Kryfo without conflict).
-            - **Vault Setup during Onboarding**: Configurable at first start with strict plausible absence (no trace in everyday settings; skipping is irreversible).
-            - **Coercion Resistance**: Mandatory App PIN + optional hidden chats PIN explained upfront.
+            - **Vault Setup during Onboarding & Restore**: Configurable at first start or profile restore with strict plausible absence (no trace in everyday settings; skipping is irreversible).
+            - **Coercion Resistance**: Mandatory App PIN on onboarding and restore + optional hidden chats PIN.
             - **Clean Slate**: Removed developer default contact, upstream support/social links, and repointed source code links to this repository.
             - **Dual Flavors**:
               - **FOSS (`-foss.apk` / default)**: Completely tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush ntfy).

@@ -1,0 +1,227 @@
+diff --git a/mobile/lib/screens/onboarding_screen.dart b/mobile/lib/screens/onboarding_screen.dart
+index b4d20129b..dbead92dc 100644
+--- a/mobile/lib/screens/onboarding_screen.dart
++++ b/mobile/lib/screens/onboarding_screen.dart
+@@ -228,7 +228,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
+       ),
+       OnboardStep.delivery => _DeliveryScreen(onContinue: _next),
+       OnboardStep.desk => _DeskRunScreen(onContinue: _next),
+-      OnboardStep.protection => _ProtectionScreen(
++      OnboardStep.protection => ProtectionScreen(
+         onContinue: _next,
+         lock: lockState,
+         host: const PinsHost(),
+@@ -1814,21 +1814,36 @@ class _DeskRunScreen extends StatelessWidget {
+ // optional vault setup on first start: isolates private chats under a second
+ // pin. chosen here once, and never replaced or set from outside
+ 
+-class _ProtectionScreen extends StatefulWidget {
++class ProtectionScreen extends StatefulWidget {
+   final VoidCallback onContinue;
+   final LockState lock;
+   final PinsHost host;
+-  const _ProtectionScreen({
++  final bool standalone;
++  const ProtectionScreen({
++    super.key,
+     required this.onContinue,
+     required this.lock,
+     required this.host,
++    this.standalone = false,
+   });
+ 
++  static Future<bool?> pushStandalone(BuildContext context) =>
++      Navigator.of(context).push<bool>(
++        haloRoute(
++          ProtectionScreen(
++            onContinue: () => Navigator.of(context).pop(true),
++            lock: lockState,
++            host: const PinsHost(),
++            standalone: true,
++          ),
++        ),
++      );
++
+   @override
+-  State<_ProtectionScreen> createState() => _ProtectionScreenState();
++  State<ProtectionScreen> createState() => _ProtectionScreenState();
+ }
+ 
+-class _ProtectionScreenState extends State<_ProtectionScreen> {
++class _ProtectionScreenState extends State<ProtectionScreen> {
+   bool _busy = false;
+ 
+   bool get _hasAppPin => widget.lock.lockOn;
+@@ -1866,60 +1881,76 @@ class _ProtectionScreenState extends State<_ProtectionScreen> {
+ 
+   @override
+   Widget build(BuildContext context) {
+-    if (!_hasAppPin) {
+-      return _StepPage(
+-        footer: [
+-          _Cta(
+-            label: l10n.pinsSetAPin,
+-            onTap: _setupAppPin,
+-          ),
+-        ],
+-        children: [
+-          _Headline(l10n.pinsAppLock),
+-          const SizedBox(height: 12),
+-          _lead(l10n.onboardingAppLockMandatoryLine),
+-          const SizedBox(height: 20),
+-          _Card(
+-            icon: Icons.lock_outline_rounded,
+-            title: l10n.pinsYourPin,
+-            desc: l10n.pinsOpensKryfoFourDigits,
+-          ),
+-        ],
+-      );
+-    }
++    final page = !_hasAppPin
++        ? _StepPage(
++            footer: [
++              _Cta(
++                label: l10n.pinsSetAPin,
++                onTap: _setupAppPin,
++              ),
++            ],
++            children: [
++              _Headline(l10n.pinsAppLock),
++              const SizedBox(height: 12),
++              _lead(l10n.onboardingAppLockMandatoryLine),
++              const SizedBox(height: 20),
++              _Card(
++                icon: Icons.lock_outline_rounded,
++                title: l10n.pinsYourPin,
++                desc: l10n.pinsOpensKryfoFourDigits,
++              ),
++            ],
++          )
++        : _StepPage(
++            footer: [
++              _Cta(
++                label: l10n.onboardingProtectionSetupVault,
++                onTap: _setupVault,
++              ),
++              const SizedBox(height: 2),
++              Center(
++                child: _TextLink(
++                  label: l10n.flowVaultNotNow,
++                  onTap: widget.onContinue,
++                ),
++              ),
++            ],
++            children: [
++              _Headline(l10n.pinsAdvanced),
++              const SizedBox(height: 12),
++              _lead(
++                onDesktop ? l10n.pinsAdvancedLineDesk : l10n.pinsAdvancedLine,
++              ),
++              const SizedBox(height: 20),
++              _Card(
++                icon: Icons.password_outlined,
++                title: l10n.onboardingProtectionDualPinTitle,
++                desc: l10n.onboardingProtectionDualPinLine,
++              ),
++              const SizedBox(height: 10),
++              _Card(
++                icon: Icons.visibility_off_outlined,
++                title: l10n.onboardingProtectionOneTimeTitle,
++                desc: l10n.onboardingProtectionOneTimeLine,
++              ),
++            ],
++          );
+ 
+-    return _StepPage(
+-      footer: [
+-        _Cta(
+-          label: l10n.onboardingProtectionSetupVault,
+-          onTap: _setupVault,
+-        ),
+-        const SizedBox(height: 2),
+-        Center(
+-          child: _TextLink(
+-            label: l10n.flowVaultNotNow,
+-            onTap: widget.onContinue,
++    if (widget.standalone) {
++      return PopScope(
++        canPop: false,
++        child: Scaffold(
++          backgroundColor: HaloColors.ink,
++          appBar: AppBar(
++            backgroundColor: HaloColors.ink,
++            elevation: 0,
++            automaticallyImplyLeading: false,
+           ),
++          body: SafeArea(child: page),
+         ),
+-      ],
+-      children: [
+-        _Headline(l10n.pinsAdvanced),
+-        const SizedBox(height: 12),
+-        _lead(onDesktop ? l10n.pinsAdvancedLineDesk : l10n.pinsAdvancedLine),
+-        const SizedBox(height: 20),
+-        _Card(
+-          icon: Icons.password_outlined,
+-          title: l10n.onboardingProtectionDualPinTitle,
+-          desc: l10n.onboardingProtectionDualPinLine,
+-        ),
+-        const SizedBox(height: 10),
+-        _Card(
+-          icon: Icons.visibility_off_outlined,
+-          title: l10n.onboardingProtectionOneTimeTitle,
+-          desc: l10n.onboardingProtectionOneTimeLine,
+-        ),
+-      ],
+-    );
++      );
++    }
++    return page;
+   }
+ }
+ 
+diff --git a/mobile/lib/screens/restore_screen.dart b/mobile/lib/screens/restore_screen.dart
+index b886a6407..416ed314f 100644
+--- a/mobile/lib/screens/restore_screen.dart
++++ b/mobile/lib/screens/restore_screen.dart
+@@ -43,6 +43,7 @@ import '../widgets/halo_sheet.dart';
+ import '../widgets/motion.dart' show haloRoute, kHouseCurve, motionStill;
+ import '../widgets/sheet_handle.dart';
+ import 'pin_flow_screen.dart';
++import 'onboarding_screen.dart' show ProtectionScreen;
+ import '../l10n/l10n.dart';
+ import '../l10n/dates.dart';
+ import '../l10n/numbers.dart';
+@@ -117,6 +118,20 @@ Future<void> endRestoreAway(
+         ),
+       );
+       if (gone) continue;
++    } else if (!cutShort) {
++      final gone = await _navGoneBefore(
++        nav.push<bool>(
++          haloRoute(
++            ProtectionScreen(
++              onContinue: () => nav.pop(true),
++              lock: lockState,
++              host: const PinsHost(),
++              standalone: true,
++            ),
++          ),
++        ),
++      );
++      if (gone) continue;
+     }
+     final ctx = nav.overlay?.context;
+     if (ctx != null && ctx.mounted) {
+@@ -447,6 +462,11 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
+           ),
+         );
+         if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
++      } else {
++        final gone = await _navGoneBefore(
++          ProtectionScreen.pushStandalone(context),
++        );
++        if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
+       }
+       if (widget.onRestored != null) {
+         widget.onRestored!();

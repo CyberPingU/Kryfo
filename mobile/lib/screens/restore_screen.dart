@@ -43,6 +43,7 @@ import '../widgets/halo_sheet.dart';
 import '../widgets/motion.dart' show haloRoute, kHouseCurve, motionStill;
 import '../widgets/sheet_handle.dart';
 import 'pin_flow_screen.dart';
+import 'onboarding_screen.dart' show ProtectionScreen;
 import '../l10n/l10n.dart';
 import '../l10n/dates.dart';
 import '../l10n/numbers.dart';
@@ -114,6 +115,20 @@ Future<void> endRestoreAway(
       final gone = await _navGoneBefore(
         nav.push<bool>(
           haloRoute(const PinFlowScreen(flow: PinFlow.vault, restoring: true)),
+        ),
+      );
+      if (gone) continue;
+    } else if (!cutShort) {
+      final gone = await _navGoneBefore(
+        nav.push<bool>(
+          haloRoute(
+            ProtectionScreen(
+              onContinue: () => nav.pop(true),
+              lock: lockState,
+              host: const PinsHost(),
+              standalone: true,
+            ),
+          ),
         ),
       );
       if (gone) continue;
@@ -445,6 +460,11 @@ class _RestoreScreenState extends State<RestoreScreen> with PinShield {
               const PinFlowScreen(flow: PinFlow.vault, restoring: true),
             ),
           ),
+        );
+        if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
+      } else {
+        final gone = await _navGoneBefore(
+          ProtectionScreen.pushStandalone(context),
         );
         if (gone || !mounted) return endRestoreAway(s.haloId, decoy: decoy);
       }
