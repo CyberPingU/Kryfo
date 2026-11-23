@@ -569,6 +569,19 @@ extension AppStateDelivery on AppState {
     return n;
   }
 
+  /// Dreadful: force slot resynchronization (e.g. after push rotation toggled)
+  Future<void> syncPushSlots() async {
+    if (linkedRole) return;
+    try {
+      if (_deliveryMode == DeliveryMode.google ||
+          (_deliveryMode == DeliveryMode.helper && _sendMode == 'private')) {
+        await _helperOp(() => helper.sync());
+      }
+    } catch (e) {
+      dlog('helper: syncPushSlots (${e.runtimeType})');
+    }
+  }
+
   /// the helper app chosen: sixteen registrations with it, the mode, then
   /// the relay. false when the helper app handed back no endpoint
   Future<bool> useHelper(HelperApp app) => _helperOp(() async {

@@ -75,6 +75,8 @@ class _NotificationsScreenState extends State<NotificationsScreen>
   late final ReadyEdge _torUp;
   // a message request pops up and sounds. null until read
   bool? _requestPopups;
+  // Dreadful: contact push rotation toggle. null until read
+  bool? _rotatePush;
 
   // no .then() without a catch: a throw here must not break the page
   void _readShow() {
@@ -116,6 +118,13 @@ class _NotificationsScreenState extends State<NotificationsScreen>
         })
         .catchError((Object e) {
           dlog('notifications: requests (${e.runtimeType})');
+        });
+    loadPushRestRotation()
+        .then((v) {
+          if (mounted) setState(() => _rotatePush = v);
+        })
+        .catchError((Object e) {
+          dlog('notifications: rotatePush (${e.runtimeType})');
         });
     appState.addListener(_changed);
     // the helper app is offered once our relay says it can knock. tor is
@@ -496,6 +505,41 @@ class _NotificationsScreenState extends State<NotificationsScreen>
                   _note(
                     l10n.notificationsGoogleNote,
                     open: mode == DeliveryMode.google,
+                  ),
+                  Unfold(
+                    open: mode == DeliveryMode.google || mode == DeliveryMode.helper,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                      child: HaloGroup(
+                        children: [
+                          HaloRow(
+                            key: const ValueKey('rotatePushRow'),
+                            icon: Icons.sync_lock_outlined,
+                            label: l10n.localeName.startsWith('it')
+                                ? 'Rotazione contatti push'
+                                : 'Push contact rotation',
+                            hint: (_rotatePush ?? false)
+                                ? (l10n.localeName.startsWith('it')
+                                    ? 'Attiva: 1 mese su 5 a turno i contatti riposano dal push per mascherare le chat isolate (richiede verifiche periodiche)'
+                                    : 'Active: contacts rest from push 1 month in 5 to mask isolated archive (requires background check-ins)')
+                                : (l10n.localeName.startsWith('it')
+                                    ? 'Disattivata: tutti i contatti ordinari ricevono sempre push istantaneo (minimo consumo batteria)'
+                                    : 'Disabled: all ordinary contacts receive instant push continuously (lowest battery impact)'),
+                            toggled: _rotatePush ?? false,
+                            pending: _rotatePush == null,
+                            onTap: _rotatePush == null
+                                ? null
+                                : () async {
+                                    HapticFeedback.selectionClick();
+                                    final on = !_rotatePush!;
+                                    setState(() => _rotatePush = on);
+                                    await savePushRestRotation(on);
+                                    unawaited(appState.syncPushSlots());
+                                  },
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
                 const SizedBox(height: 10),

@@ -126,6 +126,18 @@ Future<void> saveRequestPopups(bool on) async {
   await prefs.setBool(HaloContainer.everyday.key(_requestPopupsKey), on);
 }
 
+const kPushRestRotationKey = 'push_rest_rotation';
+
+Future<bool> loadPushRestRotation() async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getBool(kPushRestRotationKey) ?? false;
+}
+
+Future<void> savePushRestRotation(bool on) async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setBool(kPushRestRotationKey, on);
+}
+
 Future<void> _makeRequestsChannel() async {
   final android = notifPlugin
       .resolvePlatformSpecificImplementation<

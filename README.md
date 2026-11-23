@@ -31,7 +31,7 @@ Compared to upstream Kryfo, this build introduces specific hardening measures, p
   - **FOSS (`-foss.apk`)**: 100% tracker-free, zero Google/FCM dependencies (Tor always-on or UnifiedPush via ntfy).
   - **Play (`-play.apk`)**: Native Google Play Services Push (FCM wake-up ping) routed through private self-hosted push gateway at `r.dreadful.work` (ensuring URLs remain under the 512-byte Tor/relay seal limit). Works reliably without battery drain or companion apps on Sandboxed Google Play (GrapheneOS) and standard Android.
 - **Zero-Drop Push Delivery & Battery Hardening**:
-  - Disables upstream's artificial 1-month-in-5 contact rest rotation (`restsNow`), ensuring non-vault contacts remain 100% registered to instant push notifications at all times (vault chats remain strictly excluded).
+  - Adds a configurable **Push contact rotation** toggle in Settings -> Notifications (default: **OFF**). When disabled, 100% of ordinary contacts remain continuously registered to instant push notifications with near-zero background battery usage. Users seeking upstream's paranoia noise for isolated archive masking can re-enable it at will.
   - Reduces fallback background `HaloPeriodicJobService` timeout from 170s to 35s to prevent Android 14/15 JobScheduler ANRs and wakelock timeouts (`timeout-reg`), allowing battery profile to run on standard "Optimized" without wakelock leaks.
 - **Automated CI & Reproducible Container Toolchain**:
   - Automatically checks and syncs upstream tags via GitHub Actions.

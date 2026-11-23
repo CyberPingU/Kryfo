@@ -282,9 +282,13 @@ void main() {
   });
 
   test(
-    'contacts do not rest in Dreadful',
+    'contacts do not rest by default in Dreadful, but rest when enabled',
     () {
-      expect(restsNow('any-contact', 1800000000000), isFalse);
+      expect(restsNow('any-contact', 1800000000000, enabled: false), isFalse);
+      const t0 = 1800000000000;
+      final ids = [for (var i = 0; i < 2000; i++) 'id$i'];
+      final resting = ids.where((id) => restsNow(id, t0, enabled: true)).length;
+      expect(resting, inInclusiveRange(300, 500));
     },
   );
 

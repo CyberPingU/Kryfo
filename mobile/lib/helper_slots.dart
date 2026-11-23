@@ -60,12 +60,25 @@ bool lastingGroup(String g) => _kBatchGroup.hasMatch(g);
 // so, in a month of its own: unregistered, its registration left to lapse
 // as a hidden one's does. its messages come with the next knock or
 // check-in
+const kPushRestRotationKey = 'push_rest_rotation';
 const kRestWindowMs = 30 * 24 * 60 * 60 * 1000;
 const kRestOneIn = 5;
 
-// Dreadful: all ordinary contacts stay registered for push at all times (no rest rotation).
-// Hidden vault chats remain strictly unregistered as always.
-bool restsNow(String id, int nowMs) => false;
+// Dreadful: contact rest rotation can be toggled via Settings (default off).
+// When disabled, all ordinary contacts stay registered for push continuously.
+// When enabled, contacts rest ~1 month in 5 to mimic isolated vault chats.
+bool restsNow(String id, int nowMs, {bool enabled = false}) {
+  if (!enabled) return false;
+  final phase = sha256.convert(utf8.encode('phase:$id')).bytes;
+  final offset =
+      ((phase[0] << 24 | phase[1] << 16 | phase[2] << 8 | phase[3]) &
+          0x7fffffff) %
+      kRestWindowMs;
+  final window = (nowMs + offset) ~/ kRestWindowMs;
+  return sha256.convert(utf8.encode('rest:$id:$window')).bytes[0] %
+          kRestOneIn ==
+      0;
+}
 
 bool _mainGroup(String g) => lastingGroup(g) || g.startsWith('firstcontact:');
 

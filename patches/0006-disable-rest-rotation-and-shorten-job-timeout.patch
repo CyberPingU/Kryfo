@@ -17,31 +17,170 @@ index 3383627fc..fea2ec8cb 100644
          // a knock from the helper app, or the timer
          val why = params?.extras?.getString("why") ?: "job"
          ask(engine, run, if (staysOn) 0 else 15, up, startedAt, why)
+diff --git a/mobile/lib/app/state_delivery.dart b/mobile/lib/app/state_delivery.dart
+index 33ad9b0fd..60e4ec146 100644
+--- a/mobile/lib/app/state_delivery.dart
++++ b/mobile/lib/app/state_delivery.dart
+@@ -569,6 +569,19 @@ extension AppStateDelivery on AppState {
+     return n;
+   }
+ 
++  /// Dreadful: force slot resynchronization (e.g. after push rotation toggled)
++  Future<void> syncPushSlots() async {
++    if (linkedRole) return;
++    try {
++      if (_deliveryMode == DeliveryMode.google ||
++          (_deliveryMode == DeliveryMode.helper && _sendMode == 'private')) {
++        await _helperOp(() => helper.sync());
++      }
++    } catch (e) {
++      dlog('helper: syncPushSlots (${e.runtimeType})');
++    }
++  }
++
+   /// the helper app chosen: sixteen registrations with it, the mode, then
+   /// the relay. false when the helper app handed back no endpoint
+   Future<bool> useHelper(HelperApp app) => _helperOp(() async {
+diff --git a/mobile/lib/helper_delivery.dart b/mobile/lib/helper_delivery.dart
+index dc8fa8c3b..b24b767b0 100644
+--- a/mobile/lib/helper_delivery.dart
++++ b/mobile/lib/helper_delivery.dart
+@@ -239,11 +239,13 @@ class HelperDelivery {
+   Future<int> _sync(String? package) async {
+     _sent = false;
+     final now = _now();
++    final prefs = await SharedPreferences.getInstance();
++    final rotate = prefs.getBool(kPushRestRotationKey) ?? false;
+     final live = [
+       for (final a in knockAddressesOf(
+         await engine.knockAddresses(jsonEncode(_hidden())),
+       ))
+-        if (!(lastingGroup(a.group) && restsNow(a.address, now))) a,
++        if (!(lastingGroup(a.group) && restsNow(a.address, now, enabled: rotate))) a,
+     ];
+     final before = await _book();
+     final plan = planSlots(before, live, _rnd);
+@@ -261,7 +263,6 @@ class HelperDelivery {
+     var endpoints = slotEndpoints(book, await push.endpoints());
+     // a registration the helper app dropped or never answered is asked
+     // again, at most once an hour per slot: same group, same slot
+-    final prefs = await SharedPreferences.getInstance();
+     final asked = _asked(prefs);
+     final missing = [
+       for (var s = 0; s < kHelperSlots; s++)
 diff --git a/mobile/lib/helper_slots.dart b/mobile/lib/helper_slots.dart
-index 9d15fb250..33aa7dd9f 100644
+index 9d15fb250..b14d57cf1 100644
 --- a/mobile/lib/helper_slots.dart
 +++ b/mobile/lib/helper_slots.dart
-@@ -63,17 +63,9 @@ bool lastingGroup(String g) => _kBatchGroup.hasMatch(g);
+@@ -60,10 +60,15 @@ bool lastingGroup(String g) => _kBatchGroup.hasMatch(g);
+ // so, in a month of its own: unregistered, its registration left to lapse
+ // as a hidden one's does. its messages come with the next knock or
+ // check-in
++const kPushRestRotationKey = 'push_rest_rotation';
  const kRestWindowMs = 30 * 24 * 60 * 60 * 1000;
  const kRestOneIn = 5;
  
 -bool restsNow(String id, int nowMs) {
--  final phase = sha256.convert(utf8.encode('phase:$id')).bytes;
--  final offset =
--      ((phase[0] << 24 | phase[1] << 16 | phase[2] << 8 | phase[3]) &
--          0x7fffffff) %
--      kRestWindowMs;
--  final window = (nowMs + offset) ~/ kRestWindowMs;
--  return sha256.convert(utf8.encode('rest:$id:$window')).bytes[0] %
--          kRestOneIn ==
--      0;
--}
-+// Dreadful: all ordinary contacts stay registered for push at all times (no rest rotation).
-+// Hidden vault chats remain strictly unregistered as always.
-+bool restsNow(String id, int nowMs) => false;
++// Dreadful: contact rest rotation can be toggled via Settings (default off).
++// When disabled, all ordinary contacts stay registered for push continuously.
++// When enabled, contacts rest ~1 month in 5 to mimic isolated vault chats.
++bool restsNow(String id, int nowMs, {bool enabled = false}) {
++  if (!enabled) return false;
+   final phase = sha256.convert(utf8.encode('phase:$id')).bytes;
+   final offset =
+       ((phase[0] << 24 | phase[1] << 16 | phase[2] << 8 | phase[3]) &
+diff --git a/mobile/lib/notifications.dart b/mobile/lib/notifications.dart
+index b969dea3e..94c28b332 100644
+--- a/mobile/lib/notifications.dart
++++ b/mobile/lib/notifications.dart
+@@ -126,6 +126,18 @@ Future<void> saveRequestPopups(bool on) async {
+   await prefs.setBool(HaloContainer.everyday.key(_requestPopupsKey), on);
+ }
  
- bool _mainGroup(String g) => lastingGroup(g) || g.startsWith('firstcontact:');
++const kPushRestRotationKey = 'push_rest_rotation';
++
++Future<bool> loadPushRestRotation() async {
++  final prefs = await SharedPreferences.getInstance();
++  return prefs.getBool(kPushRestRotationKey) ?? false;
++}
++
++Future<void> savePushRestRotation(bool on) async {
++  final prefs = await SharedPreferences.getInstance();
++  await prefs.setBool(kPushRestRotationKey, on);
++}
++
+ Future<void> _makeRequestsChannel() async {
+   final android = notifPlugin
+       .resolvePlatformSpecificImplementation<
+diff --git a/mobile/lib/screens/notifications_screen.dart b/mobile/lib/screens/notifications_screen.dart
+index cff17cd5b..037522cd5 100644
+--- a/mobile/lib/screens/notifications_screen.dart
++++ b/mobile/lib/screens/notifications_screen.dart
+@@ -75,6 +75,8 @@ class _NotificationsScreenState extends State<NotificationsScreen>
+   late final ReadyEdge _torUp;
+   // a message request pops up and sounds. null until read
+   bool? _requestPopups;
++  // Dreadful: contact push rotation toggle. null until read
++  bool? _rotatePush;
  
+   // no .then() without a catch: a throw here must not break the page
+   void _readShow() {
+@@ -117,6 +119,13 @@ class _NotificationsScreenState extends State<NotificationsScreen>
+         .catchError((Object e) {
+           dlog('notifications: requests (${e.runtimeType})');
+         });
++    loadPushRestRotation()
++        .then((v) {
++          if (mounted) setState(() => _rotatePush = v);
++        })
++        .catchError((Object e) {
++          dlog('notifications: rotatePush (${e.runtimeType})');
++        });
+     appState.addListener(_changed);
+     // the helper app is offered once our relay says it can knock. tor is
+     // often still coming up as the page opens, so it is asked again each
+@@ -497,6 +506,41 @@ class _NotificationsScreenState extends State<NotificationsScreen>
+                     l10n.notificationsGoogleNote,
+                     open: mode == DeliveryMode.google,
+                   ),
++                  Unfold(
++                    open: mode == DeliveryMode.google || mode == DeliveryMode.helper,
++                    child: Padding(
++                      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
++                      child: HaloGroup(
++                        children: [
++                          HaloRow(
++                            key: const ValueKey('rotatePushRow'),
++                            icon: Icons.sync_lock_outlined,
++                            label: l10n.localeName.startsWith('it')
++                                ? 'Rotazione contatti push'
++                                : 'Push contact rotation',
++                            hint: (_rotatePush ?? false)
++                                ? (l10n.localeName.startsWith('it')
++                                    ? 'Attiva: 1 mese su 5 a turno i contatti riposano dal push per mascherare le chat isolate (richiede verifiche periodiche)'
++                                    : 'Active: contacts rest from push 1 month in 5 to mask isolated archive (requires background check-ins)')
++                                : (l10n.localeName.startsWith('it')
++                                    ? 'Disattivata: tutti i contatti ordinari ricevono sempre push istantaneo (minimo consumo batteria)'
++                                    : 'Disabled: all ordinary contacts receive instant push continuously (lowest battery impact)'),
++                            toggled: _rotatePush ?? false,
++                            pending: _rotatePush == null,
++                            onTap: _rotatePush == null
++                                ? null
++                                : () async {
++                                    HapticFeedback.selectionClick();
++                                    final on = !_rotatePush!;
++                                    setState(() => _rotatePush = on);
++                                    await savePushRestRotation(on);
++                                    unawaited(appState.syncPushSlots());
++                                  },
++                          ),
++                        ],
++                      ),
++                    ),
++                  ),
+                 ],
+                 const SizedBox(height: 10),
+                 // android's channel page; a computer has its own switch
 diff --git a/mobile/test/helper_delivery_test.dart b/mobile/test/helper_delivery_test.dart
 index ab371211c..4d011ae43 100644
 --- a/mobile/test/helper_delivery_test.dart
@@ -74,21 +213,23 @@ index ab371211c..4d011ae43 100644
  
      test('leaving the mode: the helper app lets go at once, the relay '
 diff --git a/mobile/test/helper_slots_test.dart b/mobile/test/helper_slots_test.dart
-index 05ce5ec4c..f91ed672b 100644
+index 05ce5ec4c..e14782745 100644
 --- a/mobile/test/helper_slots_test.dart
 +++ b/mobile/test/helper_slots_test.dart
-@@ -282,24 +282,9 @@ void main() {
+@@ -282,24 +282,13 @@ void main() {
    });
  
    test(
 -    'about one contact address in five rests, each in a month of its own',
-+    'contacts do not rest in Dreadful',
++    'contacts do not rest by default in Dreadful, but rest when enabled',
      () {
--      const t0 = 1800000000000;
++      expect(restsNow('any-contact', 1800000000000, enabled: false), isFalse);
+       const t0 = 1800000000000;
 -      const day = 24 * 60 * 60 * 1000;
--      final ids = [for (var i = 0; i < 2000; i++) 'id$i'];
+       final ids = [for (var i = 0; i < 2000; i++) 'id$i'];
 -      final resting = ids.where((id) => restsNow(id, t0)).length;
--      expect(resting, inInclusiveRange(300, 500));
++      final resting = ids.where((id) => restsNow(id, t0, enabled: true)).length;
+       expect(resting, inInclusiveRange(300, 500));
 -      // over a year each id changes now and then, and not on one shared day
 -      final changeDays = <int>{};
 -      for (final id in ids.take(200)) {
@@ -100,7 +241,6 @@ index 05ce5ec4c..f91ed672b 100644
 -        }
 -      }
 -      expect(changeDays.length, greaterThan(100));
-+      expect(restsNow('any-contact', 1800000000000), isFalse);
      },
    );
  

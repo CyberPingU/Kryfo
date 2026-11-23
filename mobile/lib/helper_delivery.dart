@@ -239,11 +239,13 @@ class HelperDelivery {
   Future<int> _sync(String? package) async {
     _sent = false;
     final now = _now();
+    final prefs = await SharedPreferences.getInstance();
+    final rotate = prefs.getBool(kPushRestRotationKey) ?? false;
     final live = [
       for (final a in knockAddressesOf(
         await engine.knockAddresses(jsonEncode(_hidden())),
       ))
-        if (!(lastingGroup(a.group) && restsNow(a.address, now))) a,
+        if (!(lastingGroup(a.group) && restsNow(a.address, now, enabled: rotate))) a,
     ];
     final before = await _book();
     final plan = planSlots(before, live, _rnd);
@@ -261,7 +263,6 @@ class HelperDelivery {
     var endpoints = slotEndpoints(book, await push.endpoints());
     // a registration the helper app dropped or never answered is asked
     // again, at most once an hour per slot: same group, same slot
-    final prefs = await SharedPreferences.getInstance();
     final asked = _asked(prefs);
     final missing = [
       for (var s = 0; s < kHelperSlots; s++)
