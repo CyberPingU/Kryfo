@@ -168,7 +168,8 @@ func main() {
 
 	fmt.Println("Publishing application release and NIP-C1 proof together to Zapstore...")
 	result, err := zsp.Publish(ctx, cfg.Publish, candidate, zsp.PublishOptions{
-		ProofSigner: proofSigner,
+		ProofSigner:       proofSigner,
+		OverwriteAppEvent: true,
 		OnProgress: func(p zsp.Progress) {
 			if p.Phase != "" {
 				fmt.Printf("[%s] %s\n", p.Phase, p.Target)
