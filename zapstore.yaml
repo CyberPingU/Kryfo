@@ -16,13 +16,13 @@ description: |
   - asynchronous push notifications via UnifiedPush (UP-Tor bridge and custom ntfy server);
   - zero-drop push delivery: continuous instant push registration by default (with an opt-in toggle in settings to re-enable upstream rest rotation; vault chats remain strictly excluded);
   - hardened background execution: background JobService timeout shortened from 170s to 35s to prevent Android 14/15 JobScheduler ANRs and wakelock leaks;
-  - pure FOSS build, entirely free of Google Play Services and tracking libraries;
+  - pure FOSS build, entirely free of Google Play Services and tracking libraries (if you prefer native FCM wake-up push, the `-play.apk` variant is downloadable directly from GitHub Releases via Obtainium);
   - independent Application ID (`work.dreadful.kryfo`) allowing side-by-side installation alongside official Kryfo without conflict.
 
   ---
   *Official upstream project*: if you wish to use the reference version or support the primary author Marios, visit [kryfo.app](https://kryfo.app) and the [GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo) repository.
 license: GPL-3.0-or-later
-website: https://github.com/CyberPingU/Kryfo
+website: https://dreadful.work
 tags:
   - privacy
   - tor
