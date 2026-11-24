@@ -38,22 +38,89 @@ index 46eac95ed..052777f8b 100644
        await _groupShotsAtOpen(v);
        // and what its shelf still holds for people it accepted
 diff --git a/mobile/lib/app/state_vault.dart b/mobile/lib/app/state_vault.dart
-index f43ac2fc7..cadc14e25 100644
+index f43ac2fc7..c2d39dd19 100644
 --- a/mobile/lib/app/state_vault.dart
 +++ b/mobile/lib/app/state_vault.dart
-@@ -229,6 +229,12 @@ extension AppStateVault on AppState {
-           }
-           if (!stays) await _router.forgetSealed(id);
-         }
-+        if (identical(_openVault, vault)) {
-+          try {
-+            final rebuilt = await Session.withVault(_session.primary, vault);
-+            if (identical(_openVault, vault)) _session = rebuilt;
-+          } catch (_) {}
-+        }
-         await refreshContacts();
+@@ -181,8 +181,12 @@ extension AppStateVault on AppState {
+             // sealed before "this isn't them" blocked its key: it goes
+             dlog('unseal: a blocked key, dropped');
+           } else if (u != null) {
++            if (u.from.isNotEmpty) _session.noteVaultPeer(u.from);
+             try {
+               final env = unwrapMessage(u.wire);
++              if (env.groupId != null && env.groupId!.isNotEmpty) {
++                _session.noteVaultGroup(env.groupId!);
++              }
+               // a first contact files its sender, as it does in the everyday
+               // container, so a changed key is flagged
+               if (u.backPair) {
+@@ -233,6 +237,14 @@ extension AppStateVault on AppState {
          await refreshGroups();
          await Future.delayed(const Duration(milliseconds: 60));
+       }
++      if (identical(_openVault, vault)) {
++        try {
++          final rebuilt = await Session.withVault(_session.primary, vault);
++          if (identical(_openVault, vault)) _session = rebuilt;
++        } catch (_) {}
++        await refreshContacts();
++        await refreshGroups();
++      }
+     } finally {
+       _unsealing = false;
+     }
+@@ -247,27 +259,33 @@ extension AppStateVault on AppState {
+   }
+ 
+   // the sealed arrivals of the open vault, when there may be any
+-  Future<void> _unseal() async {
++  Future<void> _unseal() {
+     final v = _openVault;
+-    if (v == null) {
+-      _sealKey = null;
+-      _sealKeyOf = null;
+-      // the rows left for next time are tried at the next open
+-      _sealedPastOf = null;
+-      return;
++    if (v == null || !_router.maybeSealed || _unsealing || _moveDone != null) {
++      return Future.value();
+     }
+-    // rows moving between the vault and the everyday side go first
+-    if (!_router.maybeSealed || _unsealing || _moveDone != null) return;
+-    try {
+-      if (!identical(_sealKeyOf, v)) {
+-        _sealKey = await VaultRouter.sealKeyIn(SqlRouterStore(v.open));
+-        _sealKeyOf = v;
++    return _serial(() async {
++      final v = _openVault;
++      if (v == null) {
++        _sealKey = null;
++        _sealKeyOf = null;
++        // the rows left for next time are tried at the next open
++        _sealedPastOf = null;
++        return;
+       }
+-      final k = _sealKey;
+-      if (k != null) await drainSealed(v, k);
+-    } catch (e) {
+-      dlog('unseal: $e');
+-    }
++      // rows moving between the vault and the everyday side go first
++      if (!_router.maybeSealed || _unsealing || _moveDone != null) return;
++      try {
++        if (!identical(_sealKeyOf, v)) {
++          _sealKey = await VaultRouter.sealKeyIn(SqlRouterStore(v.open));
++          _sealKeyOf = v;
++        }
++        final k = _sealKey;
++        if (k != null) await drainSealed(v, k);
++      } catch (e) {
++        dlog('unseal: $e');
++      }
++    });
+   }
+ 
+   /// [work] with no chat hidden, unhidden or removed meanwhile: a history
 diff --git a/mobile/lib/screens/chat_door.dart b/mobile/lib/screens/chat_door.dart
 index 71c41594e..6af9e56de 100644
 --- a/mobile/lib/screens/chat_door.dart

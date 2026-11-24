@@ -181,8 +181,12 @@ extension AppStateVault on AppState {
             // sealed before "this isn't them" blocked its key: it goes
             dlog('unseal: a blocked key, dropped');
           } else if (u != null) {
+            if (u.from.isNotEmpty) _session.noteVaultPeer(u.from);
             try {
               final env = unwrapMessage(u.wire);
+              if (env.groupId != null && env.groupId!.isNotEmpty) {
+                _session.noteVaultGroup(env.groupId!);
+              }
               // a first contact files its sender, as it does in the everyday
               // container, so a changed key is flagged
               if (u.backPair) {
@@ -229,15 +233,17 @@ extension AppStateVault on AppState {
           }
           if (!stays) await _router.forgetSealed(id);
         }
-        if (identical(_openVault, vault)) {
-          try {
-            final rebuilt = await Session.withVault(_session.primary, vault);
-            if (identical(_openVault, vault)) _session = rebuilt;
-          } catch (_) {}
-        }
         await refreshContacts();
         await refreshGroups();
         await Future.delayed(const Duration(milliseconds: 60));
+      }
+      if (identical(_openVault, vault)) {
+        try {
+          final rebuilt = await Session.withVault(_session.primary, vault);
+          if (identical(_openVault, vault)) _session = rebuilt;
+        } catch (_) {}
+        await refreshContacts();
+        await refreshGroups();
       }
     } finally {
       _unsealing = false;
@@ -253,27 +259,33 @@ extension AppStateVault on AppState {
   }
 
   // the sealed arrivals of the open vault, when there may be any
-  Future<void> _unseal() async {
+  Future<void> _unseal() {
     final v = _openVault;
-    if (v == null) {
-      _sealKey = null;
-      _sealKeyOf = null;
-      // the rows left for next time are tried at the next open
-      _sealedPastOf = null;
-      return;
+    if (v == null || !_router.maybeSealed || _unsealing || _moveDone != null) {
+      return Future.value();
     }
-    // rows moving between the vault and the everyday side go first
-    if (!_router.maybeSealed || _unsealing || _moveDone != null) return;
-    try {
-      if (!identical(_sealKeyOf, v)) {
-        _sealKey = await VaultRouter.sealKeyIn(SqlRouterStore(v.open));
-        _sealKeyOf = v;
+    return _serial(() async {
+      final v = _openVault;
+      if (v == null) {
+        _sealKey = null;
+        _sealKeyOf = null;
+        // the rows left for next time are tried at the next open
+        _sealedPastOf = null;
+        return;
       }
-      final k = _sealKey;
-      if (k != null) await drainSealed(v, k);
-    } catch (e) {
-      dlog('unseal: $e');
-    }
+      // rows moving between the vault and the everyday side go first
+      if (!_router.maybeSealed || _unsealing || _moveDone != null) return;
+      try {
+        if (!identical(_sealKeyOf, v)) {
+          _sealKey = await VaultRouter.sealKeyIn(SqlRouterStore(v.open));
+          _sealKeyOf = v;
+        }
+        final k = _sealKey;
+        if (k != null) await drainSealed(v, k);
+      } catch (e) {
+        dlog('unseal: $e');
+      }
+    });
   }
 
   /// [work] with no chat hidden, unhidden or removed meanwhile: a history
