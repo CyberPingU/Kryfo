@@ -245,6 +245,7 @@ jobs:
       - name: Publish to Zapstore
         if: steps.check_release.outputs.should_build == 'true'
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KEYSTORE_BASE64: ${{ secrets.DREADFUL_KEYSTORE_BASE64 }}
           KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
           SIGN_WITH: ${{ secrets.SIGN_WITH }}
@@ -255,7 +256,7 @@ jobs:
             echo "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > "$TEMP_KS"
             ROOT_DIR="$PWD"
             echo "Publishing release with NIP-C1 developer proof to Zapstore..."
-            (cd packaging/zapstore && KEYSTORE_PATH="$TEMP_KS" CONFIG_PATH="$ROOT_DIR/zapstore.yaml" go run .)
+            (cd packaging/zapstore && KEYSTORE_PATH="$TEMP_KS" CONFIG_PATH="$ROOT_DIR/zapstore.yaml" GITHUB_TOKEN="$GITHUB_TOKEN" go run .)
             rm -f "$TEMP_KS"
             echo "Zapstore publishing completed."
           else

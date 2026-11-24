@@ -5,6 +5,7 @@ import (
 	"context"
 	"crypto"
 	"crypto/x509"
+	"errors"
 	"fmt"
 	"os"
 	"strings"
@@ -140,6 +141,7 @@ func main() {
 
 	fmt.Println("Fetching release candidates according to zapstore.yaml...")
 	candidates, err := zsp.Fetch(ctx, cfg.Fetch, zsp.FetchOptions{
+		SkipHTTPCache: true,
 		OnProgress: func(p zsp.Progress) {
 			if p.Phase != "" {
 				fmt.Printf("[%s] %s\n", p.Phase, p.Target)
@@ -147,7 +149,11 @@ func main() {
 		},
 	})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error fetching release candidates: %v\n", err)
+		if errors.Is(err, zsp.ErrNoNewAPK) || strings.Contains(strings.ToLower(err.Error()), "no new apk") {
+			fmt.Printf("Notice: %v. Nothing new to publish to Zapstore.\n", err)
+			return
+		}
+		fmt.Fprintf(os.Stderr, "Error fetching release candidates: %+v\n", err)
 		os.Exit(1)
 	}
 	if len(candidates) == 0 {
@@ -170,6 +176,7 @@ func main() {
 	result, err := zsp.Publish(ctx, cfg.Publish, candidate, zsp.PublishOptions{
 		ProofSigner:       proofSigner,
 		OverwriteAppEvent: true,
+		OverwriteRelease:  true,
 		OnProgress: func(p zsp.Progress) {
 			if p.Phase != "" {
 				fmt.Printf("[%s] %s\n", p.Phase, p.Target)
@@ -181,7 +188,7 @@ func main() {
 			fmt.Printf("Notice: release version_code %d is already published on Zapstore (%v). Skipping without error.\n", candidate.VersionCode, err)
 			return
 		}
-		fmt.Fprintf(os.Stderr, "Error publishing to Zapstore: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error publishing to Zapstore: %+v\n", err)
 		if result != nil {
 			fmt.Printf("Partial result: status=%s, id=%s\n", result.Status, result.ID)
 		}
