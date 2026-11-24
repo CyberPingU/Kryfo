@@ -49,7 +49,7 @@ jobs:
           file "$TEMP_KS" || true
 
           echo "Registering NIP-C1 developer proof with Zapstore relay..."
-          KEYSTORE_PATH="$TEMP_KS" (cd packaging/zapstore && go run .)
+          (cd packaging/zapstore && KEYSTORE_PATH="$TEMP_KS" go run .)
 
           rm -f "$TEMP_KS"
           echo "Temporary keystore wiped from runner."
