@@ -76,18 +76,22 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
         run: |
           TAG="${{ steps.target.outputs.tag }}"
-          echo "Staging patches and build script..."
+          echo "Staging patches, build script and Zapstore assets..."
           mkdir -p /tmp/dreadful-assets
           cp patches/*.patch /tmp/dreadful-assets/
           cp packaging/build-dreadful-apk.sh /tmp/dreadful-assets/
+          cp -r packaging/zapstore /tmp/dreadful-assets/
+          cp zapstore.yaml /tmp/dreadful-assets/
 
           echo "Checking out $TAG..."
           git checkout "$TAG"
 
-          echo "Restoring build script..."
+          echo "Restoring build script and Zapstore assets..."
           mkdir -p packaging
           cp /tmp/dreadful-assets/build-dreadful-apk.sh packaging/
           chmod +x packaging/build-dreadful-apk.sh
+          cp -r /tmp/dreadful-assets/zapstore packaging/
+          cp /tmp/dreadful-assets/zapstore.yaml ./
 
           echo "Applying patches..."
           for p in /tmp/dreadful-assets/*.patch; do
@@ -205,3 +209,30 @@ jobs:
             Kryfo-Dreadful-*.sha256
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Go for Zapstore
+        if: steps.check_release.outputs.should_build == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache-dependency-path: packaging/zapstore/go.sum
+
+      - name: Publish to Zapstore
+        if: steps.check_release.outputs.should_build == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.DREADFUL_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
+          SIGN_WITH: ${{ secrets.SIGN_WITH }}
+          KEY_ALIAS: 'dreadful'
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ] && [ -n "$KEYSTORE_PASSWORD" ] && [ -n "$SIGN_WITH" ]; then
+            TEMP_KS=$(mktemp /tmp/ks.XXXXXX)
+            echo "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > "$TEMP_KS"
+            ROOT_DIR="$PWD"
+            echo "Publishing release with NIP-C1 developer proof to Zapstore..."
+            (cd packaging/zapstore && KEYSTORE_PATH="$TEMP_KS" CONFIG_PATH="$ROOT_DIR/zapstore.yaml" go run .)
+            rm -f "$TEMP_KS"
+            echo "Zapstore publishing completed."
+          else
+            echo "Skipping Zapstore publication: SIGN_WITH or keystore secrets not configured."
+          fi
