@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	gonostr "github.com/nbd-wtf/go-nostr"
 	"github.com/nbd-wtf/go-nostr/nip19"
@@ -199,6 +200,56 @@ func main() {
 	fmt.Printf("Successfully published %s v%s to Zapstore!\n", candidate.AppID, candidate.VersionName)
 	fmt.Printf("Status: %s\n", result.Status)
 	fmt.Printf("Release Event ID: %s\n", result.ID)
+
+	// Ensure kind 30063 release event has a current timestamp so Nostr NIP-33
+	// replacement guard accepts it even when the source release tag timestamp has not changed.
+	if result != nil && len(result.Events.Assets) > 0 {
+		ensureFreshReleaseEvent(ctx, candidate, result.Events.Assets[0], pubkeyHex, skHex)
+	}
+}
+
+func ensureFreshReleaseEvent(ctx context.Context, candidate *zsp.APK, assetEventID, pubkey, privkey string) {
+	tag := candidate.ReleaseTag
+	if tag == "" {
+		tag = "v" + candidate.VersionName + "-dreadful"
+	}
+	dTag := candidate.AppID + "@" + tag
+
+	ev := gonostr.Event{
+		PubKey:    pubkey,
+		CreatedAt: gonostr.Timestamp(time.Now().Unix()),
+		Kind:      30063,
+		Tags: gonostr.Tags{
+			gonostr.Tag{"d", dTag},
+			gonostr.Tag{"a", "32267:" + pubkey + ":" + candidate.AppID, "wss://relay.zapstore.dev"},
+			gonostr.Tag{"i", candidate.AppID},
+			gonostr.Tag{"version", tag},
+			gonostr.Tag{"version_code", fmt.Sprintf("%d", candidate.VersionCode)},
+			gonostr.Tag{"c", "main"},
+			gonostr.Tag{"f", "android-arm64-v8a"},
+			gonostr.Tag{"e", assetEventID, "wss://relay.zapstore.dev"},
+		},
+		Content: candidate.ReleaseNotes,
+	}
+
+	if err := ev.Sign(privkey); err != nil {
+		fmt.Fprintf(os.Stderr, "Warning: failed to sign fresh release event: %v\n", err)
+		return
+	}
+
+	relays := []string{"wss://relay.zapstore.dev", "wss://nos.lol"}
+	for _, rURL := range relays {
+		r, err := gonostr.RelayConnect(ctx, rURL)
+		if err != nil {
+			continue
+		}
+		if err := r.Publish(ctx, ev); err != nil {
+			fmt.Fprintf(os.Stderr, "Warning: publish fresh release to %s: %v\n", rURL, err)
+		} else {
+			fmt.Printf("Ensured fresh release event on %s (ID: %s, code: %d)\n", rURL, ev.ID, candidate.VersionCode)
+		}
+		r.Close()
+	}
 }
 
 func min(a, b int) int {
