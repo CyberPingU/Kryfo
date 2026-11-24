@@ -1,0 +1,62 @@
+name: Publish to Zapstore
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Claim Proof & Publish to Zapstore
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache-dependency-path: packaging/zapstore/go.sum
+
+      - name: Register NIP-C1 developer proof
+        env:
+          KEYSTORE_BASE64: ${{ secrets.DREADFUL_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
+          SIGN_WITH: ${{ secrets.SIGN_WITH }}
+          KEY_ALIAS: 'dreadful'
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$SIGN_WITH" ]; then
+            echo "Error: DREADFUL_KEYSTORE_BASE64, DREADFUL_KEY_PASSWORD, and SIGN_WITH must all be configured in repository secrets." >&2
+            exit 1
+          fi
+
+          TEMP_KS=$(mktemp /tmp/ks.XXXXXX)
+          echo "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > "$TEMP_KS"
+          
+          echo "Registering NIP-C1 developer proof with Zapstore relay..."
+          KEYSTORE_PATH="$TEMP_KS" (cd packaging/zapstore && go run .)
+
+          rm -f "$TEMP_KS"
+          echo "Temporary keystore wiped from runner."
+
+      - name: Install Zapstore publisher tool (zsp)
+        run: |
+          go install github.com/zapstore/zsp/v2/cmd/zsp@latest
+
+      - name: Publish application release to Zapstore
+        env:
+          SIGN_WITH: ${{ secrets.SIGN_WITH }}
+        run: |
+          echo "Publishing release from zapstore.yaml..."
+          zsp publish -q
+
+      - name: Verify Zapstore listing
+        env:
+          SIGN_WITH: ${{ secrets.SIGN_WITH }}
+        run: |
+          echo "Verifying published application on Zapstore catalog..."
+          zsp check
