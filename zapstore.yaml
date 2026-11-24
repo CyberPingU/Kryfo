@@ -1,0 +1,29 @@
+repository: https://github.com/CyberPingU/Kryfo
+release_source: https://github.com/CyberPingU/Kryfo
+release_filter: '^v[0-9]+\.[0-9]+\.[0-9]+-dreadful$'
+match: '.*-foss\.apk$'
+
+name: H-Kryfo
+summary: Client di messaggistica privata P2P ed E2EE su rete Tor onion con PQXDH
+description: |
+  **H-Kryfo** (Hardened Kryfo) è un client di messaggistica istantanea peer-to-peer cifrato end-to-end, sviluppato per garantire la massima privacy e la resistenza alla sorveglianza.
+
+  Caratteristiche principali:
+  - instradamento completamente anonimo tramite demone Tor onion embedded (con supporto per bridge WebTunnel e obfs4);
+  - crittografia end-to-end post-quantum basata su PQXDH e Double Ratchet;
+  - nessuna richiesta di numero di telefono, indirizzo email o identificativo centrale;
+  - archiviazione isolata (vault) protetta da PIN indipendente e plausibile denegabilità;
+  - notifiche push asincrone tramite UnifiedPush (UP-Tor bridge e server ntfy);
+  - build FOSS pura, priva di Google Play Services e di librerie di tracciamento.
+license: GPL-3.0-only
+website: https://github.com/CyberPingU/Kryfo
+tags:
+  - privacy
+  - tor
+  - messaging
+  - e2ee
+  - post-quantum
+  - p2p
+  - hardened
+
+icon: ./mobile/web/icons/Icon-512.png
