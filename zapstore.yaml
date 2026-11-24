@@ -4,21 +4,21 @@ release_filter: '^v[0-9]+\.[0-9]+\.[0-9]+-dreadful$'
 match: '.*-foss\.apk$'
 
 name: H-Kryfo
-summary: Fork hardened e sperimentale di Kryfo per messaggistica P2P su rete Tor con PQXDH
+summary: Hardened experimental fork of Kryfo for P2P messaging over Tor with PQXDH
 description: |
-  **H-Kryfo** (Hardened Kryfo) è un fork sperimentale, hardened e non ufficiale di **Kryfo**, il client di messaggistica privata ideato e sviluppato da **Marios** ([GnosiWorks](https://github.com/GnosiWorks/Kryfo) / [kryfo.app](https://kryfo.app)).
+  **H-Kryfo** (Hardened Kryfo) is an experimental, hardened, and unofficial fork of **Kryfo**, the private messaging client designed and developed by **Marios** ([GnosiWorks](https://github.com/GnosiWorks/Kryfo) / [kryfo.app](https://kryfo.app)).
 
-  Questa versione downstream introduce misure mirate di resistenza alla coercizione, plausibile denegabilità dell'archivio isolato (vault), uniformità di stato forense e infrastruttura di notifica push autonoma:
-  - instradamento completamente anonimo tramite demone Tor onion embedded (con supporto per bridge WebTunnel e obfs4);
-  - crittografia end-to-end post-quantum basata su PQXDH e Double Ratchet;
-  - identificativo a tre parole generate localmente, senza numero di telefono, email o account centrale;
-  - archiviazione isolata (vault) con PIN dedicato e sigillatura automatica uniforme per plausibile denegabilità forense;
-  - notifiche push asincrone tramite UnifiedPush (UP-Tor bridge e server ntfy);
-  - build FOSS pura, completamente priva di Google Play Services e di librerie di tracciamento;
-  - Application ID indipendente (`work.dreadful.kryfo`) per consentire l'installazione in parallelo all'app ufficiale Kryfo senza conflitti.
+  This downstream release introduces targeted measures for coercion resistance, plausible deniability of isolated archives (vault), forensic state uniformity, and autonomous push notification infrastructure:
+  - completely anonymous routing via an embedded Tor onion daemon (with support for WebTunnel and obfs4 bridges);
+  - post-quantum end-to-end encryption based on PQXDH and Double Ratchet;
+  - locally generated three-word identifier, requiring no phone number, email address, or central account;
+  - isolated archive (vault) with a dedicated PIN and automated uniform vault sealing for plausible deniability;
+  - asynchronous push notifications via UnifiedPush (UP-Tor bridge and custom ntfy server);
+  - pure FOSS build, entirely free of Google Play Services and tracking libraries;
+  - independent Application ID (`work.dreadful.kryfo`) allowing side-by-side installation alongside official Kryfo without conflict.
 
   ---
-  *Progetto upstream ufficiale*: se desideri utilizzare la versione originale di riferimento o supportare lo sviluppo dell'autore principale Marios, visita [kryfo.app](https://kryfo.app) e il repository [GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo).
+  *Official upstream project*: if you wish to use the reference version or support the primary author Marios, visit [kryfo.app](https://kryfo.app) and the [GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo) repository.
 license: GPL-3.0-only
 website: https://github.com/CyberPingU/Kryfo
 tags:
