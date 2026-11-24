@@ -14,6 +14,8 @@ description: |
   - locally generated three-word identifier, requiring no phone number, email address, or central account;
   - isolated archive (vault) with a dedicated PIN and automated uniform vault sealing for plausible deniability;
   - asynchronous push notifications via UnifiedPush (UP-Tor bridge and custom ntfy server);
+  - zero-drop push delivery: continuous instant push registration by default (with an opt-in toggle in settings to re-enable upstream rest rotation; vault chats remain strictly excluded);
+  - hardened background execution: background JobService timeout shortened from 170s to 35s to prevent Android 14/15 JobScheduler ANRs and wakelock leaks;
   - pure FOSS build, entirely free of Google Play Services and tracking libraries;
   - independent Application ID (`work.dreadful.kryfo`) allowing side-by-side installation alongside official Kryfo without conflict.
 
