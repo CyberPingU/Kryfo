@@ -8,12 +8,30 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time"
 
 	gonostr "github.com/nbd-wtf/go-nostr"
 	"github.com/nbd-wtf/go-nostr/nip19"
 	keystore "github.com/pavlo-v-chernykh/keystore-go/v4"
+	"github.com/zapstore/zsp/v2"
 )
+
+type keystoreSigner struct {
+	key    crypto.PrivateKey
+	cert   *x509.Certificate
+	pubkey string
+}
+
+func (s keystoreSigner) SignProof(_ context.Context, createdAt, expiry int64) (zsp.ProofSignature, error) {
+	signature, err := SignProofMessage(s.key, s.pubkey, createdAt, expiry)
+	if err != nil {
+		return zsp.ProofSignature{}, err
+	}
+	return zsp.ProofSignature{
+		PublicKey:       s.pubkey,
+		CertificateHash: ComputeCertHash(s.cert),
+		Signature:       signature,
+	}, nil
+}
 
 func main() {
 	keystorePath := os.Getenv("KEYSTORE_PATH")
@@ -23,6 +41,11 @@ func main() {
 		} else {
 			keystorePath = "dreadful.keystore"
 		}
+	}
+
+	configPath := os.Getenv("CONFIG_PATH")
+	if configPath == "" {
+		configPath = "zapstore.yaml"
 	}
 
 	keystorePassword := strings.TrimSpace(os.Getenv("KEYSTORE_PASSWORD"))
@@ -39,11 +62,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error: SIGN_WITH environment variable is empty\n")
 		os.Exit(1)
 	}
-
-	relayURL := os.Getenv("RELAY_URL")
-	if relayURL == "" {
-		relayURL = "wss://relay.zapstore.dev"
-	}
+	os.Setenv("SIGN_WITH", signWith)
 
 	var skHex string
 	if strings.HasPrefix(signWith, "nsec1") {
@@ -78,9 +97,6 @@ func main() {
 	if IsPKCS12(keystoreData) {
 		fmt.Println("Keystore format: PKCS#12")
 		privateKey, certificate, err = LoadPKCS12(keystoreData, keystorePassword)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "LoadPKCS12 failed: %v\n", err)
-		}
 	} else if IsJKS(keystoreData) {
 		fmt.Println("Keystore format: JKS")
 		ks := keystore.New(keystore.WithOrderedAliases())
@@ -113,50 +129,64 @@ func main() {
 	certHash := ComputeCertHash(certificate)
 	fmt.Printf("Keystore certificate SHA-256: %s\n", certHash)
 
-	proof, err := GenerateIdentityProof(privateKey, certificate, pubkeyHex, &IdentityProofOptions{
-		Expiry: 2 * 365 * 24 * time.Hour,
+	fmt.Printf("Loading Zapstore config: %s\n", configPath)
+	cfg, err := zsp.LoadConfig(configPath)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error loading config %s: %v\n", configPath, err)
+		os.Exit(1)
+	}
+
+	ctx := context.Background()
+
+	fmt.Println("Fetching release candidates according to zapstore.yaml...")
+	candidates, err := zsp.Fetch(ctx, cfg.Fetch, zsp.FetchOptions{
+		OnProgress: func(p zsp.Progress) {
+			if p.Phase != "" {
+				fmt.Printf("[%s] %s\n", p.Phase, p.Target)
+			}
+		},
 	})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error generating NIP-C1 identity proof: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error fetching release candidates: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("Generated NIP-C1 proof until %s\n", proof.ExpiryTime().Format(time.RFC3339))
-
-	event := &gonostr.Event{
-		Kind:      30509,
-		PubKey:    pubkeyHex,
-		CreatedAt: gonostr.Timestamp(proof.CreatedAt),
-		Tags:      proof.ToEventTags(),
-		Content:   "",
-	}
-
-	if err := event.Sign(skHex); err != nil {
-		fmt.Fprintf(os.Stderr, "Error signing Nostr proof event: %v\n", err)
+	if len(candidates) == 0 {
+		fmt.Fprintf(os.Stderr, "Error: no matching APK candidate found\n")
 		os.Exit(1)
 	}
-	fmt.Printf("Signed Nostr event %s (kind %d)\n", event.ID, event.Kind)
+	candidate := candidates[0]
+	defer candidate.Close()
 
-	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
-	defer cancel()
+	fmt.Printf("Selected APK candidate: %s v%s (code %d, SHA-256: %s)\n",
+		candidate.AppID, candidate.VersionName, candidate.VersionCode, candidate.Hash)
 
-	fmt.Printf("Connecting to relay %s...\n", relayURL)
-	relay, err := gonostr.RelayConnect(ctx, relayURL)
+	proofSigner := keystoreSigner{
+		key:    privateKey,
+		cert:   certificate,
+		pubkey: pubkeyHex,
+	}
+
+	fmt.Println("Publishing application release and NIP-C1 proof together to Zapstore...")
+	result, err := zsp.Publish(ctx, cfg.Publish, candidate, zsp.PublishOptions{
+		ProofSigner: proofSigner,
+		OnProgress: func(p zsp.Progress) {
+			if p.Phase != "" {
+				fmt.Printf("[%s] %s\n", p.Phase, p.Target)
+			}
+		},
+	})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error connecting to relay %s: %v\n", relayURL, err)
-		os.Exit(1)
-	}
-	defer relay.Close()
-
-	fmt.Printf("Publishing event to %s...\n", relayURL)
-	if err := relay.Publish(ctx, *event); err != nil {
-		fmt.Fprintf(os.Stderr, "Error publishing proof event to relay: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error publishing to Zapstore: %v\n", err)
+		if result != nil {
+			fmt.Printf("Partial result: status=%s, id=%s\n", result.Status, result.ID)
+		}
 		os.Exit(1)
 	}
 
 	fmt.Println("=== SUCCESS ===")
-	fmt.Printf("C1 proof event successfully published to %s!\n", relayURL)
-	fmt.Printf("Event ID: %s\n", event.ID)
-	fmt.Printf("App certificate %s is now claimed by %s\n", certHash, npub)
+	fmt.Printf("Successfully published %s v%s to Zapstore!\n", candidate.AppID, candidate.VersionName)
+	fmt.Printf("Status: %s\n", result.Status)
+	fmt.Printf("Release Event ID: %s\n", result.ID)
 }
 
 func min(a, b int) int {

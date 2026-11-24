@@ -22,7 +22,7 @@ jobs:
           go-version: '1.24'
           cache-dependency-path: packaging/zapstore/go.sum
 
-      - name: Register NIP-C1 developer proof
+      - name: Publish application with NIP-C1 developer proof to Zapstore
         env:
           KEYSTORE_BASE64: ${{ secrets.DREADFUL_KEYSTORE_BASE64 }}
           KEYSTORE_PASSWORD: ${{ secrets.DREADFUL_KEY_PASSWORD }}
@@ -46,28 +46,17 @@ jobs:
           echo "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > "$TEMP_KS"
           
           echo "Keystore restored to temporary file: $(ls -lh "$TEMP_KS")"
-          file "$TEMP_KS" || true
 
-          echo "Registering NIP-C1 developer proof with Zapstore relay..."
-          (cd packaging/zapstore && KEYSTORE_PATH="$TEMP_KS" go run .)
+          ROOT_DIR="$PWD"
+          echo "Publishing release with NIP-C1 developer proof to Zapstore..."
+          (cd packaging/zapstore && KEYSTORE_PATH="$TEMP_KS" CONFIG_PATH="$ROOT_DIR/zapstore.yaml" go run .)
 
           rm -f "$TEMP_KS"
           echo "Temporary keystore wiped from runner."
 
-      - name: Install Zapstore publisher tool (zsp)
+      - name: Install Zapstore CLI and verify listing
+        env:
+          SIGN_WITH: ${{ secrets.SIGN_WITH }}
         run: |
           go install github.com/zapstore/zsp/v2/cmd/zsp@latest
-
-      - name: Publish application release to Zapstore
-        env:
-          SIGN_WITH: ${{ secrets.SIGN_WITH }}
-        run: |
-          echo "Publishing release from zapstore.yaml..."
-          zsp publish -q
-
-      - name: Verify Zapstore listing
-        env:
-          SIGN_WITH: ${{ secrets.SIGN_WITH }}
-        run: |
-          echo "Verifying published application on Zapstore catalog..."
           zsp check
