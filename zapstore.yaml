@@ -19,7 +19,7 @@ description: |
 
   ---
   *Official upstream project*: if you wish to use the reference version or support the primary author Marios, visit [kryfo.app](https://kryfo.app) and the [GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo) repository.
-license: GPL-3.0-only
+license: GPL-3.0-or-later
 website: https://github.com/CyberPingU/Kryfo
 tags:
   - privacy
