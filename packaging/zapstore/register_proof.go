@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"crypto"
 	"crypto/x509"
@@ -11,6 +12,7 @@ import (
 
 	gonostr "github.com/nbd-wtf/go-nostr"
 	"github.com/nbd-wtf/go-nostr/nip19"
+	keystore "github.com/pavlo-v-chernykh/keystore-go/v4"
 )
 
 func main() {
@@ -23,20 +25,18 @@ func main() {
 		}
 	}
 
-	keystorePassword := os.Getenv("KEYSTORE_PASSWORD")
+	keystorePassword := strings.TrimSpace(os.Getenv("KEYSTORE_PASSWORD"))
 	if keystorePassword == "" {
-		fmt.Fprintf(os.Stderr, "Error: KEYSTORE_PASSWORD environment variable is required\n")
+		fmt.Fprintf(os.Stderr, "Error: KEYSTORE_PASSWORD environment variable is empty\n")
 		os.Exit(1)
 	}
 
-	keyAlias := os.Getenv("KEY_ALIAS")
-	if keyAlias == "" {
-		keyAlias = "dreadful"
-	}
+	keyAlias := strings.TrimSpace(os.Getenv("KEY_ALIAS"))
 
-	signWith := os.Getenv("SIGN_WITH")
+	signWith := strings.TrimSpace(os.Getenv("SIGN_WITH"))
+	signWith = strings.Trim(signWith, "\"'`\r\n ")
 	if signWith == "" {
-		fmt.Fprintf(os.Stderr, "Error: SIGN_WITH environment variable is required (nsec1... or hex)\n")
+		fmt.Fprintf(os.Stderr, "Error: SIGN_WITH environment variable is empty\n")
 		os.Exit(1)
 	}
 
@@ -70,23 +70,43 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error reading keystore file %s: %v\n", keystorePath, err)
 		os.Exit(1)
 	}
+	fmt.Printf("Read keystore file %s (%d bytes)\n", keystorePath, len(keystoreData))
 
 	var privateKey crypto.PrivateKey
 	var certificate *x509.Certificate
 
-	switch {
-	case IsPKCS12(keystoreData):
-		fmt.Println("Detected PKCS#12 keystore format.")
+	if IsPKCS12(keystoreData) {
+		fmt.Println("Keystore format: PKCS#12")
 		privateKey, certificate, err = LoadPKCS12(keystoreData, keystorePassword)
-	case IsJKS(keystoreData):
-		fmt.Println("Detected JKS keystore format.")
-		privateKey, certificate, err = LoadJKS(keystoreData, []byte(keystorePassword), []byte(keystorePassword), keyAlias)
-	default:
-		err = fmt.Errorf("unrecognized keystore format (neither PKCS#12 nor JKS)")
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "LoadPKCS12 failed: %v\n", err)
+		}
+	} else if IsJKS(keystoreData) {
+		fmt.Println("Keystore format: JKS")
+		ks := keystore.New(keystore.WithOrderedAliases())
+		if loadErr := ks.Load(bytes.NewReader(keystoreData), []byte(keystorePassword)); loadErr != nil {
+			err = fmt.Errorf("JKS password verification failed: %w", loadErr)
+		} else {
+			aliases := ks.Aliases()
+			fmt.Printf("JKS aliases found: %v\n", aliases)
+			selectedAlias := keyAlias
+			if selectedAlias == "" || !ks.IsPrivateKeyEntry(selectedAlias) {
+				for _, a := range aliases {
+					if ks.IsPrivateKeyEntry(a) {
+						selectedAlias = a
+						break
+					}
+				}
+			}
+			fmt.Printf("Using JKS alias: %q\n", selectedAlias)
+			privateKey, certificate, err = LoadJKS(keystoreData, []byte(keystorePassword), []byte(keystorePassword), selectedAlias)
+		}
+	} else {
+		err = fmt.Errorf("unrecognized keystore format (magic bytes: %x)", keystoreData[:min(8, len(keystoreData))])
 	}
 
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error loading keystore identity material: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error loading keystore: %v\n", err)
 		os.Exit(1)
 	}
 
@@ -94,7 +114,7 @@ func main() {
 	fmt.Printf("Keystore certificate SHA-256: %s\n", certHash)
 
 	proof, err := GenerateIdentityProof(privateKey, certificate, pubkeyHex, &IdentityProofOptions{
-		Expiry: 2 * 365 * 24 * time.Hour, // 2 years validity
+		Expiry: 2 * 365 * 24 * time.Hour,
 	})
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error generating NIP-C1 identity proof: %v\n", err)
@@ -137,4 +157,11 @@ func main() {
 	fmt.Printf("C1 proof event successfully published to %s!\n", relayURL)
 	fmt.Printf("Event ID: %s\n", event.ID)
 	fmt.Printf("App certificate %s is now claimed by %s\n", certHash, npub)
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }

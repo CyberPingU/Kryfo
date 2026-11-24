@@ -29,14 +29,25 @@ jobs:
           SIGN_WITH: ${{ secrets.SIGN_WITH }}
           KEY_ALIAS: 'dreadful'
         run: |
-          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$SIGN_WITH" ]; then
-            echo "Error: DREADFUL_KEYSTORE_BASE64, DREADFUL_KEY_PASSWORD, and SIGN_WITH must all be configured in repository secrets." >&2
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "Error: DREADFUL_KEYSTORE_BASE64 is empty." >&2
+            exit 1
+          fi
+          if [ -z "$KEYSTORE_PASSWORD" ]; then
+            echo "Error: DREADFUL_KEY_PASSWORD is empty." >&2
+            exit 1
+          fi
+          if [ -z "$SIGN_WITH" ]; then
+            echo "Error: SIGN_WITH is empty." >&2
             exit 1
           fi
 
           TEMP_KS=$(mktemp /tmp/ks.XXXXXX)
           echo "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > "$TEMP_KS"
           
+          echo "Keystore restored to temporary file: $(ls -lh "$TEMP_KS")"
+          file "$TEMP_KS" || true
+
           echo "Registering NIP-C1 developer proof with Zapstore relay..."
           KEYSTORE_PATH="$TEMP_KS" (cd packaging/zapstore && go run .)
 
