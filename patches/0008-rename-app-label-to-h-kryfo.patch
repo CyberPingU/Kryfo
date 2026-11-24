@@ -1,0 +1,21 @@
+diff --git a/mobile/android/app/build.gradle.kts b/mobile/android/app/build.gradle.kts
+--- a/mobile/android/app/build.gradle.kts
++++ b/mobile/android/app/build.gradle.kts
+@@ -153,7 +153,7 @@
+         versionCode = flutter.versionCode
+         versionName = flutter.versionName
+         // the launcher name, see the label check below
+-        manifestPlaceholders["appLabel"] = "Kryfo"
++        manifestPlaceholders["appLabel"] = "H-Kryfo"
+     }
+ 
+     // foss is what f-droid, github and the site ship, with no google code.
+@@ -368,7 +368,7 @@
+ 
+     @TaskAction
+     fun check() {
+-        val want = if (appId.get() == "app.kryfo.bridgetest") "Kryfo test" else "Kryfo"
++        val want = if (appId.get() == "app.kryfo.bridgetest") "Kryfo test" else "H-Kryfo"
+         val doc = javax.xml.parsers.DocumentBuilderFactory.newInstance()
+             .newDocumentBuilder().parse(manifest.get().asFile)
+         val app = doc.getElementsByTagName("application").item(0) as org.w3c.dom.Element
