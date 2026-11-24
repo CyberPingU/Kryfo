@@ -1,11 +1,13 @@
-# Kryfo (Dreadful Hardened Fork)
+# H-Kryfo (Hardened Kryfo)
 
 > [!NOTE]
-> **Hardened Fork Notice**
+> **Fork Notice & Upstream Credits**
 >
-> This repository is a private, hardened downstream fork of [Kryfo](https://github.com/GnosiWorks/Kryfo), engineered for enhanced coercion resistance, strict plausible absence, self-hosted push infrastructure, and privacy.
+> This repository is an independent, experimental hardened downstream fork of [Kryfo](https://github.com/GnosiWorks/Kryfo), the private Tor messenger created and actively maintained by **Marios** at [GnosiWorks](https://github.com/GnosiWorks).
 >
-> Packaged under application ID `work.dreadful.kryfo` with a custom slate cyan seal (`#1E6B8A`) so it installs cleanly side-by-side with official upstream releases without conflict.
+> **H-Kryfo** is engineered for enhanced coercion resistance, strict forensic state uniformity (plausible absence), self-hosted push gateway infrastructure, and privacy. It is packaged under application ID `work.dreadful.kryfo` with a custom slate cyan seal (`#1E6B8A`) so it installs cleanly side-by-side with official upstream releases without conflict.
+>
+> If you are looking for the official, stable release of Kryfo or wish to support the original author, please visit [kryfo.app](https://kryfo.app) and the upstream repository [github.com/GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo).
 
 ## Hardened Features & Enhancements
 

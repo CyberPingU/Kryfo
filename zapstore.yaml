@@ -4,17 +4,21 @@ release_filter: '^v[0-9]+\.[0-9]+\.[0-9]+-dreadful$'
 match: '.*-foss\.apk$'
 
 name: H-Kryfo
-summary: Client di messaggistica privata P2P ed E2EE su rete Tor onion con PQXDH
+summary: Fork hardened e sperimentale di Kryfo per messaggistica P2P su rete Tor con PQXDH
 description: |
-  **H-Kryfo** (Hardened Kryfo) è un client di messaggistica istantanea peer-to-peer cifrato end-to-end, sviluppato per garantire la massima privacy e la resistenza alla sorveglianza.
+  **H-Kryfo** (Hardened Kryfo) è un fork sperimentale, hardened e non ufficiale di **Kryfo**, il client di messaggistica privata ideato e sviluppato da **Marios** ([GnosiWorks](https://github.com/GnosiWorks/Kryfo) / [kryfo.app](https://kryfo.app)).
 
-  Caratteristiche principali:
+  Questa versione downstream introduce misure mirate di resistenza alla coercizione, plausibile denegabilità dell'archivio isolato (vault), uniformità di stato forense e infrastruttura di notifica push autonoma:
   - instradamento completamente anonimo tramite demone Tor onion embedded (con supporto per bridge WebTunnel e obfs4);
   - crittografia end-to-end post-quantum basata su PQXDH e Double Ratchet;
-  - nessuna richiesta di numero di telefono, indirizzo email o identificativo centrale;
-  - archiviazione isolata (vault) protetta da PIN indipendente e plausibile denegabilità;
+  - identificativo a tre parole generate localmente, senza numero di telefono, email o account centrale;
+  - archiviazione isolata (vault) con PIN dedicato e sigillatura automatica uniforme per plausibile denegabilità forense;
   - notifiche push asincrone tramite UnifiedPush (UP-Tor bridge e server ntfy);
-  - build FOSS pura, priva di Google Play Services e di librerie di tracciamento.
+  - build FOSS pura, completamente priva di Google Play Services e di librerie di tracciamento;
+  - Application ID indipendente (`work.dreadful.kryfo`) per consentire l'installazione in parallelo all'app ufficiale Kryfo senza conflitti.
+
+  ---
+  *Progetto upstream ufficiale*: se desideri utilizzare la versione originale di riferimento o supportare lo sviluppo dell'autore principale Marios, visita [kryfo.app](https://kryfo.app) e il repository [GnosiWorks/Kryfo](https://github.com/GnosiWorks/Kryfo).
 license: GPL-3.0-only
 website: https://github.com/CyberPingU/Kryfo
 tags:
