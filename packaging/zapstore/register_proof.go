@@ -176,6 +176,10 @@ func main() {
 		},
 	})
 	if err != nil {
+		if strings.Contains(strings.ToLower(err.Error()), "already published") {
+			fmt.Printf("Notice: release version_code %d is already published on Zapstore (%v). Skipping without error.\n", candidate.VersionCode, err)
+			return
+		}
 		fmt.Fprintf(os.Stderr, "Error publishing to Zapstore: %v\n", err)
 		if result != nil {
 			fmt.Printf("Partial result: status=%s, id=%s\n", result.Status, result.ID)
