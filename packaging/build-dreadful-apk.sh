@@ -66,13 +66,13 @@ else
   KV_JNI_LIBS_DIR="$ROOT/mobile/android/app/src/main/jniLibs" bash build.sh
 fi
 
-echo "=== 6. Flutter Build (assembleFossRelease) ==="
+echo "=== 6. Flutter Build (assembleFossRelease with split-per-abi) ==="
 cd "$ROOT/mobile"
 
 success=0
 for attempt in 1 2 3; do
   echo "Flutter build attempt $attempt (foss)..."
-  if flutter build apk --release --flavor foss; then
+  if flutter build apk --release --split-per-abi --flavor foss; then
     success=1
     break
   fi
@@ -86,22 +86,16 @@ if [[ "$success" -ne 1 ]]; then
   exit 1
 fi
 
-APK="$ROOT/mobile/build/app/outputs/flutter-apk/app-foss-release.apk"
-if [[ -f "$APK" ]]; then
-  echo "=== FOSS BUILD FINISHED SUCCESSFULLY ==="
-  ls -lh "$APK"
-  sha256sum "$APK"
-else
-  echo "Error: Output APK not found at $APK" >&2
-  exit 1
-fi
+echo "=== FOSS BUILD FINISHED SUCCESSFULLY ==="
+ls -lh "$ROOT/mobile/build/app/outputs/flutter-apk/"app-*-foss-release.apk
+sha256sum "$ROOT/mobile/build/app/outputs/flutter-apk/"app-*-foss-release.apk
 
 if [[ -f "$ROOT/mobile/android/app/src/play/google-services.json" || -f "${HOME:-/home/vagrant}/.kryfo-secrets/play/google-services.json" ]]; then
-  echo "=== 7. Flutter Build (assemblePlayRelease) ==="
+  echo "=== 7. Flutter Build (assemblePlayRelease with split-per-abi) ==="
   success_play=0
   for attempt in 1 2 3; do
     echo "Flutter build attempt $attempt (play)..."
-    if flutter build apk --release --flavor play; then
+    if flutter build apk --release --split-per-abi --flavor play; then
       success_play=1
       break
     fi
@@ -115,13 +109,7 @@ if [[ -f "$ROOT/mobile/android/app/src/play/google-services.json" || -f "${HOME:
     exit 1
   fi
 
-  PLAY_APK="$ROOT/mobile/build/app/outputs/flutter-apk/app-play-release.apk"
-  if [[ -f "$PLAY_APK" ]]; then
-    echo "=== PLAY BUILD FINISHED SUCCESSFULLY ==="
-    ls -lh "$PLAY_APK"
-    sha256sum "$PLAY_APK"
-  else
-    echo "Error: Output APK not found at $PLAY_APK" >&2
-    exit 1
-  fi
+  echo "=== PLAY BUILD FINISHED SUCCESSFULLY ==="
+  ls -lh "$ROOT/mobile/build/app/outputs/flutter-apk/"app-*-play-release.apk
+  sha256sum "$ROOT/mobile/build/app/outputs/flutter-apk/"app-*-play-release.apk
 fi

@@ -170,19 +170,44 @@ jobs:
       - name: Prepare release assets
         if: steps.check_release.outputs.should_build == 'true'
         run: |
-          FOSS_APK="mobile/build/app/outputs/flutter-apk/app-foss-release.apk"
-          DEST_FOSS="Kryfo-Dreadful-${{ steps.target.outputs.tag }}-foss.apk"
-          cp "$FOSS_APK" "$DEST_FOSS"
-          cp "$FOSS_APK" "Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk"
-          sha256sum "$DEST_FOSS" > "${DEST_FOSS}.sha256"
-          sha256sum "Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk" > "Kryfo-Dreadful-${{ steps.target.outputs.tag }}.apk.sha256"
+          APK_DIR="mobile/build/app/outputs/flutter-apk"
+          TAG="${{ steps.target.outputs.tag }}"
 
-          PLAY_APK="mobile/build/app/outputs/flutter-apk/app-play-release.apk"
-          if [[ -f "$PLAY_APK" ]]; then
-            DEST_PLAY="Kryfo-Dreadful-${{ steps.target.outputs.tag }}-play.apk"
-            cp "$PLAY_APK" "$DEST_PLAY"
-            sha256sum "$DEST_PLAY" > "${DEST_PLAY}.sha256"
+          # Copy and rename FOSS split APKs
+          for abi in arm64-v8a armeabi-v7a x86_64; do
+            SRC="$APK_DIR/app-${abi}-foss-release.apk"
+            if [[ -f "$SRC" ]]; then
+              DEST="Kryfo-Dreadful-${TAG}-${abi}-foss.apk"
+              cp "$SRC" "$DEST"
+              sha256sum "$DEST" > "${DEST}.sha256"
+            fi
+          done
+
+          # Default FOSS APK (arm64-v8a) as main alias
+          if [[ -f "$APK_DIR/app-arm64-v8a-foss-release.apk" ]]; then
+            cp "$APK_DIR/app-arm64-v8a-foss-release.apk" "Kryfo-Dreadful-${TAG}-foss.apk"
+            cp "$APK_DIR/app-arm64-v8a-foss-release.apk" "Kryfo-Dreadful-${TAG}.apk"
+            sha256sum "Kryfo-Dreadful-${TAG}-foss.apk" > "Kryfo-Dreadful-${TAG}-foss.apk.sha256"
+            sha256sum "Kryfo-Dreadful-${TAG}.apk" > "Kryfo-Dreadful-${TAG}.apk.sha256"
           fi
+
+          # Copy and rename Play split APKs if built
+          for abi in arm64-v8a armeabi-v7a x86_64; do
+            SRC="$APK_DIR/app-${abi}-play-release.apk"
+            if [[ -f "$SRC" ]]; then
+              DEST="Kryfo-Dreadful-${TAG}-${abi}-play.apk"
+              cp "$SRC" "$DEST"
+              sha256sum "$DEST" > "${DEST}.sha256"
+            fi
+          done
+
+          if [[ -f "$APK_DIR/app-arm64-v8a-play-release.apk" ]]; then
+            cp "$APK_DIR/app-arm64-v8a-play-release.apk" "Kryfo-Dreadful-${TAG}-play.apk"
+            sha256sum "Kryfo-Dreadful-${TAG}-play.apk" > "Kryfo-Dreadful-${TAG}-play.apk.sha256"
+          fi
+
+          echo "Prepared release assets:"
+          ls -lh Kryfo-Dreadful-*.apk
 
       - name: Create GitHub Release
         if: steps.check_release.outputs.should_build == 'true'

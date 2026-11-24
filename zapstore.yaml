@@ -1,7 +1,7 @@
 repository: https://github.com/CyberPingU/Kryfo
 release_source: https://github.com/CyberPingU/Kryfo
 release_filter: '^v[0-9]+\.[0-9]+\.[0-9]+-dreadful$'
-match: '.*-foss\.apk$'
+match: '.*-arm64-v8a-foss\.apk$'
 
 name: H-Kryfo
 summary: Hardened experimental fork of Kryfo for P2P messaging over Tor with PQXDH
