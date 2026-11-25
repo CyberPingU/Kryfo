@@ -419,7 +419,7 @@ class _LockScreenState extends State<LockScreen> with TickerProviderStateMixin {
                           ? Duration.zero
                           : const Duration(milliseconds: 200),
                       child: Text(
-                        face == AppFace.kryfo ? 'Kryfo' : '',
+                        face == AppFace.kryfo ? 'H-Kryfo' : '',
                         key: ValueKey(face == AppFace.kryfo),
                         style: HaloType.serif(
                           size: 40,

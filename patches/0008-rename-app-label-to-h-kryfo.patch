@@ -19,3 +19,16 @@ diff --git a/mobile/android/app/build.gradle.kts b/mobile/android/app/build.grad
          val doc = javax.xml.parsers.DocumentBuilderFactory.newInstance()
              .newDocumentBuilder().parse(manifest.get().asFile)
          val app = doc.getElementsByTagName("application").item(0) as org.w3c.dom.Element
+diff --git a/mobile/lib/screens/lock_screen.dart b/mobile/lib/screens/lock_screen.dart
+index 959b8d642..11485c23c 100644
+--- a/mobile/lib/screens/lock_screen.dart
++++ b/mobile/lib/screens/lock_screen.dart
+@@ -419,7 +419,7 @@ class _LockScreenState extends State<LockScreen> with TickerProviderStateMixin {
+                           ? Duration.zero
+                           : const Duration(milliseconds: 200),
+                       child: Text(
+-                        face == AppFace.kryfo ? 'Kryfo' : '',
++                        face == AppFace.kryfo ? 'H-Kryfo' : '',
+                         key: ValueKey(face == AppFace.kryfo),
+                         style: HaloType.serif(
+                           size: 40,
