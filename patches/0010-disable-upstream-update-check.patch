@@ -1,0 +1,24 @@
+diff --git a/mobile/lib/update_check.dart b/mobile/lib/update_check.dart
+index d88d633b9..83d456bd0 100644
+--- a/mobile/lib/update_check.dart
++++ b/mobile/lib/update_check.dart
+@@ -79,16 +79,9 @@ class InstallInfo {
+   const InstallInfo({this.installer, this.initiator, this.owner, this.version});
+ }
+ 
+-/// whether this copy gets the notice: never a play build, never a copy an
+-/// f-droid client installed or keeps updated. unknown, none, the package
+-/// installer and obtainium do
+-bool updateNoticeFor(InstallInfo i, {required bool playBuild}) {
+-  if (playBuild) return false;
+-  for (final p in [i.installer, i.initiator, i.owner]) {
+-    if (p != null && kStoreInstallers.contains(p)) return false;
+-  }
+-  return true;
+-}
++/// whether this copy gets the notice: disabled in H-Kryfo so it never
++/// pings kryfo.app or prompts to install upstream releases over the fork
++bool updateNoticeFor(InstallInfo i, {required bool playBuild}) => false;
+ 
+ final _versionShape = RegExp(r'^(\d{1,4})\.(\d{1,4})\.(\d{1,4})$');
+ 
