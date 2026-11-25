@@ -30,6 +30,7 @@ extension AppStateDevchat on AppState {
       final k = DevKey.fromLink(link, keyId: pinned.keyId);
       if (k == null ||
           k.xPub != pinned.xPub ||
+          k.fc != pinned.fc ||
           k.threeWords != pinned.threeWords ||
           !devCardStarts(k)) {
         dlog('dev card: not the pinned one');
