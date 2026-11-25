@@ -1228,7 +1228,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 if (devChatOffered && !linkedRole)
                   HaloRow(
                     mark: const DevRing(size: 20),
-                    label: l10n.settingsWriteToMarios,
+                    label: l10n.settingsWriteToMarios.replaceAll(
+                      'Marios',
+                      'CyberPingU',
+                    ),
                     hint: l10n.settingsWriteToMariosHint,
                     onTap: () => writeToMarios(context),
                   ),

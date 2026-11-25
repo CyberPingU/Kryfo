@@ -198,7 +198,7 @@ enum HaloAccent {
     for (final a in values) {
       if (a.name == name) return a;
     }
-    return yellow;
+    return velvet;
   }
 }
 
@@ -210,8 +210,8 @@ class HaloColors {
   static const Color qrViolet = Color(0xFF4C2F9E);
 
   static _Palette _p = _dark;
-  static HaloAccent _accent = HaloAccent.yellow;
-  static AccentTones _a = HaloAccent.yellow.dark;
+  static HaloAccent _accent = HaloAccent.velvet;
+  static AccentTones _a = HaloAccent.velvet.dark;
   static bool get isLight => identical(_p, _light);
   static HaloAccent get accent => _accent;
   static void setLight(bool v) {

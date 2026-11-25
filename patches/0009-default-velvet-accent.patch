@@ -1,0 +1,37 @@
+diff --git a/mobile/lib/main.dart b/mobile/lib/main.dart
+index 36a36dcbd..2f16d5a9f 100644
+--- a/mobile/lib/main.dart
++++ b/mobile/lib/main.dart
+@@ -401,7 +401,7 @@ void main() async {
+   // first. started before the window check so a headless start loads it too.
+   unawaited(
+     appState.loadThemePref().then((_) {
+-      if (HaloColors.isLight || HaloColors.accent != HaloAccent.yellow) {
++      if (HaloColors.isLight || HaloColors.accent != HaloAccent.velvet) {
+         themeRevision.value++;
+       }
+     }),
+diff --git a/mobile/lib/theme.dart b/mobile/lib/theme.dart
+index eb94cf0e4..36040f5a1 100644
+--- a/mobile/lib/theme.dart
++++ b/mobile/lib/theme.dart
+@@ -198,7 +198,7 @@ enum HaloAccent {
+     for (final a in values) {
+       if (a.name == name) return a;
+     }
+-    return yellow;
++    return velvet;
+   }
+ }
+ 
+@@ -210,8 +210,8 @@ class HaloColors {
+   static const Color qrViolet = Color(0xFF4C2F9E);
+ 
+   static _Palette _p = _dark;
+-  static HaloAccent _accent = HaloAccent.yellow;
+-  static AccentTones _a = HaloAccent.yellow.dark;
++  static HaloAccent _accent = HaloAccent.velvet;
++  static AccentTones _a = HaloAccent.velvet.dark;
+   static bool get isLight => identical(_p, _light);
+   static HaloAccent get accent => _accent;
+   static void setLight(bool v) {

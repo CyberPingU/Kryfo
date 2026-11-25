@@ -401,7 +401,7 @@ void main() async {
   // first. started before the window check so a headless start loads it too.
   unawaited(
     appState.loadThemePref().then((_) {
-      if (HaloColors.isLight || HaloColors.accent != HaloAccent.yellow) {
+      if (HaloColors.isLight || HaloColors.accent != HaloAccent.velvet) {
         themeRevision.value++;
       }
     }),

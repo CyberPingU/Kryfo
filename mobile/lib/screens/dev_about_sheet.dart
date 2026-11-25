@@ -30,8 +30,10 @@ import 'chat_screen.dart';
 import 'home_screen.dart' show ContactPreview;
 import '../wide/wide_pane.dart' show deskPush;
 
-// a key is pinned and this is not the developer's own phone. In Dreadful fork, dev chat is disabled.
-bool get devChatOffered => false;
+// a key is pinned and this is not the developer's own phone. a decoy is
+// never his
+bool get devChatOffered =>
+    currentDevKey != null && (sessionQuiet || !devModeOf(appState.myXPub));
 
 // the one door into the chat's screen, so what the chat does on its own
 // lands in one place

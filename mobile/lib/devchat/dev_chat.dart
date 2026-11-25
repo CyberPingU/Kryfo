@@ -209,14 +209,37 @@ bool devModeOf(String everydayXPub) {
 }
 
 // the home row. none while gone, on the developer's own phone, or while
-// fresh with no key to talk to. In Dreadful fork, dev chat is disabled.
+// fresh with no message sent yet (Settings-only entry in H-Kryfo)
 DevRow? devRowOf(
   DevChatRow? r, {
   Map<String, Object?>? contact,
   String? preview,
   DateTime? when,
   bool devMode = false,
-}) => null;
+}) {
+  if (r == null || devMode) return null;
+  switch (r.state) {
+    case DevState.gone || DevState.fresh:
+      return null;
+    case DevState.everyday || DevState.anon:
+      bool flag(String col, bool fallback) =>
+          contact == null ? fallback : contact[col] == 1;
+      return DevRow(
+        keyId: r.keyId,
+        chatId: DevKey.chatIdOf(r.keyId),
+        preview: preview,
+        when: when,
+        unread: (contact?['unread'] as num?)?.toInt() ?? 0,
+        pinned: flag('pinned', r.pinned),
+        muted: flag('muted', r.muted),
+        archived: flag('archived', r.archived),
+        started: true,
+        anonymous: r.state == DevState.anon,
+        nameless: r.nameless,
+        status: r.key?.status ?? DevKeyStatus.retired,
+      );
+  }
+}
 
 const _kDev = 'dev:%';
 
