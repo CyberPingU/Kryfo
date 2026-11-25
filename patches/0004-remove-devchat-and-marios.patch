@@ -1,3 +1,15 @@
+diff --git a/mobile/lib/app/state_devchat.dart b/mobile/lib/app/state_devchat.dart
+index 0c619c4f6..ee5045ddd 100644
+--- a/mobile/lib/app/state_devchat.dart
++++ b/mobile/lib/app/state_devchat.dart
+@@ -30,7 +30,6 @@ extension AppStateDevchat on AppState {
+       final k = DevKey.fromLink(link, keyId: pinned.keyId);
+       if (k == null ||
+           k.xPub != pinned.xPub ||
+-          k.fc != pinned.fc ||
+           k.threeWords != pinned.threeWords ||
+           !devCardStarts(k)) {
+         dlog('dev card: not the pinned one');
 diff --git a/mobile/lib/devchat/dev_chat.dart b/mobile/lib/devchat/dev_chat.dart
 index 84cac91af..7059d2655 100644
 --- a/mobile/lib/devchat/dev_chat.dart
